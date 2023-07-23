@@ -17,7 +17,7 @@
 <generator>quarto-1.2.335</generator>
 <lastBuildDate>Sat, 22 Jul 2023 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>포켓몬</title>
+  <title>포켓몬 여행기</title>
   <dc:creator>한지우</dc:creator>
   <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-05-22-testbook-testname/index.html</link>
   <description><![CDATA[ 
@@ -29,10 +29,28 @@
 
 
  ]]></description>
-  <category>어린이 게임</category>
+  <category>어린이게임</category>
   <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-05-22-testbook-testname/index.html</guid>
   <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
   <media:content url="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-05-22-testbook-testname/poketmon.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>딥러닝 용어 사전</title>
+  <dc:creator>용어사전 기여자들</dc:creator>
+  <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><a href="https://pseudo-lab.github.io/deep-learning-glossary">딥러닝 용어사전</a></p>
+
+
+
+ ]]></description>
+  <category>딥러닝</category>
+  <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</guid>
+  <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/poketmon.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
