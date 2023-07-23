@@ -1,0 +1,14 @@
+---
+title: 포켓몬
+subtitle: A potpourri of Quarto features useful for academics
+description: |
+  A video highlighting some of Quarto's features that are especially useful for academics, as educators and as researchers.
+categories:
+  - 어린이 게임
+author: 한지우
+date: "07/23/2023"
+image: "poketmon.png"
+image-alt: "Quarto logo on a blue background and the title of the video - Quarto for Academics"
+---
+
+포켓몬고를 바탕으로한 어린이 소설입니다.
