@@ -17,24 +17,6 @@
 <generator>quarto-1.2.335</generator>
 <lastBuildDate>Sat, 22 Jul 2023 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>포켓몬 여행기</title>
-  <dc:creator>한지우</dc:creator>
-  <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-05-22-testbook-testname/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>포켓몬고를 바탕으로한 어린이 소설입니다.</p>
-
-
-
- ]]></description>
-  <category>어린이게임</category>
-  <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-05-22-testbook-testname/index.html</guid>
-  <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-05-22-testbook-testname/poketmon.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
   <title>딥러닝 용어 사전</title>
   <dc:creator>용어사전 기여자들</dc:creator>
   <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</link>
@@ -42,7 +24,7 @@
 
 
 
-<p><a href="https://pseudo-lab.github.io/deep-learning-glossary">딥러닝 용어사전</a></p>
+<p><a href="../../../../docs/bookshelf/glossary/index.html">딥러닝 용어사전</a>프로젝트에 사용되는 한국어 용어 사전은 딥러닝에 사용되는 영어 용어를 한글 용어로 번역하기 위해 사용됩니다. 통일성 있는 번역 문서를 만들기 위해서 다함께 등록하고 수정하는 오픈 용어 사전입니다.</p>
 
 
 
@@ -50,7 +32,7 @@
   <category>딥러닝</category>
   <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</guid>
   <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/poketmon.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/glossary.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

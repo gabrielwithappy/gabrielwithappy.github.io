@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -130,14 +130,14 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="딥러닝">딥러닝 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="어린이게임">어린이게임 <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="딥러닝">딥러닝 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -161,77 +161,37 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="어린이게임" data-listing-date-sort="1690038000000" data-listing-file-modified-sort="1690079317033" data-listing-reading-time-sort="0.02">
-<div class="thumbnail">
-<p><a href="../../docs/book_blog/posts/2023-05-22-testbook-testname/index.html"> <img src="../../docs/book_blog/posts/2023-05-22-testbook-testname/poketmon.png" class="thumnail-image" alt="Quarto logo on a blue background and the title of the video - Quarto for Academics"> </a></p>
-</div>
-<div class="body">
-<a href="../../docs/book_blog/posts/2023-05-22-testbook-testname/index.html">
-<h3 class="no-anchor listing-title">
-포켓몬 여행기
-</h3>
-<div class="listing-subtitle">
-A potpourri of Quarto features useful for academics
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('어린이게임'); return false;">
-어린이게임
-</div>
-</div>
-<a href="../../docs/book_blog/posts/2023-05-22-testbook-testname/index.html">
-<div class="listing-description">
-<p>포켓몬을 찾는 한지우의 모험입니다.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../../docs/book_blog/posts/2023-05-22-testbook-testname/index.html">
-<div class="listing-date">
-Jul 23, 2023
-</div>
-<div class="listing-author">
-한지우
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="딥러닝" data-listing-date-sort="1690038000000" data-listing-file-modified-sort="1690082808854" data-listing-reading-time-sort="0.015">
-<div class="thumbnail">
-<p><a href="../../docs/book_blog/posts/2023-07-23-dl-glossary/index.html"> <img src="../../docs/book_blog/posts/2023-07-23-dl-glossary/poketmon.png" class="thumnail-image" alt="deep learning glossary"> </a></p>
-</div>
-<div class="body">
-<a href="../../docs/book_blog/posts/2023-07-23-dl-glossary/index.html">
-<h3 class="no-anchor listing-title">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="딥러닝" data-listing-date-sort="1690038000000" data-listing-file-modified-sort="1690205122236" data-listing-reading-time-sort="0.13">
+<a href="../../docs/book_blog/posts/2023-07-23-dl-glossary/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../docs/book_blog/posts/2023-07-23-dl-glossary/glossary.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="deep learning glossary">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 딥러닝 용어 사전
-</h3>
-<div class="listing-subtitle">
-딥러닝에 프로젝트에 사용되는 용어를 한국어로 정리합니다.
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('딥러닝'); return false;">
 딥러닝
 </div>
 </div>
-<a href="../../docs/book_blog/posts/2023-07-23-dl-glossary/index.html">
-<div class="listing-description">
-<p>딥러닝 용어 사전</p>
+<div class="card-text listing-description">
+딥러닝에 프로젝트에 사용되는 한국어 용어 사전
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="../../docs/book_blog/posts/2023-07-23-dl-glossary/index.html">
-<div class="listing-date">
-Jul 23, 2023
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 용어사전 기여자들
 </div>
-</a>
+<div class="listing-date">
+Jul 23, 2023
 </div>
+</div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
