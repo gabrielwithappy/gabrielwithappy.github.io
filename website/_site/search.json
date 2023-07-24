@@ -2,7 +2,7 @@
   {
     "objectID": "books.html",
     "href": "books.html",
-    "title": "Public Book",
+    "title": "Books",
     "section": "",
     "text": "온라인 상의 책들을 정리합니다."
   },
@@ -14,11 +14,18 @@
     "text": "온라인 상의 책들을 정리합니다."
   },
   {
-    "objectID": "docs/book_blog/posts/2023-05-22-testbook-testname/index.html",
-    "href": "docs/book_blog/posts/2023-05-22-testbook-testname/index.html",
-    "title": "포켓몬",
+    "objectID": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+    "href": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+    "title": "딥러닝 용어 사전",
     "section": "",
-    "text": "포켓몬고를 바탕으로한 어린이 소설입니다."
+    "text": "딥러닝 용어사전프로젝트에 사용되는 한국어 용어 사전은 딥러닝에 사용되는 영어 용어를 한글 용어로 번역하기 위해 사용됩니다. 통일성 있는 번역 문서를 만들기 위해서 다함께 등록하고 수정하는 오픈 용어 사전입니다."
+  },
+  {
+    "objectID": "docs/bookshelf/glossary/index.html",
+    "href": "docs/bookshelf/glossary/index.html",
+    "title": "Public KR Book",
+    "section": "",
+    "text": "</table>\n<div id=\"quarto-navigation-envelope\" class=\"hidden\">\n<p><span class=\"hidden\" data-render-id=\"quarto-int-sidebar-title\">Public KR Book</span> <span class=\"hidden\" data-render-id=\"quarto-int-navbar-title\">Public KR Book</span> <span class=\"hidden\" data-render-id=\"quarto-int-navbar:Home\">Home</span> <span class=\"hidden\" data-render-id=\"quarto-int-navbar:Books\">Books</span> <span class=\"hidden\" data-render-id=\"quarto-int-navbar:About\">About</span></p>\n</div>\n<div id=\"quarto-meta-markdown\" class=\"hidden\">\n<p><span class=\"hidden\" data-render-id=\"quarto-twittercardtitle\"></span> <span class=\"hidden\" data-render-id=\"quarto-ogcardtitle\"></span> <span class=\"hidden\" data-render-id=\"quarto-metasitename\">Public KR Book</span></p>\n</div>\n\n</main> <!-- /main -->\n<script id = \"quarto-html-after-body\" type=\"application/javascript\">\nwindow.document.addEventListener(\"DOMContentLoaded\", function (event) {\n  const toggleBodyColorMode = (bsSheetEl) => {\n    const mode = bsSheetEl.getAttribute(\"data-mode\");\n    const bodyEl = window.document.querySelector(\"body\");\n    if (mode === \"dark\") {\n      bodyEl.classList.add(\"quarto-dark\");\n      bodyEl.classList.remove(\"quarto-light\");\n    } else {\n      bodyEl.classList.add(\"quarto-light\");\n      bodyEl.classList.remove(\"quarto-dark\");\n    }\n  }\n  const toggleBodyColorPrimary = () => {\n    const bsSheetEl = window.document.querySelector(\"link#quarto-bootstrap\");\n    if (bsSheetEl) {\n      toggleBodyColorMode(bsSheetEl);\n    }\n  }\n  toggleBodyColorPrimary();  \n  const icon = \"\";\n  const anchorJS = new window.AnchorJS();\n  anchorJS.options = {\n    placement: 'right',\n    icon: icon\n  };\n  anchorJS.add('.anchored');\n  const clipboard = new window.ClipboardJS('.code-copy-button', {\n    target: function(trigger) {\n      return trigger.previousElementSibling;\n    }\n  });\n  clipboard.on('success', function(e) {\n    // button target\n    const button = e.trigger;\n    // don't keep focus\n    button.blur();\n    // flash \"checked\"\n    button.classList.add('code-copy-button-checked');\n    var currentTitle = button.getAttribute(\"title\");\n    button.setAttribute(\"title\", \"Copied!\");\n    let tooltip;\n    if (window.bootstrap) {\n      button.setAttribute(\"data-bs-toggle\", \"tooltip\");\n      button.setAttribute(\"data-bs-placement\", \"left\");\n      button.setAttribute(\"data-bs-title\", \"Copied!\");\n      tooltip = new bootstrap.Tooltip(button, \n        { trigger: \"manual\", \n          customClass: \"code-copy-button-tooltip\",\n          offset: [0, -8]});\n      tooltip.show();    \n    }\n    setTimeout(function() {\n      if (tooltip) {\n        tooltip.hide();\n        button.removeAttribute(\"data-bs-title\");\n        button.removeAttribute(\"data-bs-toggle\");\n        button.removeAttribute(\"data-bs-placement\");\n      }\n      button.setAttribute(\"title\", currentTitle);\n      button.classList.remove('code-copy-button-checked');\n    }, 1000);\n    // clear code selection\n    e.clearSelection();\n  });\n  function tippyHover(el, contentFn) {\n    const config = {\n      allowHTML: true,\n      content: contentFn,\n      maxWidth: 500,\n      delay: 100,\n      arrow: false,\n      appendTo: function(el) {\n          return el.parentElement;\n      },\n      interactive: true,\n      interactiveBorder: 10,\n      theme: 'quarto',\n      placement: 'bottom-start'\n    };\n    window.tippy(el, config); \n  }\n  const noterefs = window.document.querySelectorAll('a[role=\"doc-noteref\"]');\n  for (var i=0; i<noterefs.length; i++) {\n    const ref = noterefs[i];\n    tippyHover(ref, function() {\n      // use id or data attribute instead here\n      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');\n      try { href = new URL(href).hash; } catch {}\n      const id = href.replace(/^#\\/?/, \"\");\n      const note = window.document.getElementById(id);\n      return note.innerHTML;\n    });\n  }\n  const findCites = (el) => {\n    const parentEl = el.parentElement;\n    if (parentEl) {\n      const cites = parentEl.dataset.cites;\n      if (cites) {\n        return {\n          el,\n          cites: cites.split(' ')\n        };\n      } else {\n        return findCites(el.parentElement)\n      }\n    } else {\n      return undefined;\n    }\n  };\n  var bibliorefs = window.document.querySelectorAll('a[role=\"doc-biblioref\"]');\n  for (var i=0; i<bibliorefs.length; i++) {\n    const ref = bibliorefs[i];\n    const citeInfo = findCites(ref);\n    if (citeInfo) {\n      tippyHover(citeInfo.el, function() {\n        var popup = window.document.createElement('div');\n        citeInfo.cites.forEach(function(cite) {\n          var citeDiv = window.document.createElement('div');\n          citeDiv.classList.add('hanging-indent');\n          citeDiv.classList.add('csl-entry');\n          var biblioDiv = window.document.getElementById('ref-' + cite);\n          if (biblioDiv) {\n            citeDiv.innerHTML = biblioDiv.innerHTML;\n          }\n          popup.appendChild(citeDiv);\n        });\n        return popup.innerHTML;\n      });\n    }\n  }\n});\n</script>\n</div> <!-- /content -->\n\n</body>\n\n</html>"
   },
   {
     "objectID": "about.html",

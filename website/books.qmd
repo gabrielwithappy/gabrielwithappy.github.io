@@ -1,8 +1,12 @@
 ---
-title: "Public Book"
+title: "Books"
 ---
 
 온라인 상의 책들을 정리합니다.
 
+```{=typst}
+#set par(justify: true)
 
-
+== Background
+In the case of glaciers, fluid dynamics principles can be used to understand how the movement and behavior of the ice is influenced by factors such as temperature, pressure, and the presence of other fluids (such as water).
+```

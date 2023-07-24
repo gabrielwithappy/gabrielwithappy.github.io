@@ -7,15 +7,18 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
       - docs/book_blog/index.qmd
-
+      #- books.qmd
+      - about.qmd
+  # google-analytics: "UA-XXXXXXXX"
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
+
 
 
 
