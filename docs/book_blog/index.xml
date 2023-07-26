@@ -6,20 +6,20 @@
       version="2.0">
 <channel>
 <title>Public KR Book</title>
-<link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/index.html</link>
-<atom:link href="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://publickrbook.com/docs/book_blog/index.html</link>
+<atom:link href="https://publickrbook.com/docs/book_blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>https://gabrielwithappy.github.io/publickrbook/images/docs/book_blog/test.png</url>
+<url>https://publickrbook.com/images/docs/book_blog/test.png</url>
 <title>Public KR Book</title>
-<link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/index.html</link>
+<link>https://publickrbook.com/docs/book_blog/index.html</link>
 </image>
 <generator>quarto-1.2.335</generator>
 <lastBuildDate>Sat, 22 Jul 2023 15:00:00 GMT</lastBuildDate>
 <item>
   <title>딥러닝 용어 사전</title>
   <dc:creator>용어사전 기여자들</dc:creator>
-  <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</link>
+  <link>https://publickrbook.com/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</link>
   <description><![CDATA[ 
 
 
@@ -30,9 +30,9 @@
 
  ]]></description>
   <category>딥러닝</category>
-  <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</guid>
+  <guid>https://publickrbook.com/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</guid>
   <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/glossary.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://publickrbook.com/docs/book_blog/posts/2023-07-23-dl-glossary/glossary.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
