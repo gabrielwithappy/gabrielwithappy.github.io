@@ -1,0 +1,13 @@
+---
+title: "허깅페이스 예제 북"
+subtitle: 허깅페이스를 사용하기 위한 예제 코드를 정리합니다.
+format: html
+page-layout: article
+anchor-sections: false
+search: false
+# image:
+---
+
+# 시작하기 전
+
+시작하기전 Transformer가 설치되었는 지 확인합니다.

@@ -1,8 +1,17 @@
 ---
 title: "Public Book"
+sidebar: get-started
 ---
+
+
+
+::: {.get-started }
+::: {.content-block}
 
 온라인 상의 책들을 정리합니다.
 
 <a href="./google2af1b7ec19db0372.html"></a>
 
+
+:::
+:::

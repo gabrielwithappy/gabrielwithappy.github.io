@@ -1,0 +1,17 @@
+---
+title: hf examples
+subtitle: hf examples
+description:
+  hf examples
+categories:
+  - 딥러닝
+author: 용어사전 기여자들
+date: "07/23/2023"
+# image: "glossary.jpg"
+image-alt: "deep learning glossary"
+page-layout: article
+---
+
+[딥러닝 용어사전](../../../bookshelf/hf-examples/index.qmd)
+
+

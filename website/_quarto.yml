@@ -12,6 +12,29 @@ website:
       - about.qmd
   # google-analytics: "UA-XXXXXXXX"
 
+  sidebar:
+    - id: get-started
+
+    - id: hf-examples
+      collapse-level: 1
+      contents:
+        - docs/bookshelf/hf-examples/index.qmd
+        - section: "Task별 예제"
+          contents:
+            - section: "Video"
+            - section: "Audio"
+            - section: "NLP"
+              contents:
+                - docs/bookshelf/hf-examples/NLP/finance_news_sentiment.qmd
+
+    - id: korean-study
+      collapse-level: 1
+      contents:
+        - docs/bookshelf/korean-study/index.qmd
+        - section: "Transportation"
+          contents:
+            - docs/bookshelf/korean-study/subway.qmd
+
 format:
   html:
     theme: cosmo
