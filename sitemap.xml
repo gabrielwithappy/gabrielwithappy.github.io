@@ -1,27 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://publickrbook.com/books.html</loc>
-    <lastmod>2023-07-26T22:45:52.603Z</lastmod>
+    <loc>https://gabrielwithappy.github.io/publickrbook/books.html</loc>
+    <lastmod>2023-08-26T06:21:57.298Z</lastmod>
   </url>
   <url>
-    <loc>https://publickrbook.com/index.html</loc>
-    <lastmod>2023-07-26T22:45:52.885Z</lastmod>
+    <loc>https://gabrielwithappy.github.io/publickrbook/index.html</loc>
+    <lastmod>2023-08-26T06:21:57.569Z</lastmod>
   </url>
   <url>
-    <loc>https://publickrbook.com/docs/book_blog/index.html</loc>
-    <lastmod>2023-07-26T22:45:53.167Z</lastmod>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/index.html</loc>
+    <lastmod>2023-08-26T06:21:57.862Z</lastmod>
   </url>
   <url>
-    <loc>https://publickrbook.com/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</loc>
-    <lastmod>2023-07-26T22:45:53.405Z</lastmod>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</loc>
+    <lastmod>2023-08-26T06:21:58.100Z</lastmod>
   </url>
   <url>
-    <loc>https://publickrbook.com/docs/bookshelf/glossary/index.html</loc>
-    <lastmod>2023-07-26T22:45:53.643Z</lastmod>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-08-27-korean-study/index.html</loc>
+    <lastmod>2023-08-26T06:21:58.349Z</lastmod>
   </url>
   <url>
-    <loc>https://publickrbook.com/about.html</loc>
-    <lastmod>2023-07-26T22:45:53.871Z</lastmod>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-08-25-hf-examples/index.html</loc>
+    <lastmod>2023-08-26T06:21:58.598Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/bookshelf/korean-study/index.html</loc>
+    <lastmod>2023-08-26T06:21:58.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/bookshelf/korean-study/subway.html</loc>
+    <lastmod>2023-08-26T06:21:59.064Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/bookshelf/glossary/index.html</loc>
+    <lastmod>2023-08-26T06:21:59.292Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/bookshelf/hf-examples/index.html</loc>
+    <lastmod>2023-08-26T06:21:59.519Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/publickrbook/docs/bookshelf/hf-examples/NLP/finance_news_sentiment.html</loc>
+    <lastmod>2023-08-26T06:21:59.736Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/publickrbook/about.html</loc>
+    <lastmod>2023-08-26T06:21:59.985Z</lastmod>
   </url>
 </urlset>
