@@ -5,21 +5,27 @@ author: "양성모"
 format:
     revealjs:
         chalkboard: true
-publish: false
+execute:
+    eval: false
+    echo: true
 ---
 
 ## Quart가 뭐죠?
-- wake up
+
+-   wake up
 -   Turn off alarm
 -   Get out of bed
+
 ```{python}
 print("test")
 import pandas as pd
 import matplotlib.pyplot as plt
 df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})
-# plt.figure(figsize=(1,1))
 df.plot(kind='bar', figsize=(3,3))
 ```
 
+![](images/paste-1.png)
+
 ## 프로젝트 생성
-- 프로젝트 생성
+
+-   프로젝트 생성
