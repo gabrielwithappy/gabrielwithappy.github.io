@@ -4,20 +4,112 @@ author: "양성모"
 # format: pptx
 format:
     revealjs:
-    # beamer:
+        preview-links: true
         chalkboard: true
 execute:
     eval: false
     echo: true
 ---
 
-## Quart가 뭐죠?
-- TEST
-- TEST2
-- TEST3
-- TEST4
+## Quart가 뭐죠? {.smaller}
+- 오픈소스 과학, 기술 출판 시스템
+- 주피터 노트북 또는 마크다운을 이용한 문서 작성
+- 웹페이지, 블로그, 프리젠테이션 작성
+- 예제
+  - [(website) publickrbook.com](https://www.publickrbook.com)
+  - [(website) deep learning glossary](https://pseudo-lab.github.io/deep-learning-glossary)
+  - [(slides) Quarto 맛보기](http://localhost:5360/docs/slideshelf/quarto-introduction/#/title-slide)
 
 
+## 설치하기 {.smaller}
+- [Quarto 공식홈페이지](https://quarto.org/docs/get-started/)에서 프로그램 설치
+- 다양한 에디터를 지원하고 있음
+  - VSCODE
+  - Jupyter Notebook
+  - R
+  - Newvim
+
+## 프로젝트 생성하기 {.smaller}
+- 프로젝트 생성
+```{code}
+quarto create project
+ ? Type
+ ❯ default
+   website
+   blog
+   book
+```
+
+- 프로젝트 타입설정
+  - [website](https://quarto.org/): 다양한 문서그룹을 통합적을 관리 가능
+  - [blog](https://quarto.org/docs/blog/): 블로그는 게시물 모음과 게시물을 나열하는 탐색 페이지로 구성
+  - [book](https://kevinheavey.github.io/modern-polars/): 온라인북에 특화된 유형의 Quarto 웹사이트
+
+
+## Metadata {.smaller}
+
+- `_quarto.yml`: 모든 Quarto프로젝트에 있으며 프로젝트 수준으로 정의가 필요한 옵션 설정
+```{code}
+project:
+  type: website
+
+website:
+  title: "Public KR Book"
+  page-footer:
+    center: "welcome"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+  sidebar:
+      collapse-level: 1
+      contents:
+        - docs/bookshelf/hf-examples/index.qmd
+        - section: "Task별 예제"
+          contents:
+            - section: "Video"
+```
+
+
+::: {.panel-tabset}
+
+### Navbar
+`nabvar`: 웹사이트 상단 네비게이션 바
+
+### SideBar
+`side-bar`: 왼쪽 사이드 바
+
+### Page Footer
+`page footer`: 웹사이트 footer 정보
+:::
+
+
+## 웹사이트 렌더링 / 미리보기 {.smaller}
+- 렌터링 대상 파일은 Quarto에서 인식가능한 모든 파일
+  - .qmd, .ipynb, .md, .Rmd
+- 웹사이트를 만들기 위한 html 코드를 생성
+- 생성된 html 파일들은 `_site` 디렉토리에 저장됨
+- 렌더링 코드
+```{shell}
+quarto render
+```
+
+- 다양한 방식으로 렌더링 가능
+```{shell}
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
+```
+
+- 웹사이트 미리보기
+```{shell}
+quarto preview
+```
+
+
+
+
+## References
 ```{code}
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -25,7 +117,3 @@ df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})
 df.plot(kind='bar', figsize=(3,3))
 ```
 ![](images/paste-1.png)
-
-## 프로젝트 생성
-
--   프로젝트 생성
