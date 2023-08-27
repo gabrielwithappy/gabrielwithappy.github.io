@@ -20,7 +20,5 @@ df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})
 df.plot(kind='bar', figsize=(3,3))
 ```
 
-## Going to sleep
-
--   Get in bed
--   Count sheep
+## 프로젝트 생성
+- 프로젝트 생성
