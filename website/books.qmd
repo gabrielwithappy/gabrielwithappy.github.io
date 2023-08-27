@@ -2,7 +2,7 @@
 title: "Books"
 ---
 
-온라인 상의 책들을 정리합니다.
+온라인 책들을 정리합니다.
 
 ```{=typst}
 #set par(justify: true)
