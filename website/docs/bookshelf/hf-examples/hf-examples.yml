@@ -1,6 +1,6 @@
-- title: Authoring
-  subtitle: Create content with markdown
-  links:
-    - text: Markdown Basics
-      href: ../authoring/markdown-basics.qmd
-    - text: Figures
+# - title: Authoring
+#   subtitle: Create content with markdown
+#   links:
+#     - text: Markdown Basics
+#       href: ../authoring/markdown-basics.qmd
+#     - text: Figures

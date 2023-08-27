@@ -3,8 +3,13 @@ project:
 
 website:
   title: "Public KR Book"
+  site-url: https://publickrbook.com
+  site-path: '/'
+  description: "A online bookstore"
   google-analytics:
     tracking-id: "G-FGHC552RY6"
+  page-footer:
+    center: "gabrielwithhappy@gmail.com"
   repo-url: https://github.com/gabrielwithappy/publickrbook/
   repo-subdir: website/
   repo-actions: [edit]
@@ -13,13 +18,12 @@ website:
       - href: index.qmd
         text: Home
       - docs/book_blog/index.qmd
-      #- books.qmd
       - about.qmd
 
   sidebar:
     - id: get-started
 
-    - id: hf-examples
+    - id: huggingface-examples
       collapse-level: 1
       contents:
         - docs/bookshelf/hf-examples/index.qmd
