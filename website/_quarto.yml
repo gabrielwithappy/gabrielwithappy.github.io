@@ -3,7 +3,10 @@ project:
 
 website:
   title: "Public KR Book"
-  repo-url: https://github.com/gabrielwithappy/publickrbook
+  google-analytics:
+    tracking-id: "G-FGHC552RY6"
+  repo-url: https://github.com/gabrielwithappy/publickrbook/
+  repo-subdir: website/
   repo-actions: [edit]
   navbar:
     left:
@@ -12,7 +15,6 @@ website:
       - docs/book_blog/index.qmd
       #- books.qmd
       - about.qmd
-  # google-analytics: "UA-XXXXXXXX"
 
   sidebar:
     - id: get-started
