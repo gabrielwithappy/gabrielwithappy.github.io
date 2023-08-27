@@ -18,6 +18,7 @@ website:
       - href: index.qmd
         text: Home
       - docs/book_blog/index.qmd
+      - docs/slide_blog/index.qmd
       - about.qmd
 
   sidebar:

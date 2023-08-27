@@ -1,0 +1,26 @@
+---
+title: "Quarto 맛보기"
+author: "양성모"
+# format: pptx
+format:
+    revealjs:
+        chalkboard: true
+---
+
+## Quart가 뭐죠?
+- wake up
+-   Turn off alarm
+-   Get out of bed
+```{python}
+print("test")
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})
+# plt.figure(figsize=(1,1))
+df.plot(kind='bar', figsize=(3,3))
+```
+
+## Going to sleep
+
+-   Get in bed
+-   Count sheep
