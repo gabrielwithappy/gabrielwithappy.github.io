@@ -15,6 +15,7 @@ jobs:
         run: |
           pip install nbclient
           pip install nbformat
+          pip install --upgrade pip ipython ipykernel
           ipython kernel install --name 'python3' --user
           
       - name: Set up Quarto
