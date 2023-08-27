@@ -412,27 +412,123 @@
 </div>
 
 </section>
-<section id="quart가-뭐죠" class="slide level2">
+<section id="quart가-뭐죠" class="slide level2 smaller">
 <h2>Quart가 뭐죠?</h2>
 <ul>
-<li>TEST</li>
-<li>TEST2</li>
-<li>TEST3</li>
-<li>TEST4</li>
+<li>오픈소스 과학, 기술 출판 시스템</li>
+<li>주피터 노트북 또는 마크다운을 이용한 문서 작성</li>
+<li>웹페이지, 블로그, 프리젠테이션 작성</li>
+<li>예제
+<ul>
+<li><a href="https://www.publickrbook.com">(website) publickrbook.com</a></li>
+<li><a href="https://pseudo-lab.github.io/deep-learning-glossary">(website) deep learning glossary</a></li>
+<li><a href="http://localhost:5360/docs/slideshelf/quarto-introduction/#/title-slide">(slides) Quarto 맛보기</a></li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {code} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>import pandas as pd</span>
-<span id="cb1-2"><a href="#cb1-2"></a>import matplotlib.pyplot as plt</span>
-<span id="cb1-3"><a href="#cb1-3"></a>df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})</span>
-<span id="cb1-4"><a href="#cb1-4"></a>df.plot(kind='bar', figsize=(3,3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-<img data-src="images/paste-1.png" class="r-stretch"></section>
-<section id="프로젝트-생성" class="slide level2">
-<h2>프로젝트 생성</h2>
+</section>
+<section id="설치하기" class="slide level2 smaller">
+<h2>설치하기</h2>
+<ul>
+<li><a href="https://quarto.org/docs/get-started/">Quarto 공식홈페이지</a>에서 프로그램 설치</li>
+<li>다양한 에디터를 지원하고 있음
+<ul>
+<li>VSCODE</li>
+<li>Jupyter Notebook</li>
+<li>R</li>
+<li>Newvim</li>
+</ul></li>
+</ul>
+</section>
+<section id="프로젝트-생성하기" class="slide level2 smaller">
+<h2>프로젝트 생성하기</h2>
 <ul>
 <li>프로젝트 생성</li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {code} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>quarto create project</span>
+<span id="cb1-2"><a href="#cb1-2"></a> ? Type</span>
+<span id="cb1-3"><a href="#cb1-3"></a> ❯ default</span>
+<span id="cb1-4"><a href="#cb1-4"></a>   website</span>
+<span id="cb1-5"><a href="#cb1-5"></a>   blog</span>
+<span id="cb1-6"><a href="#cb1-6"></a>   book</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>프로젝트 타입설정
+<ul>
+<li><a href="https://quarto.org/">website</a>: 다양한 문서그룹을 통합적을 관리 가능</li>
+<li><a href="https://quarto.org/docs/blog/">blog</a>: 블로그는 게시물 모음과 게시물을 나열하는 탐색 페이지로 구성</li>
+<li><a href="https://kevinheavey.github.io/modern-polars/">book</a>: 온라인북에 특화된 유형의 Quarto 웹사이트</li>
+</ul></li>
+</ul>
+</section>
+<section id="metadata" class="slide level2 smaller">
+<h2>Metadata</h2>
+<ul>
+<li><code>_quarto.yml</code>: 모든 Quarto프로젝트에 있으며 프로젝트 수준으로 정의가 필요한 옵션 설정</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {code} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>project:</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  type: website</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>website:</span>
+<span id="cb2-5"><a href="#cb2-5"></a>  title: "Public KR Book"</span>
+<span id="cb2-6"><a href="#cb2-6"></a>  page-footer:</span>
+<span id="cb2-7"><a href="#cb2-7"></a>    center: "welcome"</span>
+<span id="cb2-8"><a href="#cb2-8"></a>  navbar:</span>
+<span id="cb2-9"><a href="#cb2-9"></a>    left:</span>
+<span id="cb2-10"><a href="#cb2-10"></a>      - href: index.qmd</span>
+<span id="cb2-11"><a href="#cb2-11"></a>        text: Home</span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a>  sidebar:</span>
+<span id="cb2-14"><a href="#cb2-14"></a>      collapse-level: 1</span>
+<span id="cb2-15"><a href="#cb2-15"></a>      contents:</span>
+<span id="cb2-16"><a href="#cb2-16"></a>        - docs/bookshelf/hf-examples/index.qmd</span>
+<span id="cb2-17"><a href="#cb2-17"></a>        - section: "Task별 예제"</span>
+<span id="cb2-18"><a href="#cb2-18"></a>          contents:</span>
+<span id="cb2-19"><a href="#cb2-19"></a>            - section: "Video"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Navbar</a></li><li><a href="#tabset-1-2">SideBar</a></li><li><a href="#tabset-1-3">Page Footer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><code>nabvar</code>: 웹사이트 상단 네비게이션 바</p>
+</div>
+<div id="tabset-1-2">
+<p><code>side-bar</code>: 왼쪽 사이드 바</p>
+</div>
+<div id="tabset-1-3">
+<p><code>page footer</code>: 웹사이트 footer 정보</p>
+</div>
+</div>
+</div>
+</section>
+<section id="웹사이트-렌더링-미리보기" class="slide level2 smaller">
+<h2>웹사이트 렌더링 / 미리보기</h2>
+<ul>
+<li>렌터링 대상 파일은 Quarto에서 인식가능한 모든 파일
+<ul>
+<li>.qmd, .ipynb, .md, .Rmd</li>
+</ul></li>
+<li>웹사이트를 만들기 위한 html 코드를 생성</li>
+<li>생성된 html 파일들은 <code>_site</code> 디렉토리에 저장됨</li>
+<li>렌더링 코드</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>quarto render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>다양한 방식으로 렌더링 가능</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>quarto render document.qmd --to pdf</span>
+<span id="cb4-2"><a href="#cb4-2"></a>quarto render document.qmd --to docx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>웹사이트 미리보기</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>quarto preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {code} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>import pandas as pd</span>
+<span id="cb6-2"><a href="#cb6-2"></a>import matplotlib.pyplot as plt</span>
+<span id="cb6-3"><a href="#cb6-3"></a>df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})</span>
+<span id="cb6-4"><a href="#cb6-4"></a>df.plot(kind='bar', figsize=(3,3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<div class="footer footer-default">
+
+<img data-src="images/paste-1.png" class="r-stretch"><div class="footer footer-default">
 
 </div>
 </section>
@@ -592,7 +688,7 @@
         hideCursorTime: 5000,
 
         // Opens links in an iframe preview overlay
-        previewLinks: false,
+        previewLinks: true,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
         transition: 'none',
