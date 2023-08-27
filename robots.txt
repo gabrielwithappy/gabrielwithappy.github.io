@@ -1,1 +1,1 @@
-Sitemap: https://gabrielwithappy.github.io/publickrbook/sitemap.xml
+Sitemap: https://publickrbook.com/sitemap.xml

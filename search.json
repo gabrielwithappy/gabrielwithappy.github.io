@@ -25,14 +25,14 @@
     "href": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
     "title": "Korean Study Book",
     "section": "",
-    "text": "Korean"
+    "text": "The book for Korean Study"
   },
   {
     "objectID": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
     "href": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-    "title": "hf examples",
+    "title": "HuggingFace Examples",
     "section": "",
-    "text": "딥러닝 용어사전"
+    "text": "허깅페이스 예제코드를 정리하는 온라인 책입니다."
   },
   {
     "objectID": "docs/bookshelf/korean-study/subway.html",
@@ -53,6 +53,6 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "배운 것을 정리하고 책으로 만들어 다양한 온라인 책을 모으고 싶습니다."
   }
 ]
