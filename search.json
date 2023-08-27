@@ -84,13 +84,6 @@
     "text": "웹사이트 렌더링 / 미리보기\n\n렌터링 대상 파일은 Quarto에서 인식가능한 모든 파일\n\n.qmd, .ipynb, .md, .Rmd\n\n웹사이트를 만들기 위한 html 코드를 생성\n생성된 html 파일들은 _site 디렉토리에 저장됨\n렌더링 코드\n\nquarto render\n\n다양한 방식으로 렌더링 가능\n\nquarto render document.qmd --to pdf\nquarto render document.qmd --to docx\n\n웹사이트 미리보기\n\nquarto preview"
   },
   {
-    "objectID": "docs/slideshelf/quarto-introduction/index.html#references",
-    "href": "docs/slideshelf/quarto-introduction/index.html#references",
-    "title": "Quarto 맛보기",
-    "section": "References",
-    "text": "References\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndf = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})\ndf.plot(kind='bar', figsize=(3,3))"
-  },
-  {
     "objectID": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
     "href": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
     "title": "HuggingFace Examples",
