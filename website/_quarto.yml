@@ -3,6 +3,8 @@ project:
 
 website:
   title: "Public KR Book"
+  repo-url: https://github.com/gabrielwithappy/publickrbook
+  repo-actions: [edit]
   navbar:
     left:
       - href: index.qmd
