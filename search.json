@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "배운 것을 책으로 만들어 publickrbook에 정리합니다."
-  },
-  {
-    "objectID": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
-    "href": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
-    "title": "Korean Study Book",
-    "section": "",
-    "text": "The book for Korean Study"
-  },
-  {
-    "objectID": "docs/bookshelf/korean-study/subway.html",
-    "href": "docs/bookshelf/korean-study/subway.html",
-    "title": "Subway",
-    "section": "",
-    "text": "In Korea’s big cities, it is convenient to use the subway to get around. Let’s learn how to find nearest subway.\n\n\n\n\n\n\nWhere is the nearest subway station?\n\n\n\n가까운 지하철 역이 어디인가요?\n\n\nYou can use 어디인가요? when looking for a location. The object to find the location is a subway station, which means 지하철 역 in Korean. We use 가까운 to find the nearest subway station. Use ‘가까운’ in front of the word 지하철역 to give additional information about the ‘subway station’. Now it has the meaning of a subway station close to your location. Check the pronunciation in the table below\n\n\n\n\n\n\n\n\nEnglish\nKorean\nPronunciation\n\n\n\n\nWhere is the nearest subway station?\n가까운 지하철 역이 어디인가요?\nGoogle Translation\n\n\n\n\n\nCheck the words you have learned.\n\n\n\n\n\n\n\n\nEnglish\nKorean\nPronunciation\n\n\n\n\nSubway\n지하철\nGoogle Translation"
-  },
-  {
-    "objectID": "docs/bookshelf/korean-study/subway.html#words",
-    "href": "docs/bookshelf/korean-study/subway.html#words",
-    "title": "Subway",
-    "section": "",
-    "text": "Check the words you have learned.\n\n\n\n\n\n\n\n\nEnglish\nKorean\nPronunciation\n\n\n\n\nSubway\n지하철\nGoogle Translation"
-  },
-  {
     "objectID": "books.html",
     "href": "books.html",
     "title": "Books",
@@ -42,11 +14,32 @@
     "text": "온라인 상의 책들을 정리합니다."
   },
   {
-    "objectID": "docs/bookshelf/glossary/index.html",
-    "href": "docs/bookshelf/glossary/index.html",
-    "title": "",
+    "objectID": "docs/slideshelf/quarto-introduction/index.html#quart가-뭐죠",
+    "href": "docs/slideshelf/quarto-introduction/index.html#quart가-뭐죠",
+    "title": "Quarto 맛보기",
+    "section": "Quart가 뭐죠?",
+    "text": "Quart가 뭐죠?\n\nwake up\nTurn off alarm\nGet out of bed\n\n\n\ntest\n\n\n<Axes: >"
+  },
+  {
+    "objectID": "docs/slideshelf/quarto-introduction/index.html#going-to-sleep",
+    "href": "docs/slideshelf/quarto-introduction/index.html#going-to-sleep",
+    "title": "Quarto 맛보기",
+    "section": "Going to sleep",
+    "text": "Going to sleep\n\nGet in bed\nCount sheep"
+  },
+  {
+    "objectID": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+    "href": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+    "title": "딥러닝 용어 사전",
     "section": "",
-    "text": "&lt;/div&gt;\n\n&lt;!-- &lt;/table&gt; --&gt;\n&lt;!-- ::: --&gt;\n&lt;!--\n &lt;iframe src=\"iframe.html\" id=\"iframe\" onload=\"Height();\" frameborder=\"0\" scrolling=\"no\" style=\"overflow-x:hidden; overflow:auto; width:100%; min-height:500px;\"&gt; --&gt;"
+    "text": "딥러닝 용어사전은 딥러닝에 사용되는 영어 용어를 한글 용어로 번역하기 위해 사용됩니다. 통일성 있는 번역 문서를 만들기 위해서 다함께 등록하고 수정하는 오픈 용어 사전입니다."
+  },
+  {
+    "objectID": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
+    "href": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
+    "title": "Korean Study Book",
+    "section": "",
+    "text": "The book for Korean Study"
   },
   {
     "objectID": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
@@ -56,10 +49,45 @@
     "text": "허깅페이스 예제코드를 정리하는 온라인 책입니다."
   },
   {
-    "objectID": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
-    "href": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
-    "title": "딥러닝 용어 사전",
+    "objectID": "docs/bookshelf/korean-study/subway.html",
+    "href": "docs/bookshelf/korean-study/subway.html",
+    "title": "Subway",
     "section": "",
-    "text": "딥러닝 용어사전은 딥러닝에 사용되는 영어 용어를 한글 용어로 번역하기 위해 사용됩니다. 통일성 있는 번역 문서를 만들기 위해서 다함께 등록하고 수정하는 오픈 용어 사전입니다."
+    "text": "In Korea’s big cities, it is convenient to use the subway to get around. Let’s learn how to find nearest subway.\n\n\n\n\n\n\nWhere is the nearest subway station?\n\n\n\n가까운 지하철 역이 어디인가요?\n\n\nYou can use 어디인가요? when looking for a location. The object to find the location is a subway station, which means 지하철 역 in Korean. We use 가까운 to find the nearest subway station. Use ‘가까운’ in front of the word 지하철역 to give additional information about the ‘subway station’. Now it has the meaning of a subway station close to your location. Check the pronunciation in the table below\n\n\n\n\n\n\n\n\nEnglish\nKorean\nPronunciation\n\n\n\n\nWhere is the nearest subway station?\n가까운 지하철 역이 어디인가요?\nGoogle Translation\n\n\n\n\n\nCheck the words you have learned.\n\n\n\n\n\n\n\n\nEnglish\nKorean\nPronunciation\n\n\n\n\nSubway\n지하철\nGoogle Translation"
+  },
+  {
+    "objectID": "docs/bookshelf/glossary/index.html",
+    "href": "docs/bookshelf/glossary/index.html",
+    "title": "Public KR Book",
+    "section": "",
+    "text": "</div>\n\n<!-- </table> -->\n<!-- ::: -->\n<!--\n <iframe src=\"iframe.html\" id=\"iframe\" onload=\"Height();\" frameborder=\"0\" scrolling=\"no\" style=\"overflow-x:hidden; overflow:auto; width:100%; min-height:500px;\"> -->"
+  },
+  {
+    "objectID": "docs/slide_blog/posts/2023-08-27-quarto-introduction/index.html",
+    "href": "docs/slide_blog/posts/2023-08-27-quarto-introduction/index.html",
+    "title": "Quarto 맛보기",
+    "section": "",
+    "text": "Quarto 맛보기"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "배운 것을 책으로 만들어 publickrbook에 정리합니다."
+  },
+  {
+    "objectID": "slides.html#getting-up",
+    "href": "slides.html#getting-up",
+    "title": "Habits",
+    "section": "Getting up",
+    "text": "Getting up\n\nwake up\nTurn off alarm\nGet out of bed\n\n\n\ntest\n\n\n<Axes: >"
+  },
+  {
+    "objectID": "slides.html#going-to-sleep",
+    "href": "slides.html#going-to-sleep",
+    "title": "Habits",
+    "section": "Going to sleep",
+    "text": "Going to sleep\n\nGet in bed\nCount sheep"
   }
 ]

@@ -1,51 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://publickrbook.com/about.html</loc>
-    <lastmod>2023-08-27T12:34:46.179Z</lastmod>
-  </url>
-  <url>
-    <loc>https://publickrbook.com/docs/book_blog/posts/2023-08-27-korean-study/index.html</loc>
-    <lastmod>2023-08-27T12:34:45.559Z</lastmod>
-  </url>
-  <url>
-    <loc>https://publickrbook.com/docs/book_blog/index.html</loc>
-    <lastmod>2023-08-27T12:34:44.923Z</lastmod>
-  </url>
-  <url>
-    <loc>https://publickrbook.com/docs/bookshelf/korean-study/subway.html</loc>
-    <lastmod>2023-08-27T12:34:43.971Z</lastmod>
-  </url>
-  <url>
-    <loc>https://publickrbook.com/docs/bookshelf/hf-examples/NLP/finance_news_sentiment.html</loc>
-    <lastmod>2023-08-27T12:34:43.247Z</lastmod>
-  </url>
-  <url>
     <loc>https://publickrbook.com/books.html</loc>
-    <lastmod>2023-08-27T12:34:42.575Z</lastmod>
+    <lastmod>2023-08-27T13:23:18.235Z</lastmod>
   </url>
   <url>
     <loc>https://publickrbook.com/index.html</loc>
-    <lastmod>2023-08-27T12:34:41.847Z</lastmod>
+    <lastmod>2023-08-27T13:23:18.555Z</lastmod>
   </url>
   <url>
-    <loc>https://publickrbook.com/docs/bookshelf/hf-examples/index.html</loc>
-    <lastmod>2023-08-27T12:34:42.911Z</lastmod>
+    <loc>https://publickrbook.com/docs/slideshelf/quarto-introduction/index.html</loc>
+    <lastmod>2023-08-27T13:23:23.435Z</lastmod>
   </url>
   <url>
-    <loc>https://publickrbook.com/docs/bookshelf/glossary/index.html</loc>
-    <lastmod>2023-08-27T12:34:43.555Z</lastmod>
-  </url>
-  <url>
-    <loc>https://publickrbook.com/docs/bookshelf/korean-study/index.html</loc>
-    <lastmod>2023-08-27T12:34:44.283Z</lastmod>
-  </url>
-  <url>
-    <loc>https://publickrbook.com/docs/book_blog/posts/2023-08-25-hf-examples/index.html</loc>
-    <lastmod>2023-08-27T12:34:45.247Z</lastmod>
+    <loc>https://publickrbook.com/docs/book_blog/index.html</loc>
+    <lastmod>2023-08-27T13:23:23.885Z</lastmod>
   </url>
   <url>
     <loc>https://publickrbook.com/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</loc>
-    <lastmod>2023-08-27T12:34:45.883Z</lastmod>
+    <lastmod>2023-08-27T13:23:24.255Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/book_blog/posts/2023-08-27-korean-study/index.html</loc>
+    <lastmod>2023-08-27T13:23:24.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/book_blog/posts/2023-08-25-hf-examples/index.html</loc>
+    <lastmod>2023-08-27T13:23:24.945Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/bookshelf/korean-study/index.html</loc>
+    <lastmod>2023-08-27T13:23:25.285Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/bookshelf/korean-study/subway.html</loc>
+    <lastmod>2023-08-27T13:23:25.655Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/bookshelf/glossary/index.html</loc>
+    <lastmod>2023-08-27T13:23:25.975Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/bookshelf/hf-examples/index.html</loc>
+    <lastmod>2023-08-27T13:23:26.285Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/bookshelf/hf-examples/NLP/finance_news_sentiment.html</loc>
+    <lastmod>2023-08-27T13:23:26.645Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/slide_blog/index.html</loc>
+    <lastmod>2023-08-27T13:23:27.015Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/docs/slide_blog/posts/2023-08-27-quarto-introduction/index.html</loc>
+    <lastmod>2023-08-27T13:23:27.535Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/about.html</loc>
+    <lastmod>2023-08-27T13:23:27.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://publickrbook.com/slides.html</loc>
+    <lastmod>2023-08-27T13:23:31.995Z</lastmod>
   </url>
 </urlset>
