@@ -107,13 +107,3 @@ quarto preview
 ```
 
 
-
-
-## References
-```{code}
-import pandas as pd
-import matplotlib.pyplot as plt
-df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})
-df.plot(kind='bar', figsize=(3,3))
-```
-![](images/paste-1.png)
