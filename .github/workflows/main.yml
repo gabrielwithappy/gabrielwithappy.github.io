@@ -19,12 +19,6 @@ jobs:
           # uncomment below and fill to pin a version
           # version: SPECIFIC-QUARTO-VERSION-HERE
 
-      - name: Install dependencies
-        run: |
-          python -m pip install nbclient
-          python -m pip install nbformat
-          python -m pip install --upgrade pip ipython ipykernel
-          ipython kernel install --name 'python3' --user
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
