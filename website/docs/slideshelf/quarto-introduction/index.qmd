@@ -4,6 +4,7 @@ author: "양성모"
 # format: pptx
 format:
     revealjs:
+    # beamer:
         chalkboard: true
 execute:
     eval: false
@@ -11,19 +12,18 @@ execute:
 ---
 
 ## Quart가 뭐죠?
+- TEST
+- TEST2
+- TEST3
+- TEST4
 
--   wake up
--   Turn off alarm
--   Get out of bed
 
-```{python}
-print("test")
+```{code}
 import pandas as pd
 import matplotlib.pyplot as plt
 df = pd.DataFrame({'a': [1,2,3], 'b': [10,20,30]})
 df.plot(kind='bar', figsize=(3,3))
 ```
-
 ![](images/paste-1.png)
 
 ## 프로젝트 생성
