@@ -15,7 +15,7 @@ jobs:
         run: |
           pip install nbclient
           pip install nbformat
-          ipython kernel install --ame 'python3' --user
+          ipython kernel install --name 'python3' --user
           
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
