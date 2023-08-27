@@ -10,7 +10,12 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
-
+      
+      - name: Install dependencies
+        run: |
+          pip install nbclient
+          pip install nbformat
+          
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
