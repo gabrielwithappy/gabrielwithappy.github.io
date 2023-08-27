@@ -5,6 +5,7 @@ author: "양성모"
 format:
     revealjs:
         chalkboard: true
+publish: false
 ---
 
 ## Quart가 뭐죠?
