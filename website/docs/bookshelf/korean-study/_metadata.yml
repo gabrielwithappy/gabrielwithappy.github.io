@@ -1,3 +1,4 @@
 comments:
-  utterances:
-    repo:  AlbertRapp/blogComments
+  giscus:
+    repo: gabrielwithappy/publickrbook_comment
+

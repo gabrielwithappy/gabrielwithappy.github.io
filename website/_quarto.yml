@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Public KR Book"
+  search: true
   site-url: https://publickrbook.com
   site-path: '/'
   description: "A online bookstore"
@@ -25,6 +26,7 @@ website:
     - id: get-started
 
     - id: huggingface-examples
+      style: "docked"
       collapse-level: 1
       contents:
         - docs/bookshelf/hf-examples/index.qmd
@@ -35,8 +37,12 @@ website:
             - section: "NLP"
               contents:
                 - docs/bookshelf/hf-examples/NLP/finance_news_sentiment.qmd
-
     - id: korean-study
+      border: true
+      pinned: true
+      search: true
+      style: "docked"
+
       collapse-level: 1
       contents:
         - docs/bookshelf/korean-study/index.qmd
@@ -49,9 +55,5 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-
-comments:
-  utterances:
-    repo: gabrielwithappy/publickrbook_comment
 
 
