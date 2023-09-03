@@ -77,4 +77,6 @@ format:
     css: styles.css
     toc: true
 
-
+adsense:
+    client: "ca-pub-1386106477710113"   # data-ad-client
+    slot:   "f08c47fec0942fa0"                # data-ad-slot
