@@ -1,0 +1,19 @@
+---
+title: 시계열 데이터 시각화
+subtitle: 시계열 데이터 시각화
+description:
+  시계열 데이터의 시각화 방법을 정리합니다.
+categories:
+  - 시각화
+author: 양성모
+date: "09/03/2023"
+# image: "glossary.jpg"
+image-alt: "deep learning glossary"
+page-layout: article
+---
+
+[시계열 데이터 시각화](../../../bookshelf/data_visualization/index.qmd)는 시계열 데이터를 시각화하는 방법을 정리합니다.
+
+
+
+
