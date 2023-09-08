@@ -6,20 +6,20 @@
       version="2.0">
 <channel>
 <title>BookShelf</title>
-<link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/index.html</link>
-<atom:link href="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://gabrielwithappy.github.io/docs/book_blog/index.html</link>
+<atom:link href="https://gabrielwithappy.github.io/docs/book_blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A online bookstore</description>
 <image>
-<url>https://gabrielwithappy.github.io/publickrbook/images/docs/book_blog/test.png</url>
+<url>https://gabrielwithappy.github.io/images/docs/book_blog/test.png</url>
 <title>BookShelf</title>
-<link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/index.html</link>
+<link>https://gabrielwithappy.github.io/docs/book_blog/index.html</link>
 </image>
 <generator>quarto-1.2.335</generator>
 <lastBuildDate>Sat, 02 Sep 2023 15:00:00 GMT</lastBuildDate>
 <item>
   <title>시계열 데이터 시각화</title>
   <dc:creator>양성모</dc:creator>
-  <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-09-03-data-visualization/index.html</link>
+  <link>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-09-03-data-visualization/index.html</link>
   <description><![CDATA[ 
 
 
@@ -30,13 +30,13 @@
 
  ]]></description>
   <category>시각화</category>
-  <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-09-03-data-visualization/index.html</guid>
+  <guid>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-09-03-data-visualization/index.html</guid>
   <pubDate>Sat, 02 Sep 2023 15:00:00 GMT</pubDate>
 </item>
 <item>
   <title>딥러닝 용어 사전</title>
   <dc:creator>용어사전 기여자들</dc:creator>
-  <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</link>
+  <link>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</link>
   <description><![CDATA[ 
 
 
@@ -47,14 +47,14 @@
 
  ]]></description>
   <category>딥러닝</category>
-  <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</guid>
+  <guid>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</guid>
   <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-07-23-dl-glossary/glossary.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://gabrielwithappy.github.io/docs/book_blog/posts/2023-07-23-dl-glossary/glossary.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>HuggingFace Examples</title>
   <dc:creator>Gabriel Yang</dc:creator>
-  <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-08-25-hf-examples/index.html</link>
+  <link>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-08-25-hf-examples/index.html</link>
   <description><![CDATA[ 
 
 
@@ -65,13 +65,13 @@
 
  ]]></description>
   <category>딥러닝</category>
-  <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-08-25-hf-examples/index.html</guid>
+  <guid>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-08-25-hf-examples/index.html</guid>
   <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Korean Study Book</title>
   <dc:creator>Gabriel Yang</dc:creator>
-  <link>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-08-27-korean-study/index.html</link>
+  <link>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-08-27-korean-study/index.html</link>
   <description><![CDATA[ 
 
 
@@ -82,7 +82,7 @@
 
  ]]></description>
   <category>Language</category>
-  <guid>https://gabrielwithappy.github.io/publickrbook/docs/book_blog/posts/2023-08-27-korean-study/index.html</guid>
+  <guid>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-08-27-korean-study/index.html</guid>
   <pubDate>Sat, 22 Jul 2023 15:00:00 GMT</pubDate>
 </item>
 </channel>
