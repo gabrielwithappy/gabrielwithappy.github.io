@@ -1,12 +1,14 @@
 ---
-title: Subway
-author: Gabriel Yang
-date: 07/23/2023
+title: "Subway"
+subtitle: It collects information to learn Korean
+format: html
 page-layout: article
-published: true
+anchor-sections: false
+search: false
+# image:
 ---
 
-# Transportation
+# Transportation{.unnumbered}
 
 In Korea's big cities, it is convenient to use the subway to get around.
 Let's learn how to find nearest subway.

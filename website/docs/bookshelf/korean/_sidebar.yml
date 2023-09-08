@@ -1,0 +1,10 @@
+website:
+  page-navigation: true
+
+  sidebar:
+    - id: koreanstudy
+      style: "floating"
+      collapse-level: 1
+      contents:
+        - docs/bookshelf/korean/index.qmd
+        - docs/bookshelf/korean/subway.qmd

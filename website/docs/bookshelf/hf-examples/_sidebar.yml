@@ -1,0 +1,15 @@
+website:
+  page-navigation: true
+  sidebar:
+    - id: huggingface-examples
+      style: "floating"
+      collapse-level: 1
+      contents:
+        - docs/bookshelf/hf-examples/index.qmd
+        - section: "Task별 예제"
+          contents:
+            - section: "Video"
+            - section: "Audio"
+            - section: "NLP"
+              contents:
+                - docs/bookshelf/hf-examples/NLP/finance_news_sentiment.qmd

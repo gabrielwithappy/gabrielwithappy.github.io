@@ -8,6 +8,7 @@ search: false
 # image:
 ---
 
-# Welcome
+# Welcome{.unnumbered}
 
 Welcome to the Korean Study Book
+
