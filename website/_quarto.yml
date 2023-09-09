@@ -1,17 +1,22 @@
 project:
   type: website
 
+metadata-files:
+  - docs/bookshelf/korean/_sidebar.yml
+  - docs/bookshelf/data_visualization/_sidebar.yml
+  - docs/bookshelf/hf-examples/_sidebar.yml
+
 website:
-  title: "Public KR Book"
+  title: "BookShelf"
   search: true
-  site-url: https://publickrbook.com
+  site-url: https://gabrielwithappy.github.io/
   site-path: '/'
   description: "A online bookstore"
   google-analytics:
     tracking-id: "G-FGHC552RY6"
   page-footer:
     center: "gabrielwithhappy@gmail.com"
-  repo-url: https://github.com/gabrielwithappy/publickrbook/
+  repo-url: https://github.com/gabrielwithappy/books/
   repo-subdir: website/
   repo-actions: [edit]
   navbar:
@@ -22,54 +27,6 @@ website:
       - docs/slide_blog/index.qmd
       - about.qmd
 
-  sidebar:
-    - id: get-started
-
-    - id: huggingface-examples
-      style: "docked"
-      collapse-level: 1
-      contents:
-        - docs/bookshelf/hf-examples/index.qmd
-        - section: "Task별 예제"
-          contents:
-            - section: "Video"
-            - section: "Audio"
-            - section: "NLP"
-              contents:
-                - docs/bookshelf/hf-examples/NLP/finance_news_sentiment.qmd
-    - id: korean-study
-      border: true
-      pinned: true
-      search: true
-      style: "docked"
-      collapse-level: 1
-      contents:
-        - docs/bookshelf/korean-study/index.qmd
-        - section: "Transportation"
-          contents:
-            - docs/bookshelf/korean-study/subway.qmd
-    - id: data-visualization
-      border: true
-      pinned: true
-      search: true
-      style: "docked"
-      collapse-level: 1
-      contents:
-        - docs/bookshelf/data_visualization/index.qmd
-        - docs/bookshelf/data_visualization/intro.qmd
-        - section: "Part 1. 데이터 기본구조"
-          contents:
-          - docs/bookshelf/data_visualization/time_series_basic.qmd
-        - section: "Part 2. 데이터 분석"
-          contents:
-          - docs/bookshelf/data_visualization/time_series_analysis.qmd
-        - section:  "Part 3. 데이터 시각화"
-          contents:
-          - docs/bookshelf/data_visualization/time_series_visualization.qmd
-        - docs/bookshelf/data_visualization/references.qmd
-
-
-
 
 format:
   html:
@@ -79,4 +36,4 @@ format:
 
 adsense:
     client: "ca-pub-1386106477710113"   # data-ad-client
-    slot:   "f08c47fec0942fa0"                # data-ad-slot
+    # slot:   "f08c47fec0942fa0"                # data-ad-slot
