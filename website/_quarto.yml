@@ -23,6 +23,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - docs/blog/index.qmd
       - docs/book_blog/index.qmd
       - docs/slide_blog/index.qmd
       - about.qmd

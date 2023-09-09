@@ -1,0 +1,18 @@
+---
+title: Blog
+# subtitle:
+listing:
+  sort: "date desc"
+  contents: "posts/*/*/*/index.qmd"
+  sort-ui: false
+  filter-ui: false
+  categories: true
+  type: default
+  page-size: 36
+  feed: true
+# margin-header: signup.html
+# title-block-banner: "#00000"
+title-block-banner-color: body
+search: false
+# image: images/docs/book_blog/test.png
+---
