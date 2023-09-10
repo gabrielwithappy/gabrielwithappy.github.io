@@ -328,7 +328,7 @@
   <category>Pandas</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html</guid>
   <pubDate>Sun, 10 Sep 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-11-pandas-merge/images/paste-1.png" medium="image" type="image/png" height="90" width="144"/>
+  <media:content url="https://picsum.photos/id/111/200/150" medium="image"/>
 </item>
 <item>
   <title>Quarto Callout Block</title>
@@ -505,6 +505,7 @@ minimal 외형
   <category>Quarto</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html</guid>
   <pubDate>Sat, 09 Sep 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://picsum.photos/id/10/200/150" medium="image"/>
 </item>
 <item>
   <title>Pandas 데이터 전처리</title>
@@ -702,6 +703,7 @@ Name: n_sales, dtype: float64</code></pre>
   <category>Pandas</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html</guid>
   <pubDate>Sat, 09 Sep 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://picsum.photos/id/110/200/150" medium="image"/>
 </item>
 </channel>
 </rss>
