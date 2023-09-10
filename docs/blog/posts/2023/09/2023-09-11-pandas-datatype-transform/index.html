@@ -8,6 +8,7 @@
 
 <meta name="author" content="양성모">
 <meta name="dcterms.date" content="2023-09-10">
+<meta name="description" content="Quarto Callout으로 내용 강조하는 내용을 정리합니다.">
 
 <title>BookShelf - Pandas 데이터 전처리</title>
 <style>
@@ -210,6 +211,11 @@ gtag('config', 'G-FGHC552RY6', { 'anonymize_ip': true});
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Quarto Callout으로 내용 강조하는 내용을 정리합니다.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -310,7 +316,7 @@ dtypes: object(3)
 memory usage: 248.0+ bytes</code></pre>
 </div>
 </div>
-<p>예상했던 데이터 형식과 다릅니다. <code>year</code>는 숫자를 표현하고 있기 때문에 <code>int</code> 타입으로 표현되어야 할 것 같은데 <code>object</code>타입이네요. 데이터 프레임의 통계정보를 보여주는 <code>describe()</code>함수를 사용하면 차이를 알 수 있습니다.</p>
+<p>예상했던 데이터 형식과 다릅니다. <code>n_sales</code>는 숫자를 표현하고 있기 때문에 <code>int</code> 타입으로 표현되어야 할 것 같은데 <code>object</code>타입이네요. 데이터 프레임의 통계정보를 보여주는 <code>describe()</code>함수를 사용하면 차이를 알 수 있습니다.</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'n_sales'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="양성모">
-<meta name="dcterms.date" content="2023-09-10">
-<meta name="description" content="Quarto Callout으로 내용 강조하는 방법을 정리합니다.">
+<meta name="dcterms.date" content="2023-09-11">
+<meta name="description" content="Quarto Callout으로 내용 강조하는 내용을 정리합니다.">
 
-<title>BookShelf - Quarto Callout Block</title>
+<title>BookShelf - Pandas 데이터프레임 머지</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,6 +133,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-FGHC552RY6', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../../../../../styles.css">
@@ -189,30 +192,28 @@ gtag('config', 'G-FGHC552RY6', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#callout-종류" id="toc-callout-종류" class="nav-link active" data-scroll-target="#callout-종류">Callout 종류</a></li>
-  <li><a href="#다양한-사용자-설정" id="toc-다양한-사용자-설정" class="nav-link" data-scroll-target="#다양한-사용자-설정">다양한 사용자 설정</a>
+  <li><a href="#테이터프레임-머지하기" id="toc-테이터프레임-머지하기" class="nav-link active" data-scroll-target="#테이터프레임-머지하기">테이터프레임 머지하기</a>
   <ul class="collapse">
-  <li><a href="#제목-추가하기" id="toc-제목-추가하기" class="nav-link" data-scroll-target="#제목-추가하기">제목 추가하기</a></li>
-  <li><a href="#형태-변경하기" id="toc-형태-변경하기" class="nav-link" data-scroll-target="#형태-변경하기">형태 변경하기</a></li>
+  <li><a href="#데이터-로드하기" id="toc-데이터-로드하기" class="nav-link" data-scroll-target="#데이터-로드하기">데이터 로드하기</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto Callout Block</h1>
-<p class="subtitle lead">Callout Block으로 내용 강조하기</p>
+<h1 class="title">Pandas 데이터프레임 머지</h1>
+<p class="subtitle lead">Pandas 데이터프레임 머지하기</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Quarto</div>
+    <div class="quarto-category">Pandas</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Quarto Callout으로 내용 강조하는 방법을 정리합니다.
+    Quarto Callout으로 내용 강조하는 내용을 정리합니다.
   </div>
 </div>
 
@@ -229,7 +230,7 @@ gtag('config', 'G-FGHC552RY6', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 10, 2023</p>
+      <p class="date">September 11, 2023</p>
     </div>
   </div>
   
@@ -239,164 +240,306 @@ gtag('config', 'G-FGHC552RY6', { 'anonymize_ip': true});
 
 </header>
 
-<p>Quarto를 이용해 문서를 작성하는 과정에서 강조할 내용이 있는 경우 <code>Callout Block</code>을 사용하는 것이 좋습니다. 자산이 작성한 글에 집중이 필요한 내용을 명확하게 나타낼 수 있습니다. 공부한 내용을 정리합니다.</p>
-<section id="callout-종류" class="level2">
-<h2 class="anchored" data-anchor-id="callout-종류">Callout 종류</h2>
-<p><code>Callout Block</code>은 총 아래의 <code>note</code>, <code>warning</code>, <code>important</code>, <code>tip</code>, <code>caution</code> 5가지 종류를 갖습니다. 실제 어떻게 적용되는지 아래에서 살펴보세요.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Callout <code>note</code> 타입을 사용합니다.</p>
-</div>
-</div>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Callout <code>warning</code> 타입을 사용합니다.</p>
-</div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Callout <code>important</code> 타입을 사용합니다.</p>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Callout <code>tip</code> 타입을 사용합니다.</p>
-</div>
-</div>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Danger
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Callout <code>caution</code> 타입을 사용합니다.</p>
-</div>
-</div>
-<p>Markdown으로 어떻게 구현하는 지 확인해봅시다. <code>:::</code> 키워드를 사용했고 <code>Callout Block</code>형식은 <code>{}</code>로 표시합니다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># 제목을 추가합니다.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Callout <span class="in">`caution`</span> 타입을 사용합니다.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-제목을 추가합니다.
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Callout <code>caution</code> 타입을 사용합니다.</p>
-</div>
-</div>
-</section>
-<section id="다양한-사용자-설정" class="level2">
-<h2 class="anchored" data-anchor-id="다양한-사용자-설정">다양한 사용자 설정</h2>
-<section id="제목-추가하기" class="level3">
-<h3 class="anchored" data-anchor-id="제목-추가하기">제목 추가하기</h3>
-<p>아이콘은 유지하고 제목을 변경하고 싶은 경우가 있습니다. 이 경우 <code>header</code> 마크다운을 사용합니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># 제목을 추가합니다.</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Callout <span class="in">`caution`</span> 타입을 사용합니다.</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-제목을 추가합니다.
+<section id="테이터프레임-머지하기" class="level1">
+<h1>테이터프레임 머지하기</h1>
+<p>병합은 서로다른 데이터프레임 객체에 동일하게 존재하는 값을 통해 양쪽 데이터를 연관 지어 하나의 데이터프레임으로 모델링할 수 있는 유용한 방법입니다. 연습을 위해서 데이터를 준비합니다.</p>
+<p><code>Yahoo Finance</code>에서는 미국뿐 아니라 한국 주식에 대한 정보를 제공합니다. <code>KOSPI</code>주식 정보를 csv형태로 저장해서 데이터프레임 머지 연습에 사용할께요. <a href="https://finance.yahoo.com/quote/%5EKS11?p=%5EKS11&amp;.tsrc=fin-srch">Yahoo Finance</a>로 이동해서 <code>historica l data</code> 탭을 선택합니다.</p>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
+<p><code>Historical Data</code> 를 선택하면 위와 같이 <code>KOSPI</code> 에 대한 시계열 데이터를 얻을 수 있습니다. <code>download</code>를 눌러 다운로드하여 저장합니다. 혹은 [<a href="./^KS11.csv">KS11.csv</a>]에서 다운로드 하세요.</p>
+<section id="데이터-로드하기" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-로드하기">데이터 로드하기</h2>
+<p>csv파일을 불러와서 데이터프레임 형태를 확인합니다. 시계열데이터의 경우 날짜정보를 데이터프레임의 <code>index</code>로 사용하면 편리합니다. <code>data</code>컬럼을 index로 설정합니다.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>kospi <span class="op">=</span> pd.read_csv(<span class="st">"./^KS11.csv"</span>, index_col <span class="op">=</span><span class="st">'Date'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>kospi.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Adj Close</th>
+      <th>Volume</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-09-13</th>
+      <td>2418.590088</td>
+      <td>2453.949951</td>
+      <td>2418.590088</td>
+      <td>2449.540039</td>
+      <td>2449.540039</td>
+      <td>366900</td>
+    </tr>
+    <tr>
+      <th>2022-09-14</th>
+      <td>2390.469971</td>
+      <td>2418.419922</td>
+      <td>2381.500000</td>
+      <td>2411.419922</td>
+      <td>2411.419922</td>
+      <td>461300</td>
+    </tr>
+    <tr>
+      <th>2022-09-15</th>
+      <td>2416.010010</td>
+      <td>2421.629883</td>
+      <td>2401.830078</td>
+      <td>2401.830078</td>
+      <td>2401.830078</td>
+      <td>423900</td>
+    </tr>
+    <tr>
+      <th>2022-09-16</th>
+      <td>2387.560059</td>
+      <td>2395.100098</td>
+      <td>2371.110107</td>
+      <td>2382.780029</td>
+      <td>2382.780029</td>
+      <td>440300</td>
+    </tr>
+    <tr>
+      <th>2022-09-19</th>
+      <td>2388.729980</td>
+      <td>2389.850098</td>
+      <td>2352.760010</td>
+      <td>2355.659912</td>
+      <td>2355.659912</td>
+      <td>403700</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Callout <code>caution</code> 타입을 사용합니다.</p>
+</div>
+<p>날짜정보가 index로 설정된 데이터프레임을 생성했습니다. 이제 연결을 위한 새로운 데이터프레임을 생성합니다. 데이트 프레임을 연결할 정보를 <code>Ticker</code>라는 컬럼으로 설정하고 기존 데이터프레임의 <code>Volume</code>컬럼을 추가합니다.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>kospi_volume <span class="op">=</span> pd.DataFrame ({<span class="st">'Ticker'</span>: <span class="st">'kospi'</span>, <span class="st">'Volume'</span> : kospi[<span class="st">'Volume'</span>]})</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>kospi_volume.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Ticker</th>
+      <th>Volume</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-09-13</th>
+      <td>kospi</td>
+      <td>366900</td>
+    </tr>
+    <tr>
+      <th>2022-09-14</th>
+      <td>kospi</td>
+      <td>461300</td>
+    </tr>
+    <tr>
+      <th>2022-09-15</th>
+      <td>kospi</td>
+      <td>423900</td>
+    </tr>
+    <tr>
+      <th>2022-09-16</th>
+      <td>kospi</td>
+      <td>440300</td>
+    </tr>
+    <tr>
+      <th>2022-09-19</th>
+      <td>kospi</td>
+      <td>403700</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
-</section>
-<section id="형태-변경하기" class="level3">
-<h3 class="anchored" data-anchor-id="형태-변경하기">형태 변경하기</h3>
-<p><code>Callout Block</code>의 외형은 <code>default</code>, <code>simple</code>, <code>minimam</code> 형태를 지원합니다. 각각이 어떻게 표현되는지 알아봅니다.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-Default 외형
+<p>2개의 데이터프레임이 함께 갖는 컬럼인 ’Ticker’를 통해서 병합을 진행하고 이를 통해서 <code>Volume</code>정보를 추가하려고 합니다. 올바르게 동작하는 지 확인하기 위해서 기존 데이터프레임의 <code>Volume</code> 컬럼을 삭제합니다.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>kospi[<span class="st">'Ticker'</span>] <span class="op">=</span> <span class="st">'kospi'</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>kospi.pop(<span class="st">'Volume'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>kospi.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Adj Close</th>
+      <th>Ticker</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-09-13</th>
+      <td>2418.590088</td>
+      <td>2453.949951</td>
+      <td>2418.590088</td>
+      <td>2449.540039</td>
+      <td>2449.540039</td>
+      <td>kospi</td>
+    </tr>
+    <tr>
+      <th>2022-09-14</th>
+      <td>2390.469971</td>
+      <td>2418.419922</td>
+      <td>2381.500000</td>
+      <td>2411.419922</td>
+      <td>2411.419922</td>
+      <td>kospi</td>
+    </tr>
+    <tr>
+      <th>2022-09-15</th>
+      <td>2416.010010</td>
+      <td>2421.629883</td>
+      <td>2401.830078</td>
+      <td>2401.830078</td>
+      <td>2401.830078</td>
+      <td>kospi</td>
+    </tr>
+    <tr>
+      <th>2022-09-16</th>
+      <td>2387.560059</td>
+      <td>2395.100098</td>
+      <td>2371.110107</td>
+      <td>2382.780029</td>
+      <td>2382.780029</td>
+      <td>kospi</td>
+    </tr>
+    <tr>
+      <th>2022-09-19</th>
+      <td>2388.729980</td>
+      <td>2389.850098</td>
+      <td>2352.760010</td>
+      <td>2355.659912</td>
+      <td>2355.659912</td>
+      <td>kospi</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>default 외형을 확인합니다.</p>
+</div>
+<p><code>Volume</code>컬럼이 삭제되었으니 병합을 진행합니다. <code>pd.merge()</code>함수를 사용하고 공통 컬럼인 <code>Ticker</code>컬럼을 전달합니다.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(kospi, kospi_volume, on<span class="op">=</span><span class="st">'Ticker'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>merged_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Adj Close</th>
+      <th>Ticker</th>
+      <th>Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2418.590088</td>
+      <td>2453.949951</td>
+      <td>2418.590088</td>
+      <td>2449.540039</td>
+      <td>2449.540039</td>
+      <td>kospi</td>
+      <td>366900</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2418.590088</td>
+      <td>2453.949951</td>
+      <td>2418.590088</td>
+      <td>2449.540039</td>
+      <td>2449.540039</td>
+      <td>kospi</td>
+      <td>461300</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2418.590088</td>
+      <td>2453.949951</td>
+      <td>2418.590088</td>
+      <td>2449.540039</td>
+      <td>2449.540039</td>
+      <td>kospi</td>
+      <td>423900</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2418.590088</td>
+      <td>2453.949951</td>
+      <td>2418.590088</td>
+      <td>2449.540039</td>
+      <td>2449.540039</td>
+      <td>kospi</td>
+      <td>440300</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2418.590088</td>
+      <td>2453.949951</td>
+      <td>2418.590088</td>
+      <td>2449.540039</td>
+      <td>2449.540039</td>
+      <td>kospi</td>
+      <td>403700</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
-<div class="callout-note callout callout-style-simple callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-simple 외형
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>simple 외형을 확인합니다.</p>
-</div>
-</div>
-<div class="callout-note callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-minimal 외형
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>minimal 외형을 확인합니다.</p>
-</div>
-</div>
-<p>코드는 아래와 같이 사용합니다. <code>appearance</code>가 추가되었습니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="minimal"}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># Default 외형</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>default 외형을 확인합니다.</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이제 새로운 <code>merged_df</code> 데이터프레임은 2개의 데이터프레임을 연결하여 <code>Volume</code>정보를 추가 하였습니다.</p>
 
 
 </section>
