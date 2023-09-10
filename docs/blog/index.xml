@@ -152,11 +152,11 @@ Default 외형
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Default 외형
+simple 외형
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>default 외형을 확인합니다.</p>
+<p>simple 외형을 확인합니다.</p>
 </div>
 </div>
 <div class="callout-note callout callout-style-simple no-icon callout-captioned">
@@ -165,11 +165,11 @@ Default 외형
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Default 외형
+minimal 외형
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>default 외형을 확인합니다.</p>
+<p>minimal 외형을 확인합니다.</p>
 </div>
 </div>
 <p>코드는 아래와 같이 사용합니다. <code>appearance</code>가 추가되었습니다.</p>
