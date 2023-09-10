@@ -1,0 +1,17 @@
+---
+title: "Reference Site"
+subtitle: Collect website to study Korean
+format: html
+page-layout: article
+anchor-sections: false
+search: false
+# image:
+---
+
+Websites that help you study Korean
+
+| Site                                                                                       | Description                                        |
+|-----------------------------------------------------------|-------------|
+| [STUDY Korean](https://study.korean.net/servlet/action.home.MainAction?p_process=main2022) | There are various Korean language study materials. |
+|                                                                                            |                                                    |
+|                                                                                            |                                                    |

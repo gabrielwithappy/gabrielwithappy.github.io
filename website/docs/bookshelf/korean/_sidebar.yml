@@ -10,5 +10,6 @@ website:
         - section: 'Transportation'
           contents:
           - docs/bookshelf/korean/subway.qmd
+        - docs/bookshelf/korean/reference-site.qmd
         - docs/bookshelf/korean/qna.qmd
 
