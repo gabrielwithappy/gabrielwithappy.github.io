@@ -187,5 +187,202 @@ minimal 외형
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html</guid>
   <pubDate>Sat, 09 Sep 2023 15:00:00 GMT</pubDate>
 </item>
+<item>
+  <title>Pandas 데이터 전처리</title>
+  <dc:creator>양성모</dc:creator>
+  <link>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="테이터-전처리" class="level1">
+<h1>테이터 전처리</h1>
+<p>데이터시각화 및 데이터분석을 위해 읽어온 원본 데이터의 데이터 타입이 올바른지 확인하지 않으면 분석과정에 사용하는 다양한 통계적 지표나 필터결과가 오류를 발생합니다. 데이터에 맞는 형식으로 변경되지 않은 데이터프레임을 사용할 때 발생하는 문제점을 확인하고 올바르게 데이터 형식으로 변경하는 과정을 정리합니다.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> pandas <span class="im" style="color: #00769E;">as</span> pd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;">import</span> datetime <span class="im" style="color: #00769E;">as</span> dt</span>
+<span id="cb1-3"></span>
+<span id="cb1-4">df <span class="op" style="color: #5E5E5E;">=</span> pd.DataFrame({<span class="st" style="color: #20794D;">"year"</span>: [<span class="st" style="color: #20794D;">'1900'</span>,<span class="st" style="color: #20794D;">'1901'</span>,<span class="st" style="color: #20794D;">'1910'</span>,<span class="st" style="color: #20794D;">'2021'</span>, <span class="st" style="color: #20794D;">'2023'</span>],</span>
+<span id="cb1-5">                   <span class="st" style="color: #20794D;">"n_sales"</span> : [<span class="st" style="color: #20794D;">'10EA'</span>, <span class="st" style="color: #20794D;">'20EA'</span>, <span class="st" style="color: #20794D;">'40EA'</span>, <span class="st" style="color: #20794D;">'100EA'</span>, <span class="st" style="color: #20794D;">'210EA'</span>],</span>
+<span id="cb1-6">                   <span class="st" style="color: #20794D;">"status"</span> : [<span class="st" style="color: #20794D;">'good'</span>, <span class="st" style="color: #20794D;">'bad'</span>, <span class="st" style="color: #20794D;">'normal'</span>, <span class="st" style="color: #20794D;">'bad'</span>, <span class="st" style="color: #20794D;">'good'</span>]})</span>
+<span id="cb1-7">df</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>year</th>
+      <th>n_sales</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1900</td>
+      <td>10EA</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1901</td>
+      <td>20EA</td>
+      <td>bad</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1910</td>
+      <td>40EA</td>
+      <td>normal</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021</td>
+      <td>100EA</td>
+      <td>bad</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023</td>
+      <td>210EA</td>
+      <td>good</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>데이터 프레임은 <code>year</code>, <code>n_sales</code>, <code>status</code> 3개의 컬럼을 갖습니다. 각 컬럼이 어떤 데이터 타입인지 확인해볼까요? 데이터프레임의 정보를 보여주는 <code>info()</code>함수로 데이터 타입을 확인합니다.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">df.info()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 3 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   year     5 non-null      object
+ 1   n_sales  5 non-null      object
+ 2   status   5 non-null      object
+dtypes: object(3)
+memory usage: 248.0+ bytes</code></pre>
+</div>
+</div>
+<p>예상했던 데이터 형식과 다릅니다. <code>year</code>는 숫자를 표현하고 있기 때문에 <code>int</code> 타입으로 표현되어야 할 것 같은데 <code>object</code>타입이네요. 데이터 프레임의 통계정보를 보여주는 <code>describe()</code>함수를 사용하면 차이를 알 수 있습니다.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">df[<span class="st" style="color: #20794D;">'n_sales'</span>].describe()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>count        5
+unique       5
+top       10EA
+freq         1
+Name: n_sales, dtype: object</code></pre>
+</div>
+</div>
+<p>위의 코드 실행결과에서 확인할 수 있는 것처럼 <code>n_sales</code>컬럼의 통계 정보는 <code>categorical</code> 통계정보가 출력됩니다. 숫자로 표현되지 않아서 예상했던 <code>평균</code>, <code>표준편차</code> 등의 정보는 알 수 없습니다.</p>
+<section id="데이터-타입-변경하기" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-타입-변경하기">데이터 타입 변경하기</h2>
+<p>데이터에 대한 적절한 전처리가 되지 않는 경우 잘못된 통계정보를 이용할 수 있기 때문에 적절한 전처리가 필요합니다. 위에서 만든 데이터프레임의 각 컬럼에 올바른 데이터타입을 적용해야 합니다.</p>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>year</th>
+      <th>n_sales</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1900</td>
+      <td>10EA</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1901</td>
+      <td>20EA</td>
+      <td>bad</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1910</td>
+      <td>40EA</td>
+      <td>normal</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021</td>
+      <td>100EA</td>
+      <td>bad</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023</td>
+      <td>210EA</td>
+      <td>good</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>일반적으로 데이터 타입 변경은 데이터에 대한 이해가 필요합니다. <code>year</code>의 경우 날짜를 표현하고 있고 <code>n_sales</code>의 <code>EA</code>는 단위이기 때문에 꼭 필요한 정보가 아니라면 삭제 가능합니다. 이 두 가지 데이터 컬럼은 숫자를 표현하고 있으니 <code>int</code> 타입으로 변경합니다. 마지막 <code>status</code> 컬럼은 명백히 <code>categorical</code> 데이터입니다.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">df[<span class="st" style="color: #20794D;">'year'</span>] <span class="op" style="color: #5E5E5E;">=</span> pd.to_datetime(df[<span class="st" style="color: #20794D;">'year'</span>])</span>
+<span id="cb6-2">df[<span class="st" style="color: #20794D;">'n_sales'</span>] <span class="op" style="color: #5E5E5E;">=</span> df[<span class="st" style="color: #20794D;">'n_sales'</span>].<span class="bu" style="color: null;">str</span>.strip(<span class="st" style="color: #20794D;">'EA'</span>).astype(<span class="st" style="color: #20794D;">'int'</span>)</span>
+<span id="cb6-3">df[<span class="st" style="color: #20794D;">'status'</span>] <span class="op" style="color: #5E5E5E;">=</span> df[<span class="st" style="color: #20794D;">'status'</span>].astype(<span class="st" style="color: #20794D;">'category'</span>)</span></code></pre></div>
+</div>
+<p>위의 <code>to_datatime()</code>과 <code>astype()</code>함수를 이용해서 각 컬럼을 ‘datetime’, ‘int’, ‘categorical’ 타입으로 변경했습니다. 단위를 제거하기 위해서 ‘strip()’ 함수를 사용한 것을 참고하세요.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">df.info()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 3 columns):
+ #   Column   Non-Null Count  Dtype         
+---  ------   --------------  -----         
+ 0   year     5 non-null      datetime64[ns]
+ 1   n_sales  5 non-null      int64         
+ 2   status   5 non-null      category      
+dtypes: category(1), datetime64[ns](1), int64(1)
+memory usage: 345.0 bytes</code></pre>
+</div>
+</div>
+<p>수정된 데이터 프레임은 올바른 데이터 타입을 갖습니다. 이제 데이터프레임의 통계정보를 확인하겠습니다.</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">df[<span class="st" style="color: #20794D;">'n_sales'</span>].describe()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>count      5.000000
+mean      76.000000
+std       82.643814
+min       10.000000
+25%       20.000000
+50%       40.000000
+75%      100.000000
+max      210.000000
+Name: n_sales, dtype: float64</code></pre>
+</div>
+</div>
+<p>이제 예상한 것과 같이 <code>n_sales</code>에 대한 <code>평균</code>, <code>표준편차</code> 등의 통계정보를 확인할 수 있습니다.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Pandas</category>
+  <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html</guid>
+  <pubDate>Sat, 09 Sep 2023 15:00:00 GMT</pubDate>
+</item>
 </channel>
 </rss>
