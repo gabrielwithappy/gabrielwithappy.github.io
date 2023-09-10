@@ -1,4 +1,7 @@
-.venv/
-_site/
-site_libs/
+/.venv/
+/_site/
+/site_libs/
+/_*.local
+*_cache/
+
 /.luarc.json
