@@ -1,8 +1,8 @@
 ---
 title: Pandas 데이터 전처리
 subtitle: Pandas 데이터 타입 변경 전처리
-# description:
-#   Quarto Callout으로 내용 강조하는 내용을 정리합니다.
+description:
+  Quarto Callout으로 내용 강조하는 내용을 정리합니다.
 categories:
   - Pandas
 author: 양성모

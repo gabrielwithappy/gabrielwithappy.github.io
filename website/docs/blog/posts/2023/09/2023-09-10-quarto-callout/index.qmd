@@ -1,8 +1,8 @@
 ---
 title: Quarto Callout Block
 subtitle: Callout Block으로 내용 강조하기
-# description:
-#   Quarto Callout으로 내용 강조하는 내용을 정리합니다.
+description:
+  Quarto Callout으로 내용 강조하는 방법을 정리합니다.
 categories:
   - Quarto
 author: 양성모
