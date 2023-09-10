@@ -1,5 +1,11 @@
 ---
 title: "About"
+comments:
+  giscus:
+    repo: gabrielwithappy/publickrbook_comment
 ---
 
-배운 것을 책으로 만들어 publickrbook에 정리합니다.
+온라인에 책을 만들고 싶다는 생각에 배운 것을 정리하는 사이트입니다. Quarto를 이용해서 만들었고 느리지만 꾸준이 업데이트하려고 노력하고 있습니다.
+
+궁금한 내용이나 함께 작성하고 싶은 책이 있다면 알려주세요.
+감사합니다.
