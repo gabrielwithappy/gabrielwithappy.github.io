@@ -8,11 +8,11 @@ listing:
   filter-ui: false
   categories: true
   type: default
-  page-size: 36
+  page-size: 10
   feed: true
 # margin-header: signup.html
 # title-block-banner: "#00000"
 title-block-banner-color: body
-search: false
+search: true
 # image: images/docs/book_blog/test.png
 ---

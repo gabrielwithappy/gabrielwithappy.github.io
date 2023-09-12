@@ -13,7 +13,7 @@ website:
   site-path: '/'
   description: "A online bookstore"
   google-analytics:
-    tracking-id: "G-FGHC552RY6"
+    tracking-id: "G-N916ZQ0D0N"
   page-footer:
     center: "gabrielwithhappy@gmail.com"
   repo-url: https://github.com/gabrielwithappy/books/
