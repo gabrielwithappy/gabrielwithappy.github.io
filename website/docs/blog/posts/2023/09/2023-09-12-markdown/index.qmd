@@ -4,7 +4,7 @@ subtitle: Markdown문법 정리하기
 description:
   Markdown문법을 정리합니다.
 categories:
-  - Pandas
+  - Quarto
 author: 양성모
 date: "09/12/2023"
 image: "https://picsum.photos/id/12/200/150"
