@@ -11,7 +11,8 @@ image: "https://picsum.photos/id/12/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
 ---
-[작성중]
+
+\[작성중\]
 
 # Markdown
 
@@ -37,21 +38,28 @@ page-layout: article
 | ```                                     |                                         |
 +-----------------------------------------+-----------------------------------------+
 
-
 ## Link 및 이미지 연결
 
 링크에 보일 글자와 함께 링크정보를 표시합니다.
 
 ``` markdown
+# 링크 연결
 <https://quarto.org>
+[Quarto](https://quarto/org)
 ```
-<https://quarto.org>
 
+<https://quarto.org> [Quarto](https://quarto/org)
 
+``` markdown
+# 이미지표시
+![Caption](cover.png)
+```
 
-
+![](cover.jpg)
 
 ## Table
+
+Markdown으로 table을 구성하는 방법을 정리합니다.
 
 ``` markdown
 | Right | Left | Default | Center |
@@ -63,14 +71,15 @@ page-layout: article
 
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
-|   12  |  12  |    12   |    12  |
-|  123  |  123 |   123   |   123  |
-|    1  |    1 |     1   |     1  |
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
 
+## 소스 코드
 
-## Source Code
+Quarto에서 소스코드를 추가하는 방법을 정리힙니다.
 
-Use ```` ``` ```` to delimit blocks of source code:
+코드의 처음과 마지막에 ```` ``` ````를 이용해서 코드 영역을 표시합니다.
 
 ```` markdown
 ```
@@ -78,7 +87,7 @@ code
 ```
 ````
 
-Add a language to syntax highlight code blocks:
+코드에 맞는 언어를 표시하여 언어별 코드 하이라이트를 적용할 수 있습니다.
 
 ```` markdown
 ```python
@@ -86,7 +95,7 @@ Add a language to syntax highlight code blocks:
 ```
 ````
 
-Pandoc supports syntax highlighting for over [140 different languages](https://github.com/jgm/skylighting/tree/master/skylighting-core/xml). If your language is not supported then you can use the `default` language to get a similar visual treatment:
+Pandoc에서 지원하는 하이라이트 기능을 사용할 수 있습니다. [140 언어 지원](https://github.com/jgm/skylighting/tree/master/skylighting-core/xml) 정보를 확인하세요. 만약 지원하는 언어가 없다면 `default`를 사용할 수 있습니다.
 
 ```` markdown
 ```default
@@ -94,197 +103,79 @@ code
 ```
 ````
 
-If you are creating HTML output there is a wide variety of options available for code block output. See the article on [HTML Code](../output-formats/html-code.qmd) for additional details.
+## 수식
 
-## Equations
-
-Use `$` delimiters for inline math and `$$` delimiters for display math. For example:
+`$` 구분기호를 이용하여 인라인 수식을 추가하고 `$$` 구분기호를 이용하여 수식만 표현할 수 있습니다.
 
 +---------------------------+-------------------------+
 | Markdown Syntax           | Output                  |
 +===========================+=========================+
-| ``` markdown              |                         |
-| inline math: $E = mc^{2}$ | inline math: $E=mc^{2}$ |
+| ``` markdown              | 인라인 수식: $E=mc^{2}$ |
+| 인라인 수식: $E = mc^{2}$ |                         |
 | ```                       |                         |
 +---------------------------+-------------------------+
-| ``` markdown              |                         |
-| display math:             | display math:           |
-|                           |                         |
-| $$E = mc^{2}$$            | $$E = mc^{2}$$          |
+| ``` markdown              | 수식 단독표현:          |
+| 수식 단독표현:            |                         |
+|                           | $$E = mc^{2}$$          |
+| $$E = mc^{2}$$            |                         |
 | ```                       |                         |
 +---------------------------+-------------------------+
 
-If you want to define custom TeX macros, include them within `$$` delimiters enclosed in a `.hidden` block. For example:
+## 다이어그램
 
-``` tex
-::: {.hidden}
-$$
- \def\RR{{\bf R}}
- \def\bold#1{{\bf #1}}
-$$
-:::
-```
-
-For HTML math processed using [MathJax](https://docs.mathjax.org/) (the default) you can use the `\def`, `\newcommand`, `\renewcommand`, `\newenvironment`, `\renewenvironment`, and `\let` commands to create your own macros and environments.
-
-## Diagrams
-
-Quarto has native support for embedding [Mermaid](https://mermaid-js.github.io/mermaid/#/) and [Graphviz](https://graphviz.org/) diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, Gantt charts, and more using a plain text syntax inspired by markdown.
-
-For example, here we embed a flowchart created using Mermaid:
+Quarto는 [Mermaid](https://mermaid-js.github.io/mermaid/#/)와 [Graphviz](https://graphviz.org/) 다이어그램을 지원합니다. 플로우차트, 시퀀스 다이어그램, 스테이트 다이어그램, 간트차트등을 그릴 수 있습니다. Mermaid를 이용해서 플로우 차트를 생성합니다.
 
 ```{mermaid}
 %%| echo: fenced
 flowchart LR
-  A[Hard edge] --> B(Round edge)
-  B --> C{Decision}
-  C --> D[Result one]
-  C --> E[Result two]
+  A[입력] --> B(전처리)
+  B --> C{판단로직}
+  C --> D[성공]
+  C --> E[실패]
 ```
 
-Learn more in the article on [Diagrams](diagrams.qmd).
+## 동영상 연결
 
-## Videos
-
-You can include videos in documents using the `{{{< video >}}}` shortcode. For example, here we embed a YouTube video:
+문서 내부에 동영상을 연결할 수 있습니다. `{{{< video >}}}` 를 이용해서 유튜브 동영상은 연결할 수 있습니다.
 
 ``` {.markdown shortcodes="false"}
 {{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
 ```
 
-Videos can refer to video files (e.g. MPEG) or can be links to videos published on YouTube, Vimeo, or Brightcove. Learn more in the article on [Videos](videos.qmd).
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
 
+## HTML 코드 (Divs,  Spans)
 
-## Divs and Spans
-
-You can add classes, attributes, and other identifiers to regions of content using Divs and Spans (you'll see an example of this below in [Callout Blocks]).
-
-For example, here we add the "border" class to a region of content using a div (`:::`):
+HTML의 `div` 블럭을 만들 수 있습니다. `class` 정보를 `border`로 정의합니다.
 
 ``` markdown
-::: {.border}
-This content can be styled with a border
+::: {#special .border}
+class를 "border"로 정의한 div block으로 변환됩니다.
 :::
 ```
 
-Once rendered to HTML, Quarto will translate the markdown into:
+Quarto를 렌터링하고 나면 아래의 HTML 코드로 변경됩니다.
 
 ``` html
-<div class="border">
-  <p>This content can be styled with a border</p>
+<div id="special" class="border">
+  <p>class를 "border"로 정의한 div block으로 변환됩니다.</p>
 </div>
 ```
 
-Divs start with a fence containing at least three consecutive colons plus some attributes. The attributes may optionally be followed by another string of consecutive colons. The Div ends with another line containing a string of at least three consecutive colons. The Div should be separated by blank lines from preceding and following blocks. Divs may also be nested. For example
+대괄호 `[]`로 표현된 문자열은 `span`으로 변환됩니다.
 
 ``` markdown
-::::: {#special .sidebar}
-
-::: {.warning}
-Here is a warning.
-:::
-
-More content.
-:::::
+[테스트 *SPAN* 코드입니다.]{.class key="val"}
 ```
-
-Once rendered to HTML, Quarto will translate the markdown into:
-
-``` html
-<div id="special" class="sidebar">
-  <div class="warning">
-    <p>Here is a warning.</p>
-  </div>
-  <p>More content.</p>
-</div>
-```
-
-Fences without attributes are always closing fences. Unlike with fenced code blocks, the number of colons in the closing fence need not match the number in the opening fence. However, it can be helpful for visual clarity to use fences of different lengths to distinguish nested divs from their parents.
-
-A bracketed sequence of inlines, as one would use to begin a link, will be treated as a `Span` with attributes if it is followed immediately by attributes:
-
-``` markdown
-[This is *some text*]{.class key="val"}
-```
-
-Once rendered to HTML, Quarto will translate the markdown into:
 
 ``` html
 <span class="class" data-key="val">
-  This is <em>some text</em>
+  테스트 <em>SPAN</em> 코드입니다.
 </span>
 ```
 
 
-### Ordering of Attributes
-
-Both divs and spans in Pandoc can have any combination of identifiers, classes, and (potentially many) key-value attributes. In order for these to be recognized by Pandoc, they have to be provided in a specific order: identifiers, classes, and then key-value attributes. Any of these can be omitted, but must follow that order if they are provided. For example, the following is valid:
-
-``` markdown
-[This is good]{#id .class key1="val1" key2="val2"}
-```
-
-However, the following *will not be recognized by Pandoc*:
-
-``` markdown
-[This does *not* work!]{.class key="val" #id}
-```
-
-This ordering restriction applies to both divs and spans. See Pandoc's documentation on [Divs and Spans](https://pandoc.org/MANUAL.html#divs-and-spans) for additional details.
-
-## Callout Blocks
-
-#### Markdown Syntax
-
-``` markdown
-:::{.callout-note}
-Note that there are five types of callouts, including:
-`note`, `tip`, `warning`, `caution`, and `important`.
-:::
-```
-
-#### Output
-
-::: callout-note
-Note that there are five types of callouts, including `note`, `tip`, `warning`, `caution`, and `important`.
-:::
-
-
-## Other Blocks
-
-+--------------------------+--------------------------+
-| Markdown Syntax          | Output                   |
-+==========================+==========================+
-| ``` markdown             | > Blockquote             |
-| > Blockquote             |                          |
-| ```                      |                          |
-+--------------------------+--------------------------+
-| ``` markdown             | ::: classname            |
-| ::: {.classname}         | Div                      |
-| Div                      | :::                      |
-| :::                      |                          |
-| ```                      |                          |
-+--------------------------+--------------------------+
-| ``` markdown             | | Line Block             |
-| | Line Block             | |    Spaces and newlines |
-| |   Spaces and newlines  | |    are preserved       |
-| |   are preserved        |                          |
-| ```                      |                          |
-+--------------------------+--------------------------+
-
-## Special Characters
-
-+-----------------+---------------+
-| Markdown Syntax | Output        |
-+=================+===============+
-| ``` markdown    | endash: --    |
-| endash: --      |               |
-| ```             |               |
-+-----------------+---------------+
-| ``` markdown    | emdash: ---   |
-| emdash: ---     |               |
-| ```             |               |
-+-----------------+---------------+
 
 ## 참고
-1. https://quarto.org/docs/authoring/markdown-basics.html
+
+1.  https://quarto.org/docs/authoring/markdown-basics.html
