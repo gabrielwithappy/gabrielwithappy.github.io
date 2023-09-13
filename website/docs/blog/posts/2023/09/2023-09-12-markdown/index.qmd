@@ -12,7 +12,6 @@ image: "https://picsum.photos/id/12/200/150"
 page-layout: article
 ---
 
-\[작성중\]
 
 # Markdown
 
