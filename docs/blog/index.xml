@@ -56,16 +56,22 @@
 <section id="link-및-이미지-연결" class="level2">
 <h2 class="anchored" data-anchor-id="link-및-이미지-연결">Link 및 이미지 연결</h2>
 <p>링크에 보일 글자와 함께 링크정보를 표시합니다.</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><span class="ot" style="color: #003B4F;">&lt;https://quarto.org&gt;</span></span></code></pre></div>
-<p><a href="https://quarto.org" class="uri">https://quarto.org</a></p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><span class="fu" style="color: #4758AB;"># 링크 연결</span></span>
+<span id="cb4-2"><span class="ot" style="color: #003B4F;">&lt;https://quarto.org&gt;</span></span>
+<span id="cb4-3"><span class="co" style="color: #5E5E5E;">[</span><span class="ot" style="color: #003B4F;">Quarto</span><span class="co" style="color: #5E5E5E;">](https://quarto/org)</span></span></code></pre></div>
+<p><a href="https://quarto.org" class="uri">https://quarto.org</a> <a href="https://quarto/org">Quarto</a></p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><span class="fu" style="color: #4758AB;"># 이미지표시</span></span>
+<span id="cb5-2"><span class="al" style="color: #AD0000;">![Caption](cover.png)</span></span></code></pre></div>
+<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-12-markdown/cover.jpg" class="img-fluid"></p>
 </section>
 <section id="table" class="level2">
 <h2 class="anchored" data-anchor-id="table">Table</h2>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1">| Right | Left | Default | Center |</span>
-<span id="cb5-2">|------:|:-----|---------|:------:|</span>
-<span id="cb5-3">|   12  |  12  |    12   |    12  |</span>
-<span id="cb5-4">|  123  |  123 |   123   |   123  |</span>
-<span id="cb5-5">|    1  |    1 |     1   |     1  |</span></code></pre></div>
+<p>Markdown으로 table을 구성하는 방법을 정리합니다.</p>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1">| Right | Left | Default | Center |</span>
+<span id="cb6-2">|------:|:-----|---------|:------:|</span>
+<span id="cb6-3">|   12  |  12  |    12   |    12  |</span>
+<span id="cb6-4">|  123  |  123 |   123   |   123  |</span>
+<span id="cb6-5">|    1  |    1 |     1   |     1  |</span></code></pre></div>
 <table class="table">
 <thead>
 <tr class="header">
@@ -97,25 +103,25 @@
 </tbody>
 </table>
 </section>
-<section id="source-code" class="level2">
-<h2 class="anchored" data-anchor-id="source-code">Source Code</h2>
-<p>Use <code>```</code> to delimit blocks of source code:</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><span class="in" style="color: #5E5E5E;">```</span></span>
-<span id="cb6-2"><span class="in" style="color: #5E5E5E;">code</span></span>
-<span id="cb6-3"><span class="in" style="color: #5E5E5E;">```</span></span></code></pre></div>
-<p>Add a language to syntax highlight code blocks:</p>
-<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><span class="in" style="color: #5E5E5E;">```python</span></span>
-<span id="cb7-2"><span class="dv" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span></span>
+<section id="소스-코드" class="level2">
+<h2 class="anchored" data-anchor-id="소스-코드">소스 코드</h2>
+<p>Quarto에서 소스코드를 추가하는 방법을 정리힙니다.</p>
+<p>코드의 처음과 마지막에 <code>```</code>를 이용해서 코드 영역을 표시합니다.</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><span class="in" style="color: #5E5E5E;">```</span></span>
+<span id="cb7-2"><span class="in" style="color: #5E5E5E;">code</span></span>
 <span id="cb7-3"><span class="in" style="color: #5E5E5E;">```</span></span></code></pre></div>
-<p>Pandoc supports syntax highlighting for over <a href="https://github.com/jgm/skylighting/tree/master/skylighting-core/xml">140 different languages</a>. If your language is not supported then you can use the <code>default</code> language to get a similar visual treatment:</p>
-<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><span class="in" style="color: #5E5E5E;">```default</span></span>
-<span id="cb8-2"><span class="in" style="color: #5E5E5E;">code</span></span>
+<p>코드에 맞는 언어를 표시하여 언어별 코드 하이라이트를 적용할 수 있습니다.</p>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><span class="in" style="color: #5E5E5E;">```python</span></span>
+<span id="cb8-2"><span class="dv" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span></span>
 <span id="cb8-3"><span class="in" style="color: #5E5E5E;">```</span></span></code></pre></div>
-<p>If you are creating HTML output there is a wide variety of options available for code block output. See the article on <a href="../output-formats/html-code.qmd">HTML Code</a> for additional details.</p>
+<p>Pandoc에서 지원하는 하이라이트 기능을 사용할 수 있습니다. <a href="https://github.com/jgm/skylighting/tree/master/skylighting-core/xml">140 언어 지원</a> 정보를 확인하세요. 만약 지원하는 언어가 없다면 <code>default</code>를 사용할 수 있습니다.</p>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><span class="in" style="color: #5E5E5E;">```default</span></span>
+<span id="cb9-2"><span class="in" style="color: #5E5E5E;">code</span></span>
+<span id="cb9-3"><span class="in" style="color: #5E5E5E;">```</span></span></code></pre></div>
 </section>
-<section id="equations" class="level2">
-<h2 class="anchored" data-anchor-id="equations">Equations</h2>
-<p>Use <code>$</code> delimiters for inline math and <code>$$</code> delimiters for display math. For example:</p>
+<section id="수식" class="level2">
+<h2 class="anchored" data-anchor-id="수식">수식</h2>
+<p><code>$</code> 구분기호를 이용하여 인라인 수식을 추가하고 <code>$$</code> 구분기호를 이용하여 수식만 표현할 수 있습니다.</p>
 <table class="table">
 <colgroup>
 <col style="width: 38%">
@@ -129,47 +135,38 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><span class="an" style="color: #5E5E5E;">inline math:</span><span class="co" style="color: #5E5E5E;"> $E = mc^{2}$</span></span></code></pre></div></td>
-<td>inline math: <img src="https://latex.codecogs.com/png.latex?E=mc%5E%7B2%7D"></td>
+<td><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1">인라인 수식: $E = mc^{2}$</span></code></pre></div></td>
+<td>인라인 수식: <img src="https://latex.codecogs.com/png.latex?E=mc%5E%7B2%7D"></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><span class="an" style="color: #5E5E5E;">display math:</span></span>
-<span id="cb10-2"></span>
-<span id="cb10-3">$$E = mc^{2}$$</span></code></pre></div></td>
-<td><p>display math:</p>
+<td><div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1">수식 단독표현:</span>
+<span id="cb11-2"></span>
+<span id="cb11-3">$$E = mc^{2}$$</span></code></pre></div></td>
+<td><p>수식 단독표현:</p>
 <p><img src="https://latex.codecogs.com/png.latex?E%20=%20mc%5E%7B2%7D"></p></td>
 </tr>
 </tbody>
 </table>
-<p>If you want to define custom TeX macros, include them within <code>$$</code> delimiters enclosed in a <code>.hidden</code> block. For example:</p>
-<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb11-1">::: {.hidden}</span>
-<span id="cb11-2"><span class="ss" style="color: #20794D;">$$</span></span>
-<span id="cb11-3"><span class="ss" style="color: #20794D;"> </span><span class="sc" style="color: #5E5E5E;">\def\RR</span><span class="ss" style="color: #20794D;">{{</span><span class="sc" style="color: #5E5E5E;">\bf</span><span class="ss" style="color: #20794D;"> R}}</span></span>
-<span id="cb11-4"><span class="ss" style="color: #20794D;"> </span><span class="sc" style="color: #5E5E5E;">\def\bold</span><span class="ss" style="color: #20794D;">#1{{</span><span class="sc" style="color: #5E5E5E;">\bf</span><span class="ss" style="color: #20794D;"> #1}}</span></span>
-<span id="cb11-5"><span class="ss" style="color: #20794D;">$$</span></span>
-<span id="cb11-6">:::</span></code></pre></div>
-<p>For HTML math processed using <a href="https://docs.mathjax.org/">MathJax</a> (the default) you can use the <code>\def</code>, <code>\newcommand</code>, <code>\renewcommand</code>, <code>\newenvironment</code>, <code>\renewenvironment</code>, and <code>\let</code> commands to create your own macros and environments.</p>
 </section>
-<section id="diagrams" class="level2">
-<h2 class="anchored" data-anchor-id="diagrams">Diagrams</h2>
-<p>Quarto has native support for embedding <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> and <a href="https://graphviz.org/">Graphviz</a> diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, Gantt charts, and more using a plain text syntax inspired by markdown.</p>
-<p>For example, here we embed a flowchart created using Mermaid:</p>
+<section id="다이어그램" class="level2">
+<h2 class="anchored" data-anchor-id="다이어그램">다이어그램</h2>
+<p>Quarto는 <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a>와 <a href="https://graphviz.org/">Graphviz</a> 다이어그램을 지원합니다. 플로우차트, 시퀀스 다이어그램, 스테이트 다이어그램, 간트차트등을 그릴 수 있습니다. Mermaid를 이용해서 플로우 차트를 생성합니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><span class="in" style="color: #5E5E5E;">```{mermaid}</span></span>
 <span id="cb12-2">flowchart LR</span>
-<span id="cb12-3">  A[Hard edge] --&gt; B(Round edge)</span>
-<span id="cb12-4">  B --&gt; C{Decision}</span>
-<span id="cb12-5">  C --&gt; D[Result one]</span>
-<span id="cb12-6">  C --&gt; E[Result two]</span>
+<span id="cb12-3">  A[입력] --&gt; B(전처리)</span>
+<span id="cb12-4">  B --&gt; C{판단로직}</span>
+<span id="cb12-5">  C --&gt; D[성공]</span>
+<span id="cb12-6">  C --&gt; E[실패]</span>
 <span id="cb12-7"><span class="in" style="color: #5E5E5E;">```</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  A[Hard edge] --&gt; B(Round edge)
-  B --&gt; C{Decision}
-  C --&gt; D[Result one]
-  C --&gt; E[Result two]
+  A[입력] --&gt; B(전처리)
+  B --&gt; C{판단로직}
+  C --&gt; D[성공]
+  C --&gt; E[실패]
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -178,146 +175,28 @@
 </div>
 </div>
 </div>
-<p>Learn more in the article on <a href="diagrams.qmd">Diagrams</a>.</p>
 </section>
-<section id="videos" class="level2">
-<h2 class="anchored" data-anchor-id="videos">Videos</h2>
-<p>You can include videos in documents using the <code>{{&lt; video &gt;}}</code> shortcode. For example, here we embed a YouTube video:</p>
+<section id="동영상-연결" class="level2">
+<h2 class="anchored" data-anchor-id="동영상-연결">동영상 연결</h2>
+<p>문서 내부에 동영상을 연결할 수 있습니다. <code>{{&lt; video &gt;}}</code> 를 이용해서 유튜브 동영상은 연결할 수 있습니다.</p>
 <div class="sourceCode" id="cb13" data-shortcodes="false" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1">{{&lt; video https://www.youtube.com/embed/wo9vZccmqwc &gt;}}</span></code></pre></div>
-<p>Videos can refer to video files (e.g.&nbsp;MPEG) or can be links to videos published on YouTube, Vimeo, or Brightcove. Learn more in the article on <a href="videos.qmd">Videos</a>.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/wo9vZccmqwc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="divs-and-spans" class="level2">
-<h2 class="anchored" data-anchor-id="divs-and-spans">Divs and Spans</h2>
-<p>You can add classes, attributes, and other identifiers to regions of content using Divs and Spans (you’ll see an example of this below in Callout Blocks).</p>
-<p>For example, here we add the “border” class to a region of content using a div (<code>:::</code>):</p>
-<div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1">::: {.border}</span>
-<span id="cb14-2">This content can be styled with a border</span>
+<section id="html-코드-divs-spans" class="level2">
+<h2 class="anchored" data-anchor-id="html-코드-divs-spans">HTML 코드 (Divs, Spans)</h2>
+<p>HTML의 <code>div</code> 블럭을 만들 수 있습니다. <code>class</code> 정보를 <code>border</code>로 정의합니다.</p>
+<div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1">::: {#special .border}</span>
+<span id="cb14-2">class를 "border"로 정의한 div block으로 변환됩니다.</span>
 <span id="cb14-3">:::</span></code></pre></div>
-<p>Once rendered to HTML, Quarto will translate the markdown into:</p>
-<div class="sourceCode" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb15-1"><span class="kw" style="color: #003B4F;">&lt;div</span> <span class="er" style="color: #AD0000;">class</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"border"</span><span class="kw" style="color: #003B4F;">&gt;</span></span>
-<span id="cb15-2">  <span class="kw" style="color: #003B4F;">&lt;p&gt;</span>This content can be styled with a border<span class="kw" style="color: #003B4F;">&lt;/p&gt;</span></span>
+<p>Quarto를 렌터링하고 나면 아래의 HTML 코드로 변경됩니다.</p>
+<div class="sourceCode" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb15-1"><span class="kw" style="color: #003B4F;">&lt;div</span> <span class="er" style="color: #AD0000;">id</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"special"</span> <span class="er" style="color: #AD0000;">class</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"border"</span><span class="kw" style="color: #003B4F;">&gt;</span></span>
+<span id="cb15-2">  <span class="kw" style="color: #003B4F;">&lt;p&gt;</span>class를 "border"로 정의한 div block으로 변환됩니다.<span class="kw" style="color: #003B4F;">&lt;/p&gt;</span></span>
 <span id="cb15-3"><span class="kw" style="color: #003B4F;">&lt;/div&gt;</span></span></code></pre></div>
-<p>Divs start with a fence containing at least three consecutive colons plus some attributes. The attributes may optionally be followed by another string of consecutive colons. The Div ends with another line containing a string of at least three consecutive colons. The Div should be separated by blank lines from preceding and following blocks. Divs may also be nested. For example</p>
-<div class="sourceCode" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1">::::: {#special .sidebar}</span>
-<span id="cb16-2"></span>
-<span id="cb16-3">::: {.warning}</span>
-<span id="cb16-4">Here is a warning.</span>
-<span id="cb16-5">:::</span>
-<span id="cb16-6"></span>
-<span id="cb16-7">More content.</span>
-<span id="cb16-8">:::::</span></code></pre></div>
-<p>Once rendered to HTML, Quarto will translate the markdown into:</p>
-<div class="sourceCode" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb17-1"><span class="kw" style="color: #003B4F;">&lt;div</span> <span class="er" style="color: #AD0000;">id</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"special"</span> <span class="er" style="color: #AD0000;">class</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"sidebar"</span><span class="kw" style="color: #003B4F;">&gt;</span></span>
-<span id="cb17-2">  <span class="kw" style="color: #003B4F;">&lt;div</span> <span class="er" style="color: #AD0000;">class</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"warning"</span><span class="kw" style="color: #003B4F;">&gt;</span></span>
-<span id="cb17-3">    <span class="kw" style="color: #003B4F;">&lt;p&gt;</span>Here is a warning.<span class="kw" style="color: #003B4F;">&lt;/p&gt;</span></span>
-<span id="cb17-4">  <span class="kw" style="color: #003B4F;">&lt;/div&gt;</span></span>
-<span id="cb17-5">  <span class="kw" style="color: #003B4F;">&lt;p&gt;</span>More content.<span class="kw" style="color: #003B4F;">&lt;/p&gt;</span></span>
-<span id="cb17-6"><span class="kw" style="color: #003B4F;">&lt;/div&gt;</span></span></code></pre></div>
-<p>Fences without attributes are always closing fences. Unlike with fenced code blocks, the number of colons in the closing fence need not match the number in the opening fence. However, it can be helpful for visual clarity to use fences of different lengths to distinguish nested divs from their parents.</p>
-<p>A bracketed sequence of inlines, as one would use to begin a link, will be treated as a <code>Span</code> with attributes if it is followed immediately by attributes:</p>
-<div class="sourceCode" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><span class="co" style="color: #5E5E5E;">[</span><span class="ot" style="color: #003B4F;">This is *some text*</span><span class="co" style="color: #5E5E5E;">]</span>{.class key="val"}</span></code></pre></div>
-<p>Once rendered to HTML, Quarto will translate the markdown into:</p>
-<div class="sourceCode" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb19-1"><span class="kw" style="color: #003B4F;">&lt;span</span> <span class="er" style="color: #AD0000;">class</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"class"</span> <span class="er" style="color: #AD0000;">data-key</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"val"</span><span class="kw" style="color: #003B4F;">&gt;</span></span>
-<span id="cb19-2">  This is <span class="kw" style="color: #003B4F;">&lt;em&gt;</span>some text<span class="kw" style="color: #003B4F;">&lt;/em&gt;</span></span>
-<span id="cb19-3"><span class="kw" style="color: #003B4F;">&lt;/span&gt;</span></span></code></pre></div>
-<section id="ordering-of-attributes" class="level3">
-<h3 class="anchored" data-anchor-id="ordering-of-attributes">Ordering of Attributes</h3>
-<p>Both divs and spans in Pandoc can have any combination of identifiers, classes, and (potentially many) key-value attributes. In order for these to be recognized by Pandoc, they have to be provided in a specific order: identifiers, classes, and then key-value attributes. Any of these can be omitted, but must follow that order if they are provided. For example, the following is valid:</p>
-<div class="sourceCode" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><span class="co" style="color: #5E5E5E;">[</span><span class="ot" style="color: #003B4F;">This is good</span><span class="co" style="color: #5E5E5E;">]</span>{#id .class key1="val1" key2="val2"}</span></code></pre></div>
-<p>However, the following <em>will not be recognized by Pandoc</em>:</p>
-<div class="sourceCode" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><span class="co" style="color: #5E5E5E;">[</span><span class="ot" style="color: #003B4F;">This does *not* work!</span><span class="co" style="color: #5E5E5E;">]</span>{.class key="val" #id}</span></code></pre></div>
-<p>This ordering restriction applies to both divs and spans. See Pandoc’s documentation on <a href="https://pandoc.org/MANUAL.html#divs-and-spans">Divs and Spans</a> for additional details.</p>
-</section>
-</section>
-<section id="callout-blocks" class="level2">
-<h2 class="anchored" data-anchor-id="callout-blocks">Callout Blocks</h2>
-<section id="markdown-syntax" class="level4">
-<h4 class="anchored" data-anchor-id="markdown-syntax">Markdown Syntax</h4>
-<div class="sourceCode" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1">:::{.callout-note}</span>
-<span id="cb22-2">Note that there are five types of callouts, including:</span>
-<span id="cb22-3"><span class="in" style="color: #5E5E5E;">`note`</span>, <span class="in" style="color: #5E5E5E;">`tip`</span>, <span class="in" style="color: #5E5E5E;">`warning`</span>, <span class="in" style="color: #5E5E5E;">`caution`</span>, and <span class="in" style="color: #5E5E5E;">`important`</span>.</span>
-<span id="cb22-4">:::</span></code></pre></div>
-</section>
-<section id="output" class="level4">
-<h4 class="anchored" data-anchor-id="output">Output</h4>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="other-blocks" class="level2">
-<h2 class="anchored" data-anchor-id="other-blocks">Other Blocks</h2>
-<table class="table">
-<colgroup>
-<col style="width: 37%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown Syntax</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><div class="sourceCode" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><span class="at" style="color: #657422;">&gt; Blockquote</span></span></code></pre></div></td>
-<td><blockquote class="blockquote">
-<p>Blockquote</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><div class="sourceCode" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1">::: {.classname}</span>
-<span id="cb24-2">Div</span>
-<span id="cb24-3">:::</span></code></pre></div></td>
-<td><div class="classname">
-<p>Div</p>
-</div></td>
-</tr>
-<tr class="odd">
-<td><div class="sourceCode" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1">| Line Block</span>
-<span id="cb25-2">|   Spaces and newlines</span>
-<span id="cb25-3">|   are preserved</span></code></pre></div></td>
-<td><p>Line Block<br>
-&nbsp;&nbsp;&nbsp;Spaces and newlines<br>
-&nbsp;&nbsp;&nbsp;are preserved</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="special-characters" class="level2">
-<h2 class="anchored" data-anchor-id="special-characters">Special Characters</h2>
-<table class="table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown Syntax</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><div class="sourceCode" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><span class="an" style="color: #5E5E5E;">endash:</span><span class="co" style="color: #5E5E5E;"> --</span></span></code></pre></div></td>
-<td>endash: –</td>
-</tr>
-<tr class="even">
-<td><div class="sourceCode" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><span class="an" style="color: #5E5E5E;">emdash:</span><span class="co" style="color: #5E5E5E;"> ---</span></span></code></pre></div></td>
-<td>emdash: —</td>
-</tr>
-</tbody>
-</table>
+<p>대괄호 <code>[]</code>로 표현된 문자열은 <code>span</code>으로 변환됩니다.</p>
+<div class="sourceCode" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><span class="co" style="color: #5E5E5E;">[</span><span class="ot" style="color: #003B4F;">테스트 *SPAN* 코드입니다.</span><span class="co" style="color: #5E5E5E;">]</span>{.class key="val"}</span></code></pre></div>
+<div class="sourceCode" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb17-1"><span class="kw" style="color: #003B4F;">&lt;span</span> <span class="er" style="color: #AD0000;">class</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"class"</span> <span class="er" style="color: #AD0000;">data-key</span><span class="ot" style="color: #003B4F;">=</span><span class="st" style="color: #20794D;">"val"</span><span class="kw" style="color: #003B4F;">&gt;</span></span>
+<span id="cb17-2">  테스트 <span class="kw" style="color: #003B4F;">&lt;em&gt;</span>SPAN<span class="kw" style="color: #003B4F;">&lt;/em&gt;</span> 코드입니다.</span>
+<span id="cb17-3"><span class="kw" style="color: #003B4F;">&lt;/span&gt;</span></span></code></pre></div>
 </section>
 <section id="참고" class="level2">
 <h2 class="anchored" data-anchor-id="참고">참고</h2>
