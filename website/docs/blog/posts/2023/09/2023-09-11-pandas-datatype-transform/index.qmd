@@ -5,7 +5,7 @@ description:
   Pandas 데이터 타입을 변경하는 방법, 데이터 전처리 방법을 정리합니다.
 categories:
   - Pandas
-author: 양성모
+author: gabriel yang
 date: "09/10/2023"
 image: "https://picsum.photos/id/110/200/150"
 # image-alt: "deep learning glossary"
