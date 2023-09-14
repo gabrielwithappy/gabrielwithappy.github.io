@@ -8,7 +8,7 @@ listing:
   filter-ui: false
   categories: true
   type: default
-  page-size: 10
+  page-size: 5
   feed: true
 # margin-header: signup.html
 # title-block-banner: "#00000"
