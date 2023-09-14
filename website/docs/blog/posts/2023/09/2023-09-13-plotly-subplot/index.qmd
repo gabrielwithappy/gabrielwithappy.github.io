@@ -14,7 +14,7 @@ page-layout: article
 
 # Plotly Subplot
 
-Python으로 그래프를 그릴 여러개의 그래프를 비교하기 좋은 방법은 subplot을 이용한 방법인 것 같습니다. subplot을 만드는 방법과 subplot의 title작성하는 방법 그리고 subplot들에 대한 전체 title을 넣는 방법도 함께 정리합니다.
+Python으로 여러개의 그래프를 비교하기 좋은 방법은 subplot을 이용한 방법인 것 같습니다. subplot을 만드는 방법과 subplot의 title작성하는 방법 그리고 subplot들에 대한 전체 title을 넣는 방법도 함께 정리합니다.
 
 Plotly의 `make_subplots`함수로 subplot을 구성하고 ploty 그래프를 생성했습니다. `add_trace()`함수로 생성한 subplot에 그래프를 추가합니다.
 
