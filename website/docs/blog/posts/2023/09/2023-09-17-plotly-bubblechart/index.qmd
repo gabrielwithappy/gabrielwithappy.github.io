@@ -1,0 +1,62 @@
+---
+title: Plotly Bubble chart 만들기
+subtitle: Plotly Bubble chart 만들기
+description:
+  Plotly Bubble chart의 사용방법을 정리합니다.
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "09/17/2023"
+image: "https://picsum.photos/id/171/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Bubble chart 만들기
+
+Plotly로 Bubble 차트 만들기를 연습합니다. 연습을 위한 데이터는 Plotly Express에서 제공하는 데이터를 사용합니다. `gapminder.org`에서 제공하는 데이터를 데이터프레임으로 불러옵니다.
+데이터 구조를 확인하기 위해서 처음 3개의 데이터를 확인하겠습니다.
+``` {python}
+import plotly.express as px
+df = px.data.gapminder()
+df.sample(3)
+```
+
+여러 국가에 대한 정보를 연도별로 정리한 데이터입니다. 대한민국에 대한 데이터를 살펴보면 좀 더 의미있고 재미있는 시각화가 될 것 같습니다. `country`컬럼의 값이 `Korea, Rep.`인 데이터만 추출합니다.
+
+``` {python}
+df_korea = df[df['country'] == 'Korea, Rep.']
+display(df_korea.head(3))
+display(df['year'].describe())
+```
+
+데이터프레임의 `year`컬럼의 통계정보를 `describe()`함수로 확인하여 데이터가 `1952년` 부터 `2007년`까지 있음을 확인합니다. 버블차트를 이용하여 인구의 변화 양상을 시각화하겠습니다.
+
+## 버블차트 만들기
+
+데이터프레임의 인구를 버블차트로 표현합니다. y축에는 기대수명을 표시하고 `scatter` 차트를 버블차트로 표현하기 위해서 `size`에 인구정보를 전달했습니다. 이제 새로운 차트에서는 버블의 크기로 인구를 표시합니다..
+``` {python}
+import numpy as np
+
+fig = px.scatter(df.query("country== 'Korea, Rep.'"), x= 'year', y='lifeExp', size="pop")
+fig.show()
+```
+
+버블차트를 살펴보면 1950년, 1970년 이후 기대수명이 크게 올라가는 것을 알 수 있습니다. 추가로 버블의 크기를 통해서 인구 증가폭이 2007년에 가까워 지면서 인구수의 변화가 작아짐을 알 수 있습니다.
+
+## 버블차트 색상 설정하기
+
+버블차트는 버블의 크기와 색상으로 각각 정보를 표현할 수 있습니다. 이번엔 버블에 색상을 추가하여 총 4개의 정보를 표현합니다. 각 컬럼정보`gdpPercap`은 1인당 GDP를 의미하고 `lifeExp`는 기대 수명을 의미합니다. 1인당 GDP 변화에 따른 기대수명과 인구를 대륙별로 비교합니다.
+
+``` {python}
+fig = px.scatter(df.query("year==2007"), x="gdpPercap", y="lifeExp",
+	              size="pop", color="continent",
+                hover_name="country", log_x=True, size_max=60)
+fig.show()
+```
+
+우선 색상으로 대륙별 기대수명과 인구를 비교할 수 있습니다. 초록색의 아프리카 대륙은 좌측 하단에 주로 위치하고 있어 인구수와 기대수명이 낮을 것을 알 수 있습니다. 아시아 국가는 버블의 크기도 다양하고 1인당 GDP도 넓은 분포를 보여주고 1인당 GDP가 높은 국가로는 `일본`, `한국`, `싱가포르`등이 있는 것을 알 수 있습니다.
+
+## 참조
+1. https://plotly.com/python/bubble-charts/

@@ -10,6 +10,7 @@ date: "09/10/2023"
 image: "https://picsum.photos/id/10/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
+freeze: true
 ---
 
 Quarto를 이용해 문서를 작성하는 과정에서 강조할 내용이 있는 경우 `Callout Block`을 사용하는 것이 좋습니다. 자산이 작성한 글에 집중이 필요한 내용을 명확하게 나타낼 수 있습니다. 공부한 내용을 정리합니다.
