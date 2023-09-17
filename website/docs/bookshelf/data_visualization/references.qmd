@@ -1,3 +1,9 @@
+---
+title: 딥러닝 용어 사전
+author: Gabriel Yang
+freeze: true
+---
+
 # References {.unnumbered}
 
 ::: {#refs}
