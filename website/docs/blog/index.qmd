@@ -4,8 +4,8 @@ title: Blog
 listing:
   sort: "date desc"
   contents: "posts/*/*/*/index.qmd"
-  sort-ui: false
-  filter-ui: false
+  sort-ui: true
+  filter-ui: true
   categories: true
   type: default
   page-size: 5
