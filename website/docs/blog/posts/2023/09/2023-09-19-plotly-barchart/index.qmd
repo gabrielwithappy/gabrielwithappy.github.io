@@ -7,7 +7,7 @@ categories:
   - Data Visualization
 author: gabriel yang
 date: "09/18/2023"
-image: "https://picsum.photos/id/181/200/150"
+image: "https://picsum.photos/id/191/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
 # draft: true
