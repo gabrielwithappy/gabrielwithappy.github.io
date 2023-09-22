@@ -13,9 +13,9 @@ page-layout: article
 # draft: true
 ---
 
-# Plotly Bar Plot 만들기
+# Plotly Box Plot 만들기
 
-Plotly Bar Plot 만드는 방법을 정리합니다. 데이터는 레스토랑의 tip정보를 저장한 `tips`를 사용합니다.
+Plotly Box Plot 만드는 방법을 정리합니다. 데이터는 레스토랑의 tip정보를 저장한 `tips`를 사용합니다.
 ``` {python}
 import plotly.express as px
 df = px.data.tips()
