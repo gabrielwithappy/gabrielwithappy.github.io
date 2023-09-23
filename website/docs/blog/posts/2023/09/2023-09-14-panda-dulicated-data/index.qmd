@@ -10,6 +10,7 @@ date: "09/14/2023"
 image: "https://picsum.photos/id/14/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
+freeze: true
 ---
 
 # Pandas 중복 데이터 제거하기
