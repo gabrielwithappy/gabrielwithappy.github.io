@@ -11,12 +11,13 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html",
       "/docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html",
       "/docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html",
       "/docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html",
       "/docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html",
       "/docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html",
-      "/docs/blog/posts/2023/09/2023-09-19-plotly-barchart/index.html",
+      "/docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html",
       "/docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html",
       "/docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html",
       "/docs/blog/posts/2023/09/2023-09-16-date-index/index.html",
