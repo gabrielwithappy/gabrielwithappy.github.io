@@ -1,0 +1,62 @@
+---
+title: Plotly Dash로 Table 표시하기
+subtitle: Plotly Dash로 Table 표시하기
+description:
+  Plotly Dash로 Table 표시하는 방법을 정리합니다.
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "09/24/2023"
+image: "https://picsum.photos/id/240/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Dash로 Table 표시하기
+
+Dash를 사용하면 Python으로 대화형 웹 어플리케이션을 쉽게 개발할 수 있습니다. 여러개의 대화형 인터페이스를 모아서 데이터 시각화와 데이터 분석을 위한 대화형 대시보드를 생성할 수 있습니다.
+
+Dash를 이용해서 데이터프레임을 인터렉티브 Table로 표시하는 방법을 정리합니다. 테스트를 위한 데이터프레임을 확인합니다.
+
+``` {python}
+from dash import Dash, html, dash_table
+import pandas as pd
+import plotly.offline as pyo
+import plotly.graph_objs as go
+
+# jupyterbook offline 변경하기
+pyo.init_notebook_mode()
+
+# Incorporate data
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
+df.head(3)
+```
+
+Dash는 데이터 프레임을 `records`형식의 딕셔너리로 전달 받습니다. 데이터프레임을 `to_dict()`함수로 `records`형식 딕셔너리로 변경합니다.
+결과는 하나의 열에 대한 정보가 `컬럼명`:`값`의 형태를 갖는 딕셔너리를 리스트의 요소로 갖습니다.
+
+```{python}
+df.to_dict(orient='records')[:2]
+```
+
+결과를 확인하면 리스트에 하나의 열의 정보를 딕셔너리 형태로 표현하는 것을 확인할 수 있습니다.
+
+## Dash를 이용한 DataFrame 표시하기
+
+`app`이라는 이름으로 Dash 인스턴스를 생성합니다. `layout`함수는 Dash앱의 레이아웃을 결정합니다. `html`읕 이용해서 HTML 요소를 생성하고 레이아웃에 추가할 수 있습니다. `div` HTML TAG에 `My First App with Data` 내용을 추가합니다.
+
+`dash_table`은 딕셔너리 데이터를 대화형 표 형식으로 표현합니다. `page_size`에 10을 설정해서 한 페이지에 표시할 데이터 갯수를 결정합니다. `to_dict()`함수로 데이터프레임을 전환 시 `orient`를 `record` 형태로 설정해야합니다.
+
+``` {python}
+# Initialize the app
+app = Dash(__name__)
+
+# App layout
+app.layout = html.Div([
+    html.Div(children='My First App with Data'),
+    dash_table.DataTable(data=df.to_dict(orient = 'records'), page_size=10)])
+
+app.run_server(mode="inline")
+```
+
