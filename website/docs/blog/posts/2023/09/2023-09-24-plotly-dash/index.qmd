@@ -58,5 +58,6 @@ app.layout = html.Div([
     dash_table.DataTable(data=df.to_dict(orient = 'records'), page_size=10)])
 
 app.run_server(mode="inline")
+app.run_server(mode='jupyterlab')
 ```
 
