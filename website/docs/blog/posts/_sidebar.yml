@@ -1,0 +1,5 @@
+website:
+  page-navigation: true
+  sidebar:
+      collapse-level: 2
+      contents: "docs/blog/posts/*/*/*/index.*"

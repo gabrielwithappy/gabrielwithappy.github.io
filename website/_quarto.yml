@@ -5,6 +5,7 @@ metadata-files:
   - docs/bookshelf/korean/_sidebar.yml
   - docs/bookshelf/data_visualization/_sidebar.yml
   - docs/bookshelf/hf-examples/_sidebar.yml
+  - docs/blog/posts/_sidebar.yml
 
 website:
   title: "BookShelf"
