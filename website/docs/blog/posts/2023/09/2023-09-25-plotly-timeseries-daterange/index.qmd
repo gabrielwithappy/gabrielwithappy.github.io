@@ -1,0 +1,93 @@
+---
+title: Plotly Time Series 날짜 범위 UI 사용하기
+subtitle: Plotly Time Series 날짜 범위 UI 사용하기
+description:
+  Plotly Time Series 날짜 범위를 지정하는 방법을 정리합니다.
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "09/25/2023"
+image: "https://picsum.photos/id/250/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Time Series 날짜 범위 지정 하기
+
+시계열 데이터의 날짜 범위를 잘 사용하면 데이터의 의미를 다양한 관점으로 이해할 수 있습니다. 시계열 데이터를 시각화 시 날짜 범위를 설정하는 방법을 정리합니다.
+
+``` {python}
+import plotly.express as px
+
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+display(df.head(3))
+display(df.tail(3))
+```
+
+
+시계열 데이터를 시각화하기 위해서 불러온 데이터를 확인합니다. 데이터프레임의 `Date`컬럼에 날짜 정보가 있습니다. 처음과 마지막 3개의 데이터를 확인하면 데이터에 2015년 2월부터 2017년 2월까지의 데이터가 있는 것을 알 수 있습니다.
+
+나머지 컬럼은 `Apple` 주가의 상한가, 하한가, 종가등의 정보를 갖습니다. `Apple`의 상한가를 Line plot으로 확인합니다.
+
+``` {python}
+fig = px.line(df, x='Date', y='AAPL.High')
+fig.show()
+
+```
+
+2015년 부터 2017년까지의 주가 정보를 Line plot으로 시각화 했습니다.
+
+## 날짜 범위 지정
+
+시계열 데이터를 좀 더 자세히 확인하기 위해서 x축으로 표시할 날짜 범위를 지정합니다. 2016년 3월부터 2016년 7월까지의 정보를 확인하기 위해서 날짜범위를 지정합니다.
+
+``` {python}
+fig = px.line(df, x='Date', y='AAPL.High', range_x=['2016-03-01','2016-7-31'])
+fig.show()
+```
+
+전체 데이터에서 `range_x`로 지정한 날짜 사이의 데이터만 Line plot에 표시됩니다.
+
+## 슬라이더 UI 사용하기
+
+슬라이더 UI를 사용하면 사용자가 원하는 날짜 범위를 설정하고 날짜를 변경할 수 있습니다.
+``` {python}
+fig = px.line(df, x='Date', y='AAPL.High', title='Time Series with Rangeslider')
+
+fig.update_xaxes(rangeslider_visible=True)
+fig.show()
+```
+
+`update_xaxes()`에 `rangeslider_visible` 옵션을 `True`로 선택해서 x축에 슬라이더 UI를 사용합니다.
+
+사용자는 그래프 하단의 날짜 범위 슬라이더의 양쪽 끝의 흰색 바를 이동하여 날짜 범위를 변경합니다.
+슬라이더 내부를 선택한 상태로 이동시켜 날짜 범위의 위치를 변경할 수 있습니다.
+
+
+## 버튼 UI 사용하기
+
+특정한 날짜 범위를 버튼으로 제공해서 사용자가 일정 날짜 범위로 데이터를 확인할 수 있습니다. `update_xaxes()`함수로 x축에 대한 설정을 변경합니다. `rangeselector`옵션에 버튼에 대한 정보를 딕셔너리 형태로 전달해서 버튼을 생성합니다.
+
+`buttons`을 생성하기 위한 정보는 [buttons API문서](https://plotly.com/python/reference/layout/xaxis/#layout-xaxis-rangeselector-buttons)에서 확인할 수 있습니다. `step`을 통해서 날짜범위위의 단위를 결정하고 `count`를 통해서 범위횟수, `stepmode`는 현재 시점에서 어떤 방향로 날짜범위를 결정합니다.
+
+``` {python}
+fig = px.line(df, x='Date', y='AAPL.High', title='Time Series with Range Slider and Selectors')
+
+fig.update_xaxes(
+    rangeslider_visible=True,
+    rangeselector=dict(
+        buttons=list([
+            dict(count=1, label="1m", step="month", stepmode="backward"),
+            dict(count=6, label="6m", step="month", stepmode="backward"),
+            dict(count=1, label="YTD", step="year", stepmode="todate"),
+            dict(count=1, label="1y", step="year", stepmode="backward"),
+            dict(step="all")
+        ])
+    )
+)
+fig.show()
+```
+
+그래프 위쪽의 날짜 버튼을 선택해서 슬라이더 UI가 어떻게 변경되는 지 확인해보세요.
