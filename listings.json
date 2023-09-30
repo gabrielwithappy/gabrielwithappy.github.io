@@ -11,6 +11,7 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html",
       "/docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html",
       "/docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html",
       "/docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html",
