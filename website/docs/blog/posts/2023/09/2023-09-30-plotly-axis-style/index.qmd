@@ -1,0 +1,91 @@
+---
+title: Plotly Axis 포멧 변경하기
+subtitle: Plotly Axis 포멧 변경하기
+description:
+   Plotly Axis 포멧 변경하기
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "09/30/2023"
+image: "https://picsum.photos/id/300/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Axis 포멧 변경하기
+
+Plotly 차트의 포멧을 변경하는 방법을 정리합니다.
+``` {python}
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Scatter(
+    x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    y = [0.28, 0.285, 0.37, 0.56, 0.69, 0.79, 0.78, 0.77, 0.74, 0.62, 0.45, 0.39]
+))
+
+fig.update_layout(yaxis_tickformat = '%')
+fig.show()
+```
+
+y축으로 표시하는 정보가 `%`단위인 경우 `yaxis_tickformat`으로 정보를 전달할 수 있습니다.
+
+## 자릿수 표현하기
+
+소숫점 표현 방식을 지정하여 표현하는 방법을 정리합니다. `yaxis_tickformat`에 소수점 이하 한자리만 표현하기 위해서 `.1%`로 표현을 변경했습니다.
+
+``` {python}
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Scatter(
+    x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    y = [0.28, 0.285, 0.37, 0.56, 0.69, 0.79, 0.78, 0.77, 0.74, 0.62, 0.45, 0.39]
+))
+
+fig.update_layout(
+  yaxis_tickformat = '.1%')
+fig.show()
+```
+
+## 두개의 Y축 표현하기
+
+두 개의 Y축을 이용해서 그래프를 표현하는 방법을 정리합니다.
+``` {python}
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Create figure with secondary y-axis
+fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+# Add traces
+fig.add_trace(
+    go.Scatter(x=[1, 2, 3], y=[40, 50, 60], name="yaxis data (left)"),
+    secondary_y=False,
+)
+
+fig.add_trace(
+    go.Scatter(x=[2, 3, 4], y=[4, 5, 6], name="yaxis2 data (right)"),
+    secondary_y=True,
+)
+
+# Add figure title
+fig.update_layout(
+    title_text="Double Y Axis Example"
+)
+
+# Set x-axis title
+fig.update_xaxes(title_text="xaxis title")
+
+# Set y-axes titles
+fig.update_yaxes(title_text="<b>primary</b> yaxis title", secondary_y=False)
+fig.update_yaxes(title_text="<b>secondary</b> yaxis title", secondary_y=True)
+
+fig.show()
+```
+
+두 분째 Y축을 사용하기 위해서 `make_subplots`의 spec에 `secondary_y`값을 `True`로 설정합니다.
+
+그래프를 `add_trace`로 추가 시 `secondary_y`정보를 이용해서 오른쪽 Y축을 사용할 데이터를 결정합니다.
+
+각 그래프의 name을 `yaxis data (left)`와 `yaxis2 data (right)`와 같이 작성해서 어떤 Y축을 참고해야 하는 지 전달합니다.
+
