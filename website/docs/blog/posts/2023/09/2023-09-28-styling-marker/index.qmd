@@ -11,6 +11,7 @@ image: "https://picsum.photos/id/280/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
 # draft: true
+freeze: auto
 ---
 
 # Plotly 마커 모양 변경하기

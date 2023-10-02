@@ -11,6 +11,7 @@ image: "https://picsum.photos/id/221/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
 # draft: true
+freeze: auto
 ---
 
 # Plotly 3D Plot만들기
