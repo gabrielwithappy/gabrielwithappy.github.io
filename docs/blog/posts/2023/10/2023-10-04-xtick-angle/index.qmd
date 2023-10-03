@@ -1,0 +1,43 @@
+---
+title: Plotly Zoom Disable하기
+subtitle: Plotly Zoom Disable하기
+description:
+   Plotly Zoom을 disable하는 방법에 대해서 정리합니다.
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "10/04/2023"
+image: "https://picsum.photos/id/40/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Zoom Disable하기
+
+Plotly 차트는 마우스를 이용하여 원하는 위치를 쉽게 확대할 수 있습니다. 하지만 모바일 환경에서 차트를 표시하거나 영역의 확대를 하나의 축의 방향으로 확대하 필요한 경우 Zoom Disable을 사용할 수 있습니다.
+
+``` {python}
+import plotly.express as px
+df = px.data.iris()
+
+fig = px.scatter(df, x="sepal_width", y="sepal_length", facet_col="species")
+fig.update_xaxes(fixedrange=True)
+
+fig.show()
+```
+
+x축에 대한 Zoom을 disable 하기 위해서 `update_xaxes()`함수에 `fixedrange`값을 `true`로 설정했습니다.
+
+모든 축에 대해서 `fixedrange`를 사용하면 어떤 방향으로도 Zoom이 수행되지 않습니다.
+
+``` {python}
+import plotly.express as px
+df = px.data.iris()
+
+fig = px.scatter(df, x="sepal_width", y="sepal_length", facet_col="species")
+fig.update_xaxes(fixedrange=True)
+fig.update_yaxes(fixedrange=True)
+
+fig.show()
+```
