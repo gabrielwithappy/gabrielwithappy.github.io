@@ -1,7 +1,6 @@
 ---
 title: Welcome
 author: Gabriel Yang
-# freeze: true
 ---
 
 데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다.

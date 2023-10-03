@@ -10,7 +10,6 @@ date: "07/23/2023"
 image: "korean.jpg"
 # image-alt: "deep learning glossary"
 page-layout: article
-freeze: auto
 ---
 
 It is the book for [Korean Study](../../../bookshelf/korean/index.qmd)

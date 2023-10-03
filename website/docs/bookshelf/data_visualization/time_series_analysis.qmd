@@ -1,7 +1,6 @@
 ---
 title: 시계열 데이터 분석
 author: Gabriel Yang
-freeze: true
 ---
 
 KOSPI주가 정보를 저장한 시계열 데이터를 이용해서 정보를 분석하는 연습을 합니다.

@@ -10,7 +10,6 @@ date: "09/16/2023"
 image: "https://picsum.photos/id/16/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
-freeze: true
 ---
 
 # 날짜 범위 index 만들기

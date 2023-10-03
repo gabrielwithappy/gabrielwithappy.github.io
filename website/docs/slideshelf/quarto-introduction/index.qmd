@@ -6,7 +6,6 @@ format:
     revealjs:
         preview-links: true
         chalkboard: true
-freeze: auto
 execute:
     eval: false
     echo: true

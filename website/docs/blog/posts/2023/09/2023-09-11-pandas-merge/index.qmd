@@ -10,7 +10,6 @@ date: "09/11/2023"
 image: "https://picsum.photos/id/111/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
-freeze: true
 ---
 
 # 테이터프레임 머지하기

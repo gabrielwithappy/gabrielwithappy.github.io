@@ -1,7 +1,6 @@
 ---
 title: References
 author: Gabriel Yang
-# freeze: true
 ---
 
 ::: {#refs}

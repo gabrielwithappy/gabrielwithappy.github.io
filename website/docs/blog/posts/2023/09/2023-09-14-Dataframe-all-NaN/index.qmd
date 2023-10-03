@@ -10,7 +10,6 @@ date: "09/14/2023"
 image: "https://picsum.photos/id/141/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
-freeze: true
 ---
 
 # 모든 컬럼이 NaN일 때만 삭제하기
