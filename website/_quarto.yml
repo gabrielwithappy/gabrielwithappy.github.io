@@ -29,6 +29,8 @@ website:
       - docs/slide_blog/index.qmd
       - about.qmd
 
+execute:
+  freeze: auto
 
 format:
   html:
