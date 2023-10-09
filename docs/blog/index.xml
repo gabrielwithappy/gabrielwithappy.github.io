@@ -10,7 +10,43 @@
 <atom:link href="https://gabrielwithappy.github.io/docs/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A online bookstore</description>
 <generator>quarto-1.2.335</generator>
-<lastBuildDate>Sat, 07 Oct 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 08 Oct 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>Github Pull Request 템플릿 적용하기</title>
+  <dc:creator>gabriel yang</dc:creator>
+  <link>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-09-github-template/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="github-pull-request-템플릿-적용하기" class="level1">
+<h1>Github Pull Request 템플릿 적용하기</h1>
+<p>Github의 Pull Request 진행 시 적용되는 문서 탬플릿을 작성하고 적용하는 방법을 정리합니다.</p>
+<section id="pull-request-탬플릿-파일-생성" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request-탬플릿-파일-생성">Pull Request 탬플릿 파일 생성</h2>
+<p>Pull Request 탬플릿을 작성하기 위해서 탬플릿 문서를 작성합니다.</p>
+<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-09-github-template/images/paste-1.png" class="img-fluid"></p>
+<p>문서 생성을 위해서 위와 같이 Github 레포지토리 상단의 <code>Add file</code> &gt; <code>Create new file</code> 버튼을 선택합니다.</p>
+<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-09-github-template/images/paste-3.png" class="img-fluid"></p>
+<p>버튼을 선택하면 파일의 내용과 파일명을 저장할 수 있는 Text Editor 페이지가 위와 같이 생성됩니다. 탬플릿 문서를 특정 위치에 저장됩니다. 이를 위해서 레포지토리 루트폴더에 <code>.github</code> 폴더를 만들고 이 폴더에 <code>pull_request_template.md</code> 파일을 생성합니다.</p>
+<p>이 문서 내부에 작성하는 내용은 <code>Pull Request(PR)</code> 을 작성하는 commiter가 PR을 작성하면 이 템플릿의 내용을 Text Editor에 자동으로 추가됩니다. 필요한 내용을 모두 작성했다면 <code>Commit chages</code> 버튼을 눌러 수정한 내용을 저장합니다.</p>
+</section>
+<section id="pull-request-템플릿-결과-확인" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request-템플릿-결과-확인">Pull Request 템플릿 결과 확인</h2>
+<p>PR을 생성할 때 새롭게 작성한 템플릿 내용이 작성되었는 지 확인합니다. 이를 위해서 기본 레포지토리를 <code>Fork</code>해서 수정 내용을 작성하고 <code>Pull Requset</code> 를 진행합니다.</p>
+<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-09-github-template/images/paste-6.png" class="img-fluid"></p>
+<p>위와같이 PR을 생성하면 템플릿으로 작성한 내용이 기본적으로 제공됩니다. 레포지토리에 머지를 요청할 때 전달할 내용과 확인이 필요한 내용을 탬플릿으로 작성하면 PR리뷰에 필요한 내용을 잘 확인할 수 있습니다.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>DevOps</category>
+  <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-09-github-template/index.html</guid>
+  <pubDate>Sun, 08 Oct 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://picsum.photos/id/90/200/150" medium="image"/>
+</item>
 <item>
   <title>Plotly line, shape 그리기</title>
   <dc:creator>gabriel yang</dc:creator>
@@ -4473,118 +4509,6 @@ if (outputEl) {{
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html</guid>
   <pubDate>Sat, 16 Sep 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/171/200/150" medium="image"/>
-</item>
-<item>
-  <title>날짜 범위 index 만들기</title>
-  <dc:creator>gabriel yang</dc:creator>
-  <link>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-16-date-index/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<section id="날짜-범위-index-만들기" class="level1">
-<h1>날짜 범위 index 만들기</h1>
-<p>날짜 정보를 index로 넣는 경우 날짜 정보를 가진 series를 만들어야 합니다 이 때 <code>data_range()</code>함수를 사용할 수 있습니다. 연습을 위해서 과목의 성적을 갖는 데이터프레임을 만듭니다.</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> pandas <span class="im" style="color: #00769E;">as</span> pd</span>
-<span id="cb1-2"></span>
-<span id="cb1-3">df <span class="op" style="color: #5E5E5E;">=</span> pd.DataFrame({<span class="st" style="color: #20794D;">'Math'</span> : [<span class="dv" style="color: #AD0000;">100</span>,<span class="dv" style="color: #AD0000;">80</span>,<span class="dv" style="color: #AD0000;">80</span>,<span class="dv" style="color: #AD0000;">70</span>,<span class="dv" style="color: #AD0000;">90</span>],</span>
-<span id="cb1-4">                   <span class="st" style="color: #20794D;">'Science'</span> : [<span class="dv" style="color: #AD0000;">80</span>,<span class="dv" style="color: #AD0000;">100</span>,<span class="dv" style="color: #AD0000;">20</span>,<span class="dv" style="color: #AD0000;">100</span>,<span class="dv" style="color: #AD0000;">70</span>],</span>
-<span id="cb1-5">                   <span class="st" style="color: #20794D;">'English'</span> : [<span class="dv" style="color: #AD0000;">70</span>,<span class="dv" style="color: #AD0000;">80</span>,<span class="dv" style="color: #AD0000;">90</span>,<span class="dv" style="color: #AD0000;">59</span>,<span class="dv" style="color: #AD0000;">100</span>]})</span>
-<span id="cb1-6">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-
-<div>
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Math</th>
-      <th>Science</th>
-      <th>English</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>100</td>
-      <td>80</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>80</td>
-      <td>100</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>80</td>
-      <td>20</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>70</td>
-      <td>100</td>
-      <td>59</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>90</td>
-      <td>70</td>
-      <td>100</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-<p>각 과목의 점수는 시험이 진행된 시간으로 작성되는 것이 데이터 관리에 편리할 것 같습니다. <code>data_range()</code>함수로 날짜 인덱스를 만듭니다.</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">pd.date_range(<span class="st" style="color: #20794D;">'2021-01-01'</span>, <span class="st" style="color: #20794D;">'2021-01-10'</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>DatetimeIndex(['2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04',
-               '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08',
-               '2021-01-09', '2021-01-10'],
-              dtype='datetime64[ns]', freq='D')</code></pre>
-</div>
-</div>
-<p>DatetimeIndex를 생성했습니다. 날짜 인덱스가 데이터보다 많이 생성됐습니다. 정해진 갯수의 날짜를 생성합니다.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">pd.date_range(start<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'1/1/2018'</span>, periods<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">5</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>DatetimeIndex(['2018-01-01', '2018-01-02', '2018-01-03', '2018-01-04',
-               '2018-01-05'],
-              dtype='datetime64[ns]', freq='D')</code></pre>
-</div>
-</div>
-<p>이제 5개의 날짜 인덱스가 생성되었습니다. 각 과목의 점수는 2달마다 진행된다고 합니다. 인덱스가 시작날짜부터 2달 간격으로 늘어가면 좋겠습니다.</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">pd.date_range(start<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'1/1/2021'</span>, periods<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">5</span>, freq<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'2M'</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>DatetimeIndex(['2021-01-31', '2021-03-31', '2021-05-31', '2021-07-31',
-               '2021-09-30'],
-              dtype='datetime64[ns]', freq='2M')</code></pre>
-</div>
-</div>
-<p>함수에서 제공하는 <code>freq</code>를 이용해서 2달 간격 날짜 인덱스를 생성했습니다. frequency로 지원하는 시간정보는 [<a href="https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases">여기</a>]서 확인할 수 있습니다.</p>
-<section id="참조" class="level2">
-<h2 class="anchored" data-anchor-id="참조">참조</h2>
-<ol type="1">
-<li>https://pandas.pydata.org/docs/reference/api/pandas.date_range.html</li>
-</ol>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>Pandas</category>
-  <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-16-date-index/index.html</guid>
-  <pubDate>Fri, 15 Sep 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://picsum.photos/id/16/200/150" medium="image"/>
 </item>
 </channel>
 </rss>
