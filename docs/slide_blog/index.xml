@@ -10,7 +10,25 @@
 <atom:link href="https://gabrielwithappy.github.io/docs/slide_blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A online bookstore</description>
 <generator>quarto-1.2.335</generator>
-<lastBuildDate>Sat, 26 Aug 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 08 Oct 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>딥러닝문서 번역하기</title>
+  <dc:creator>양성모</dc:creator>
+  <link>https://gabrielwithappy.github.io/docs/slide_blog/posts/2023-10-09-deeplearning-translation/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<iframe class="slide-deck" src="../../../slideshelf/deeplearning-translation/index.html" title="Day 1A Slides">
+</iframe>
+
+
+
+ ]]></description>
+  <category>Translation</category>
+  <guid>https://gabrielwithappy.github.io/docs/slide_blog/posts/2023-10-09-deeplearning-translation/index.html</guid>
+  <pubDate>Sun, 08 Oct 2023 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Quarto 맛보기</title>
   <dc:creator>양성모</dc:creator>

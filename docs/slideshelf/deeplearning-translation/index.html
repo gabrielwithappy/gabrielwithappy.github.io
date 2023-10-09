@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="양성모">
-  <title>BookShelf - Quarto 맛보기</title>
+  <title>BookShelf - 딥러닝 문서 번역하기</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,70 +28,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-N916ZQ0D0N"></script>
@@ -399,7 +335,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Quarto 맛보기</h1>
+  <h1 class="title">딥러닝 문서 번역하기</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -409,122 +345,6 @@
 </div>
 </div>
 
-</section>
-<section id="quart가-뭐죠" class="slide level2 smaller">
-<h2>Quart가 뭐죠?</h2>
-<ul>
-<li>오픈소스 과학, 기술 출판 시스템</li>
-<li>주피터 노트북 또는 마크다운을 이용한 문서 작성</li>
-<li>웹페이지, 블로그, 프리젠테이션 작성</li>
-<li>예제
-<ul>
-<li><a href="https://www.publickrbook.com">(website) publickrbook.com</a></li>
-<li><a href="https://pseudo-lab.github.io/deep-learning-glossary">(website) deep learning glossary</a></li>
-<li><a href="http://localhost:5360/docs/slideshelf/quarto-introduction/#/title-slide">(slides) Quarto 맛보기</a></li>
-<li><a href="https://quarto.org/docs/gallery/">Quarto Gallary</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="quarto-설치하기" class="slide level2 smaller">
-<h2>Quarto 설치하기</h2>
-<ul>
-<li><a href="https://quarto.org/docs/get-started/">Quarto 공식홈페이지</a>에서 프로그램 설치</li>
-<li>다양한 에디터를 지원하고 있음
-<ul>
-<li>VSCODE</li>
-<li>Jupyter Notebook</li>
-<li>R</li>
-<li>Newvim</li>
-</ul></li>
-</ul>
-</section>
-<section id="프로젝트-생성하기" class="slide level2 smaller">
-<h2>프로젝트 생성하기</h2>
-<ul>
-<li>프로젝트 생성</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {code} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a># quarto create project</span>
-<span id="cb1-2"><a href="#cb1-2"></a> ? Type</span>
-<span id="cb1-3"><a href="#cb1-3"></a> ❯ default</span>
-<span id="cb1-4"><a href="#cb1-4"></a>   website</span>
-<span id="cb1-5"><a href="#cb1-5"></a>   blog</span>
-<span id="cb1-6"><a href="#cb1-6"></a>   book</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Quarto 프로젝트 타입설정
-<ul>
-<li><a href="https://quarto.org/">website</a>: 다양한 문서그룹을 통합적을 관리 가능</li>
-<li><a href="https://quarto.org/docs/blog/">blog</a>: 블로그는 게시물 모음과 게시물을 나열하는 탐색 페이지로 구성</li>
-<li><a href="https://kevinheavey.github.io/modern-polars/">book</a>: 온라인북에 특화된 유형의 Quarto 웹사이트</li>
-</ul></li>
-</ul>
-</section>
-<section id="metadata" class="slide level2 smaller">
-<h2>Metadata</h2>
-<ul>
-<li><code>_quarto.yml</code>: 모든 Quarto프로젝트에 있으며 프로젝트 수준으로 정의가 필요한 옵션 설정</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {code} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>project:</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  type: website</span>
-<span id="cb2-3"><a href="#cb2-3"></a>website:</span>
-<span id="cb2-4"><a href="#cb2-4"></a>  title: "Public KR Book"</span>
-<span id="cb2-5"><a href="#cb2-5"></a>  page-footer:</span>
-<span id="cb2-6"><a href="#cb2-6"></a>    center: "welcome"</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  navbar:</span>
-<span id="cb2-8"><a href="#cb2-8"></a>    left:</span>
-<span id="cb2-9"><a href="#cb2-9"></a>      - href: index.qmd</span>
-<span id="cb2-10"><a href="#cb2-10"></a>        text: Home</span>
-<span id="cb2-11"><a href="#cb2-11"></a>  sidebar:</span>
-<span id="cb2-12"><a href="#cb2-12"></a>      collapse-level: 1</span>
-<span id="cb2-13"><a href="#cb2-13"></a>      contents:</span>
-<span id="cb2-14"><a href="#cb2-14"></a>        - docs/bookshelf/hf-examples/index.qmd</span>
-<span id="cb2-15"><a href="#cb2-15"></a>        - section: "Task별 예제"</span>
-<span id="cb2-16"><a href="#cb2-16"></a>          contents:</span>
-<span id="cb2-17"><a href="#cb2-17"></a>            - section: "Video"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Keyword 의미
-<ul>
-<li><code>nabvar</code>: 웹사이트 상단 네비게이션 바</li>
-<li><code>side-bar</code>: 왼쪽 사이드 바</li>
-<li><code>page footer</code>: 웹사이트 footer 정보</li>
-</ul></li>
-</ul>
-</section>
-<section id="웹사이트-렌더링-미리보기" class="slide level2 smaller">
-<h2>웹사이트 렌더링 / 미리보기</h2>
-<ul>
-<li>렌터링 대상 파일은 Quarto에서 인식가능한 모든 파일
-<ul>
-<li>.qmd, .ipynb, .md, .Rmd</li>
-</ul></li>
-<li>렌터링시 문서를 사용해서 html 코드를 생성
-<ul>
-<li>프로젝트 타입에 따라서 특정 폴더에 저장됨</li>
-<li>website 타입의 경우<code>_site</code> 디렉토리에 저장됨</li>
-</ul></li>
-<li>렌더링 : Quarto가 인식한 문서를 html코드 형식으로 변경하는 과정</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a># quarto render</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>// 다양한 방식으로 렌더링 가능</span>
-<span id="cb3-4"><a href="#cb3-4"></a># quarto render document.qmd --to pdf</span>
-<span id="cb3-5"><a href="#cb3-5"></a># quarto render document.qmd --to docx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>웹사이트 미리보기</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>quarto preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="웹사이트-배포하기" class="slide level2 smaller">
-<h2>웹사이트 배포하기</h2>
-<ul>
-<li>Quarto는 웹페이지로 배포하기 위해서 <code>Quarto Pub</code>, <code>Github Pages</code>등을 지원합니다.</li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a># quarto publish</span>
-<span id="cb5-2"><a href="#cb5-2"></a>? Provider:</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  Quarto Pub</span>
-<span id="cb5-4"><a href="#cb5-4"></a>❯ GitHub Pages</span>
-<span id="cb5-5"><a href="#cb5-5"></a>  RStudio Connect</span>
-<span id="cb5-6"><a href="#cb5-6"></a>  Netlify</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br> - 배포 사이트 정보 - Quarto Pub : Quarto에서 quarto를 이용한 웹페이지를 배포하기 위해 제공 - GitHub Pages : 깃헙에서 정적 웹페이지를 지원하기 위해서 제공</p>
 </section>
 <section id="번역의-어려움-1" class="slide level2 smaller">
 <h2>번역의 어려움 1</h2>
