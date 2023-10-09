@@ -19,9 +19,10 @@ execute:
   - [(website) publickrbook.com](https://www.publickrbook.com)
   - [(website) deep learning glossary](https://pseudo-lab.github.io/deep-learning-glossary)
   - [(slides) Quarto 맛보기](http://localhost:5360/docs/slideshelf/quarto-introduction/#/title-slide)
+  - [Quarto Gallary](https://quarto.org/docs/gallery/)
 
 
-## 설치하기 {.smaller}
+## Quarto 설치하기 {.smaller}
 - [Quarto 공식홈페이지](https://quarto.org/docs/get-started/)에서 프로그램 설치
 - 다양한 에디터를 지원하고 있음
   - VSCODE
@@ -32,7 +33,7 @@ execute:
 ## 프로젝트 생성하기 {.smaller}
 - 프로젝트 생성
 ```{code}
-quarto create project
+# quarto create project
  ? Type
  ❯ default
    website
@@ -40,7 +41,7 @@ quarto create project
    book
 ```
 
-- 프로젝트 타입설정
+- Quarto 프로젝트 타입설정
   - [website](https://quarto.org/): 다양한 문서그룹을 통합적을 관리 가능
   - [blog](https://quarto.org/docs/blog/): 블로그는 게시물 모음과 게시물을 나열하는 탐색 페이지로 구성
   - [book](https://kevinheavey.github.io/modern-polars/): 온라인북에 특화된 유형의 Quarto 웹사이트
@@ -52,7 +53,6 @@ quarto create project
 ```{code}
 project:
   type: website
-
 website:
   title: "Public KR Book"
   page-footer:
@@ -61,7 +61,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-
   sidebar:
       collapse-level: 1
       contents:
@@ -71,40 +70,50 @@ website:
             - section: "Video"
 ```
 
+- Keyword 의미
+  - `nabvar`: 웹사이트 상단 네비게이션 바
+  - `side-bar`: 왼쪽 사이드 바
+  - `page footer`: 웹사이트 footer 정보
 
-::: {.panel-tabset}
-
-### Navbar
-`nabvar`: 웹사이트 상단 네비게이션 바
-
-### SideBar
-`side-bar`: 왼쪽 사이드 바
-
-### Page Footer
-`page footer`: 웹사이트 footer 정보
-:::
 
 
 ## 웹사이트 렌더링 / 미리보기 {.smaller}
 - 렌터링 대상 파일은 Quarto에서 인식가능한 모든 파일
   - .qmd, .ipynb, .md, .Rmd
-- 웹사이트를 만들기 위한 html 코드를 생성
-- 생성된 html 파일들은 `_site` 디렉토리에 저장됨
-- 렌더링 코드
-```{shell}
-quarto render
-```
+- 렌터링시 문서를 사용해서 html 코드를 생성
+  - 프로젝트 타입에 따라서 특정 폴더에 저장됨
+  - website 타입의 경우`_site` 디렉토리에 저장됨
 
-- 다양한 방식으로 렌더링 가능
+- 렌더링 : Quarto가 인식한 문서를 html코드 형식으로 변경하는 과정
 ```{shell}
-quarto render document.qmd --to pdf
-quarto render document.qmd --to docx
+# quarto render
+
+// 다양한 방식으로 렌더링 가능
+# quarto render document.qmd --to pdf
+# quarto render document.qmd --to docx
+
 ```
 
 - 웹사이트 미리보기
 ```{shell}
 quarto preview
 ```
+
+## 웹사이트 배포하기 {.smaller}
+- Quarto는 웹페이지로 배포하기 위해서 `Quarto Pub`, `Github Pages`등을 지원합니다.
+```{shell}
+# quarto publish
+? Provider:
+  Quarto Pub
+❯ GitHub Pages
+  RStudio Connect
+  Netlify
+```
+
+</br>
+- 배포 사이트 정보
+  - Quarto Pub : Quarto에서 quarto를 이용한 웹페이지를 배포하기 위해 제공
+  - GitHub Pages : 깃헙에서 정적 웹페이지를 지원하기 위해서 제공
 
 ## 번역의 어려움 1{.smaller}
 - 일관성 있게 용어를 사용하기가 어려움
@@ -119,14 +128,14 @@ quarto preview
 - 번역 리뷰는 어떻게 진행하지?
   - 얼마나 자세하게 확인해야하나?
   - 하다보면 계속 고칠 것이 나와서 번역이 완료가 안됨! ㅠ_ㅠ
-  - <p class="fragment fade-up">번역완료에 대한 기준 (시간, 리뷰어 수를 정하자!!</p>
+  - <p class="fragment fade-up"><b>번역완료에 대한 기준 (시간, 리뷰어 수를 정하자!!)</b></p>
 <br>
 - 번역을 하다보니 문서 자체에 대한 이해가 부족한 것 같다.
   - 번역은 다 했는데 막상 다시보니 문서내용을 이해를 못했다.
   - 번역 작업의 목적?
     - 문서를 이해하고 배우기 위한 것이 목적인가?
     - 아니면 번역 skill을 높이는 것이 목적인가?
-    - <p class="fragment fade-up">머지가 되면 자기 문서를 발표해보자.</p>
+    - <p class="fragment fade-up"><b>머지가 되면 자기 문서를 발표해보자.</b></p>
 
 ## 번역의 어려움 3{.smaller}
 - 영어 용어를 한국어로 변경하는 방식
