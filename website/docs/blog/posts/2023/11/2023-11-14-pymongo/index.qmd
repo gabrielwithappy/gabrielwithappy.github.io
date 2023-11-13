@@ -1,0 +1,214 @@
+---
+title: MongoDB 명령어 정리하기
+subtitle: Dash 시작하기
+description:
+   mongodb 명령어 정리하기
+categories:
+  - Database
+author: gabriel yang
+date: "10/15/2023"
+image: "https://picsum.photos/id/130/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# MongoDB 정리하기
+
+MongoDB(몽고디비)는 NoSQL 데이터베이스 시스템의 하나로, 문서 지향(Document-Oriented) 데이터베이스입니다. 이것은 데이터를 BSON(Binary JSON) 형식의 문서로 저장하며, 이러한 문서는 키-값 쌍(key-value pairs)으로 이루어져 있습니다. MongoDB는 관계형 데이터베이스와는 달리 스키마가 정의되지 않아 유연성이 높고, 데이터 모델의 변화에 적응하기 쉽습니다.
+
+SQL의 database, table, row를 mongoDB의 구조와 비교해서 테이블로 표시합니다.
+
+| MongoDB    | SQL      |
+|------------|----------|
+| Database   | Database |
+| Collection | Table    |
+| Document   | Row      |
+
+-   Collection : MongoDB에서는 문서의 그룹을 컬랙션이라고 부르며 논리적으로 그룹화하는 방법입니다.
+
+-   Document : MongoDB는 데이터를 문서로 저장합니다. 문서에는 필드 및 값의 쌍으로 구성되며 중첩되는 구조를 갖을 수 있습니다.
+
+mongoDB를 설치한 후 `mongosh` 명령을 실행하면 mongoDB 쉘에 접속할 수 있습니다. 버전에 따라서 `mongo` 명령을 사용합니다.
+
+## MongoDB의 명령어 정리
+
+### Database 확인하기
+
+``` {shell}
+test> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB
+```
+
+### Database 만들기 / 확인하기
+DB를 생성해도 data가 없는 경우 데이터베이스가 표시되지 않습니다.
+
+``` {shell}
+test> use testdb
+switched to db testdb
+
+testdb> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB
+```
+
+### Database 상태 확인하기
+
+정보를 확인할 db를 `use`명령으로 결정하고 `stats`명령을 db의 상세 정보를 확인할 수 있습니다.
+
+``` {shell}
+testdb> use admin
+switched to db admin
+admin> db.stats()
+{
+  db: 'admin',
+  collections: Long("1"),
+  views: Long("0"),
+  objects: Long("1"),
+  avgObjSize: 59,
+  dataSize: 59,
+  storageSize: 20480,
+  indexes: Long("1"),
+  indexSize: 20480,
+  totalSize: 40960,
+  scaleFactor: Long("1"),
+  fsUsedSize: 57764601856,
+  fsTotalSize: 1081101176832,
+  ok: 1
+}
+```
+
+### Database에 collection 만들기
+
+`testdb`에 collection을 생성하는 명령을 정리합니다.
+
+``` {shell}
+admin> use testdb
+switched to db testdb
+
+testdb> db.createCollection("mydoc")
+{ ok: 1 }
+
+testdb> show collections
+mydoc
+``` {shell}
+
+### Database에 document 만들기
+collection 이름을 사용하여 단일 문서 삽입 시 `insertOne`명령을 사용합니다.
+``` {shell}
+testdb> show collections
+mydoc
+
+testdb> db.mydoc.insertOne({name: "john", age:30})
+{
+  acknowledged: true,
+  insertedId: ObjectId("655228d0dc1f13e70f4fcc12")
+}
+```
+
+여러문서를 한 번에 삽입하려면 `insertMany`메서드를 사용합니다. 데이터는 리스트로 전달합니다.
+
+``` {shell}
+testdb> db.mydoc.insertMany([{name: "mike", age:10}, {name: "tony", age:51}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("65522a45dc1f13e70f4fcc13"),
+    '1': ObjectId("65522a45dc1f13e70f4fcc14")
+  }
+}
+```
+
+### Database에 문서 조회
+
+MongoDB에서 데이터를 확인하고 검색하기 위해서는 find 명령어나 그와 유사한 메서드를 사용합니다. MongoDB의 셸에서 데이터를 확인하는 기본적인 방법은 다음과 같습니다.
+
+``` {shell}
+# 모든 문서 조회
+testdb> db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 }
+]
+
+# 조건에 따른 문서조회
+testdb> db.mydoc.find({ name: 'john' })
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 }
+]
+
+# 정렬을 사용한 결과정렬
+# age를 오름차순으로 정렬합니다.
+testdb> db.mydoc.find().sort({ age: 1})
+[
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 },
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 }
+]
+
+# 제한된 수의 데이터만 출력합니다.
+testdb> db.mydoc.find().limit(2)
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 }
+]
+```
+
+### Database에 문서 삭제
+
+문서를 삭제하기 위해서 `deleteOne`, `deleteMany`명령을 사용할 수 있습니다.
+
+``` {shell}
+testdb> db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 }
+]
+
+testdb> db.mydoc.deleteOne({name: "mike"})
+{ acknowledged: true, deletedCount: 1 }
+
+testdb> db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 }
+]
+```
+
+`deleteMany`명령은 조건에 맞는 모든 데이터를 삭제합니다. 테스트를 위해서 동일한 나이를 갖는 데이터를 만듭니다.
+
+``` {shell}
+testdb> db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 },
+  { _id: ObjectId("65522dfadc1f13e70f4fcc16"), name: 'a', age: 15 },
+  { _id: ObjectId("65522dfedc1f13e70f4fcc17"), name: 'b', age: 15 },
+  { _id: ObjectId("65522e01dc1f13e70f4fcc18"), name: 'c', age: 15 },
+  { _id: ObjectId("65522e04dc1f13e70f4fcc19"), name: 'd', age: 15 }
+]
+
+testdb> db.mydoc.deleteMany({age: 15})
+{ acknowledged: true, deletedCount: 4 }
+
+testdb> db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 }
+]
+```
+
+`deleteMany`명령을 사용해서 age가 `15`인 document 4개가 모두 삭제되었습니다.
+
+
+# References
+1. https://www.mongodb.com/docs/manual/reference/operator/query/
