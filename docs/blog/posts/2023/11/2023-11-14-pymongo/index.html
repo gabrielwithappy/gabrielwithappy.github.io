@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-09-12">
-<meta name="description" content="Markdown문법을 정리합니다.">
+<meta name="dcterms.date" content="2023-10-15">
+<meta name="description" content="mongodb 명령어 정리하기">
 
-<title>BookShelf - Markdown문법 정리하기</title>
+<title>BookShelf - MongoDB 명령어 정리하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -67,8 +33,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,13 +72,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </script>
-<script src="../../../../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../../../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../../../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../../../../../styles.css">
 </head>
@@ -167,7 +127,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html">09</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html">Markdown문법 정리하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html">MongoDB 명령어 정리하기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -190,13 +150,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">09</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html" class="sidebar-item-text sidebar-link">
@@ -259,7 +219,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Markdown문법 정리하기</span></a>
   </div>
 </li>
@@ -380,13 +340,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">11</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
@@ -395,7 +355,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">MongoDB 명령어 정리하기</span></a>
   </div>
 </li>
@@ -413,36 +373,37 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link active" data-scroll-target="#markdown">Markdown</a>
+  <li><a href="#mongodb-정리하기" id="toc-mongodb-정리하기" class="nav-link active" data-scroll-target="#mongodb-정리하기">MongoDB 정리하기</a>
   <ul class="collapse">
-  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting">Text Formatting</a></li>
-  <li><a href="#link-및-이미지-연결" id="toc-link-및-이미지-연결" class="nav-link" data-scroll-target="#link-및-이미지-연결">Link 및 이미지 연결</a></li>
-  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a></li>
-  <li><a href="#소스-코드" id="toc-소스-코드" class="nav-link" data-scroll-target="#소스-코드">소스 코드</a></li>
-  <li><a href="#수식" id="toc-수식" class="nav-link" data-scroll-target="#수식">수식</a></li>
-  <li><a href="#다이어그램" id="toc-다이어그램" class="nav-link" data-scroll-target="#다이어그램">다이어그램</a></li>
-  <li><a href="#동영상-연결" id="toc-동영상-연결" class="nav-link" data-scroll-target="#동영상-연결">동영상 연결</a></li>
-  <li><a href="#html-코드-divs-spans" id="toc-html-코드-divs-spans" class="nav-link" data-scroll-target="#html-코드-divs-spans">HTML 코드 (Divs, Spans)</a></li>
-  <li><a href="#참고" id="toc-참고" class="nav-link" data-scroll-target="#참고">참고</a></li>
+  <li><a href="#mongodb의-명령어-정리" id="toc-mongodb의-명령어-정리" class="nav-link" data-scroll-target="#mongodb의-명령어-정리">MongoDB의 명령어 정리</a>
+  <ul class="collapse">
+  <li><a href="#database-확인하기" id="toc-database-확인하기" class="nav-link" data-scroll-target="#database-확인하기">Database 확인하기</a></li>
+  <li><a href="#database-만들기-확인하기" id="toc-database-만들기-확인하기" class="nav-link" data-scroll-target="#database-만들기-확인하기">Database 만들기 / 확인하기</a></li>
+  <li><a href="#database-상태-확인하기" id="toc-database-상태-확인하기" class="nav-link" data-scroll-target="#database-상태-확인하기">Database 상태 확인하기</a></li>
+  <li><a href="#database에-collection-만들기" id="toc-database에-collection-만들기" class="nav-link" data-scroll-target="#database에-collection-만들기">Database에 collection 만들기</a></li>
+  <li><a href="#database에-문서-조회" id="toc-database에-문서-조회" class="nav-link" data-scroll-target="#database에-문서-조회">Database에 문서 조회</a></li>
+  <li><a href="#database에-문서-삭제" id="toc-database에-문서-삭제" class="nav-link" data-scroll-target="#database에-문서-삭제">Database에 문서 삭제</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/09/2023-09-12-markdown/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-14-pymongo/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Markdown문법 정리하기</h1>
-<p class="subtitle lead">Markdown문법 정리하기</p>
+<h1 class="title">MongoDB 명령어 정리하기</h1>
+<p class="subtitle lead">Dash 시작하기</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Quarto</div>
+    <div class="quarto-category">Database</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Markdown문법을 정리합니다.
+    mongodb 명령어 정리하기
   </div>
 </div>
 
@@ -459,7 +420,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 12, 2023</p>
+      <p class="date">October 15, 2023</p>
     </div>
   </div>
   
@@ -469,189 +430,199 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="markdown" class="level1">
-<h1>Markdown</h1>
-<p>마크다운은 텍스트를 이용해 문서를 작성하는 도구입니다. 일반 텍스트를 이용해서 Table, 링크 등 다양한 문서형태를 작성할 수 있습니다. Quart는 Pandoc을 기반으로 하고 있으며 Markdown으로 문서를 작성합니다. 자주 사용하는 Markdown 문법을 정리합니다.</p>
-<section id="text-formatting" class="level2">
-<h2 class="anchored" data-anchor-id="text-formatting">Text Formatting</h2>
-<p>텍스트의 형태를 변경하는 다양한 문법을 확인합니다.</p>
+<section id="mongodb-정리하기" class="level1">
+<h1>MongoDB 정리하기</h1>
+<p>MongoDB(몽고디비)는 NoSQL 데이터베이스 시스템의 하나로, 문서 지향(Document-Oriented) 데이터베이스입니다. 이것은 데이터를 BSON(Binary JSON) 형식의 문서로 저장하며, 이러한 문서는 키-값 쌍(key-value pairs)으로 이루어져 있습니다. MongoDB는 관계형 데이터베이스와는 달리 스키마가 정의되지 않아 유연성이 높고, 데이터 모델의 변화에 적응하기 쉽습니다.</p>
+<p>SQL의 database, table, row를 mongoDB의 구조와 비교해서 테이블로 표시합니다.</p>
 <table class="table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Markdown Syntax</th>
-<th>Output</th>
+<th>MongoDB</th>
+<th>SQL</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>*italics*, **bold**, ***bold italics***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><em>italics</em>, <strong>bold</strong>, <strong><em>bold italics</em></strong></td>
+<td>Database</td>
+<td>Database</td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>superscript^2^ / subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
+<td>Collection</td>
+<td>Table</td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>~~strikethrough~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><del>strikethrough</del></td>
+<td>Document</td>
+<td>Row</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><p>Collection : MongoDB에서는 문서의 그룹을 컬랙션이라고 부르며 논리적으로 그룹화하는 방법입니다.</p></li>
+<li><p>Document : MongoDB는 데이터를 문서로 저장합니다. 문서에는 필드 및 값의 쌍으로 구성되며 중첩되는 구조를 갖을 수 있습니다.</p></li>
+</ul>
+<p>mongoDB를 설치한 후 <code>mongosh</code> 명령을 실행하면 mongoDB 쉘에 접속할 수 있습니다. 버전에 따라서 <code>mongo</code> 명령을 사용합니다.</p>
+<section id="mongodb의-명령어-정리" class="level2">
+<h2 class="anchored" data-anchor-id="mongodb의-명령어-정리">MongoDB의 명령어 정리</h2>
+<section id="database-확인하기" class="level3">
+<h3 class="anchored" data-anchor-id="database-확인하기">Database 확인하기</h3>
+<pre class="{shell}"><code>test&gt; show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB</code></pre>
 </section>
-<section id="link-및-이미지-연결" class="level2">
-<h2 class="anchored" data-anchor-id="link-및-이미지-연결">Link 및 이미지 연결</h2>
-<p>링크에 보일 글자와 함께 링크정보를 표시합니다.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 링크 연결</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://quarto.org&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto/org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="https://quarto.org" class="uri">https://quarto.org</a> <a href="https://quarto/org">Quarto</a></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 이미지표시</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption](cover.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="cover.jpg" class="img-fluid"></p>
+<section id="database-만들기-확인하기" class="level3">
+<h3 class="anchored" data-anchor-id="database-만들기-확인하기">Database 만들기 / 확인하기</h3>
+<p>DB를 생성해도 data가 없는 경우 데이터베이스가 표시되지 않습니다.</p>
+<pre class="{shell}"><code>test&gt; use testdb
+switched to db testdb
+
+testdb&gt; show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB</code></pre>
 </section>
-<section id="table" class="level2">
-<h2 class="anchored" data-anchor-id="table">Table</h2>
-<p>Markdown으로 table을 구성하는 방법을 정리합니다.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>| Right | Left | Default | Center |</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>|------:|:-----|---------|:------:|</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>|   12  |  12  |    12   |    12  |</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>|  123  |  123 |   123   |   123  |</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Right</th>
-<th style="text-align: left;">Left</th>
-<th>Default</th>
-<th style="text-align: center;">Center</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">12</td>
-<td>12</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">123</td>
-<td style="text-align: left;">123</td>
-<td>123</td>
-<td style="text-align: center;">123</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">1</td>
-<td>1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
+<section id="database-상태-확인하기" class="level3">
+<h3 class="anchored" data-anchor-id="database-상태-확인하기">Database 상태 확인하기</h3>
+<p>정보를 확인할 db를 <code>use</code>명령으로 결정하고 <code>stats</code>명령을 db의 상세 정보를 확인할 수 있습니다.</p>
+<pre class="{shell}"><code>testdb&gt; use admin
+switched to db admin
+admin&gt; db.stats()
+{
+  db: 'admin',
+  collections: Long("1"),
+  views: Long("0"),
+  objects: Long("1"),
+  avgObjSize: 59,
+  dataSize: 59,
+  storageSize: 20480,
+  indexes: Long("1"),
+  indexSize: 20480,
+  totalSize: 40960,
+  scaleFactor: Long("1"),
+  fsUsedSize: 57764601856,
+  fsTotalSize: 1081101176832,
+  ok: 1
+}</code></pre>
 </section>
-<section id="소스-코드" class="level2">
-<h2 class="anchored" data-anchor-id="소스-코드">소스 코드</h2>
-<p>Quarto에서 소스코드를 추가하는 방법을 정리힙니다.</p>
-<p>코드의 처음과 마지막에 <code>```</code>를 이용해서 코드 영역을 표시합니다.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">code</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>코드에 맞는 언어를 표시하여 언어별 코드 하이라이트를 적용할 수 있습니다.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pandoc에서 지원하는 하이라이트 기능을 사용할 수 있습니다. <a href="https://github.com/jgm/skylighting/tree/master/skylighting-core/xml">140 언어 지원</a> 정보를 확인하세요. 만약 지원하는 언어가 없다면 <code>default</code>를 사용할 수 있습니다.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```default</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">code</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="database에-collection-만들기" class="level3">
+<h3 class="anchored" data-anchor-id="database에-collection-만들기">Database에 collection 만들기</h3>
+<p><code>testdb</code>에 collection을 생성하는 명령을 정리합니다.</p>
+<pre class="{shell}"><code>admin&gt; use testdb
+switched to db testdb
+
+testdb&gt; db.createCollection("mydoc")
+{ ok: 1 }
+
+testdb&gt; show collections
+mydoc
+``` {shell}
+
+### Database에 document 만들기
+collection 이름을 사용하여 단일 문서 삽입 시 `insertOne`명령을 사용합니다.
+``` {shell}
+testdb&gt; show collections
+mydoc
+
+testdb&gt; db.mydoc.insertOne({name: "john", age:30})
+{
+  acknowledged: true,
+  insertedId: ObjectId("655228d0dc1f13e70f4fcc12")
+}</code></pre>
+<p>여러문서를 한 번에 삽입하려면 <code>insertMany</code>메서드를 사용합니다. 데이터는 리스트로 전달합니다.</p>
+<pre class="{shell}"><code>testdb&gt; db.mydoc.insertMany([{name: "mike", age:10}, {name: "tony", age:51}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("65522a45dc1f13e70f4fcc13"),
+    '1': ObjectId("65522a45dc1f13e70f4fcc14")
+  }
+}</code></pre>
 </section>
-<section id="수식" class="level2">
-<h2 class="anchored" data-anchor-id="수식">수식</h2>
-<p><code>$</code> 구분기호를 이용하여 인라인 수식을 추가하고 <code>$$</code> 구분기호를 이용하여 수식만 표현할 수 있습니다.</p>
-<table class="table">
-<colgroup>
-<col style="width: 38%">
-<col style="width: 36%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown Syntax</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>인라인 수식: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td>인라인 수식: <span class="math inline">\(E=mc^{2}\)</span></td>
-</tr>
-<tr class="even">
-<td><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>수식 단독표현:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><p>수식 단독표현:</p>
-<p><span class="math display">\[E = mc^{2}\]</span></p></td>
-</tr>
-</tbody>
-</table>
+<section id="database에-문서-조회" class="level3">
+<h3 class="anchored" data-anchor-id="database에-문서-조회">Database에 문서 조회</h3>
+<p>MongoDB에서 데이터를 확인하고 검색하기 위해서는 find 명령어나 그와 유사한 메서드를 사용합니다. MongoDB의 셸에서 데이터를 확인하는 기본적인 방법은 다음과 같습니다.</p>
+<pre class="{shell}"><code># 모든 문서 조회
+testdb&gt; db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 }
+]
+
+# 조건에 따른 문서조회
+testdb&gt; db.mydoc.find({ name: 'john' })
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 }
+]
+
+# 정렬을 사용한 결과정렬
+# age를 오름차순으로 정렬합니다.
+testdb&gt; db.mydoc.find().sort({ age: 1})
+[
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 },
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 }
+]
+
+# 제한된 수의 데이터만 출력합니다.
+testdb&gt; db.mydoc.find().limit(2)
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 }
+]</code></pre>
 </section>
-<section id="다이어그램" class="level2">
-<h2 class="anchored" data-anchor-id="다이어그램">다이어그램</h2>
-<p>Quarto는 <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a>와 <a href="https://graphviz.org/">Graphviz</a> 다이어그램을 지원합니다. 플로우차트, 시퀀스 다이어그램, 스테이트 다이어그램, 간트차트등을 그릴 수 있습니다. Mermaid를 이용해서 플로우 차트를 생성합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  A[입력] --&gt; B(전처리)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  B --&gt; C{판단로직}</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  C --&gt; D[성공]</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  C --&gt; E[실패]</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[입력] --&gt; B(전처리)
-  B --&gt; C{판단로직}
-  C --&gt; D[성공]
-  C --&gt; E[실패]
-</pre>
-</div>
-</div>
-</div>
-</div>
+<section id="database에-문서-삭제" class="level3">
+<h3 class="anchored" data-anchor-id="database에-문서-삭제">Database에 문서 삭제</h3>
+<p>문서를 삭제하기 위해서 <code>deleteOne</code>, <code>deleteMany</code>명령을 사용할 수 있습니다.</p>
+<pre class="{shell}"><code>testdb&gt; db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc13"), name: 'mike', age: 10 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 }
+]
+
+testdb&gt; db.mydoc.deleteOne({name: "mike"})
+{ acknowledged: true, deletedCount: 1 }
+
+testdb&gt; db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 }
+]</code></pre>
+<p><code>deleteMany</code>명령은 조건에 맞는 모든 데이터를 삭제합니다. 테스트를 위해서 동일한 나이를 갖는 데이터를 만듭니다.</p>
+<pre class="{shell}"><code>testdb&gt; db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 },
+  { _id: ObjectId("65522dfadc1f13e70f4fcc16"), name: 'a', age: 15 },
+  { _id: ObjectId("65522dfedc1f13e70f4fcc17"), name: 'b', age: 15 },
+  { _id: ObjectId("65522e01dc1f13e70f4fcc18"), name: 'c', age: 15 },
+  { _id: ObjectId("65522e04dc1f13e70f4fcc19"), name: 'd', age: 15 }
+]
+
+testdb&gt; db.mydoc.deleteMany({age: 15})
+{ acknowledged: true, deletedCount: 4 }
+
+testdb&gt; db.mydoc.find()
+[
+  { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
+  { _id: ObjectId("65522a45dc1f13e70f4fcc14"), name: 'tony', age: 51 },
+  { _id: ObjectId("65522be8dc1f13e70f4fcc15"), name: 'mike', age: 12 }
+]</code></pre>
+<p><code>deleteMany</code>명령을 사용해서 age가 <code>15</code>인 document 4개가 모두 삭제되었습니다.</p>
 </section>
-<section id="동영상-연결" class="level2">
-<h2 class="anchored" data-anchor-id="동영상-연결">동영상 연결</h2>
-<p>문서 내부에 동영상을 연결할 수 있습니다. <code>{{&lt; video &gt;}}</code> 를 이용해서 유튜브 동영상은 연결할 수 있습니다.</p>
-<div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://www.youtube.com/embed/wo9vZccmqwc &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wo9vZccmqwc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="html-코드-divs-spans" class="level2">
-<h2 class="anchored" data-anchor-id="html-코드-divs-spans">HTML 코드 (Divs, Spans)</h2>
-<p>HTML의 <code>div</code> 블럭을 만들 수 있습니다. <code>class</code> 정보를 <code>border</code>로 정의합니다.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {#special .border}</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>class를 "border"로 정의한 div block으로 변환됩니다.</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Quarto를 렌터링하고 나면 아래의 HTML 코드로 변경됩니다.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"special"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"border"</span><span class="kw">&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p&gt;</span>class를 "border"로 정의한 div block으로 변환됩니다.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>대괄호 <code>[]</code>로 표현된 문자열은 <code>span</code>으로 변환됩니다.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">테스트 *SPAN* 코드입니다.</span><span class="co">]</span>{.class key="val"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span</span> <span class="er">class</span><span class="ot">=</span><span class="st">"class"</span> <span class="er">data-key</span><span class="ot">=</span><span class="st">"val"</span><span class="kw">&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  테스트 <span class="kw">&lt;em&gt;</span>SPAN<span class="kw">&lt;/em&gt;</span> 코드입니다.</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/span&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="참고" class="level2">
-<h2 class="anchored" data-anchor-id="참고">참고</h2>
+<section id="references" class="level1">
+<h1>References</h1>
 <ol type="1">
-<li>https://quarto.org/docs/authoring/markdown-basics.html</li>
+<li>https://www.mongodb.com/docs/manual/reference/operator/query/</li>
 </ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -892,14 +863,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pandas 중복 데이터 제거하기</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pymongo 명령어 정리하기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" class="pagination-link">
-        <span class="nav-page-text">Plotly Bubble chart 만들기</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
