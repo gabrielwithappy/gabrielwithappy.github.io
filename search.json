@@ -592,7 +592,7 @@
     "href": "docs/blog/posts/2023/11/2023-11-14-pymongo/index.html",
     "title": "Pymongo 명령어 정리하기",
     "section": "",
-    "text": "Pymongo 정리하기"
+    "text": "Pymongo 설치하기\nPymongo를 사용하기위해서 mongo DB를 설치해야합니다. docker를 이용해서 mongo DB를 설치합니다.\n# mongo image 다운로드\ndocker pull mongo\n\n# 다운로드한 docker image 확인\ndocker images\nREPOSITORY    TAG       IMAGE ID       CREATED        SIZE\nmongo         latest    ee3b4d1239f1   4 weeks ago    748MB\nhello-world   latest    9c7a54a9a43c   6 months ago   13.3kB\n도커 이미지가 다운로드 완료되면 docker images명령으로 mongo이미지가 다운로드 된 것을 확인할 수 있습니다. VSCODE에서 docker extension을 설치하면 container를 쉽게 실행할 수 있습니다.\n# --name : 컨테이너에 이름 부여\n# -p : 호스트와 컨테이너 간의 포터의 배포/바인드를 위해 사용\n# -e : 컨테이너의 환경변수 설정\n# ex) docker run -e FOO=bar python\n# -v : 호스트와 컨테이너 간의 볼륨 설정을 위해 사용\n# -w : 도커의 작업 디렉토리를 변경\n# ex) docker run -w /etc python (컨테이너의 작업 디렉토리를 /etc로 변경)\n# -d : 도커를 백그라운드에서 사용하는 경우\ndocker run -p 27017:27017 --name mongodb -v .:/data/db -d mongo\n\nimport pymongo\nclient = pymongo.MongoClient(host=\"localhost\", port=27017)\nfor item in client.list_databases():\n  print(item)\n\n{'name': 'admin', 'sizeOnDisk': 40960, 'empty': False}\n{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}\n{'name': 'local', 'sizeOnDisk': 73728, 'empty': False}\n\n\nMongoClient를 생성하고 데이터베이스 정보를 list_databases로 확인합니다."
   },
   {
     "objectID": "docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html",
