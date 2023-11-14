@@ -468,7 +468,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <section id="기존-설치제거-저장소-추가" class="level2">
 <h2 class="anchored" data-anchor-id="기존-설치제거-저장소-추가">1. 기존 설치제거 / 저장소 추가</h2>
 <p>기존의 설치된 Docker가 있다면 제거한다.</p>
-<pre class="shell"><code>sudo apt-get remove docker docker-engine docker.io containerd runc</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get remove docker docker-engine docker.io containerd runc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Docker 저장소를 사용할 수 있도록 패키지 인덱스를 업데이트 한다.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="dt">\</span></span>
