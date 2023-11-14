@@ -7,7 +7,7 @@ categories:
   - Database
 author: gabriel yang
 date: "10/15/2023"
-image: "https://picsum.photos/id/140/200/150"
+image: "https://picsum.photos/id/113/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
 # draft: true
@@ -35,7 +35,7 @@ mongoDB를 설치한 후 `mongosh` 명령을 실행하면 mongoDB 쉘에 접속�
 
 ### Database 확인하기
 
-```
+``` bash
 test> show dbs
 admin   40.00 KiB
 config  60.00 KiB
@@ -46,7 +46,7 @@ local   40.00 KiB
 
 DB를 생성해도 data가 없는 경우 데이터베이스가 표시되지 않습니다.
 
-```
+``` bash
 test> use testdb
 switched to db testdb
 
@@ -60,7 +60,7 @@ local   40.00 KiB
 
 정보를 확인할 db를 `use`명령으로 결정하고 `stats`명령을 db의 상세 정보를 확인할 수 있습니다.
 
-``` shell
+``` bash
 testdb> use admin
 switched to db admin
 admin> db.stats()
@@ -86,7 +86,7 @@ admin> db.stats()
 
 `testdb`에 collection을 생성하는 명령을 정리합니다.
 
-``` shell
+``` bash
 admin> use testdb
 switched to db testdb
 
@@ -101,7 +101,7 @@ mydoc
 
 collection 이름을 사용하여 단일 문서 삽입 시 `insertOne`명령을 사용합니다.
 
-``` shell
+``` bash
 testdb> show collections
 mydoc
 
@@ -114,7 +114,7 @@ testdb> db.mydoc.insertOne({name: "john", age:30})
 
 여러문서를 한 번에 삽입하려면 `insertMany`메서드를 사용합니다. 데이터는 리스트로 전달합니다.
 
-``` shell
+``` bash
 testdb> db.mydoc.insertMany([{name: "mike", age:10}, {name: "tony", age:51}])
 {
   acknowledged: true,
@@ -129,7 +129,7 @@ testdb> db.mydoc.insertMany([{name: "mike", age:10}, {name: "tony", age:51}])
 
 MongoDB에서 데이터를 확인하고 검색하기 위해서는 find 명령어나 그와 유사한 메서드를 사용합니다. MongoDB의 셸에서 데이터를 확인하는 기본적인 방법은 다음과 같습니다.
 
-``` shell
+``` bash
 # 모든 문서 조회
 testdb> db.mydoc.find()
 [
@@ -165,7 +165,7 @@ testdb> db.mydoc.find().limit(2)
 
 문서를 삭제하기 위해서 `deleteOne`, `deleteMany`명령을 사용할 수 있습니다.
 
-``` shell
+``` bash
 testdb> db.mydoc.find()
 [
   { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
@@ -187,7 +187,7 @@ testdb> db.mydoc.find()
 
 `deleteMany`명령은 조건에 맞는 모든 데이터를 삭제합니다. 테스트를 위해서 동일한 나이를 갖는 데이터를 만듭니다.
 
-``` shell
+``` bash
 testdb> db.mydoc.find()
 [
   { _id: ObjectId("655228d0dc1f13e70f4fcc12"), name: 'john', age: 30 },
