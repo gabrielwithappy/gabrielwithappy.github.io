@@ -366,7 +366,7 @@ font-style: inherit;">This</span> message shows that your installation appears t
   <category>DevOps</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html</guid>
   <pubDate>Sat, 14 Oct 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://picsum.photos/id/140/200/150" medium="image"/>
+  <media:content url="https://picsum.photos/id/150/200/150" medium="image"/>
 </item>
 <item>
   <title>Pymongo 명령어 정리하기</title>
@@ -475,7 +475,7 @@ font-style: inherit;">print</span>(item)</span></code></pre></div>
   <category>Database</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-14-pymongo/index.html</guid>
   <pubDate>Fri, 13 Oct 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://picsum.photos/id/140/200/150" medium="image"/>
+  <media:content url="https://picsum.photos/id/130/200/150" medium="image"/>
 </item>
 <item>
   <title>Github Pull Request 템플릿 적용하기</title>
