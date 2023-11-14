@@ -12,8 +12,8 @@
     "listing": "/docs/blog/index.html",
     "items": [
       "/docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
-      "/docs/blog/posts/2023/11/2023-11-14-pymongo/index.html",
       "/docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html",
+      "/docs/blog/posts/2023/11/2023-11-14-pymongo/index.html",
       "/docs/blog/posts/2023/10/2023-10-09-github-template/index.html",
       "/docs/blog/posts/2023/10/2023-10-08-plotly-line-shape/index.html",
       "/docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html",
