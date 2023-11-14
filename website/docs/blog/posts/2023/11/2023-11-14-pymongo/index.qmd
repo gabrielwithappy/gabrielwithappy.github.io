@@ -13,4 +13,41 @@ page-layout: article
 # draft: true
 ---
 
-# Pymongo 정리하기
+# Pymongo 설치하기
+
+Pymongo를 사용하기위해서 mongo DB를 설치해야합니다. docker를 이용해서 mongo DB를 설치합니다.
+
+``` bash
+# mongo image 다운로드
+docker pull mongo
+
+# 다운로드한 docker image 확인
+docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mongo         latest    ee3b4d1239f1   4 weeks ago    748MB
+hello-world   latest    9c7a54a9a43c   6 months ago   13.3kB
+```
+
+도커 이미지가 다운로드 완료되면 `docker images`명령으로 `mongo`이미지가 다운로드 된 것을 확인할 수 있습니다. VSCODE에서 docker extension을 설치하면 container를 쉽게 실행할 수 있습니다.
+
+``` bash
+# --name : 컨테이너에 이름 부여
+# -p : 호스트와 컨테이너 간의 포터의 배포/바인드를 위해 사용
+# -e : 컨테이너의 환경변수 설정
+# ex) docker run -e FOO=bar python
+# -v : 호스트와 컨테이너 간의 볼륨 설정을 위해 사용
+# -w : 도커의 작업 디렉토리를 변경
+# ex) docker run -w /etc python (컨테이너의 작업 디렉토리를 /etc로 변경)
+# -d : 도커를 백그라운드에서 사용하는 경우
+docker run -p 27017:27017 --name mongodb -v .:/data/db -d mongo
+```
+
+``` {python}
+import pymongo
+client = pymongo.MongoClient(host="localhost", port=27017)
+for item in client.list_databases():
+  print(item)
+
+```
+
+MongoClient를 생성하고 데이터베이스 정보를 `list_databases`로 확인합니다.
