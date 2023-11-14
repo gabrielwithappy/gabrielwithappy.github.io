@@ -1,0 +1,96 @@
+---
+title: wsl2에 docker 설치하기
+subtitle: wsl2에 docker 설치하기
+description:
+   wsl2에 docker 설치하기
+categories:
+  - DevOps
+author: gabriel yang
+date: "10/15/2023"
+image: "https://picsum.photos/id/140/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# WSL에 Docker Engine설치하기
+
+WSL에 Docker를 설치하는 방법을 정리합니다.
+
+## 1. 기존 설치제거 / 저장소 추가
+
+기존의 설치된 Docker가 있다면 제거한다.
+
+``` shell
+sudo apt-get remove docker docker-engine docker.io containerd runc
+```
+
+Docker 저장소를 사용할 수 있도록 패키지 인덱스를 업데이트 한다.
+
+``` bash
+sudo apt-get update
+sudo apt-get install \
+  ca-certificates \
+  curl \
+  gnupg \
+  lsb-release
+```
+
+Docker의 공식 GPG키를 추가합니다. GPG(GNU Privacy Guard)는 개인 정보를 안전하게 보호하기 위한 오픈 소스의 암호화 소프트웨어입니다. Git에서 GPG는 주로 커밋에 서명을 추가하여 코드의 무결성을 보호하는 데 사용됩니다.
+
+``` bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+위의 명령을 이용해서 Docker APT저장소를 시스템에 추가합니다. 명령의 각 부분을 정리합니다.
+
+-   `deb`는 `APT`(Advanced Package Tool)패키지 관리자가 사용하는 저장소를 정의합니다.
+-   `arch=$(dpkg --print-architecture)`는 현재 설치를 수행하는 시스템의 아키택처를 가져옵니다.
+-   `signed-by=/etc/apt/keyrings/docker.gpg`는 저장소가 서명된 GPG 키를 사용하고 있음을 나타냅니다.
+- $(lsb_release -cs)는 현재 Ubuntu 배포판의 코드명(예: focal, bionic 등)을 가져옵니다.
+- `tee` 명령은 표준 입력에서 데이터를 읽어 파일에 쓰는 동시에 표준 출력에도 쓰는 명령입니다.
+- `> /dev/null`은 tee의 출력을 표준 출력으로 보내지 않도록 하는데, 여기서는 필요하지 않은 출력을 방지하기 위해 사용됩니다.
+
+## Docker Engine 설치
+
+저장소를 추가했으니 도커에 관련된 설치를 위해서 apt 패키지 인덱스를 업데이트 및 설치합니다.
+
+``` bash
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+도커 설치가 완료되면 `hello-world`이미지를 실행해서 Docker Engine이 정상적으로 설치되었는지 확인합니다. 명령 실행 시 docker가 실행되지 않아 아래와 같은 에러가 발생할 수 있습니다.
+
+``` bash
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+이 경우 docker엔진을 실행합니다. 도커가 정상적으로 시행하되면 `Docker is running`메세지를 확인할 수 있습니다.
+
+``` bash
+sudo service docker start
+sudo service docker status
+ * Docker is running
+```
+hello-world 테스트 이미지를 실행해서 docker가 정상적으로 설치되었는지 확인합니다.
+
+``` bash
+sudo docker run hello-world
+```
+
+`hello-world`이미지를 실행하면 아래와 같이 `Hello from Docker!`메세지를 확인할 수 있습니다.
+
+``` bash
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+719385e32844: Pull complete
+Digest: sha256:88ec0acaa3ec199d3b7eaf73588f4518c25f9d34f58ce9a0df68429c5af48e8d
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+```
+
+

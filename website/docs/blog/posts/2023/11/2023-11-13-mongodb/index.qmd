@@ -1,8 +1,8 @@
 ---
-title: Pymongo 명령어 정리하기
-subtitle: Pymongo 명령어 정리하기
+title: MongoDB 명령어 정리하기
+subtitle: MongoDB 명령어 정리하기
 description:
-   Pymongo 명령어 정리하기
+   MongoDB 명령어 정리하기
 categories:
   - Database
 author: gabriel yang
