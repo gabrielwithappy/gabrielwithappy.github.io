@@ -1,0 +1,79 @@
+---
+title: mkfifo를 이용한 IPC
+subtitle: mkfifo를 이용한 IPC
+description:
+   mkfifo를 이용한 IPC
+categories:
+  - DevOps
+author: gabriel yang
+date: "10/15/2023"
+image: "https://picsum.photos/id/215/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# mkfifo를 이용한 IPC
+
+mkfifo 명령어는 리눅스 시스템에서 FIFO(First In, First Out) 파일을 생성하는 데 사용됩니다. FIFO는 프로세스 간 통신을 위한 특별한 파일 유형으로, 한 프로세스가 데이터를 쓰면 다른 프로세스가 그 데이터를 읽을 수 있습니다.
+
+## FIFO 파일 생성 및 IPC 테스트
+
+`mkfifo`명령을 FIFO 파일을 생성합니다. `pipe`라는 이름으로 FIFO 파일을 생성했습니다.
+
+``` bash
+mkfifo pipe
+```
+이제 `pipe`파일을 사용해서 프로세스간 통신을 구현할 수 있습니다. 한 프로세스에서 데이터를 쓰고 다른 프로세스에서 데이터를 읽을 수 있습니다. 새로운 터미널을 생성하고 각 터미널에서 아래의 명령을 수행합니다.
+
+``` bash
+# 터미널 1
+echo "Hello" > pipe
+
+# 터미널 2
+cat pipe
+Hello
+```
+터미널 2번에서 다른 프로세스에서 전달한 `Hello`를 확인할 수 있습니다.
+
+## 생성한 파이프를 이용해서 명령어 수행하기
+
+터미널 2번에서 전달받은 명령을 실행하는 연습을 합니다. `ls`명령을 파이프를 이용하여 다른 프로세스로 전달하고 명령을 실행합니다.
+
+``` bash
+# 터미널 1
+echo "ls" > pipe
+
+# 터미널 2
+eval "$(cat pipe)"
+README.md  pipe
+```
+명령을 전달받은 프로세스에서는 `eval`을 사용하여 명령을 수행합니다. 다른 프로세스에서 전달된 `ls`명령이 실행됩니다.
+
+## 파이프에 전달받은 명령을 계속 읽기
+
+명령을 읽어서 실행하는 과정을 계속 진행할 수 있도록 `while`을 사용합니다.
+
+``` bash
+# 터미널 1
+echo "ls -al" > pipe
+
+# 터미널 2
+while true; do eval "$(cat pipe)"; done
+drwxr-xr-x 6 root root 4096 11월 15 23:04 .
+drwxr-xr-x 4 root root 4096 11월 13 23:48 ..
+-rw-r--r-- 1 root root   14 11월 13 23:43 README.md
+prw-r--r-- 1 root root    0 11월 15 23:06 pipe
+```
+
+터미널 2에서 전달 받은 `ls -al`명령이 실행됩니다. 실행 결과를 파일로 저장하기 위해서 아래의 명령을 사용할 수 있습니다.
+
+``` bash
+while true; do eval "$(cat pipe)" &> result.log; done
+```
+이제 명령을 전달하면 실행결과가 `result.log`파일에 저장됩니다.
+
+
+
+# References
+1. https://young-cow.tistory.com/79
