@@ -1,17 +1,9 @@
 [
   {
-    "listing": "/docs/book_blog/index.html",
-    "items": [
-      "/docs/book_blog/posts/2023-09-03-data-visualization/index.html",
-      "/docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
-      "/docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-      "/docs/book_blog/posts/2023-08-27-korean-study/index.html"
-    ]
-  },
-  {
     "listing": "/docs/blog/index.html",
     "items": [
       "/docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
+      "/docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html",
       "/docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html",
       "/docs/blog/posts/2023/11/2023-11-14-pymongo/index.html",
       "/docs/blog/posts/2023/10/2023-10-09-github-template/index.html",
@@ -42,6 +34,15 @@
       "/docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html",
       "/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html",
       "/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html"
+    ]
+  },
+  {
+    "listing": "/docs/book_blog/index.html",
+    "items": [
+      "/docs/book_blog/posts/2023-09-03-data-visualization/index.html",
+      "/docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+      "/docs/book_blog/posts/2023-08-25-hf-examples/index.html",
+      "/docs/book_blog/posts/2023-08-27-korean-study/index.html"
     ]
   },
   {
