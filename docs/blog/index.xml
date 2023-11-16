@@ -1466,8 +1466,7 @@ font-style: inherit;">print</span>(name)</span></code></pre></div>
 <section id="document-확인하기" class="level2">
 <h2 class="anchored" data-anchor-id="document-확인하기">document 확인하기</h2>
 <p>PyMongo를 사용하여 MongoDB에서 문서(document)를 확인하는 방법은 find() 메서드를 사용하는 것입니다. 아래는 예시 코드입니다</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">db <span class="op" style="color: #5E5E5E;
+<div class="sourceCode" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">db <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> client[<span class="st" style="color: #20794D;
 background-color: null;
@@ -1489,23 +1488,9 @@ font-style: inherit;">in</span> documents:</span>
 <span id="cb13-6">  <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(document)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('655642f0f23cab961d457752'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('655642f0f1cdcfb1f527fe54'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('65564358f23cab961d457754'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('65564367f23cab961d457756'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('6556482cf1cdcfb1f527fe55'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('6556482cf1cdcfb1f527fe56'), 'name': 'bill', 'age': 51}
-{'_id': ObjectId('65564a0af1cdcfb1f527fe57'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
-</div>
-</div>
 <pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}</code></pre>
 <p>특정 조건을 만족하는 document만 확인하는 방법은 query정보를 딕셔너리 형태로 전달합니다. 검색조건 확인을 위해서 document를 조금 더 추가합니다. 3개의 document가 생성됩니다.</p>
-<div class="sourceCode" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">document <span class="op" style="color: #5E5E5E;
+<div class="sourceCode" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">document <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
 background-color: null;
@@ -1516,9 +1501,9 @@ background-color: null;
 font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">30</span>}</span>
-<span id="cb16-2">collection.insert_one(document)</span>
-<span id="cb16-3"></span>
-<span id="cb16-4">document <span class="op" style="color: #5E5E5E;
+<span id="cb15-2">collection.insert_one(document)</span>
+<span id="cb15-3"></span>
+<span id="cb15-4">document <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
 background-color: null;
@@ -1529,9 +1514,9 @@ background-color: null;
 font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">30</span>}</span>
-<span id="cb16-5">collection.insert_one(document)</span>
-<span id="cb16-6"></span>
-<span id="cb16-7">document <span class="op" style="color: #5E5E5E;
+<span id="cb15-5">collection.insert_one(document)</span>
+<span id="cb15-6"></span>
+<span id="cb15-7">document <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
 background-color: null;
@@ -1542,17 +1527,17 @@ background-color: null;
 font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">51</span>}</span>
-<span id="cb16-8">collection.insert_one(document)</span>
-<span id="cb16-9"></span>
-<span id="cb16-10">documents <span class="op" style="color: #5E5E5E;
+<span id="cb15-8">collection.insert_one(document)</span>
+<span id="cb15-9"></span>
+<span id="cb15-10">documents <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> collection.find()</span>
-<span id="cb16-11"><span class="cf" style="color: #003B4F;
+<span id="cb15-11"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">for</span> document <span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">in</span> documents:</span>
-<span id="cb16-12">  <span class="bu" style="color: null;
+<span id="cb15-12">  <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(document)</span></code></pre></div>
 <pre><code>{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
@@ -1560,17 +1545,17 @@ font-style: inherit;">print</span>(document)</span></code></pre></div>
 {'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
 <p>collection에서 검색하는 document중 하나만 선택 시 <code>find_one</code>을 사용합니다.</p>
-<div class="sourceCode" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">document <span class="op" style="color: #5E5E5E;
+<div class="sourceCode" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">document <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> collection.find_one({<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"name"</span>:<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"mike"</span>})</span>
-<span id="cb18-2"><span class="bu" style="color: null;
+<span id="cb17-2"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(document)</span>
-<span id="cb18-3"><span class="bu" style="color: null;
+<span id="cb17-3"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
 background-color: null;

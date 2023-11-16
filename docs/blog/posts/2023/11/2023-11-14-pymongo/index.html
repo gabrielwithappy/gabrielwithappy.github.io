@@ -550,49 +550,34 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <section id="document-확인하기" class="level2">
 <h2 class="anchored" data-anchor-id="document-확인하기">document 확인하기</h2>
 <p>PyMongo를 사용하여 MongoDB에서 문서(document)를 확인하는 방법은 find() 메서드를 사용하는 것입니다. 아래는 예시 코드입니다</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'testdb'</span>]</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'testdb'</span>]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('655642f0f23cab961d457752'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('655642f0f1cdcfb1f527fe54'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('65564358f23cab961d457754'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('65564367f23cab961d457756'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('6556482cf1cdcfb1f527fe55'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('6556482cf1cdcfb1f527fe56'), 'name': 'bill', 'age': 51}
-{'_id': ObjectId('65564a0af1cdcfb1f527fe57'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
-</div>
-</div>
 <pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}</code></pre>
 <p>특정 조건을 만족하는 document만 확인하는 방법은 query정보를 딕셔너리 형태로 전달합니다. 검색조건 확인을 위해서 document를 조금 더 추가합니다. 3개의 document가 생성됩니다.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"bill"</span>, <span class="st">"age"</span>: <span class="dv">51</span>}</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"bill"</span>, <span class="st">"age"</span>: <span class="dv">51</span>}</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
 {'_id': ObjectId('65564a0af1cdcfb1f527fe57'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
 <p>collection에서 검색하는 document중 하나만 선택 시 <code>find_one</code>을 사용합니다.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> collection.find_one({<span class="st">"name"</span>:<span class="st">"mike"</span>})</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(document)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> collection.find_one({<span class="st">"name"</span>:<span class="st">"mike"</span>})</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(document)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>{'_id': ObjectId('6556482cf1cdcfb1f527fe55'), 'name': 'mike', 'age': 30}</code></pre>
 
 
