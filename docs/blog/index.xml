@@ -1344,11 +1344,20 @@ background-color: null;
 font-style: inherit;">-v</span> .:/data/db <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">-d</span> mongo</span></code></pre></div>
+<p>이제 백그라운드로 실해되고 있는 mongodb container에 접속합니다.</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">docker</span> exec <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-it</span> mongodb bash</span></code></pre></div>
+<section id="mongodb-서버에-연결" class="level2">
+<h2 class="anchored" data-anchor-id="mongodb-서버에-연결">MongoDB 서버에 연결</h2>
+<p>DB에 연결할 수 있는 clinet를 생성합니다.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> pymongo</span>
-<span id="cb3-2">client <span class="op" style="color: #5E5E5E;
+<span id="cb4-2">client <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pymongo.MongoClient(host<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1358,24 +1367,218 @@ font-style: inherit;">"localhost"</span>, port<span class="op" style="color: #5E
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">27017</span>)</span>
-<span id="cb3-3"><span class="cf" style="color: #003B4F;
+font-style: inherit;">27017</span>)</span></code></pre></div>
+</div>
+</section>
+<section id="데이터베이스-선택" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-선택">데이터베이스 선택</h2>
+<p>MongoClient를 생성하고 데이터베이스 정보를 <code>list_databases</code>로 확인합니다. 기본적으로 생성된 데이터베이스를 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">for</span> item <span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">in</span> client.list_databases():</span>
-<span id="cb3-4">  <span class="bu" style="color: null;
+<span id="cb5-2">  <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(item)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
 <pre><code>{'name': 'admin', 'sizeOnDisk': 40960, 'empty': False}
-{'name': 'config', 'sizeOnDisk': 73728, 'empty': False}
-{'name': 'local', 'sizeOnDisk': 73728, 'empty': False}</code></pre>
+{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
+{'name': 'local', 'sizeOnDisk': 40960, 'empty': False}</code></pre>
+</section>
+<section id="데이터-베이스-생성" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-베이스-생성">데이터 베이스 생성</h2>
+<p>새로운 데이터베이스는 client의 key로 생성할 수 있습니다. 새롭게 <code>testdb</code>를 생성했지만 db에 데이터가 없는 경우 db가 표시되지 않습니다. <code>testdb</code>가 표시되지 않습니다.</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">db <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> client[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'testdb'</span>]</span>
+<span id="cb7-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> item <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> client.list_databases():</span>
+<span id="cb7-3">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(item)</span></code></pre></div>
+<pre><code>{'name': 'admin', 'sizeOnDisk': 40960, 'empty': False}
+{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
+{'name': 'local', 'sizeOnDisk': 40960, 'empty': False}</code></pre>
+</section>
+<section id="document-생성" class="level2">
+<h2 class="anchored" data-anchor-id="document-생성">document 생성</h2>
+<p>새롭게 생성한 데이터베이스에 collection을 생성하고 document를 추가합니다. document가 추가되면 데이터베이스가 표시됩니다. document가 추가된 후 다시 데이터베이스를 확인하면</p>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">collection <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> db[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'test_collection'</span>]</span>
+<span id="cb9-2">document <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tony"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>}</span>
+<span id="cb9-3">result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> collection.insert_one(document)</span>
+<span id="cb9-4"></span>
+<span id="cb9-5"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> item <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> client.list_databases():</span>
+<span id="cb9-6">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(item)</span></code></pre></div>
+<pre><code>{'name': 'admin', 'sizeOnDisk': 40960, 'empty': False}
+{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
+{'name': 'local', 'sizeOnDisk': 40960, 'empty': False}
+{'name': 'testdb', 'sizeOnDisk': 40960, 'empty': False}</code></pre>
+<p>document가 추가되었으니 데이터베이스를 다시 확인합니다. 새롭게 생성된 <code>testdb</code>를 확인할 수 있습니다.</p>
+</section>
+<section id="collection-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="collection-확인하기">collection 확인하기</h2>
+<p>db에 생성된 collection을 확인하는 방법을 정리합니다. <code>testdb</code>에 생성된 collection 정보를 확인합니다.</p>
+<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">db <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> client[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'testdb'</span>]</span>
+<span id="cb11-2">collection_names <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> db.list_collection_names()</span>
+<span id="cb11-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> name <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> collection_names:</span>
+<span id="cb11-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(name)</span></code></pre></div>
+<pre><code>test_collection</code></pre>
+</section>
+<section id="document-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="document-확인하기">document 확인하기</h2>
+<p>PyMongo를 사용하여 MongoDB에서 문서(document)를 확인하는 방법은 find() 메서드를 사용하는 것입니다. 아래는 예시 코드입니다</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">db <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> client[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'testdb'</span>]</span>
+<span id="cb13-2">collection <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> db[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'test_collection'</span>]</span>
+<span id="cb13-3">documents <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> collection.find()</span>
+<span id="cb13-4"></span>
+<span id="cb13-5"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> document <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> documents:</span>
+<span id="cb13-6">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(document)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('655642f0f23cab961d457752'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('655642f0f1cdcfb1f527fe54'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564358f23cab961d457754'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564367f23cab961d457756'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('6556482cf1cdcfb1f527fe55'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('6556482cf1cdcfb1f527fe56'), 'name': 'bill', 'age': 51}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe57'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
 </div>
 </div>
-<p>MongoClient를 생성하고 데이터베이스 정보를 <code>list_databases</code>로 확인합니다.</p>
+<pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}</code></pre>
+<p>특정 조건을 만족하는 document만 확인하는 방법은 query정보를 딕셔너리 형태로 전달합니다. 검색조건 확인을 위해서 document를 조금 더 추가합니다. 3개의 document가 생성됩니다.</p>
+<div class="sourceCode" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">document <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mike"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>}</span>
+<span id="cb16-2">collection.insert_one(document)</span>
+<span id="cb16-3"></span>
+<span id="cb16-4">document <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mike"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>}</span>
+<span id="cb16-5">collection.insert_one(document)</span>
+<span id="cb16-6"></span>
+<span id="cb16-7">document <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bill"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"age"</span>: <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">51</span>}</span>
+<span id="cb16-8">collection.insert_one(document)</span>
+<span id="cb16-9"></span>
+<span id="cb16-10">documents <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> collection.find()</span>
+<span id="cb16-11"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> document <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> documents:</span>
+<span id="cb16-12">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(document)</span></code></pre></div>
+<pre><code>{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe57'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
+<p>collection에서 검색하는 document중 하나만 선택 시 <code>find_one</code>을 사용합니다.</p>
+<div class="sourceCode" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">document <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> collection.find_one({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>:<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mike"</span>})</span>
+<span id="cb18-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(document)</span>
+<span id="cb18-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>)</span></code></pre></div>
+<pre><code>{'_id': ObjectId('6556482cf1cdcfb1f527fe55'), 'name': 'mike', 'age': 30}</code></pre>
 
 
+</section>
 </section>
 
  ]]></description>

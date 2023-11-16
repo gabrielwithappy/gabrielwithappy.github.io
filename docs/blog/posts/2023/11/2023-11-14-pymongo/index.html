@@ -420,7 +420,15 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pymongo-설치하기" id="toc-pymongo-설치하기" class="nav-link active" data-scroll-target="#pymongo-설치하기">Pymongo 설치하기</a></li>
+  <li><a href="#pymongo-설치하기" id="toc-pymongo-설치하기" class="nav-link active" data-scroll-target="#pymongo-설치하기">Pymongo 설치하기</a>
+  <ul class="collapse">
+  <li><a href="#mongodb-서버에-연결" id="toc-mongodb-서버에-연결" class="nav-link" data-scroll-target="#mongodb-서버에-연결">MongoDB 서버에 연결</a></li>
+  <li><a href="#데이터베이스-선택" id="toc-데이터베이스-선택" class="nav-link" data-scroll-target="#데이터베이스-선택">데이터베이스 선택</a></li>
+  <li><a href="#데이터-베이스-생성" id="toc-데이터-베이스-생성" class="nav-link" data-scroll-target="#데이터-베이스-생성">데이터 베이스 생성</a></li>
+  <li><a href="#document-생성" id="toc-document-생성" class="nav-link" data-scroll-target="#document-생성">document 생성</a></li>
+  <li><a href="#collection-확인하기" id="toc-collection-확인하기" class="nav-link" data-scroll-target="#collection-확인하기">collection 확인하기</a></li>
+  <li><a href="#document-확인하기" id="toc-document-확인하기" class="nav-link" data-scroll-target="#document-확인하기">document 확인하기</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-14-pymongo/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -486,20 +494,109 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ex) docker run -w /etc python (컨테이너의 작업 디렉토리를 /etc로 변경)</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -d : 도커를 백그라운드에서 사용하는 경우</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-p</span> 27017:27017 <span class="at">--name</span> mongodb <span class="at">-v</span> .:/data/db <span class="at">-d</span> mongo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이제 백그라운드로 실해되고 있는 mongodb container에 접속합니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> mongodb bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="mongodb-서버에-연결" class="level2">
+<h2 class="anchored" data-anchor-id="mongodb-서버에-연결">MongoDB 서버에 연결</h2>
+<p>DB에 연결할 수 있는 clinet를 생성합니다.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymongo</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> pymongo.MongoClient(host<span class="op">=</span><span class="st">"localhost"</span>, port<span class="op">=</span><span class="dv">27017</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymongo</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> pymongo.MongoClient(host<span class="op">=</span><span class="st">"localhost"</span>, port<span class="op">=</span><span class="dv">27017</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="데이터베이스-선택" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-선택">데이터베이스 선택</h2>
+<p>MongoClient를 생성하고 데이터베이스 정보를 <code>list_databases</code>로 확인합니다. 기본적으로 생성된 데이터베이스를 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>{'name': 'admin', 'sizeOnDisk': 40960, 'empty': False}
-{'name': 'config', 'sizeOnDisk': 73728, 'empty': False}
-{'name': 'local', 'sizeOnDisk': 73728, 'empty': False}</code></pre>
+{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
+{'name': 'local', 'sizeOnDisk': 40960, 'empty': False}</code></pre>
+</section>
+<section id="데이터-베이스-생성" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-베이스-생성">데이터 베이스 생성</h2>
+<p>새로운 데이터베이스는 client의 key로 생성할 수 있습니다. 새롭게 <code>testdb</code>를 생성했지만 db에 데이터가 없는 경우 db가 표시되지 않습니다. <code>testdb</code>가 표시되지 않습니다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'testdb'</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>{'name': 'admin', 'sizeOnDisk': 40960, 'empty': False}
+{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
+{'name': 'local', 'sizeOnDisk': 40960, 'empty': False}</code></pre>
+</section>
+<section id="document-생성" class="level2">
+<h2 class="anchored" data-anchor-id="document-생성">document 생성</h2>
+<p>새롭게 생성한 데이터베이스에 collection을 생성하고 document를 추가합니다. document가 추가되면 데이터베이스가 표시됩니다. document가 추가된 후 다시 데이터베이스를 확인하면</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"tony"</span>, <span class="st">"age"</span>: <span class="dv">20</span>}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> collection.insert_one(document)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>{'name': 'admin', 'sizeOnDisk': 40960, 'empty': False}
+{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
+{'name': 'local', 'sizeOnDisk': 40960, 'empty': False}
+{'name': 'testdb', 'sizeOnDisk': 40960, 'empty': False}</code></pre>
+<p>document가 추가되었으니 데이터베이스를 다시 확인합니다. 새롭게 생성된 <code>testdb</code>를 확인할 수 있습니다.</p>
+</section>
+<section id="collection-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="collection-확인하기">collection 확인하기</h2>
+<p>db에 생성된 collection을 확인하는 방법을 정리합니다. <code>testdb</code>에 생성된 collection 정보를 확인합니다.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'testdb'</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>collection_names <span class="op">=</span> db.list_collection_names()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> collection_names:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>test_collection</code></pre>
+</section>
+<section id="document-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="document-확인하기">document 확인하기</h2>
+<p>PyMongo를 사용하여 MongoDB에서 문서(document)를 확인하는 방법은 find() 메서드를 사용하는 것입니다. 아래는 예시 코드입니다</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'testdb'</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('655642f0f23cab961d457752'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('655642f0f1cdcfb1f527fe54'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564358f23cab961d457754'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564367f23cab961d457756'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('6556482cf1cdcfb1f527fe55'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('6556482cf1cdcfb1f527fe56'), 'name': 'bill', 'age': 51}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe57'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
 </div>
 </div>
-<p>MongoClient를 생성하고 데이터베이스 정보를 <code>list_databases</code>로 확인합니다.</p>
+<pre><code>{'_id': ObjectId('655642e7f23cab961d457750'), 'name': 'tony', 'age': 20}</code></pre>
+<p>특정 조건을 만족하는 document만 확인하는 방법은 query정보를 딕셔너리 형태로 전달합니다. 검색조건 확인을 위해서 document를 조금 더 추가합니다. 3개의 document가 생성됩니다.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"bill"</span>, <span class="st">"age"</span>: <span class="dv">51</span>}</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>{'_id': ObjectId('65564377f23cab961d457758'), 'name': 'tony', 'age': 20}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe57'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe58'), 'name': 'mike', 'age': 30}
+{'_id': ObjectId('65564a0af1cdcfb1f527fe59'), 'name': 'bill', 'age': 51}</code></pre>
+<p>collection에서 검색하는 document중 하나만 선택 시 <code>find_one</code>을 사용합니다.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> collection.find_one({<span class="st">"name"</span>:<span class="st">"mike"</span>})</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(document)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>{'_id': ObjectId('6556482cf1cdcfb1f527fe55'), 'name': 'mike', 'age': 30}</code></pre>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
