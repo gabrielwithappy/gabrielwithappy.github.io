@@ -1,0 +1,11 @@
+{
+  "hash": "58d1779f4c0de369888f8f38aaa1057e",
+  "result": {
+    "markdown": "---\ntitle: wsl2에 docker 설치하기\nsubtitle: wsl2에 docker 설치하기\ndescription:\n   wsl2에 docker 설치하기\ncategories:\n  - DevOps\nauthor: gabriel yang\ndate: \"10/15/2023\"\nimage: \"https://picsum.photos/id/140/200/150\"\n# image-alt: \"deep learning glossary\"\npage-layout: article\n# draft: true\n---\n\n# WSL에 Docker Engine설치하기\n\nWSL에 Docker를 설치하는 방법을 정리합니다.\n\n## 기존 설치제거 / 저장소 추가\n기존의 설치된 Docker가 있다면 제거한다.\n\n``` shell\nsudo apt-get remove docker docker-engine docker.io containerd runc\n```\n\nDocker 저장소를 사용할 수 있도록 패키지 인덱스를 업데이트 한다.\n\n``` bash\nsudo apt-get update\nsudo apt-get install \\\n  ca-certificates \\\n  curl \\\n  gnupg \\\n  lsb-release\n```\n\nDocker의 공식 GPG키를 추가합니다. GPG(GNU Privacy Guard)는 개인 정보를 안전하게 보호하기 위한 오픈 소스의 암호화 소프트웨어입니다. Git에서 GPG는 주로 커밋에 서명을 추가하여 코드의 무결성을 보호하는 데 사용됩니다.\n\n``` bash\necho \\\n  \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \\\n  $(lsb_release -cs) stable\" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null\n```\n\n위의 명령을 이용해서 Docker APT저장소를 시스템에 추가합니다. `deb`는 `APT`(Advanced Package Tool)패키지 관리자가 사용하는 저장소를 정의합니다. `arch=$(dpkg --print-architecture)`는 현재 설치를 수행하는 시스템의 아키택처를 가져옵니다.\n\n\n``` {shell}\ndpkg --print-architecture\n```\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
