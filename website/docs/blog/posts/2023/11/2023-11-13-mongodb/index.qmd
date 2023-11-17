@@ -31,7 +31,34 @@ SQL의 database, table, row를 mongoDB의 구조와 비교해서 테이블로 �
 
 mongoDB를 설치한 후 `mongosh` 명령을 실행하면 mongoDB 쉘에 접속할 수 있습니다. 버전에 따라서 `mongo` 명령을 사용합니다.
 
+## MongoDB 도커로 설치하기
+mongo DB를 docker로 설치하는 방법을 정리합니다. 도커를 사용하여 DB를 설치하면 쉽게 DB를 연습할 수 있습니다.
+
+``` bash
+sudo service docker start
+sudo service docker status
+docker pull mongo
+docker images
+```
+```
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mongo         latest    ee3b4d1239f1   5 weeks ago    748MB
+hello-world   latest    9c7a54a9a43c   6 months ago   13.3kB
+```
+wsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경우 [WSL에 docker설치](https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-wsl-docker/)를 확인하세요.
+
+
 ## MongoDB의 명령어 정리
+
+Mongo DB에서 자주 사용하는 명령어를 정리합니다.
+
+### Auth정보로 MongoDB 접속하기
+
+Mongo DB에 admin을 위한 id, password를 설정했다면 해당 정보를 이용하여 DB에 접속해야 합니다.
+
+``` bash
+mongo admin -u username -p 'password'
+```
 
 ### Database 확인하기
 
@@ -212,6 +239,18 @@ testdb> db.mydoc.find()
 
 `deleteMany`명령을 사용해서 age가 `15`인 document 4개가 모두 삭제되었습니다.
 
+### 특정 Key정보만 출력하기
+
+DB에서 query로 탐색한 정보 중 특정 key정보만 출력하고 싶은 경우 사용합니다. 선택한 `collection`의 전체 document 중 `date` 키 정보만 출력됩니다.
+``` bash
+db.test_collection.find({}, {'date':1})
+```
+
+
+
+
+
 # References
 
-1.  https://www.mongodb.com/docs/manual/reference/operator/query/
+1. https://www.mongodb.com/docs/manual/reference/operator/query/
+2. https://jhleeeme.github.io/mongodb-collection-find/
