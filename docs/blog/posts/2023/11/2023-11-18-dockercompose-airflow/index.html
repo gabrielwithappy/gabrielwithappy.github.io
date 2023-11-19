@@ -68,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
 <link href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -396,6 +396,12 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">wsl 이미지 저장 위치 변경 및 백업</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
   </div>
@@ -511,6 +517,54 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="도커-실행">도커 실행</h2>
 <p>도커 서비스를 실행합니다.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
+<p>docker compose에서 사용되는 명령어를 함께 정리합니다. 백그라운드에서 airflow를 동작하는 경우 <code>docker compose up -d</code>를 사용합니다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>명령어</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>docker compose build &lt;service&gt;</td>
+<td>docker-compose.yaml 파일의 build로 표현된 서비스를 빌드합니다.</td>
+</tr>
+<tr class="even">
+<td>docker compose up</td>
+<td><strong><code>docker-compose.yml</code></strong> 파일을 기반으로 서비스를 시작합니다.</td>
+</tr>
+<tr class="odd">
+<td>docker compose up -d</td>
+<td>백그라운드에서 서비스를 시작합니다.</td>
+</tr>
+<tr class="even">
+<td>docker compose down</td>
+<td>서비스를 중지하고 관련된 리소스(컨테이너, 네트워크, 볼륨 등)를 제거합니다.</td>
+</tr>
+<tr class="odd">
+<td>docker-compose logs [service]</td>
+<td>지정된 서비스의 로그를 표시합니다. 서비스를 지정하지 않으면 모든 서비스의 로그를 표시합니다.</td>
+</tr>
+<tr class="even">
+<td>docker-compose start</td>
+<td>중지된 서비스를 시작합니다.</td>
+</tr>
+<tr class="odd">
+<td>docker-compose stop</td>
+<td>지정된 서비스를 중지합니다.</td>
+</tr>
+<tr class="even">
+<td>docker-compose restart</td>
+<td>지정된 서비스를 재시작합니다.</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="references" class="level1">
@@ -761,8 +815,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">MongoDB 명령어 정리하기</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">wsl 이미지 저장 위치 변경 및 백업</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

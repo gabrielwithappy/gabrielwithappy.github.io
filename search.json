@@ -347,7 +347,7 @@
     "href": "docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html",
     "title": "docker-compose로 airflow 설치하기",
     "section": "",
-    "text": "airflow 공식홈페이지에서는 airflow 설치를 위한 다양한 방법을 제공합니다.\nProduction 도커 이미지를 사용하는 방법은 Container/Docker 스택에 익숙할 때 유용합니다. 종속성을 쉽게 유지 관리하여 동일한 물리적 또는 가상 머신에서 실행되는 다른 소프트웨어와 별도로 Airflow 구성 요소를 실행하는 기능을 제공합니다.\n이 설치 방법은 Container/Docker 스택에 익숙할 뿐만 아니라 Kubernetes를 사용하고 Helm 차트를 통해 커뮤니티 관리 Kubernetes 설치 메커니즘을 사용하여 Airflow를 설치 및 유지 관리하려는 경우에 유용합니다.\n설치를 위해서 - Docker Compose v1.29.1 또는 최신버전을 설치해야합니다.\n\n\nAirflow docker compose를 사용하기 위해서 yaml파일을 다운로드 합니다.\ncurl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.7.3/docker-compose.yaml'\n이 파일에는 아래의 서비스를 포함합니다.\n\nairflow-scheduler - 스케줄러는 모든 작업과 DAG를 모니터링하고 실행합니다.\nairflow-webserver - http://localhost:8080 에서 실행되는 웹서버\nairflow-worker - 스케쥴러가 제공하는 작업을 실행합니다.\nairflow-triggerer - 지연될 수 있는 작업에 대한 이벤트 루프를 생성합니다.\nairflow-init - 서비스를 초기화 합니다.\npostgres - 데이터베이스\nredis - The redis - 스케줄러에서 작업자에게 메세지를 전달하는 브로커입니다.\n\nairflow를 설치할 위치에서 도커 이미지의 airflow 폴더와 싱크되는 폴더를 생성합니다.\nmkdir -p ./dags ./logs ./plugins ./config\necho -e \"AIRFLOW_UID=$(id -u)\"  . env\nairflow에서 사용하는 환경변수에서 세부내용을 확인할 수 있습니다.\n\n\n\n데이터베이스 마이그레이션을 실행하고 첫 번째 사용자 계정을 생성해야 합니다. 아래의 airflow-init을 수행합니다. 초기 설정되는 ID와 PW는 모두 airflow로 설정됩니다.\ndocker compose up airflow-init\n\n\n\n도커 서비스를 실행합니다.\ndocker compose up"
+    "text": "airflow 공식홈페이지에서는 airflow 설치를 위한 다양한 방법을 제공합니다.\nProduction 도커 이미지를 사용하는 방법은 Container/Docker 스택에 익숙할 때 유용합니다. 종속성을 쉽게 유지 관리하여 동일한 물리적 또는 가상 머신에서 실행되는 다른 소프트웨어와 별도로 Airflow 구성 요소를 실행하는 기능을 제공합니다.\n이 설치 방법은 Container/Docker 스택에 익숙할 뿐만 아니라 Kubernetes를 사용하고 Helm 차트를 통해 커뮤니티 관리 Kubernetes 설치 메커니즘을 사용하여 Airflow를 설치 및 유지 관리하려는 경우에 유용합니다.\n설치를 위해서 - Docker Compose v1.29.1 또는 최신버전을 설치해야합니다.\n\n\nAirflow docker compose를 사용하기 위해서 yaml파일을 다운로드 합니다.\ncurl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.7.3/docker-compose.yaml'\n이 파일에는 아래의 서비스를 포함합니다.\n\nairflow-scheduler - 스케줄러는 모든 작업과 DAG를 모니터링하고 실행합니다.\nairflow-webserver - http://localhost:8080 에서 실행되는 웹서버\nairflow-worker - 스케쥴러가 제공하는 작업을 실행합니다.\nairflow-triggerer - 지연될 수 있는 작업에 대한 이벤트 루프를 생성합니다.\nairflow-init - 서비스를 초기화 합니다.\npostgres - 데이터베이스\nredis - The redis - 스케줄러에서 작업자에게 메세지를 전달하는 브로커입니다.\n\nairflow를 설치할 위치에서 도커 이미지의 airflow 폴더와 싱크되는 폴더를 생성합니다.\nmkdir -p ./dags ./logs ./plugins ./config\necho -e \"AIRFLOW_UID=$(id -u)\"  . env\nairflow에서 사용하는 환경변수에서 세부내용을 확인할 수 있습니다.\n\n\n\n데이터베이스 마이그레이션을 실행하고 첫 번째 사용자 계정을 생성해야 합니다. 아래의 airflow-init을 수행합니다. 초기 설정되는 ID와 PW는 모두 airflow로 설정됩니다.\ndocker compose up airflow-init\n\n\n\n도커 서비스를 실행합니다.\ndocker compose up\n\ndocker compose에서 사용되는 명령어를 함께 정리합니다. 백그라운드에서 airflow를 동작하는 경우 docker compose up -d를 사용합니다.\n\n\n\n\n\n\n\n명령어\n의미\n\n\n\n\ndocker compose build &lt;service&gt;\ndocker-compose.yaml 파일의 build로 표현된 서비스를 빌드합니다.\n\n\ndocker compose up\ndocker-compose.yml 파일을 기반으로 서비스를 시작합니다.\n\n\ndocker compose up -d\n백그라운드에서 서비스를 시작합니다.\n\n\ndocker compose down\n서비스를 중지하고 관련된 리소스(컨테이너, 네트워크, 볼륨 등)를 제거합니다.\n\n\ndocker-compose logs [service]\n지정된 서비스의 로그를 표시합니다. 서비스를 지정하지 않으면 모든 서비스의 로그를 표시합니다.\n\n\ndocker-compose start\n중지된 서비스를 시작합니다.\n\n\ndocker-compose stop\n지정된 서비스를 중지합니다.\n\n\ndocker-compose restart\n지정된 서비스를 재시작합니다."
   },
   {
     "objectID": "docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html#docker-compose-yaml-다운로드",
@@ -368,98 +368,140 @@
     "href": "docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html#도커-실행",
     "title": "docker-compose로 airflow 설치하기",
     "section": "",
-    "text": "도커 서비스를 실행합니다.\ndocker compose up"
+    "text": "도커 서비스를 실행합니다.\ndocker compose up\n\ndocker compose에서 사용되는 명령어를 함께 정리합니다. 백그라운드에서 airflow를 동작하는 경우 docker compose up -d를 사용합니다.\n\n\n\n\n\n\n\n명령어\n의미\n\n\n\n\ndocker compose build &lt;service&gt;\ndocker-compose.yaml 파일의 build로 표현된 서비스를 빌드합니다.\n\n\ndocker compose up\ndocker-compose.yml 파일을 기반으로 서비스를 시작합니다.\n\n\ndocker compose up -d\n백그라운드에서 서비스를 시작합니다.\n\n\ndocker compose down\n서비스를 중지하고 관련된 리소스(컨테이너, 네트워크, 볼륨 등)를 제거합니다.\n\n\ndocker-compose logs [service]\n지정된 서비스의 로그를 표시합니다. 서비스를 지정하지 않으면 모든 서비스의 로그를 표시합니다.\n\n\ndocker-compose start\n중지된 서비스를 시작합니다.\n\n\ndocker-compose stop\n지정된 서비스를 중지합니다.\n\n\ndocker-compose restart\n지정된 서비스를 재시작합니다."
   },
   {
-    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html",
-    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html",
-    "title": "mkfifo를 이용한 IPC",
+    "objectID": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
+    "href": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
+    "title": "MongoDB 명령어 정리하기",
     "section": "",
-    "text": "mkfifo 명령어는 리눅스 시스템에서 FIFO(First In, First Out) 파일을 생성하는 데 사용됩니다. FIFO는 프로세스 간 통신을 위한 특별한 파일 유형으로, 한 프로세스가 데이터를 쓰면 다른 프로세스가 그 데이터를 읽을 수 있습니다.\n\n\nmkfifo명령을 FIFO 파일을 생성합니다. pipe라는 이름으로 FIFO 파일을 생성했습니다.\nmkfifo pipe\n이제 pipe파일을 사용해서 프로세스간 통신을 구현할 수 있습니다. 한 프로세스에서 데이터를 쓰고 다른 프로세스에서 데이터를 읽을 수 있습니다. 새로운 터미널을 생성하고 각 터미널에서 아래의 명령을 수행합니다.\n# 터미널 1\necho \"Hello\" &gt; pipe\n\n# 터미널 2\ncat pipe\nHello\n터미널 2번에서 다른 프로세스에서 전달한 Hello를 확인할 수 있습니다.\n\n\n\n터미널 2번에서 전달받은 명령을 실행하는 연습을 합니다. ls명령을 파이프를 이용하여 다른 프로세스로 전달하고 명령을 실행합니다.\n# 터미널 1\necho \"ls\" &gt; pipe\n\n# 터미널 2\neval \"$(cat pipe)\"\nREADME.md  pipe\n명령을 전달받은 프로세스에서는 eval을 사용하여 명령을 수행합니다. 다른 프로세스에서 전달된 ls명령이 실행됩니다.\n\n\n\n명령을 읽어서 실행하는 과정을 계속 진행할 수 있도록 while을 사용합니다.\n# 터미널 1\necho \"ls -al\" &gt; pipe\n\n# 터미널 2\nwhile true; do eval \"$(cat pipe)\"; done\ndrwxr-xr-x 6 root root 4096 11월 15 23:04 .\ndrwxr-xr-x 4 root root 4096 11월 13 23:48 ..\n-rw-r--r-- 1 root root   14 11월 13 23:43 README.md\nprw-r--r-- 1 root root    0 11월 15 23:06 pipe\n터미널 2에서 전달 받은 ls -al명령이 실행됩니다. 실행 결과를 파일로 저장하기 위해서 아래의 명령을 사용할 수 있습니다.\nwhile true; do eval \"$(cat pipe)\" &&gt; result.log; done\n이제 명령을 전달하면 실행결과가 result.log파일에 저장됩니다."
+    "text": "MongoDB(몽고디비)는 NoSQL 데이터베이스 시스템의 하나로, 문서 지향(Document-Oriented) 데이터베이스입니다. 이것은 데이터를 BSON(Binary JSON) 형식의 문서로 저장하며, 이러한 문서는 키-값 쌍(key-value pairs)으로 이루어져 있습니다. MongoDB는 관계형 데이터베이스와는 달리 스키마가 정의되지 않아 유연성이 높고, 데이터 모델의 변화에 적응하기 쉽습니다.\nSQL의 database, table, row를 mongoDB의 구조와 비교해서 테이블로 표시합니다.\n\n\n\nMongoDB\nSQL\n\n\n\n\nDatabase\nDatabase\n\n\nCollection\nTable\n\n\nDocument\nRow\n\n\n\n\nCollection : MongoDB에서는 문서의 그룹을 컬랙션이라고 부르며 논리적으로 그룹화하는 방법입니다.\nDocument : MongoDB는 데이터를 문서로 저장합니다. 문서에는 필드 및 값의 쌍으로 구성되며 중첩되는 구조를 갖을 수 있습니다.\n\nmongoDB를 설치한 후 mongosh 명령을 실행하면 mongoDB 쉘에 접속할 수 있습니다. 버전에 따라서 mongo 명령을 사용합니다.\n\n\nmongo DB를 docker로 설치하는 방법을 정리합니다. 도커를 사용하여 DB를 설치하면 쉽게 DB를 연습할 수 있습니다.\nsudo service docker start\nsudo service docker status\ndocker pull mongo\ndocker images\nREPOSITORY    TAG       IMAGE ID       CREATED        SIZE\nmongo         latest    ee3b4d1239f1   5 weeks ago    748MB\nhello-world   latest    9c7a54a9a43c   6 months ago   13.3kB\nwsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경우 WSL에 docker설치를 확인하세요.\n\n\n\nMongo DB에서 자주 사용하는 명령어를 정리합니다.\n\n\nMongo DB에 admin을 위한 id, password를 설정했다면 해당 정보를 이용하여 DB에 접속해야 합니다.\nmongo admin -u username -p 'password'\n\n\n\ntest&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\nDB를 생성해도 data가 없는 경우 데이터베이스가 표시되지 않습니다.\ntest&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\n정보를 확인할 db를 use명령으로 결정하고 stats명령을 db의 상세 정보를 확인할 수 있습니다.\ntestdb&gt; use admin\nswitched to db admin\nadmin&gt; db.stats()\n{\n  db: 'admin',\n  collections: Long(\"1\"),\n  views: Long(\"0\"),\n  objects: Long(\"1\"),\n  avgObjSize: 59,\n  dataSize: 59,\n  storageSize: 20480,\n  indexes: Long(\"1\"),\n  indexSize: 20480,\n  totalSize: 40960,\n  scaleFactor: Long(\"1\"),\n  fsUsedSize: 57764601856,\n  fsTotalSize: 1081101176832,\n  ok: 1\n}\n\n\n\ntestdb에 collection을 생성하는 명령을 정리합니다.\nadmin&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; db.createCollection(\"mydoc\")\n{ ok: 1 }\n\ntestdb&gt; show collections\nmydoc\n\n\n\ncollection 이름을 사용하여 단일 문서 삽입 시 insertOne명령을 사용합니다.\ntestdb&gt; show collections\nmydoc\n\ntestdb&gt; db.mydoc.insertOne({name: \"john\", age:30})\n{\n  acknowledged: true,\n  insertedId: ObjectId(\"655228d0dc1f13e70f4fcc12\")\n}\n여러문서를 한 번에 삽입하려면 insertMany메서드를 사용합니다. 데이터는 리스트로 전달합니다.\ntestdb&gt; db.mydoc.insertMany([{name: \"mike\", age:10}, {name: \"tony\", age:51}])\n{\n  acknowledged: true,\n  insertedIds: {\n    '0': ObjectId(\"65522a45dc1f13e70f4fcc13\"),\n    '1': ObjectId(\"65522a45dc1f13e70f4fcc14\")\n  }\n}\n\n\n\nMongoDB에서 데이터를 확인하고 검색하기 위해서는 find 명령어나 그와 유사한 메서드를 사용합니다. MongoDB의 셸에서 데이터를 확인하는 기본적인 방법은 다음과 같습니다.\n# 모든 문서 조회\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 조건에 따른 문서조회\ntestdb&gt; db.mydoc.find({ name: 'john' })\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 }\n]\n\n# 정렬을 사용한 결과정렬\n# age를 오름차순으로 정렬합니다.\ntestdb&gt; db.mydoc.find().sort({ age: 1})\n[\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 제한된 수의 데이터만 출력합니다.\ntestdb&gt; db.mydoc.find().limit(2)\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 }\n]\n\n\n\n문서를 삭제하기 위해서 deleteOne, deleteMany명령을 사용할 수 있습니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\n\ntestdb&gt; db.mydoc.deleteOne({name: \"mike\"})\n{ acknowledged: true, deletedCount: 1 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령은 조건에 맞는 모든 데이터를 삭제합니다. 테스트를 위해서 동일한 나이를 갖는 데이터를 만듭니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 },\n  { _id: ObjectId(\"65522dfadc1f13e70f4fcc16\"), name: 'a', age: 15 },\n  { _id: ObjectId(\"65522dfedc1f13e70f4fcc17\"), name: 'b', age: 15 },\n  { _id: ObjectId(\"65522e01dc1f13e70f4fcc18\"), name: 'c', age: 15 },\n  { _id: ObjectId(\"65522e04dc1f13e70f4fcc19\"), name: 'd', age: 15 }\n]\n\ntestdb&gt; db.mydoc.deleteMany({age: 15})\n{ acknowledged: true, deletedCount: 4 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령을 사용해서 age가 15인 document 4개가 모두 삭제되었습니다.\n\n\n\nDB에서 query로 탐색한 정보 중 특정 key정보만 출력하고 싶은 경우 사용합니다. 선택한 collection의 전체 document 중 date 키 정보만 출력됩니다.\ndb.test_collection.find({}, {'date':1})"
   },
   {
-    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#fifo-파일-생성-및-ipc-테스트",
-    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#fifo-파일-생성-및-ipc-테스트",
-    "title": "mkfifo를 이용한 IPC",
+    "objectID": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb-도커로-설치하기",
+    "href": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb-도커로-설치하기",
+    "title": "MongoDB 명령어 정리하기",
     "section": "",
-    "text": "mkfifo명령을 FIFO 파일을 생성합니다. pipe라는 이름으로 FIFO 파일을 생성했습니다.\nmkfifo pipe\n이제 pipe파일을 사용해서 프로세스간 통신을 구현할 수 있습니다. 한 프로세스에서 데이터를 쓰고 다른 프로세스에서 데이터를 읽을 수 있습니다. 새로운 터미널을 생성하고 각 터미널에서 아래의 명령을 수행합니다.\n# 터미널 1\necho \"Hello\" &gt; pipe\n\n# 터미널 2\ncat pipe\nHello\n터미널 2번에서 다른 프로세스에서 전달한 Hello를 확인할 수 있습니다."
+    "text": "mongo DB를 docker로 설치하는 방법을 정리합니다. 도커를 사용하여 DB를 설치하면 쉽게 DB를 연습할 수 있습니다.\nsudo service docker start\nsudo service docker status\ndocker pull mongo\ndocker images\nREPOSITORY    TAG       IMAGE ID       CREATED        SIZE\nmongo         latest    ee3b4d1239f1   5 weeks ago    748MB\nhello-world   latest    9c7a54a9a43c   6 months ago   13.3kB\nwsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경우 WSL에 docker설치를 확인하세요."
   },
   {
-    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#생성한-파이프를-이용해서-명령어-수행하기",
-    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#생성한-파이프를-이용해서-명령어-수행하기",
-    "title": "mkfifo를 이용한 IPC",
+    "objectID": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb의-명령어-정리",
+    "href": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb의-명령어-정리",
+    "title": "MongoDB 명령어 정리하기",
     "section": "",
-    "text": "터미널 2번에서 전달받은 명령을 실행하는 연습을 합니다. ls명령을 파이프를 이용하여 다른 프로세스로 전달하고 명령을 실행합니다.\n# 터미널 1\necho \"ls\" &gt; pipe\n\n# 터미널 2\neval \"$(cat pipe)\"\nREADME.md  pipe\n명령을 전달받은 프로세스에서는 eval을 사용하여 명령을 수행합니다. 다른 프로세스에서 전달된 ls명령이 실행됩니다."
+    "text": "Mongo DB에서 자주 사용하는 명령어를 정리합니다.\n\n\nMongo DB에 admin을 위한 id, password를 설정했다면 해당 정보를 이용하여 DB에 접속해야 합니다.\nmongo admin -u username -p 'password'\n\n\n\ntest&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\nDB를 생성해도 data가 없는 경우 데이터베이스가 표시되지 않습니다.\ntest&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\n정보를 확인할 db를 use명령으로 결정하고 stats명령을 db의 상세 정보를 확인할 수 있습니다.\ntestdb&gt; use admin\nswitched to db admin\nadmin&gt; db.stats()\n{\n  db: 'admin',\n  collections: Long(\"1\"),\n  views: Long(\"0\"),\n  objects: Long(\"1\"),\n  avgObjSize: 59,\n  dataSize: 59,\n  storageSize: 20480,\n  indexes: Long(\"1\"),\n  indexSize: 20480,\n  totalSize: 40960,\n  scaleFactor: Long(\"1\"),\n  fsUsedSize: 57764601856,\n  fsTotalSize: 1081101176832,\n  ok: 1\n}\n\n\n\ntestdb에 collection을 생성하는 명령을 정리합니다.\nadmin&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; db.createCollection(\"mydoc\")\n{ ok: 1 }\n\ntestdb&gt; show collections\nmydoc\n\n\n\ncollection 이름을 사용하여 단일 문서 삽입 시 insertOne명령을 사용합니다.\ntestdb&gt; show collections\nmydoc\n\ntestdb&gt; db.mydoc.insertOne({name: \"john\", age:30})\n{\n  acknowledged: true,\n  insertedId: ObjectId(\"655228d0dc1f13e70f4fcc12\")\n}\n여러문서를 한 번에 삽입하려면 insertMany메서드를 사용합니다. 데이터는 리스트로 전달합니다.\ntestdb&gt; db.mydoc.insertMany([{name: \"mike\", age:10}, {name: \"tony\", age:51}])\n{\n  acknowledged: true,\n  insertedIds: {\n    '0': ObjectId(\"65522a45dc1f13e70f4fcc13\"),\n    '1': ObjectId(\"65522a45dc1f13e70f4fcc14\")\n  }\n}\n\n\n\nMongoDB에서 데이터를 확인하고 검색하기 위해서는 find 명령어나 그와 유사한 메서드를 사용합니다. MongoDB의 셸에서 데이터를 확인하는 기본적인 방법은 다음과 같습니다.\n# 모든 문서 조회\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 조건에 따른 문서조회\ntestdb&gt; db.mydoc.find({ name: 'john' })\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 }\n]\n\n# 정렬을 사용한 결과정렬\n# age를 오름차순으로 정렬합니다.\ntestdb&gt; db.mydoc.find().sort({ age: 1})\n[\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 제한된 수의 데이터만 출력합니다.\ntestdb&gt; db.mydoc.find().limit(2)\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 }\n]\n\n\n\n문서를 삭제하기 위해서 deleteOne, deleteMany명령을 사용할 수 있습니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\n\ntestdb&gt; db.mydoc.deleteOne({name: \"mike\"})\n{ acknowledged: true, deletedCount: 1 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령은 조건에 맞는 모든 데이터를 삭제합니다. 테스트를 위해서 동일한 나이를 갖는 데이터를 만듭니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 },\n  { _id: ObjectId(\"65522dfadc1f13e70f4fcc16\"), name: 'a', age: 15 },\n  { _id: ObjectId(\"65522dfedc1f13e70f4fcc17\"), name: 'b', age: 15 },\n  { _id: ObjectId(\"65522e01dc1f13e70f4fcc18\"), name: 'c', age: 15 },\n  { _id: ObjectId(\"65522e04dc1f13e70f4fcc19\"), name: 'd', age: 15 }\n]\n\ntestdb&gt; db.mydoc.deleteMany({age: 15})\n{ acknowledged: true, deletedCount: 4 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령을 사용해서 age가 15인 document 4개가 모두 삭제되었습니다.\n\n\n\nDB에서 query로 탐색한 정보 중 특정 key정보만 출력하고 싶은 경우 사용합니다. 선택한 collection의 전체 document 중 date 키 정보만 출력됩니다.\ndb.test_collection.find({}, {'date':1})"
   },
   {
-    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#파이프에-전달받은-명령을-계속-읽기",
-    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#파이프에-전달받은-명령을-계속-읽기",
-    "title": "mkfifo를 이용한 IPC",
+    "objectID": "docs/blog/index.html",
+    "href": "docs/blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "명령을 읽어서 실행하는 과정을 계속 진행할 수 있도록 while을 사용합니다.\n# 터미널 1\necho \"ls -al\" &gt; pipe\n\n# 터미널 2\nwhile true; do eval \"$(cat pipe)\"; done\ndrwxr-xr-x 6 root root 4096 11월 15 23:04 .\ndrwxr-xr-x 4 root root 4096 11월 13 23:48 ..\n-rw-r--r-- 1 root root   14 11월 13 23:43 README.md\nprw-r--r-- 1 root root    0 11월 15 23:06 pipe\n터미널 2에서 전달 받은 ls -al명령이 실행됩니다. 실행 결과를 파일로 저장하기 위해서 아래의 명령을 사용할 수 있습니다.\nwhile true; do eval \"$(cat pipe)\" &&gt; result.log; done\n이제 명령을 전달하면 실행결과가 result.log파일에 저장됩니다."
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nwsl 이미지 저장 위치 변경 및 백업\n\n\nwsl 이미지 저장 위치 변경 및 백업\n\n\n\n\nDevOps\n\n\n\n\nwsl 이미지 저장 위치 변경 및 백업\n\n\n\n\n\n\nNov 20, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\ndocker-compose로 airflow 설치하기\n\n\ndocker-compose로 airflow 설치하기\n\n\n\n\nDevOps\n\n\n\n\ndocker-compose로 airflow 설치하기\n\n\n\n\n\n\nNov 18, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nMongoDB 명령어 정리하기\n\n\nMongoDB 명령어 정리하기\n\n\n\n\nDatabase\n\n\n\n\nMongoDB 명령어 정리하기\n\n\n\n\n\n\nNov 15, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nmkfifo를 이용한 IPC\n\n\nmkfifo를 이용한 IPC\n\n\n\n\nDevOps\n\n\n\n\nmkfifo를 이용한 IPC\n\n\n\n\n\n\nNov 15, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nwsl2에 docker 설치하기\n\n\nwsl2에 docker 설치하기\n\n\n\n\nDevOps\n\n\n\n\nwsl2에 docker 설치하기\n\n\n\n\n\n\nNov 15, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPymongo 명령어 정리하기\n\n\nPymongo 명령어 정리하기\n\n\n\n\nDatabase\n\n\n\n\nPymongo 명령어 정리하기\n\n\n\n\n\n\nNov 14, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nGithub Pull Request 템플릿 적용하기\n\n\nGithub Pull Request 템플릿 적용하기\n\n\n\n\nDevOps\n\n\n\n\nGithub Pull Request 템플릿을 적용하는 방법을 정리합니다.\n\n\n\n\n\n\nOct 9, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly line, shape 그리기\n\n\nPlotly line, shape 그리기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly line, shape를 그리는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 8, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Funnel(깔대기) 차트 만들기\n\n\nPlotly Funnel(깔대기) 차트 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Funnel(깔대기) 차트를 만드는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 5, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Zoom Disable하기\n\n\nPlotly Zoom Disable하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Zoom을 disable하는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 4, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 차트의 축 tick 회전 및 폰트 변경하기\n\n\nPlotly x축 tick 회전 및 폰트 변경하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly의 x축 tick을 변경하는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 4, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 불릿차트\n\n\nPlotly 불릿차트\n\n\n\n\nData Visualization\n\n\n\n\nPlotly 불릿차트에 대해서 정리합니다.\n\n\n\n\n\n\nOct 3, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Hover 설정하기\n\n\nPlotly Hover 설정하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Hover 레이블을 설정하는 방법을 정리합니다.\n\n\n\n\n\n\nOct 2, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Axis 포멧 변경하기\n\n\nPlotly Axis 포멧 변경하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Axis 포멧 변경하기\n\n\n\n\n\n\nSep 30, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 마커 모양 변경하기\n\n\nPlotly 마커 모양 변경하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly 마커 모양을 변경하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 28, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Time Series 날짜 범위 UI 사용하기\n\n\nPlotly Time Series 날짜 범위 UI 사용하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Time Series 날짜 범위를 지정하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 25, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Dash로 Table 표시하기\n\n\nPlotly Dash로 Table 표시하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Dash로 Table 표시하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 24, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Rador 차트 만들기\n\n\nPlotly Rador 차트 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Rador 차트를 만드는 방법을 정리합니다.\n\n\n\n\n\n\nSep 23, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 3D Plot만들기\n\n\nPlotly 3D Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly 3D Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 22, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Line Plot만들기\n\n\nPlotly Line Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Line Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 22, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Histogram Plot만들기\n\n\nPlotly Histogram Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Histogram Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 21, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Scatter Plot만들기\n\n\nPlotly Scatter Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Scatter Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 19, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Animation 만들기\n\n\nPlotly Animation 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Animation의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 18, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Box Plot만들기\n\n\nPlotly Box Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Bar Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 18, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Treemap 만들기\n\n\nPlotly Treemap 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Treemap의 사용방법과 생상변경 방법을 정리합니다.\n\n\n\n\n\n\nSep 17, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Bubble chart 만들기\n\n\nPlotly Bubble chart 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Bubble chart의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 17, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\n날짜 범위 index 만들기\n\n\n날짜 범위 index 만들기\n\n\n\n\nPandas\n\n\n\n\n날짜 범위 index 만들기\n\n\n\n\n\n\nSep 16, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 모든 컬럼이 NaN일 때만 삭제하기\n\n\nPandas 모든 컬럼이 NaN일 때만 삭제하기\n\n\n\n\nPandas\n\n\n\n\nPandas 모든 컬럼이 NaN일 때만 삭제하기\n\n\n\n\n\n\nSep 14, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 중복 데이터 제거하기\n\n\nPandas 중복 데이터 제거하기\n\n\n\n\nPandas\n\n\n\n\nPandas 중복 데이터 제거하기\n\n\n\n\n\n\nSep 14, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Subpolt 만들기\n\n\nPlotly Subpolt 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Subplt 만들기\n\n\n\n\n\n\nSep 13, 2023\n\n\n양성모\n\n\n\n\n\n\n  \n\n\n\n\nMarkdown문법 정리하기\n\n\nMarkdown문법 정리하기\n\n\n\n\nQuarto\n\n\n\n\nMarkdown문법을 정리합니다.\n\n\n\n\n\n\nSep 12, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 데이터프레임 머지\n\n\nPandas 데이터프레임 머지하기\n\n\n\n\nPandas\n\n\n\n\nPandas 데이터프레임을 머지하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 11, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nQuarto Callout Block\n\n\nCallout Block으로 내용 강조하기\n\n\n\n\nQuarto\n\n\n\n\nQuarto Callout으로 내용 강조하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 10, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 데이터 전처리\n\n\nPandas 데이터 타입 변경 전처리\n\n\n\n\nPandas\n\n\n\n\nPandas 데이터 타입을 변경하는 방법, 데이터 전처리 방법을 정리합니다.\n\n\n\n\n\n\nSep 10, 2023\n\n\ngabriel yang\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "docs/bookshelf/data_visualization/summary.html",
-    "href": "docs/bookshelf/data_visualization/summary.html",
-    "title": "Summary",
+    "objectID": "docs/bookshelf/data_visualization/intro.html",
+    "href": "docs/bookshelf/data_visualization/intro.html",
+    "title": "Introduction",
     "section": "",
-    "text": "In summary, this book has no content whatsoever."
+    "text": "데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다."
   },
   {
-    "objectID": "docs/bookshelf/data_visualization/index.html",
-    "href": "docs/bookshelf/data_visualization/index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다.\n배움을 잘 이해하고 기억하는 가장 좋은 방법은 정리하여 글로 남기는 것이라고 생각합니다. 다만 배운 내용을 정리하는 과정에 잘못된 정보가 있을 수 있습니다.\n읽으시며 중요한 내용이 있다면 틀린 부분이 있는 지 다시 확인해 주시길 부탁드립니다. 이 책을 만들면서 데이터 시각화에 대해서 좀 더 잘 이해하고 더불어 이 책을 보는 분들에게도 도움이 되면 좋겠습니다.\n감사합니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html",
-    "href": "docs/bookshelf/data_visualization/time_series_analysis.html",
-    "title": "시계열 데이터 분석",
-    "section": "",
-    "text": "KOSPI주가 정보를 저장한 시계열 데이터를 이용해서 정보를 분석하는 연습을 합니다. 시계열데이터 분석을 위해서 시간에 따라 이동시키거나 일정 주기로 추출하는 작업을 수행을 합니다. 일정 기간동안의 통계적 특성을 분석하기 위해서 window을 만들고 이동할 수도 있습니다.\n우선 연습을 위해서 KOSPI주가 정보를 가져옵니다. KOSPI주가 정보를 가져오기 위해 FinanceDataReader 라이브러리를 사용합니다. DataReader함수에 시계열 정보를 가져올 주식 종목 기호 KS11과 시작 시점을 전달합니다.\nimport pandas as pd\nimport numpy as np\nimport FinanceDataReader as fdr\n\nstock_name = 'KS11'\ndf = fdr.DataReader(stock_name, start = '2022-1-1')\ndisplay(df.head(5))\n\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n2022-01-04\n2991.969971\n2995.250000\n2973.080078\n2989.239990\n2989.239990\n621200\n\n\n2022-01-05\n2984.050049\n2986.199951\n2936.729980\n2953.969971\n2953.969971\n786900\n\n\n2022-01-06\n2925.399902\n2952.540039\n2915.379883\n2920.530029\n2920.530029\n785500\n\n\n2022-01-07\n2933.780029\n2959.030029\n2933.100098\n2954.889893\n2954.889893\n545800\n\n\n2022-01-10\n2947.370117\n2951.120117\n2910.899902\n2926.719971\n2926.719971\n477000\n\n\n\n\n\nFigure 1: KOPI 시계열 데이터\n리턴된 데이터를 간단하게 살펴봅니다. 시간 정보로 Index가 표시되고 주가 정보는 각 컬럼에 표시됩니다. 해당 시점의 고점, 저점, 종가, 수정 종가, 시가 총액이 각각 컬럼으로 있습니다.\nFigure 1 의 index의 데이터 형식은 DatetimeIndex로 출력됩니다. 따라서 시계열 데이터 분석에 사용할 수 있는 Pandas 기능을 사용할 수 있습니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#shift",
-    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#shift",
-    "title": "시계열 데이터 분석",
-    "section": "shift()",
-    "text": "shift()\n시간을 이동시키는 명령어인 shift()함수를 알아봅니다. shift()함수는 지정한 수만큼 인덱스를 이동 시키는 명령입니다. Figure 1 데이터 프레임은 한국 주식 시장이 운영기간을 하루 단위로 측정된 시계열 데이터 프레임입니다. shift()명령을 이용하여 Close컬럼 데이터를 1개 Index크기 만큼 앞으로 이동합니다.\n\ndf['Close+1'] = df['Close'].shift(1)\ndisplay(df[['Close', 'Close+1']].head(5))\n\n\n\n\n\n\n\n\nClose\nClose+1\n\n\nDate\n\n\n\n\n\n\n2022-01-04\n2989.239990\nNaN\n\n\n2022-01-05\n2953.969971\n2989.239990\n\n\n2022-01-06\n2920.530029\n2953.969971\n\n\n2022-01-07\n2954.889893\n2920.530029\n\n\n2022-01-10\n2926.719971\n2954.889893\n\n\n\n\n\n\n\n비교를 쉽게하기 위해서 Close와 Close+1 컬럼만 표시하여 결과를 확인합니다. 새롭게 생성한 Close+1 컬럼은 Close 컬럼이 이동되어 저장되었습니다. 정보를 가져올 수 없는 2023-01-02 인덱스 정보는 NaN으로 표시됩니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#asfreq",
-    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#asfreq",
-    "title": "시계열 데이터 분석",
-    "section": "asfreq()",
-    "text": "asfreq()\n시계열 데이터 프레임을 새로운 빈도로 변환하기 위해서 as_freq()함수를 사용합니다. KOSPI주가 데이터의 월별 종가 정보를 확인할 수 있도록 이 함수를 사용해 봅니다.\n\ndf_monthly = df.asfreq('M')\ndisplay(df_monthly.head(5))\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n\n\n2022-02-28\n2663.000000\n2699.179932\n2658.250000\n2699.179932\n2699.179932\n613300.0\n2676.760010\n\n\n2022-03-31\n2743.239990\n2765.199951\n2743.199951\n2757.649902\n2757.649902\n1029500.0\n2746.739990\n\n\n2022-04-30\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n\n\n2022-05-31\n2666.879883\n2685.899902\n2654.320068\n2685.899902\n2685.899902\n670700.0\n2669.659912\n\n\n\n\n\n\n\n결과를 보면 NaN으로 데이터가 처리된 부분이 있습니다. 2020년 1월 31일과 2022년 4월 30일 데이터는 왜 없는 걸까요?\n\nstart_day = pd.Timestamp('2022-01-28 00:00:00')\nend_day = start_day + pd.DateOffset(days = 10)\ndf.loc[start_day : end_day, :]\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-28\n2617.870117\n2668.590088\n2591.530029\n2663.340088\n2663.340088\n433700\n2614.489990\n\n\n2022-02-03\n2706.340088\n2735.340088\n2702.780029\n2707.820068\n2707.820068\n435300\n2663.340088\n\n\n2022-02-04\n2714.830078\n2751.800049\n2712.870117\n2750.260010\n2750.260010\n535900\n2707.820068\n\n\n2022-02-07\n2750.699951\n2750.699951\n2718.939941\n2745.060059\n2745.060059\n417600\n2750.260010\n\n\n\n\n\n\n\n시작일을 2022-01-28일로 설정하고 시작일로 부터 10일 간격 뒤의 시간을 종료일로 설정 후 해당 위치의 데이터 프레임 정보를 확인합니다. 1월의 마지막은 1월 31일이지만 주식시장은 1월 28일 거래로 폐장 후 2월에 개장하기 때문에 데이터가 없는 상태입니다.\nasfreq()로 간격을 설정한 기준은 월말을 기준으로 했기 때문에 해당 시점에 데이터가 없어 NaN으로 결과가 출력 되었습니다.\n\n\n\n\n\n\nTip\n\n\n\n새로운 시간 단위를 설정 시 새롭게 설정하는 시간간격에 맞는 원데이터가 없는 경우 NaN으로 데이터가 표시되기 때문에 결과에 유의 해야합니다.\n\n\n주식정보를 갖는 이 데이터 프레임의 특성 상 해당 날짜에 주가 정보가 없다면 직전 날짜의 주가 정보를 유지하면 될 것 같습니다. 1월 28일의 마지막 주가 정보를 1월말 주가 정보로 대체해도 문제가 없는 데이터이기 때문에 as_freq()함수의 method인자를 이용합니다.\nmethod인자에는 NaN으로 표시된 결측치를 어떤 정보로 채울지 결정할 정보를 전달합니다. API문서를 확인하면 bfill과 ffill을 지원한다고 합니다. 우리의 경우 이전 시점의 데이터로 결측치를 채울 예정이니 ffill로 설정합니다.\n\ndf_monthly = df.asfreq('M', method='ffill')\ndisplay(df_monthly.head(5))\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\n2617.870117\n2668.590088\n2591.530029\n2663.340088\n2663.340088\n433700\n2614.489990\n\n\n2022-02-28\n2663.000000\n2699.179932\n2658.250000\n2699.179932\n2699.179932\n613300\n2676.760010\n\n\n2022-03-31\n2743.239990\n2765.199951\n2743.199951\n2757.649902\n2757.649902\n1029500\n2746.739990\n\n\n2022-04-30\n2669.179932\n2696.100098\n2664.060059\n2695.050049\n2695.050049\n975000\n2667.489990\n\n\n2022-05-31\n2666.879883\n2685.899902\n2654.320068\n2685.899902\n2685.899902\n670700\n2669.659912\n\n\n\n\n\n\n\n이번에는 월말인 2022년 1월 31일 데이터가 NaN이 아니고 이전 시점의 데이터로 업데이트 된 것을 알 수 있습니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#resample",
-    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#resample",
-    "title": "시계열 데이터 분석",
-    "section": "resample()",
-    "text": "resample()\nresample()함수는 주어진 빈도로 리샘플링할 때 사용합니다. 데이터를 보간하여 빈 시간대에 대한 새로운 값을 생성합니다. 시간을 기반으로 한 데이터에 적용하는 groupby함수로 생각할 수 있습니다.\nasfreq()함수는 주기를 변경하기 위해 사용되어 해당 시점에 원데이터가 없다면 NaN으로 표시됩니다.\n\ndf_monthly = df.resample('M').last()\ndf_monthly.head(5)\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\n2617.870117\n2668.590088\n2591.530029\n2663.340088\n2663.340088\n433700\n2614.489990\n\n\n2022-02-28\n2663.000000\n2699.179932\n2658.250000\n2699.179932\n2699.179932\n613300\n2676.760010\n\n\n2022-03-31\n2743.239990\n2765.199951\n2743.199951\n2757.649902\n2757.649902\n1029500\n2746.739990\n\n\n2022-04-30\n2669.179932\n2696.100098\n2664.060059\n2695.050049\n2695.050049\n975000\n2667.489990\n\n\n2022-05-31\n2666.879883\n2685.899902\n2654.320068\n2685.899902\n2685.899902\n670700\n2669.659912\n\n\n\n\n\n\n\n\n\nresample()함수에 시간 간격이 전달된 후 리턴되는 객체는 DatetimeIndexResampler입니다. 이 객체에 시간단위로 그룹된 데이터를 처리할 방식을 전달합니다. 월단위로 리샘플링된 그룹에 마지막 값을 취하기 위해서 last()를 수행하여 매월 마지막 주가정보로 저장되었습니다.\n\ndf_monthly = df.resample('M').mean()\ndf_monthly.head(5)\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\n2872.972116\n2886.611598\n2842.880525\n2859.066830\n2859.066830\n5.516632e+05\n2869.940538\n\n\n2022-02-28\n2722.530002\n2740.107788\n2703.206665\n2724.015015\n2724.015015\n5.617500e+05\n2722.023912\n\n\n2022-03-31\n2699.054316\n2710.955694\n2684.923840\n2698.716192\n2698.716192\n6.851857e+05\n2695.931908\n\n\n2022-04-30\n2700.210007\n2711.937163\n2688.504790\n2703.242850\n2703.242850\n1.048310e+06\n2706.223796\n\n\n2022-05-31\n2628.057971\n2642.537500\n2613.529016\n2629.215002\n2629.215002\n7.979600e+05\n2629.672510\n\n\n\n\n\n\n\n\n\nKOSPI주가 지수의 월별 평균값을 구해봅니다. 시간간격은 동일하게 월 단위이고 해당 시간 단위 데이터를 평균하기 위해 mean함수를 사용했습니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#rolling",
-    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#rolling",
-    "title": "시계열 데이터 분석",
-    "section": "rolling()",
-    "text": "rolling()\n시계열 정보에서는 여러가지 이동 통계를 사용합니다. 일반적으로 이동 평균, 이동 표준 편차등이 주로 사용됩니다. 이동 통계를 이용하면 시계열 데이터의 추세를 확인할 수 있으며 이상치 검출에도 사용할 수 있습니다. 이동 윈도우에 크기에 따라서 데이터를 부드럽게 만들 수 있기 때문에 데이터가 가지는 불필요한 고주파 노이즈를 제거할 수 있습니다.\nPandas에서는 rolling()함수로 롤링 윈도우를 지원합니다. 이 함수를 이용해서 KOSPI 지수의 60일 이동평균값을 확인해봅니다.\n\ndf_monthly = df.rolling('60d').mean()\ndf_monthly.head(5)\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-04\n2991.969971\n2995.250000\n2973.080078\n2989.239990\n2989.239990\n621200.0\nNaN\n\n\n2022-01-05\n2988.010010\n2990.724976\n2954.905029\n2971.604981\n2971.604981\n704050.0\n2989.239990\n\n\n2022-01-06\n2967.139974\n2977.996663\n2941.729980\n2954.579997\n2954.579997\n731200.0\n2971.604981\n\n\n2022-01-07\n2958.799988\n2973.255005\n2939.572510\n2954.657471\n2954.657471\n684850.0\n2954.579997\n\n\n2022-01-10\n2956.514014\n2968.828027\n2933.837988\n2949.069971\n2949.069971\n643280.0\n2954.657471"
-  },
-  {
-    "objectID": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-    "href": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-    "title": "HuggingFace Examples",
-    "section": "",
-    "text": "허깅페이스 예제코드를 정리하는 온라인 책입니다."
-  },
-  {
-    "objectID": "docs/book_blog/posts/2023-09-03-data-visualization/index.html",
-    "href": "docs/book_blog/posts/2023-09-03-data-visualization/index.html",
+    "objectID": "docs/bookshelf/data_visualization/time_series_visualization.html",
+    "href": "docs/bookshelf/data_visualization/time_series_visualization.html",
     "title": "시계열 데이터 시각화",
     "section": "",
-    "text": "시계열 데이터 시각화는 시계열 데이터를 시각화하는 방법을 정리합니다."
+    "text": "시계열 데이터를 시각화를 연습합니다. 시계열 데이터 중 좋은 예로 사용할 수 있는 데이터는 주식데이터일 것 같습니다. FinanceDataReader라이브러리를 이용하여 Kospi 주가 정보를 읽어오고 이를 이용하여 월별 수익률을 계산합니다.\n시계열 데이터의 경우 일정 기간을 기준으로 통계정보를 추출하고 이를 지표로 사용하는 경우가 많습니다. KOSPI 주가지수를 분석하는 예제로 시계열 데이터를 시각화합니다.\n\n\n\n                                                \n\n\nPandas 데이터 프레임으로 KOSPI 주가지수 정보를 로드하고 각각의 정보를 3개의 sub plot으로 구성하여 같이 비교할 수 있도록 위와 같이 구성합니다. 예제를 통해서 subplot을 생성하는 방법에 대해서 이해할 수 있었고 특정 시간 단위로 시계열 데이터를 처리하는 방법도 배울 수 있었습니다."
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html",
+    "href": "docs/bookshelf/data_visualization/time_series_basic.html",
+    "title": "시계열 데이터",
+    "section": "",
+    "text": "시계열 데이터는 일정 시간간격을 측정된 정보한 데이터입니다. 시계열 데이터는 시간의 흐름에 따라서 테이터가 갖는 특징을 확인하기 위해서 생성되며 금융 정보나 생체 정보등의 특징을 저장하는 경우가 많습니다.\nPandas는 시계열 데이터를 관리하기 위한 많은 기능을 제공합니다. 데이터의 추세, 주기성 등을 파악할 수 있고 필요한 경우 예측 모델링을 할 수 있습니다. 그리고 원하는 형태의 시간을 표시할 수 있도록 DatetimeIndex, Timestamp, Teimdelta등 다양한 함수를 지원하고 있습니다."
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시간-데이터형",
+    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시간-데이터형",
+    "title": "시계열 데이터",
+    "section": "시간 데이터형",
+    "text": "시간 데이터형\n시계열 데이터를 이해하기 위해서 데이터를 구성하는 날짜를 어떻게 지정하는 지 이해해야 합니다. 파이썬은 날짜와 시간을 나타내는 datetime클래스를 제공합니다. 그리고 Pandas는 datetime객체를 Timestamp 객체로 변화시켜 사용합니다.\n\nfrom datetime import datetime\nnew_year = datetime(2023, 1, 1, 0, 0)\nnew_year\n\ndatetime.datetime(2023, 1, 1, 0, 0)\n\n\ndatetime객체를 이용하여 2023년 1월 1일 0시 0분을 나타내는 객체를 생성하였습니다. 이제 Timestamp를 이용하여 특정 시점을 표현합니다.\n\nimport pandas as pd\ntime_start = pd.Timestamp('2002-5-5 13:00')\ntime_start\n\nTimestamp('2002-05-05 13:00:00')\n\n\n이제 Pandas의 시계열 데이터의 특정시점을 지정하기 위해서 Timestamp 객체를 생성할 수 있습니다. 하지만 시간 정보를 전달 받는 대부분의 라이브러리는 내부적으로 Timestamp객체로 만들어 데이터를 처리하기 때문에 날짜 및 시간을 표시하는 문자열을 전달 받습니다.\n만약 이와 같이 구성하지 않고 생각해보면 매번 Timestamp나 datetime 클래스로 시간 정보를 변경해서 전달 해야 했다면 매우 불편했을 것 같습니다.\n시계열 데이터는 데이터의 인덱스로 시간 정보를 사용하는 경우가 대부분입니다. Pandas에서는 Timestamp 데이터로 정의된 인덱스인 DatetimeIndex객체를 사용합니다. 시계열 데이터로 데이터 프레임을 생성하고 이 데이터 프레임 index가 어떤 데이터 형인지 알아봅니다.\n\ndates = pd.Series([10, 20], [pd.Timestamp('2023-1-1'), pd.Timestamp('2023-1-2')])\nprint(type(dates.index))\ndisplay(dates)\n\n&lt;class 'pandas.core.indexes.datetimes.DatetimeIndex'&gt;\n\n\n2023-01-01    10\n2023-01-02    20\ndtype: int64\n\n\n위의 코드에서 dates라는 이름으로 pandas series데이터를 생성했습니다. 데이터와 함께 index로 Timestamp정보가 전달됩니다. dates series 데이터에 전달된 Timestamp는 인덱스로 사용되면서 데이터형은 DatetimeIndex로 설정되었습니다.\n\ndf = pd.DataFrame({'data': [10, 20]},\n                    index = pd.to_datetime(['2023-1-1', '2023-1-2']))\nprint(type(df.index))\ndisplay(df)\n\n&lt;class 'pandas.core.indexes.datetimes.DatetimeIndex'&gt;\n\n\n\n\n\n\n\n\n\ndata\n\n\n\n\n2023-01-01\n10\n\n\n2023-01-02\n20\n\n\n\n\n\n\n\n위의 코드는 df 데이터 프레임 생성 시 index정보를 to_datetime()함수를 이용하여 Timestamp로 변환하고 이를 index로 전달했습니다. 데이터 프레임의 index는 이전 예제와 같이 DatetimeIndex로 표시됩니다.\n\n\n\n\n\n\nTip\n\n\n\n하지만 매번 Timestamp객체를 만들어 전달하는 것을 코드의 가독성을 낮추는 문제가 있습니다. to_dateteime함수는 Pandas는 Timestamp로 전달될 수 있는 문자열을 Timestamp로 변환할 수 있기 때문에 좀 더 효율적으로 DatetimeIndex를 생성할 수 있습니다."
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시간-간격-표현방법",
+    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시간-간격-표현방법",
+    "title": "시계열 데이터",
+    "section": "시간 간격 표현방법",
+    "text": "시간 간격 표현방법\n\nTimedelta\nTimedelta 클래스는 시간간격을 표시하기 위해 사용됩니다. 두 날짜 사이의 차이를 계산하거나 간격을 계산하기 위해서 사용됩니다. Timedelta를 사용하기 위해서는 datatime 패키지에서 Timedelta를 import해야 합니다.\n\nimport pandas as pd\nfrom datetime import datetime, timedelta\nnow = datetime.now()\nbefore_7days = now - timedelta(days=7)\ndisplay(before_7days)\n\ndatetime.datetime(2023, 11, 6, 23, 53, 8, 632763)\n\n\n예를 들어 시계열 데이터의 현재시점에서 7일전 데이터와의 차이를 확인하기 위해서는 현재 시점에서 원하는 날짜 차이를 빼야 합니다. timedelta를 사용하여 현재 시간에서 7일전을 계산한 결과가 출력되었습니다.\n\n\nDateOffset\nDateOffset은 정기적인 증가 또는 감소를 표현하기 위한 시간적 크기를 표현합니다. 일정 시점에서 자신이 원하는 시간 간격만큼 더하거나 빼는 수학적 연산을 DateOffset을 이용하여 수행합니다.\n\ndate = pd.Timestamp('2023-01-01')\noffset_3days = pd.DateOffset(days = 3)\noffset_3hours = pd.DateOffset(hours = 3)\ndisplay(date + offset_3days)\ndisplay(date + offset_3hours)\n\nTimestamp('2023-01-04 00:00:00')\n\n\nTimestamp('2023-01-01 03:00:00')\n\n\n2023년 1월 1일을 나타내는 date에 3일과 3시간 간격의 DateOffset 객체를 더해 지정한 간격의 날짜 정보를 얻을 수 있습니다."
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시간-반복-시계열-생성방법",
+    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시간-반복-시계열-생성방법",
+    "title": "시계열 데이터",
+    "section": "시간 반복 시계열 생성방법",
+    "text": "시간 반복 시계열 생성방법\n\nRange\nRange class는 일정 시간 간격으로 시계열 데이터를 만들어야하는 경우 사용됩니다. 년도, 분기, 월 등 다양한 시간간격을 나타낼 수 있으며 이를 이용하여 일정한 간격의 시계열 데이터를 처리하는 경우에 사용할 수 있습니다.\n예를 들어 특정한 시작날짜와 종료날짜 사이의 기간을 주단위로 시간간격으로 정보를 확인해야하는 경우 사용될 수 있습니다.\n\nimport pandas as pd\nimport numpy as np\n\ndates = pd.date_range('2023-1-1', '2023-5-1', freq = 'W')\ndf = pd.DataFrame({'date' : dates,\n                   'value' : range(len(dates))})\ndisplay(dates)\ndisplay(df.head())\n\nDatetimeIndex(['2023-01-01', '2023-01-08', '2023-01-15', '2023-01-22',\n               '2023-01-29', '2023-02-05', '2023-02-12', '2023-02-19',\n               '2023-02-26', '2023-03-05', '2023-03-12', '2023-03-19',\n               '2023-03-26', '2023-04-02', '2023-04-09', '2023-04-16',\n               '2023-04-23', '2023-04-30'],\n              dtype='datetime64[ns]', freq='W-SUN')\n\n\n\n\n\n\n\n\n\ndate\nvalue\n\n\n\n\n0\n2023-01-01\n0\n\n\n1\n2023-01-08\n1\n\n\n2\n2023-01-15\n2\n\n\n3\n2023-01-22\n3\n\n\n4\n2023-01-29\n4\n\n\n\n\n\n\n\ndates는 date_range()함수에 전달된 시작시점과 종료시점 사이를 freq로 전달된 간격만큼 떨어진 시간 정보를 생성했습니다. freq로 전달될 수 있는 주요 offset정보는 아래와 같습니다. 자세한 내용은 Pandas API 문서에서 확인 합니다.\n\n\n\nAlias\nDescription\n\n\n\n\nB\nbusiness day frequency\n\n\nBM\nbusiness month end frequency\n\n\nMS\nmonth start frequency\n\n\nQ\nquarter end frequency\n\n\nW-MON\nweekly frequency (Mondays)\n\n\n\nW-MON은 고정 오프셋으로 특정 날짜를 기준으로하는 빈도가 필요할 때 사용합니다. 위의 예제의 기간 중 매주 월요일을 간격으로 날짜를 생성하는 예제를 확인합니다.\n\nimport pandas as pd\nimport numpy as np\n\ndates = pd.date_range('2023-1-1', '2023-5-1', freq = 'W-MON')\ndf = pd.DataFrame({'date' : dates,\n                   'value' : range(len(dates))})\ndisplay(df.head())\n\n\n\n\n\n\n\n\ndate\nvalue\n\n\n\n\n0\n2023-01-02\n0\n\n\n1\n2023-01-09\n1\n\n\n2\n2023-01-16\n2\n\n\n3\n2023-01-23\n3\n\n\n4\n2023-01-30\n4\n\n\n\n\n\n\n\n생성된 데이터 프레임의 처음 날짜는 2023년 1월 1일이 아니고 해당 기간 중 첫 번째 월요일인 2023년 1월 2일로 날짜가 생성되었습니다.\n\n\nPeriod\n일정 시점에서 한달 간격으로 수행하는 작업이 있는 경우 Period를 사용할 수 있습니다. Period는 Timestamp와 DateOffset으로 생성한는 시간 데이터를 더 효율적으로 관리할 수 있도록 합니다.\n\nperiods = pd.Period('2023-1-1', freq='M')\ndisplay(periods)\ndisplay(periods+1)\n\nPeriod('2023-01', 'M')\n\n\nPeriod('2023-02', 'M')"
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시계열-데이터-만들기",
+    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시계열-데이터-만들기",
+    "title": "시계열 데이터",
+    "section": "시계열 데이터 만들기",
+    "text": "시계열 데이터 만들기\n다양한 시계열 데이터를 만들면서 Pandas에서 제공하는 시계열 데이터 생성 기능을 배워봅니다.\n\n특정 빈도의 시계열 생성\nPandas에서 제공하는 to_datetime()'과date_range()` 함수를 이용해서 시계열 데이터를 만들어 봅니다.\n\nindex = pd.to_datetime(['2023-1-1', '2023-2-28', '2023-3-31', '2023-4-30'])\ndata = range(len(index))\ndf = pd.DataFrame({'data': data},\n                    index = index)\nprint(type(df.index))\ndisplay(df)\n\n&lt;class 'pandas.core.indexes.datetimes.DatetimeIndex'&gt;\n\n\n\n\n\n\n\n\n\n\ndata\n\n\n\n\n2023-01-01\n0\n\n\n2023-02-28\n1\n\n\n2023-03-31\n2\n\n\n2023-04-30\n3\n\n\n\n\n\nFigure 1: 데이터프레임 생성, to_datetime()\n\n\n\n위의 예제에서는 to_datetime()함수로 일정 시간 정보를 데이터 프레임의 index로 전달하여 데이터 프레임을 생성합니다. 데이터 프레임의 index는 DateTimeIndex로 표시되었습니다.\n\nindex = pd.date_range('2023-1-1', '2023-5-1', freq = 'M')\ndata = range(len(index))\ndf = pd.DataFrame({'data' : data},\n                   index = index)\ndisplay(df)\n\n\n\n\n\n\n\n\n\ndata\n\n\n\n\n2023-01-31\n0\n\n\n2023-02-28\n1\n\n\n2023-03-31\n2\n\n\n2023-04-30\n3\n\n\n\n\n\nFigure 2: 데이터프레임 생성, date_range()\n\n\n\nSection 3.2 에서 사용한 date_range()함수를 이용하면 Figure 1 와 같이 to_datatime()함수 이용한 시간 정보가 동일한 간격이라면 Figure 2 처럼 date_range()함수를 이용해 다시 간략하게 표현할 수 있습니다."
+  },
+  {
+    "objectID": "docs/bookshelf/glossary/index.html",
+    "href": "docs/bookshelf/glossary/index.html",
+    "title": "",
+    "section": "",
+    "text": "&lt;/div&gt;\n\n&lt;!-- &lt;/table&gt; --&gt;\n&lt;!-- ::: --&gt;\n&lt;!--\n &lt;iframe src=\"iframe.html\" id=\"iframe\" onload=\"Height();\" frameborder=\"0\" scrolling=\"no\" style=\"overflow-x:hidden; overflow:auto; width:100%; min-height:500px;\"&gt; --&gt;"
+  },
+  {
+    "objectID": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
+    "href": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
+    "title": "Korean Study Book",
+    "section": "",
+    "text": "It is the book for Korean Study"
+  },
+  {
+    "objectID": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+    "href": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+    "title": "딥러닝 용어 사전",
+    "section": "",
+    "text": "딥러닝 용어사전은 딥러닝에 사용되는 영어 용어를 한글 용어로 번역하기 위해 사용됩니다. 통일성 있는 번역 문서를 만들기 위해서 다함께 등록하고 수정하는 오픈 용어 사전입니다."
+  },
+  {
+    "objectID": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-1",
+    "href": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-1",
+    "title": "딥러닝 문서 번역하기",
+    "section": "번역의 어려움 1",
+    "text": "번역의 어려움 1\n\n일관성 있게 용어를 사용하기가 어려움\n\n번역하는 사람이 여러 명이기 때문에 동일한 용어를 다르게 번역하는 경우가 발생함\n한국어 문장 형식이 서로 다름.\n\n~한다로 사용? 아니면 ~합니다로 사용?\n\n\n팀 내부에서 간단한 style guide를 정하면 좋다.\n\n하지만 너무 복잡하면 찾기 어려워 결국 사용 못함!\n컨센서스와 쉽게 확인할 수 있는 정도가 좋음."
+  },
+  {
+    "objectID": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-2",
+    "href": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-2",
+    "title": "딥러닝 문서 번역하기",
+    "section": "번역의 어려움 2",
+    "text": "번역의 어려움 2\n\n번역 리뷰는 어떻게 진행하지?\n\n얼마나 자세하게 확인해야하나?\n하다보면 계속 고칠 것이 나와서 번역이 완료가 안됨! ㅠ_ㅠ\n\n번역완료에 대한 기준 (시간, 리뷰어 수를 정하자!!)\n\n\n\n번역을 하다보니 문서 자체에 대한 이해가 부족한 것 같다.\n\n번역은 다 했는데 막상 다시보니 문서내용을 이해를 못했다.\n번역 작업의 목적?\n\n문서를 이해하고 배우기 위한 것이 목적인가?\n아니면 번역 skill을 높이는 것이 목적인가?\n\n머지가 되면 자기 문서를 발표해보자."
+  },
+  {
+    "objectID": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-3",
+    "href": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-3",
+    "title": "딥러닝 문서 번역하기",
+    "section": "번역의 어려움 3",
+    "text": "번역의 어려움 3\n\n영어 용어를 한국어로 변경하는 방식\n\n외국어 표기법\n\n예제: custom, 커스텀\n장점: 번역의 편리성, 영어 단어의 의미를 안다면 이해가 쉬움\n단점: 생소한 영어단어의 경우 의미 전달이 어려움, 번역의 장점이 없음\n\n한국어 사용\n\n예제: custom, 사용자정의\n장점: 의미 전달이 가능함.\n단점: 적절한 한국어 단어 선택이 어려움. 올바른 단어인지 결정할 주체가 없음. 원래 영어용어를 알 수 없어 원문이나 논문을 읽을 때 어려움."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Public BookShelf",
+    "section": "",
+    "text": "온라인 책장입니다. 공부한 내용을 정리하고 차근차근 모아 책으로 만듭니다.\n추가하고 싶은 책이 있다면 블로그에 하나씩 글을 모으는 것으로 시작합니다. 느리게 작지만 꾸준히 글쓰기를 연습합니다."
+  },
+  {
+    "objectID": "books.html",
+    "href": "books.html",
+    "title": "Books",
+    "section": "",
+    "text": "온라인 책들을 정리합니다."
   },
   {
     "objectID": "docs/slideshelf/quarto-introduction/index.html#quart가-뭐죠",
@@ -525,137 +567,116 @@
     "text": "번역의 어려움 3\n\n영어 용어를 한국어로 변경하는 방식\n\n외국어 표기법\n\n예제: custom, 커스텀\n장점: 번역의 편리성, 영어 단어의 의미를 안다면 이해가 쉬움\n단점: 생소한 영어단어의 경우 의미 전달이 어려움, 번역의 장점이 없음\n\n한국어 사용\n\n예제: custom, 사용자정의\n장점: 의미 전달이 가능함.\n단점: 적절한 한국어 단어 선택이 어려움. 올바른 단어인지 결정할 주체가 없음. 원래 영어용어를 알 수 없어 원문이나 논문을 읽을 때 어려움."
   },
   {
-    "objectID": "books.html",
-    "href": "books.html",
-    "title": "Books",
-    "section": "",
-    "text": "온라인 책들을 정리합니다."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Public BookShelf",
-    "section": "",
-    "text": "온라인 책장입니다. 공부한 내용을 정리하고 차근차근 모아 책으로 만듭니다.\n추가하고 싶은 책이 있다면 블로그에 하나씩 글을 모으는 것으로 시작합니다. 느리게 작지만 꾸준히 글쓰기를 연습합니다."
-  },
-  {
-    "objectID": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-1",
-    "href": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-1",
-    "title": "딥러닝 문서 번역하기",
-    "section": "번역의 어려움 1",
-    "text": "번역의 어려움 1\n\n일관성 있게 용어를 사용하기가 어려움\n\n번역하는 사람이 여러 명이기 때문에 동일한 용어를 다르게 번역하는 경우가 발생함\n한국어 문장 형식이 서로 다름.\n\n~한다로 사용? 아니면 ~합니다로 사용?\n\n\n팀 내부에서 간단한 style guide를 정하면 좋다.\n\n하지만 너무 복잡하면 찾기 어려워 결국 사용 못함!\n컨센서스와 쉽게 확인할 수 있는 정도가 좋음."
-  },
-  {
-    "objectID": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-2",
-    "href": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-2",
-    "title": "딥러닝 문서 번역하기",
-    "section": "번역의 어려움 2",
-    "text": "번역의 어려움 2\n\n번역 리뷰는 어떻게 진행하지?\n\n얼마나 자세하게 확인해야하나?\n하다보면 계속 고칠 것이 나와서 번역이 완료가 안됨! ㅠ_ㅠ\n\n번역완료에 대한 기준 (시간, 리뷰어 수를 정하자!!)\n\n\n\n번역을 하다보니 문서 자체에 대한 이해가 부족한 것 같다.\n\n번역은 다 했는데 막상 다시보니 문서내용을 이해를 못했다.\n번역 작업의 목적?\n\n문서를 이해하고 배우기 위한 것이 목적인가?\n아니면 번역 skill을 높이는 것이 목적인가?\n\n머지가 되면 자기 문서를 발표해보자."
-  },
-  {
-    "objectID": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-3",
-    "href": "docs/slideshelf/deeplearning-translation/index.html#번역의-어려움-3",
-    "title": "딥러닝 문서 번역하기",
-    "section": "번역의 어려움 3",
-    "text": "번역의 어려움 3\n\n영어 용어를 한국어로 변경하는 방식\n\n외국어 표기법\n\n예제: custom, 커스텀\n장점: 번역의 편리성, 영어 단어의 의미를 안다면 이해가 쉬움\n단점: 생소한 영어단어의 경우 의미 전달이 어려움, 번역의 장점이 없음\n\n한국어 사용\n\n예제: custom, 사용자정의\n장점: 의미 전달이 가능함.\n단점: 적절한 한국어 단어 선택이 어려움. 올바른 단어인지 결정할 주체가 없음. 원래 영어용어를 알 수 없어 원문이나 논문을 읽을 때 어려움."
-  },
-  {
-    "objectID": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
-    "href": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
-    "title": "딥러닝 용어 사전",
-    "section": "",
-    "text": "딥러닝 용어사전은 딥러닝에 사용되는 영어 용어를 한글 용어로 번역하기 위해 사용됩니다. 통일성 있는 번역 문서를 만들기 위해서 다함께 등록하고 수정하는 오픈 용어 사전입니다."
-  },
-  {
-    "objectID": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
-    "href": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
-    "title": "Korean Study Book",
-    "section": "",
-    "text": "It is the book for Korean Study"
-  },
-  {
-    "objectID": "docs/bookshelf/glossary/index.html",
-    "href": "docs/bookshelf/glossary/index.html",
-    "title": "",
-    "section": "",
-    "text": "&lt;/div&gt;\n\n&lt;!-- &lt;/table&gt; --&gt;\n&lt;!-- ::: --&gt;\n&lt;!--\n &lt;iframe src=\"iframe.html\" id=\"iframe\" onload=\"Height();\" frameborder=\"0\" scrolling=\"no\" style=\"overflow-x:hidden; overflow:auto; width:100%; min-height:500px;\"&gt; --&gt;"
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html",
-    "href": "docs/bookshelf/data_visualization/time_series_basic.html",
-    "title": "시계열 데이터",
-    "section": "",
-    "text": "시계열 데이터는 일정 시간간격을 측정된 정보한 데이터입니다. 시계열 데이터는 시간의 흐름에 따라서 테이터가 갖는 특징을 확인하기 위해서 생성되며 금융 정보나 생체 정보등의 특징을 저장하는 경우가 많습니다.\nPandas는 시계열 데이터를 관리하기 위한 많은 기능을 제공합니다. 데이터의 추세, 주기성 등을 파악할 수 있고 필요한 경우 예측 모델링을 할 수 있습니다. 그리고 원하는 형태의 시간을 표시할 수 있도록 DatetimeIndex, Timestamp, Teimdelta등 다양한 함수를 지원하고 있습니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시간-데이터형",
-    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시간-데이터형",
-    "title": "시계열 데이터",
-    "section": "시간 데이터형",
-    "text": "시간 데이터형\n시계열 데이터를 이해하기 위해서 데이터를 구성하는 날짜를 어떻게 지정하는 지 이해해야 합니다. 파이썬은 날짜와 시간을 나타내는 datetime클래스를 제공합니다. 그리고 Pandas는 datetime객체를 Timestamp 객체로 변화시켜 사용합니다.\n\nfrom datetime import datetime\nnew_year = datetime(2023, 1, 1, 0, 0)\nnew_year\n\ndatetime.datetime(2023, 1, 1, 0, 0)\n\n\ndatetime객체를 이용하여 2023년 1월 1일 0시 0분을 나타내는 객체를 생성하였습니다. 이제 Timestamp를 이용하여 특정 시점을 표현합니다.\n\nimport pandas as pd\ntime_start = pd.Timestamp('2002-5-5 13:00')\ntime_start\n\nTimestamp('2002-05-05 13:00:00')\n\n\n이제 Pandas의 시계열 데이터의 특정시점을 지정하기 위해서 Timestamp 객체를 생성할 수 있습니다. 하지만 시간 정보를 전달 받는 대부분의 라이브러리는 내부적으로 Timestamp객체로 만들어 데이터를 처리하기 때문에 날짜 및 시간을 표시하는 문자열을 전달 받습니다.\n만약 이와 같이 구성하지 않고 생각해보면 매번 Timestamp나 datetime 클래스로 시간 정보를 변경해서 전달 해야 했다면 매우 불편했을 것 같습니다.\n시계열 데이터는 데이터의 인덱스로 시간 정보를 사용하는 경우가 대부분입니다. Pandas에서는 Timestamp 데이터로 정의된 인덱스인 DatetimeIndex객체를 사용합니다. 시계열 데이터로 데이터 프레임을 생성하고 이 데이터 프레임 index가 어떤 데이터 형인지 알아봅니다.\n\ndates = pd.Series([10, 20], [pd.Timestamp('2023-1-1'), pd.Timestamp('2023-1-2')])\nprint(type(dates.index))\ndisplay(dates)\n\n&lt;class 'pandas.core.indexes.datetimes.DatetimeIndex'&gt;\n\n\n2023-01-01    10\n2023-01-02    20\ndtype: int64\n\n\n위의 코드에서 dates라는 이름으로 pandas series데이터를 생성했습니다. 데이터와 함께 index로 Timestamp정보가 전달됩니다. dates series 데이터에 전달된 Timestamp는 인덱스로 사용되면서 데이터형은 DatetimeIndex로 설정되었습니다.\n\ndf = pd.DataFrame({'data': [10, 20]},\n                    index = pd.to_datetime(['2023-1-1', '2023-1-2']))\nprint(type(df.index))\ndisplay(df)\n\n&lt;class 'pandas.core.indexes.datetimes.DatetimeIndex'&gt;\n\n\n\n\n\n\n\n\n\ndata\n\n\n\n\n2023-01-01\n10\n\n\n2023-01-02\n20\n\n\n\n\n\n\n\n위의 코드는 df 데이터 프레임 생성 시 index정보를 to_datetime()함수를 이용하여 Timestamp로 변환하고 이를 index로 전달했습니다. 데이터 프레임의 index는 이전 예제와 같이 DatetimeIndex로 표시됩니다.\n\n\n\n\n\n\nTip\n\n\n\n하지만 매번 Timestamp객체를 만들어 전달하는 것을 코드의 가독성을 낮추는 문제가 있습니다. to_dateteime함수는 Pandas는 Timestamp로 전달될 수 있는 문자열을 Timestamp로 변환할 수 있기 때문에 좀 더 효율적으로 DatetimeIndex를 생성할 수 있습니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시간-간격-표현방법",
-    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시간-간격-표현방법",
-    "title": "시계열 데이터",
-    "section": "시간 간격 표현방법",
-    "text": "시간 간격 표현방법\n\nTimedelta\nTimedelta 클래스는 시간간격을 표시하기 위해 사용됩니다. 두 날짜 사이의 차이를 계산하거나 간격을 계산하기 위해서 사용됩니다. Timedelta를 사용하기 위해서는 datatime 패키지에서 Timedelta를 import해야 합니다.\n\nimport pandas as pd\nfrom datetime import datetime, timedelta\nnow = datetime.now()\nbefore_7days = now - timedelta(days=7)\ndisplay(before_7days)\n\ndatetime.datetime(2023, 11, 6, 23, 53, 8, 632763)\n\n\n예를 들어 시계열 데이터의 현재시점에서 7일전 데이터와의 차이를 확인하기 위해서는 현재 시점에서 원하는 날짜 차이를 빼야 합니다. timedelta를 사용하여 현재 시간에서 7일전을 계산한 결과가 출력되었습니다.\n\n\nDateOffset\nDateOffset은 정기적인 증가 또는 감소를 표현하기 위한 시간적 크기를 표현합니다. 일정 시점에서 자신이 원하는 시간 간격만큼 더하거나 빼는 수학적 연산을 DateOffset을 이용하여 수행합니다.\n\ndate = pd.Timestamp('2023-01-01')\noffset_3days = pd.DateOffset(days = 3)\noffset_3hours = pd.DateOffset(hours = 3)\ndisplay(date + offset_3days)\ndisplay(date + offset_3hours)\n\nTimestamp('2023-01-04 00:00:00')\n\n\nTimestamp('2023-01-01 03:00:00')\n\n\n2023년 1월 1일을 나타내는 date에 3일과 3시간 간격의 DateOffset 객체를 더해 지정한 간격의 날짜 정보를 얻을 수 있습니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시간-반복-시계열-생성방법",
-    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시간-반복-시계열-생성방법",
-    "title": "시계열 데이터",
-    "section": "시간 반복 시계열 생성방법",
-    "text": "시간 반복 시계열 생성방법\n\nRange\nRange class는 일정 시간 간격으로 시계열 데이터를 만들어야하는 경우 사용됩니다. 년도, 분기, 월 등 다양한 시간간격을 나타낼 수 있으며 이를 이용하여 일정한 간격의 시계열 데이터를 처리하는 경우에 사용할 수 있습니다.\n예를 들어 특정한 시작날짜와 종료날짜 사이의 기간을 주단위로 시간간격으로 정보를 확인해야하는 경우 사용될 수 있습니다.\n\nimport pandas as pd\nimport numpy as np\n\ndates = pd.date_range('2023-1-1', '2023-5-1', freq = 'W')\ndf = pd.DataFrame({'date' : dates,\n                   'value' : range(len(dates))})\ndisplay(dates)\ndisplay(df.head())\n\nDatetimeIndex(['2023-01-01', '2023-01-08', '2023-01-15', '2023-01-22',\n               '2023-01-29', '2023-02-05', '2023-02-12', '2023-02-19',\n               '2023-02-26', '2023-03-05', '2023-03-12', '2023-03-19',\n               '2023-03-26', '2023-04-02', '2023-04-09', '2023-04-16',\n               '2023-04-23', '2023-04-30'],\n              dtype='datetime64[ns]', freq='W-SUN')\n\n\n\n\n\n\n\n\n\ndate\nvalue\n\n\n\n\n0\n2023-01-01\n0\n\n\n1\n2023-01-08\n1\n\n\n2\n2023-01-15\n2\n\n\n3\n2023-01-22\n3\n\n\n4\n2023-01-29\n4\n\n\n\n\n\n\n\ndates는 date_range()함수에 전달된 시작시점과 종료시점 사이를 freq로 전달된 간격만큼 떨어진 시간 정보를 생성했습니다. freq로 전달될 수 있는 주요 offset정보는 아래와 같습니다. 자세한 내용은 Pandas API 문서에서 확인 합니다.\n\n\n\nAlias\nDescription\n\n\n\n\nB\nbusiness day frequency\n\n\nBM\nbusiness month end frequency\n\n\nMS\nmonth start frequency\n\n\nQ\nquarter end frequency\n\n\nW-MON\nweekly frequency (Mondays)\n\n\n\nW-MON은 고정 오프셋으로 특정 날짜를 기준으로하는 빈도가 필요할 때 사용합니다. 위의 예제의 기간 중 매주 월요일을 간격으로 날짜를 생성하는 예제를 확인합니다.\n\nimport pandas as pd\nimport numpy as np\n\ndates = pd.date_range('2023-1-1', '2023-5-1', freq = 'W-MON')\ndf = pd.DataFrame({'date' : dates,\n                   'value' : range(len(dates))})\ndisplay(df.head())\n\n\n\n\n\n\n\n\ndate\nvalue\n\n\n\n\n0\n2023-01-02\n0\n\n\n1\n2023-01-09\n1\n\n\n2\n2023-01-16\n2\n\n\n3\n2023-01-23\n3\n\n\n4\n2023-01-30\n4\n\n\n\n\n\n\n\n생성된 데이터 프레임의 처음 날짜는 2023년 1월 1일이 아니고 해당 기간 중 첫 번째 월요일인 2023년 1월 2일로 날짜가 생성되었습니다.\n\n\nPeriod\n일정 시점에서 한달 간격으로 수행하는 작업이 있는 경우 Period를 사용할 수 있습니다. Period는 Timestamp와 DateOffset으로 생성한는 시간 데이터를 더 효율적으로 관리할 수 있도록 합니다.\n\nperiods = pd.Period('2023-1-1', freq='M')\ndisplay(periods)\ndisplay(periods+1)\n\nPeriod('2023-01', 'M')\n\n\nPeriod('2023-02', 'M')"
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_basic.html#시계열-데이터-만들기",
-    "href": "docs/bookshelf/data_visualization/time_series_basic.html#시계열-데이터-만들기",
-    "title": "시계열 데이터",
-    "section": "시계열 데이터 만들기",
-    "text": "시계열 데이터 만들기\n다양한 시계열 데이터를 만들면서 Pandas에서 제공하는 시계열 데이터 생성 기능을 배워봅니다.\n\n특정 빈도의 시계열 생성\nPandas에서 제공하는 to_datetime()'과date_range()` 함수를 이용해서 시계열 데이터를 만들어 봅니다.\n\nindex = pd.to_datetime(['2023-1-1', '2023-2-28', '2023-3-31', '2023-4-30'])\ndata = range(len(index))\ndf = pd.DataFrame({'data': data},\n                    index = index)\nprint(type(df.index))\ndisplay(df)\n\n&lt;class 'pandas.core.indexes.datetimes.DatetimeIndex'&gt;\n\n\n\n\n\n\n\n\n\n\ndata\n\n\n\n\n2023-01-01\n0\n\n\n2023-02-28\n1\n\n\n2023-03-31\n2\n\n\n2023-04-30\n3\n\n\n\n\n\nFigure 1: 데이터프레임 생성, to_datetime()\n\n\n\n위의 예제에서는 to_datetime()함수로 일정 시간 정보를 데이터 프레임의 index로 전달하여 데이터 프레임을 생성합니다. 데이터 프레임의 index는 DateTimeIndex로 표시되었습니다.\n\nindex = pd.date_range('2023-1-1', '2023-5-1', freq = 'M')\ndata = range(len(index))\ndf = pd.DataFrame({'data' : data},\n                   index = index)\ndisplay(df)\n\n\n\n\n\n\n\n\n\ndata\n\n\n\n\n2023-01-31\n0\n\n\n2023-02-28\n1\n\n\n2023-03-31\n2\n\n\n2023-04-30\n3\n\n\n\n\n\nFigure 2: 데이터프레임 생성, date_range()\n\n\n\nSection 3.2 에서 사용한 date_range()함수를 이용하면 Figure 1 와 같이 to_datatime()함수 이용한 시간 정보가 동일한 간격이라면 Figure 2 처럼 date_range()함수를 이용해 다시 간략하게 표현할 수 있습니다."
-  },
-  {
-    "objectID": "docs/bookshelf/data_visualization/time_series_visualization.html",
-    "href": "docs/bookshelf/data_visualization/time_series_visualization.html",
+    "objectID": "docs/book_blog/posts/2023-09-03-data-visualization/index.html",
+    "href": "docs/book_blog/posts/2023-09-03-data-visualization/index.html",
     "title": "시계열 데이터 시각화",
     "section": "",
-    "text": "시계열 데이터를 시각화를 연습합니다. 시계열 데이터 중 좋은 예로 사용할 수 있는 데이터는 주식데이터일 것 같습니다. FinanceDataReader라이브러리를 이용하여 Kospi 주가 정보를 읽어오고 이를 이용하여 월별 수익률을 계산합니다.\n시계열 데이터의 경우 일정 기간을 기준으로 통계정보를 추출하고 이를 지표로 사용하는 경우가 많습니다. KOSPI 주가지수를 분석하는 예제로 시계열 데이터를 시각화합니다.\n\n\n\n                                                \n\n\nPandas 데이터 프레임으로 KOSPI 주가지수 정보를 로드하고 각각의 정보를 3개의 sub plot으로 구성하여 같이 비교할 수 있도록 위와 같이 구성합니다. 예제를 통해서 subplot을 생성하는 방법에 대해서 이해할 수 있었고 특정 시간 단위로 시계열 데이터를 처리하는 방법도 배울 수 있었습니다."
+    "text": "시계열 데이터 시각화는 시계열 데이터를 시각화하는 방법을 정리합니다."
   },
   {
-    "objectID": "docs/bookshelf/data_visualization/intro.html",
-    "href": "docs/bookshelf/data_visualization/intro.html",
-    "title": "Introduction",
+    "objectID": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
+    "href": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
+    "title": "HuggingFace Examples",
     "section": "",
-    "text": "데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다."
+    "text": "허깅페이스 예제코드를 정리하는 온라인 책입니다."
   },
   {
-    "objectID": "docs/blog/index.html",
-    "href": "docs/blog/index.html",
-    "title": "Blog",
+    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html",
+    "href": "docs/bookshelf/data_visualization/time_series_analysis.html",
+    "title": "시계열 데이터 분석",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\ndocker-compose로 airflow 설치하기\n\n\ndocker-compose로 airflow 설치하기\n\n\n\n\nDevOps\n\n\n\n\ndocker-compose로 airflow 설치하기\n\n\n\n\n\n\nNov 18, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nMongoDB 명령어 정리하기\n\n\nMongoDB 명령어 정리하기\n\n\n\n\nDatabase\n\n\n\n\nMongoDB 명령어 정리하기\n\n\n\n\n\n\nNov 15, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nmkfifo를 이용한 IPC\n\n\nmkfifo를 이용한 IPC\n\n\n\n\nDevOps\n\n\n\n\nmkfifo를 이용한 IPC\n\n\n\n\n\n\nNov 15, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nwsl2에 docker 설치하기\n\n\nwsl2에 docker 설치하기\n\n\n\n\nDevOps\n\n\n\n\nwsl2에 docker 설치하기\n\n\n\n\n\n\nNov 15, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPymongo 명령어 정리하기\n\n\nPymongo 명령어 정리하기\n\n\n\n\nDatabase\n\n\n\n\nPymongo 명령어 정리하기\n\n\n\n\n\n\nNov 14, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nGithub Pull Request 템플릿 적용하기\n\n\nGithub Pull Request 템플릿 적용하기\n\n\n\n\nDevOps\n\n\n\n\nGithub Pull Request 템플릿을 적용하는 방법을 정리합니다.\n\n\n\n\n\n\nOct 9, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly line, shape 그리기\n\n\nPlotly line, shape 그리기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly line, shape를 그리는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 8, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Funnel(깔대기) 차트 만들기\n\n\nPlotly Funnel(깔대기) 차트 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Funnel(깔대기) 차트를 만드는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 5, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Zoom Disable하기\n\n\nPlotly Zoom Disable하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Zoom을 disable하는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 4, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 차트의 축 tick 회전 및 폰트 변경하기\n\n\nPlotly x축 tick 회전 및 폰트 변경하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly의 x축 tick을 변경하는 방법에 대해서 정리합니다.\n\n\n\n\n\n\nOct 4, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 불릿차트\n\n\nPlotly 불릿차트\n\n\n\n\nData Visualization\n\n\n\n\nPlotly 불릿차트에 대해서 정리합니다.\n\n\n\n\n\n\nOct 3, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Hover 설정하기\n\n\nPlotly Hover 설정하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Hover 레이블을 설정하는 방법을 정리합니다.\n\n\n\n\n\n\nOct 2, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Axis 포멧 변경하기\n\n\nPlotly Axis 포멧 변경하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Axis 포멧 변경하기\n\n\n\n\n\n\nSep 30, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 마커 모양 변경하기\n\n\nPlotly 마커 모양 변경하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly 마커 모양을 변경하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 28, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Time Series 날짜 범위 UI 사용하기\n\n\nPlotly Time Series 날짜 범위 UI 사용하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Time Series 날짜 범위를 지정하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 25, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Dash로 Table 표시하기\n\n\nPlotly Dash로 Table 표시하기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Dash로 Table 표시하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 24, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Rador 차트 만들기\n\n\nPlotly Rador 차트 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Rador 차트를 만드는 방법을 정리합니다.\n\n\n\n\n\n\nSep 23, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly 3D Plot만들기\n\n\nPlotly 3D Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly 3D Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 22, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Line Plot만들기\n\n\nPlotly Line Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Line Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 22, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Histogram Plot만들기\n\n\nPlotly Histogram Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Histogram Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 21, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Scatter Plot만들기\n\n\nPlotly Scatter Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Scatter Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 19, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Animation 만들기\n\n\nPlotly Animation 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Animation의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 18, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Box Plot만들기\n\n\nPlotly Box Plot만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Bar Plot의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 18, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Treemap 만들기\n\n\nPlotly Treemap 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Treemap의 사용방법과 생상변경 방법을 정리합니다.\n\n\n\n\n\n\nSep 17, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Bubble chart 만들기\n\n\nPlotly Bubble chart 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Bubble chart의 사용방법을 정리합니다.\n\n\n\n\n\n\nSep 17, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\n날짜 범위 index 만들기\n\n\n날짜 범위 index 만들기\n\n\n\n\nPandas\n\n\n\n\n날짜 범위 index 만들기\n\n\n\n\n\n\nSep 16, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 모든 컬럼이 NaN일 때만 삭제하기\n\n\nPandas 모든 컬럼이 NaN일 때만 삭제하기\n\n\n\n\nPandas\n\n\n\n\nPandas 모든 컬럼이 NaN일 때만 삭제하기\n\n\n\n\n\n\nSep 14, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 중복 데이터 제거하기\n\n\nPandas 중복 데이터 제거하기\n\n\n\n\nPandas\n\n\n\n\nPandas 중복 데이터 제거하기\n\n\n\n\n\n\nSep 14, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPlotly Subpolt 만들기\n\n\nPlotly Subpolt 만들기\n\n\n\n\nData Visualization\n\n\n\n\nPlotly Subplt 만들기\n\n\n\n\n\n\nSep 13, 2023\n\n\n양성모\n\n\n\n\n\n\n  \n\n\n\n\nMarkdown문법 정리하기\n\n\nMarkdown문법 정리하기\n\n\n\n\nQuarto\n\n\n\n\nMarkdown문법을 정리합니다.\n\n\n\n\n\n\nSep 12, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 데이터프레임 머지\n\n\nPandas 데이터프레임 머지하기\n\n\n\n\nPandas\n\n\n\n\nPandas 데이터프레임을 머지하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 11, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nQuarto Callout Block\n\n\nCallout Block으로 내용 강조하기\n\n\n\n\nQuarto\n\n\n\n\nQuarto Callout으로 내용 강조하는 방법을 정리합니다.\n\n\n\n\n\n\nSep 10, 2023\n\n\ngabriel yang\n\n\n\n\n\n\n  \n\n\n\n\nPandas 데이터 전처리\n\n\nPandas 데이터 타입 변경 전처리\n\n\n\n\nPandas\n\n\n\n\nPandas 데이터 타입을 변경하는 방법, 데이터 전처리 방법을 정리합니다.\n\n\n\n\n\n\nSep 10, 2023\n\n\ngabriel yang\n\n\n\n\n\n\nNo matching items"
+    "text": "KOSPI주가 정보를 저장한 시계열 데이터를 이용해서 정보를 분석하는 연습을 합니다. 시계열데이터 분석을 위해서 시간에 따라 이동시키거나 일정 주기로 추출하는 작업을 수행을 합니다. 일정 기간동안의 통계적 특성을 분석하기 위해서 window을 만들고 이동할 수도 있습니다.\n우선 연습을 위해서 KOSPI주가 정보를 가져옵니다. KOSPI주가 정보를 가져오기 위해 FinanceDataReader 라이브러리를 사용합니다. DataReader함수에 시계열 정보를 가져올 주식 종목 기호 KS11과 시작 시점을 전달합니다.\nimport pandas as pd\nimport numpy as np\nimport FinanceDataReader as fdr\n\nstock_name = 'KS11'\ndf = fdr.DataReader(stock_name, start = '2022-1-1')\ndisplay(df.head(5))\n\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n2022-01-04\n2991.969971\n2995.250000\n2973.080078\n2989.239990\n2989.239990\n621200\n\n\n2022-01-05\n2984.050049\n2986.199951\n2936.729980\n2953.969971\n2953.969971\n786900\n\n\n2022-01-06\n2925.399902\n2952.540039\n2915.379883\n2920.530029\n2920.530029\n785500\n\n\n2022-01-07\n2933.780029\n2959.030029\n2933.100098\n2954.889893\n2954.889893\n545800\n\n\n2022-01-10\n2947.370117\n2951.120117\n2910.899902\n2926.719971\n2926.719971\n477000\n\n\n\n\n\nFigure 1: KOPI 시계열 데이터\n리턴된 데이터를 간단하게 살펴봅니다. 시간 정보로 Index가 표시되고 주가 정보는 각 컬럼에 표시됩니다. 해당 시점의 고점, 저점, 종가, 수정 종가, 시가 총액이 각각 컬럼으로 있습니다.\nFigure 1 의 index의 데이터 형식은 DatetimeIndex로 출력됩니다. 따라서 시계열 데이터 분석에 사용할 수 있는 Pandas 기능을 사용할 수 있습니다."
   },
   {
-    "objectID": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
-    "href": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
-    "title": "MongoDB 명령어 정리하기",
-    "section": "",
-    "text": "MongoDB(몽고디비)는 NoSQL 데이터베이스 시스템의 하나로, 문서 지향(Document-Oriented) 데이터베이스입니다. 이것은 데이터를 BSON(Binary JSON) 형식의 문서로 저장하며, 이러한 문서는 키-값 쌍(key-value pairs)으로 이루어져 있습니다. MongoDB는 관계형 데이터베이스와는 달리 스키마가 정의되지 않아 유연성이 높고, 데이터 모델의 변화에 적응하기 쉽습니다.\nSQL의 database, table, row를 mongoDB의 구조와 비교해서 테이블로 표시합니다.\n\n\n\nMongoDB\nSQL\n\n\n\n\nDatabase\nDatabase\n\n\nCollection\nTable\n\n\nDocument\nRow\n\n\n\n\nCollection : MongoDB에서는 문서의 그룹을 컬랙션이라고 부르며 논리적으로 그룹화하는 방법입니다.\nDocument : MongoDB는 데이터를 문서로 저장합니다. 문서에는 필드 및 값의 쌍으로 구성되며 중첩되는 구조를 갖을 수 있습니다.\n\nmongoDB를 설치한 후 mongosh 명령을 실행하면 mongoDB 쉘에 접속할 수 있습니다. 버전에 따라서 mongo 명령을 사용합니다.\n\n\nmongo DB를 docker로 설치하는 방법을 정리합니다. 도커를 사용하여 DB를 설치하면 쉽게 DB를 연습할 수 있습니다.\nsudo service docker start\nsudo service docker status\ndocker pull mongo\ndocker images\nREPOSITORY    TAG       IMAGE ID       CREATED        SIZE\nmongo         latest    ee3b4d1239f1   5 weeks ago    748MB\nhello-world   latest    9c7a54a9a43c   6 months ago   13.3kB\nwsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경우 WSL에 docker설치를 확인하세요.\n\n\n\nMongo DB에서 자주 사용하는 명령어를 정리합니다.\n\n\nMongo DB에 admin을 위한 id, password를 설정했다면 해당 정보를 이용하여 DB에 접속해야 합니다.\nmongo admin -u username -p 'password'\n\n\n\ntest&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\nDB를 생성해도 data가 없는 경우 데이터베이스가 표시되지 않습니다.\ntest&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\n정보를 확인할 db를 use명령으로 결정하고 stats명령을 db의 상세 정보를 확인할 수 있습니다.\ntestdb&gt; use admin\nswitched to db admin\nadmin&gt; db.stats()\n{\n  db: 'admin',\n  collections: Long(\"1\"),\n  views: Long(\"0\"),\n  objects: Long(\"1\"),\n  avgObjSize: 59,\n  dataSize: 59,\n  storageSize: 20480,\n  indexes: Long(\"1\"),\n  indexSize: 20480,\n  totalSize: 40960,\n  scaleFactor: Long(\"1\"),\n  fsUsedSize: 57764601856,\n  fsTotalSize: 1081101176832,\n  ok: 1\n}\n\n\n\ntestdb에 collection을 생성하는 명령을 정리합니다.\nadmin&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; db.createCollection(\"mydoc\")\n{ ok: 1 }\n\ntestdb&gt; show collections\nmydoc\n\n\n\ncollection 이름을 사용하여 단일 문서 삽입 시 insertOne명령을 사용합니다.\ntestdb&gt; show collections\nmydoc\n\ntestdb&gt; db.mydoc.insertOne({name: \"john\", age:30})\n{\n  acknowledged: true,\n  insertedId: ObjectId(\"655228d0dc1f13e70f4fcc12\")\n}\n여러문서를 한 번에 삽입하려면 insertMany메서드를 사용합니다. 데이터는 리스트로 전달합니다.\ntestdb&gt; db.mydoc.insertMany([{name: \"mike\", age:10}, {name: \"tony\", age:51}])\n{\n  acknowledged: true,\n  insertedIds: {\n    '0': ObjectId(\"65522a45dc1f13e70f4fcc13\"),\n    '1': ObjectId(\"65522a45dc1f13e70f4fcc14\")\n  }\n}\n\n\n\nMongoDB에서 데이터를 확인하고 검색하기 위해서는 find 명령어나 그와 유사한 메서드를 사용합니다. MongoDB의 셸에서 데이터를 확인하는 기본적인 방법은 다음과 같습니다.\n# 모든 문서 조회\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 조건에 따른 문서조회\ntestdb&gt; db.mydoc.find({ name: 'john' })\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 }\n]\n\n# 정렬을 사용한 결과정렬\n# age를 오름차순으로 정렬합니다.\ntestdb&gt; db.mydoc.find().sort({ age: 1})\n[\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 제한된 수의 데이터만 출력합니다.\ntestdb&gt; db.mydoc.find().limit(2)\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 }\n]\n\n\n\n문서를 삭제하기 위해서 deleteOne, deleteMany명령을 사용할 수 있습니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\n\ntestdb&gt; db.mydoc.deleteOne({name: \"mike\"})\n{ acknowledged: true, deletedCount: 1 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령은 조건에 맞는 모든 데이터를 삭제합니다. 테스트를 위해서 동일한 나이를 갖는 데이터를 만듭니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 },\n  { _id: ObjectId(\"65522dfadc1f13e70f4fcc16\"), name: 'a', age: 15 },\n  { _id: ObjectId(\"65522dfedc1f13e70f4fcc17\"), name: 'b', age: 15 },\n  { _id: ObjectId(\"65522e01dc1f13e70f4fcc18\"), name: 'c', age: 15 },\n  { _id: ObjectId(\"65522e04dc1f13e70f4fcc19\"), name: 'd', age: 15 }\n]\n\ntestdb&gt; db.mydoc.deleteMany({age: 15})\n{ acknowledged: true, deletedCount: 4 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령을 사용해서 age가 15인 document 4개가 모두 삭제되었습니다.\n\n\n\nDB에서 query로 탐색한 정보 중 특정 key정보만 출력하고 싶은 경우 사용합니다. 선택한 collection의 전체 document 중 date 키 정보만 출력됩니다.\ndb.test_collection.find({}, {'date':1})"
+    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#shift",
+    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#shift",
+    "title": "시계열 데이터 분석",
+    "section": "shift()",
+    "text": "shift()\n시간을 이동시키는 명령어인 shift()함수를 알아봅니다. shift()함수는 지정한 수만큼 인덱스를 이동 시키는 명령입니다. Figure 1 데이터 프레임은 한국 주식 시장이 운영기간을 하루 단위로 측정된 시계열 데이터 프레임입니다. shift()명령을 이용하여 Close컬럼 데이터를 1개 Index크기 만큼 앞으로 이동합니다.\n\ndf['Close+1'] = df['Close'].shift(1)\ndisplay(df[['Close', 'Close+1']].head(5))\n\n\n\n\n\n\n\n\nClose\nClose+1\n\n\nDate\n\n\n\n\n\n\n2022-01-04\n2989.239990\nNaN\n\n\n2022-01-05\n2953.969971\n2989.239990\n\n\n2022-01-06\n2920.530029\n2953.969971\n\n\n2022-01-07\n2954.889893\n2920.530029\n\n\n2022-01-10\n2926.719971\n2954.889893\n\n\n\n\n\n\n\n비교를 쉽게하기 위해서 Close와 Close+1 컬럼만 표시하여 결과를 확인합니다. 새롭게 생성한 Close+1 컬럼은 Close 컬럼이 이동되어 저장되었습니다. 정보를 가져올 수 없는 2023-01-02 인덱스 정보는 NaN으로 표시됩니다."
   },
   {
-    "objectID": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb-도커로-설치하기",
-    "href": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb-도커로-설치하기",
-    "title": "MongoDB 명령어 정리하기",
-    "section": "",
-    "text": "mongo DB를 docker로 설치하는 방법을 정리합니다. 도커를 사용하여 DB를 설치하면 쉽게 DB를 연습할 수 있습니다.\nsudo service docker start\nsudo service docker status\ndocker pull mongo\ndocker images\nREPOSITORY    TAG       IMAGE ID       CREATED        SIZE\nmongo         latest    ee3b4d1239f1   5 weeks ago    748MB\nhello-world   latest    9c7a54a9a43c   6 months ago   13.3kB\nwsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경우 WSL에 docker설치를 확인하세요."
+    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#asfreq",
+    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#asfreq",
+    "title": "시계열 데이터 분석",
+    "section": "asfreq()",
+    "text": "asfreq()\n시계열 데이터 프레임을 새로운 빈도로 변환하기 위해서 as_freq()함수를 사용합니다. KOSPI주가 데이터의 월별 종가 정보를 확인할 수 있도록 이 함수를 사용해 봅니다.\n\ndf_monthly = df.asfreq('M')\ndisplay(df_monthly.head(5))\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n\n\n2022-02-28\n2663.000000\n2699.179932\n2658.250000\n2699.179932\n2699.179932\n613300.0\n2676.760010\n\n\n2022-03-31\n2743.239990\n2765.199951\n2743.199951\n2757.649902\n2757.649902\n1029500.0\n2746.739990\n\n\n2022-04-30\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n\n\n2022-05-31\n2666.879883\n2685.899902\n2654.320068\n2685.899902\n2685.899902\n670700.0\n2669.659912\n\n\n\n\n\n\n\n결과를 보면 NaN으로 데이터가 처리된 부분이 있습니다. 2020년 1월 31일과 2022년 4월 30일 데이터는 왜 없는 걸까요?\n\nstart_day = pd.Timestamp('2022-01-28 00:00:00')\nend_day = start_day + pd.DateOffset(days = 10)\ndf.loc[start_day : end_day, :]\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-28\n2617.870117\n2668.590088\n2591.530029\n2663.340088\n2663.340088\n433700\n2614.489990\n\n\n2022-02-03\n2706.340088\n2735.340088\n2702.780029\n2707.820068\n2707.820068\n435300\n2663.340088\n\n\n2022-02-04\n2714.830078\n2751.800049\n2712.870117\n2750.260010\n2750.260010\n535900\n2707.820068\n\n\n2022-02-07\n2750.699951\n2750.699951\n2718.939941\n2745.060059\n2745.060059\n417600\n2750.260010\n\n\n\n\n\n\n\n시작일을 2022-01-28일로 설정하고 시작일로 부터 10일 간격 뒤의 시간을 종료일로 설정 후 해당 위치의 데이터 프레임 정보를 확인합니다. 1월의 마지막은 1월 31일이지만 주식시장은 1월 28일 거래로 폐장 후 2월에 개장하기 때문에 데이터가 없는 상태입니다.\nasfreq()로 간격을 설정한 기준은 월말을 기준으로 했기 때문에 해당 시점에 데이터가 없어 NaN으로 결과가 출력 되었습니다.\n\n\n\n\n\n\nTip\n\n\n\n새로운 시간 단위를 설정 시 새롭게 설정하는 시간간격에 맞는 원데이터가 없는 경우 NaN으로 데이터가 표시되기 때문에 결과에 유의 해야합니다.\n\n\n주식정보를 갖는 이 데이터 프레임의 특성 상 해당 날짜에 주가 정보가 없다면 직전 날짜의 주가 정보를 유지하면 될 것 같습니다. 1월 28일의 마지막 주가 정보를 1월말 주가 정보로 대체해도 문제가 없는 데이터이기 때문에 as_freq()함수의 method인자를 이용합니다.\nmethod인자에는 NaN으로 표시된 결측치를 어떤 정보로 채울지 결정할 정보를 전달합니다. API문서를 확인하면 bfill과 ffill을 지원한다고 합니다. 우리의 경우 이전 시점의 데이터로 결측치를 채울 예정이니 ffill로 설정합니다.\n\ndf_monthly = df.asfreq('M', method='ffill')\ndisplay(df_monthly.head(5))\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\n2617.870117\n2668.590088\n2591.530029\n2663.340088\n2663.340088\n433700\n2614.489990\n\n\n2022-02-28\n2663.000000\n2699.179932\n2658.250000\n2699.179932\n2699.179932\n613300\n2676.760010\n\n\n2022-03-31\n2743.239990\n2765.199951\n2743.199951\n2757.649902\n2757.649902\n1029500\n2746.739990\n\n\n2022-04-30\n2669.179932\n2696.100098\n2664.060059\n2695.050049\n2695.050049\n975000\n2667.489990\n\n\n2022-05-31\n2666.879883\n2685.899902\n2654.320068\n2685.899902\n2685.899902\n670700\n2669.659912\n\n\n\n\n\n\n\n이번에는 월말인 2022년 1월 31일 데이터가 NaN이 아니고 이전 시점의 데이터로 업데이트 된 것을 알 수 있습니다."
   },
   {
-    "objectID": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb의-명령어-정리",
-    "href": "docs/blog/posts/2023/11/2023-11-13-mongodb/index.html#mongodb의-명령어-정리",
-    "title": "MongoDB 명령어 정리하기",
+    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#resample",
+    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#resample",
+    "title": "시계열 데이터 분석",
+    "section": "resample()",
+    "text": "resample()\nresample()함수는 주어진 빈도로 리샘플링할 때 사용합니다. 데이터를 보간하여 빈 시간대에 대한 새로운 값을 생성합니다. 시간을 기반으로 한 데이터에 적용하는 groupby함수로 생각할 수 있습니다.\nasfreq()함수는 주기를 변경하기 위해 사용되어 해당 시점에 원데이터가 없다면 NaN으로 표시됩니다.\n\ndf_monthly = df.resample('M').last()\ndf_monthly.head(5)\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\n2617.870117\n2668.590088\n2591.530029\n2663.340088\n2663.340088\n433700\n2614.489990\n\n\n2022-02-28\n2663.000000\n2699.179932\n2658.250000\n2699.179932\n2699.179932\n613300\n2676.760010\n\n\n2022-03-31\n2743.239990\n2765.199951\n2743.199951\n2757.649902\n2757.649902\n1029500\n2746.739990\n\n\n2022-04-30\n2669.179932\n2696.100098\n2664.060059\n2695.050049\n2695.050049\n975000\n2667.489990\n\n\n2022-05-31\n2666.879883\n2685.899902\n2654.320068\n2685.899902\n2685.899902\n670700\n2669.659912\n\n\n\n\n\n\n\n\n\nresample()함수에 시간 간격이 전달된 후 리턴되는 객체는 DatetimeIndexResampler입니다. 이 객체에 시간단위로 그룹된 데이터를 처리할 방식을 전달합니다. 월단위로 리샘플링된 그룹에 마지막 값을 취하기 위해서 last()를 수행하여 매월 마지막 주가정보로 저장되었습니다.\n\ndf_monthly = df.resample('M').mean()\ndf_monthly.head(5)\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-31\n2872.972116\n2886.611598\n2842.880525\n2859.066830\n2859.066830\n5.516632e+05\n2869.940538\n\n\n2022-02-28\n2722.530002\n2740.107788\n2703.206665\n2724.015015\n2724.015015\n5.617500e+05\n2722.023912\n\n\n2022-03-31\n2699.054316\n2710.955694\n2684.923840\n2698.716192\n2698.716192\n6.851857e+05\n2695.931908\n\n\n2022-04-30\n2700.210007\n2711.937163\n2688.504790\n2703.242850\n2703.242850\n1.048310e+06\n2706.223796\n\n\n2022-05-31\n2628.057971\n2642.537500\n2613.529016\n2629.215002\n2629.215002\n7.979600e+05\n2629.672510\n\n\n\n\n\n\n\n\n\nKOSPI주가 지수의 월별 평균값을 구해봅니다. 시간간격은 동일하게 월 단위이고 해당 시간 단위 데이터를 평균하기 위해 mean함수를 사용했습니다."
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html#rolling",
+    "href": "docs/bookshelf/data_visualization/time_series_analysis.html#rolling",
+    "title": "시계열 데이터 분석",
+    "section": "rolling()",
+    "text": "rolling()\n시계열 정보에서는 여러가지 이동 통계를 사용합니다. 일반적으로 이동 평균, 이동 표준 편차등이 주로 사용됩니다. 이동 통계를 이용하면 시계열 데이터의 추세를 확인할 수 있으며 이상치 검출에도 사용할 수 있습니다. 이동 윈도우에 크기에 따라서 데이터를 부드럽게 만들 수 있기 때문에 데이터가 가지는 불필요한 고주파 노이즈를 제거할 수 있습니다.\nPandas에서는 rolling()함수로 롤링 윈도우를 지원합니다. 이 함수를 이용해서 KOSPI 지수의 60일 이동평균값을 확인해봅니다.\n\ndf_monthly = df.rolling('60d').mean()\ndf_monthly.head(5)\n\n\n\n\n\n\n\n\nOpen\nHigh\nLow\nClose\nAdj Close\nVolume\nClose+1\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\n2022-01-04\n2991.969971\n2995.250000\n2973.080078\n2989.239990\n2989.239990\n621200.0\nNaN\n\n\n2022-01-05\n2988.010010\n2990.724976\n2954.905029\n2971.604981\n2971.604981\n704050.0\n2989.239990\n\n\n2022-01-06\n2967.139974\n2977.996663\n2941.729980\n2954.579997\n2954.579997\n731200.0\n2971.604981\n\n\n2022-01-07\n2958.799988\n2973.255005\n2939.572510\n2954.657471\n2954.657471\n684850.0\n2954.579997\n\n\n2022-01-10\n2956.514014\n2968.828027\n2933.837988\n2949.069971\n2949.069971\n643280.0\n2954.657471"
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/index.html",
+    "href": "docs/bookshelf/data_visualization/index.html",
+    "title": "Welcome",
     "section": "",
-    "text": "Mongo DB에서 자주 사용하는 명령어를 정리합니다.\n\n\nMongo DB에 admin을 위한 id, password를 설정했다면 해당 정보를 이용하여 DB에 접속해야 합니다.\nmongo admin -u username -p 'password'\n\n\n\ntest&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\nDB를 생성해도 data가 없는 경우 데이터베이스가 표시되지 않습니다.\ntest&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; show dbs\nadmin   40.00 KiB\nconfig  60.00 KiB\nlocal   40.00 KiB\n\n\n\n정보를 확인할 db를 use명령으로 결정하고 stats명령을 db의 상세 정보를 확인할 수 있습니다.\ntestdb&gt; use admin\nswitched to db admin\nadmin&gt; db.stats()\n{\n  db: 'admin',\n  collections: Long(\"1\"),\n  views: Long(\"0\"),\n  objects: Long(\"1\"),\n  avgObjSize: 59,\n  dataSize: 59,\n  storageSize: 20480,\n  indexes: Long(\"1\"),\n  indexSize: 20480,\n  totalSize: 40960,\n  scaleFactor: Long(\"1\"),\n  fsUsedSize: 57764601856,\n  fsTotalSize: 1081101176832,\n  ok: 1\n}\n\n\n\ntestdb에 collection을 생성하는 명령을 정리합니다.\nadmin&gt; use testdb\nswitched to db testdb\n\ntestdb&gt; db.createCollection(\"mydoc\")\n{ ok: 1 }\n\ntestdb&gt; show collections\nmydoc\n\n\n\ncollection 이름을 사용하여 단일 문서 삽입 시 insertOne명령을 사용합니다.\ntestdb&gt; show collections\nmydoc\n\ntestdb&gt; db.mydoc.insertOne({name: \"john\", age:30})\n{\n  acknowledged: true,\n  insertedId: ObjectId(\"655228d0dc1f13e70f4fcc12\")\n}\n여러문서를 한 번에 삽입하려면 insertMany메서드를 사용합니다. 데이터는 리스트로 전달합니다.\ntestdb&gt; db.mydoc.insertMany([{name: \"mike\", age:10}, {name: \"tony\", age:51}])\n{\n  acknowledged: true,\n  insertedIds: {\n    '0': ObjectId(\"65522a45dc1f13e70f4fcc13\"),\n    '1': ObjectId(\"65522a45dc1f13e70f4fcc14\")\n  }\n}\n\n\n\nMongoDB에서 데이터를 확인하고 검색하기 위해서는 find 명령어나 그와 유사한 메서드를 사용합니다. MongoDB의 셸에서 데이터를 확인하는 기본적인 방법은 다음과 같습니다.\n# 모든 문서 조회\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 조건에 따른 문서조회\ntestdb&gt; db.mydoc.find({ name: 'john' })\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 }\n]\n\n# 정렬을 사용한 결과정렬\n# age를 오름차순으로 정렬합니다.\ntestdb&gt; db.mydoc.find().sort({ age: 1})\n[\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 }\n]\n\n# 제한된 수의 데이터만 출력합니다.\ntestdb&gt; db.mydoc.find().limit(2)\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 }\n]\n\n\n\n문서를 삭제하기 위해서 deleteOne, deleteMany명령을 사용할 수 있습니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc13\"), name: 'mike', age: 10 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\n\ntestdb&gt; db.mydoc.deleteOne({name: \"mike\"})\n{ acknowledged: true, deletedCount: 1 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령은 조건에 맞는 모든 데이터를 삭제합니다. 테스트를 위해서 동일한 나이를 갖는 데이터를 만듭니다.\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 },\n  { _id: ObjectId(\"65522dfadc1f13e70f4fcc16\"), name: 'a', age: 15 },\n  { _id: ObjectId(\"65522dfedc1f13e70f4fcc17\"), name: 'b', age: 15 },\n  { _id: ObjectId(\"65522e01dc1f13e70f4fcc18\"), name: 'c', age: 15 },\n  { _id: ObjectId(\"65522e04dc1f13e70f4fcc19\"), name: 'd', age: 15 }\n]\n\ntestdb&gt; db.mydoc.deleteMany({age: 15})\n{ acknowledged: true, deletedCount: 4 }\n\ntestdb&gt; db.mydoc.find()\n[\n  { _id: ObjectId(\"655228d0dc1f13e70f4fcc12\"), name: 'john', age: 30 },\n  { _id: ObjectId(\"65522a45dc1f13e70f4fcc14\"), name: 'tony', age: 51 },\n  { _id: ObjectId(\"65522be8dc1f13e70f4fcc15\"), name: 'mike', age: 12 }\n]\ndeleteMany명령을 사용해서 age가 15인 document 4개가 모두 삭제되었습니다.\n\n\n\nDB에서 query로 탐색한 정보 중 특정 key정보만 출력하고 싶은 경우 사용합니다. 선택한 collection의 전체 document 중 date 키 정보만 출력됩니다.\ndb.test_collection.find({}, {'date':1})"
+    "text": "데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다.\n배움을 잘 이해하고 기억하는 가장 좋은 방법은 정리하여 글로 남기는 것이라고 생각합니다. 다만 배운 내용을 정리하는 과정에 잘못된 정보가 있을 수 있습니다.\n읽으시며 중요한 내용이 있다면 틀린 부분이 있는 지 다시 확인해 주시길 부탁드립니다. 이 책을 만들면서 데이터 시각화에 대해서 좀 더 잘 이해하고 더불어 이 책을 보는 분들에게도 도움이 되면 좋겠습니다.\n감사합니다."
+  },
+  {
+    "objectID": "docs/bookshelf/data_visualization/summary.html",
+    "href": "docs/bookshelf/data_visualization/summary.html",
+    "title": "Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html",
+    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html",
+    "title": "mkfifo를 이용한 IPC",
+    "section": "",
+    "text": "mkfifo 명령어는 리눅스 시스템에서 FIFO(First In, First Out) 파일을 생성하는 데 사용됩니다. FIFO는 프로세스 간 통신을 위한 특별한 파일 유형으로, 한 프로세스가 데이터를 쓰면 다른 프로세스가 그 데이터를 읽을 수 있습니다.\n\n\nmkfifo명령을 FIFO 파일을 생성합니다. pipe라는 이름으로 FIFO 파일을 생성했습니다.\nmkfifo pipe\n이제 pipe파일을 사용해서 프로세스간 통신을 구현할 수 있습니다. 한 프로세스에서 데이터를 쓰고 다른 프로세스에서 데이터를 읽을 수 있습니다. 새로운 터미널을 생성하고 각 터미널에서 아래의 명령을 수행합니다.\n# 터미널 1\necho \"Hello\" &gt; pipe\n\n# 터미널 2\ncat pipe\nHello\n터미널 2번에서 다른 프로세스에서 전달한 Hello를 확인할 수 있습니다.\n\n\n\n터미널 2번에서 전달받은 명령을 실행하는 연습을 합니다. ls명령을 파이프를 이용하여 다른 프로세스로 전달하고 명령을 실행합니다.\n# 터미널 1\necho \"ls\" &gt; pipe\n\n# 터미널 2\neval \"$(cat pipe)\"\nREADME.md  pipe\n명령을 전달받은 프로세스에서는 eval을 사용하여 명령을 수행합니다. 다른 프로세스에서 전달된 ls명령이 실행됩니다.\n\n\n\n명령을 읽어서 실행하는 과정을 계속 진행할 수 있도록 while을 사용합니다.\n# 터미널 1\necho \"ls -al\" &gt; pipe\n\n# 터미널 2\nwhile true; do eval \"$(cat pipe)\"; done\ndrwxr-xr-x 6 root root 4096 11월 15 23:04 .\ndrwxr-xr-x 4 root root 4096 11월 13 23:48 ..\n-rw-r--r-- 1 root root   14 11월 13 23:43 README.md\nprw-r--r-- 1 root root    0 11월 15 23:06 pipe\n터미널 2에서 전달 받은 ls -al명령이 실행됩니다. 실행 결과를 파일로 저장하기 위해서 아래의 명령을 사용할 수 있습니다.\nwhile true; do eval \"$(cat pipe)\" &&gt; result.log; done\n이제 명령을 전달하면 실행결과가 result.log파일에 저장됩니다."
+  },
+  {
+    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#fifo-파일-생성-및-ipc-테스트",
+    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#fifo-파일-생성-및-ipc-테스트",
+    "title": "mkfifo를 이용한 IPC",
+    "section": "",
+    "text": "mkfifo명령을 FIFO 파일을 생성합니다. pipe라는 이름으로 FIFO 파일을 생성했습니다.\nmkfifo pipe\n이제 pipe파일을 사용해서 프로세스간 통신을 구현할 수 있습니다. 한 프로세스에서 데이터를 쓰고 다른 프로세스에서 데이터를 읽을 수 있습니다. 새로운 터미널을 생성하고 각 터미널에서 아래의 명령을 수행합니다.\n# 터미널 1\necho \"Hello\" &gt; pipe\n\n# 터미널 2\ncat pipe\nHello\n터미널 2번에서 다른 프로세스에서 전달한 Hello를 확인할 수 있습니다."
+  },
+  {
+    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#생성한-파이프를-이용해서-명령어-수행하기",
+    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#생성한-파이프를-이용해서-명령어-수행하기",
+    "title": "mkfifo를 이용한 IPC",
+    "section": "",
+    "text": "터미널 2번에서 전달받은 명령을 실행하는 연습을 합니다. ls명령을 파이프를 이용하여 다른 프로세스로 전달하고 명령을 실행합니다.\n# 터미널 1\necho \"ls\" &gt; pipe\n\n# 터미널 2\neval \"$(cat pipe)\"\nREADME.md  pipe\n명령을 전달받은 프로세스에서는 eval을 사용하여 명령을 수행합니다. 다른 프로세스에서 전달된 ls명령이 실행됩니다."
+  },
+  {
+    "objectID": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#파이프에-전달받은-명령을-계속-읽기",
+    "href": "docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html#파이프에-전달받은-명령을-계속-읽기",
+    "title": "mkfifo를 이용한 IPC",
+    "section": "",
+    "text": "명령을 읽어서 실행하는 과정을 계속 진행할 수 있도록 while을 사용합니다.\n# 터미널 1\necho \"ls -al\" &gt; pipe\n\n# 터미널 2\nwhile true; do eval \"$(cat pipe)\"; done\ndrwxr-xr-x 6 root root 4096 11월 15 23:04 .\ndrwxr-xr-x 4 root root 4096 11월 13 23:48 ..\n-rw-r--r-- 1 root root   14 11월 13 23:43 README.md\nprw-r--r-- 1 root root    0 11월 15 23:06 pipe\n터미널 2에서 전달 받은 ls -al명령이 실행됩니다. 실행 결과를 파일로 저장하기 위해서 아래의 명령을 사용할 수 있습니다.\nwhile true; do eval \"$(cat pipe)\" &&gt; result.log; done\n이제 명령을 전달하면 실행결과가 result.log파일에 저장됩니다."
+  },
+  {
+    "objectID": "docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html",
+    "href": "docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html",
+    "title": "wsl 이미지 저장 위치 변경 및 백업",
+    "section": "",
+    "text": "WSL을 사용할 때 필요한 정보를 정리합니다.\n\n\n[move-wsl] 깃 저장소에서 제공하는 파워쉘 스크립트를 이용하면 쉽게 wsl 이미지 위치를 변경할 수 있습니다. 스크립트로 이동 시 주의해야할 점은 Docker WSL이 정지된 상태인지 확인하는 것이라고 합니다. 정지되지 않은 상태에서 스크립트가 실행되는 경우 crash로 fatory default로 리셋될 수 있다고 합니다. (너무 무섭네요….)\n\n\n\n우선 설치된 모든 배포판을 확인합니다. 각 이미지의 상태도 확인할 수 있습니다.\nwsl -l -v\n  NAME                   STATE           VERSION\n* Ubuntu-20.04           Running         2\n  docker-desktop         Running         2\n  docker-desktop-data    Running         2\n배포판에 특정 유저이름으로 접속하는 경우 유저이름을 추가할 수 있습니다.\nwsl -u &lt;유저이름&gt;\n\n\nwsl --export &lt;배포판 이름&gt; &lt;파일명&gt;\n\n\n\n실행하면 설치위치에 ext4.vhdx 파일이 생성됩니다.\nwsl --import &lt;패포판 이름&gt; &lt;설치할 위치&gt; &lt;가져올 배포판 파일명&gt;"
+  },
+  {
+    "objectID": "docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html#wsl-이미지-저장-위치-변경하기",
+    "href": "docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html#wsl-이미지-저장-위치-변경하기",
+    "title": "wsl 이미지 저장 위치 변경 및 백업",
+    "section": "",
+    "text": "[move-wsl] 깃 저장소에서 제공하는 파워쉘 스크립트를 이용하면 쉽게 wsl 이미지 위치를 변경할 수 있습니다. 스크립트로 이동 시 주의해야할 점은 Docker WSL이 정지된 상태인지 확인하는 것이라고 합니다. 정지되지 않은 상태에서 스크립트가 실행되는 경우 crash로 fatory default로 리셋될 수 있다고 합니다. (너무 무섭네요….)"
+  },
+  {
+    "objectID": "docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html#wsl-이미지-백업하기",
+    "href": "docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html#wsl-이미지-백업하기",
+    "title": "wsl 이미지 저장 위치 변경 및 백업",
+    "section": "",
+    "text": "우선 설치된 모든 배포판을 확인합니다. 각 이미지의 상태도 확인할 수 있습니다.\nwsl -l -v\n  NAME                   STATE           VERSION\n* Ubuntu-20.04           Running         2\n  docker-desktop         Running         2\n  docker-desktop-data    Running         2\n배포판에 특정 유저이름으로 접속하는 경우 유저이름을 추가할 수 있습니다.\nwsl -u &lt;유저이름&gt;\n\n\nwsl --export &lt;배포판 이름&gt; &lt;파일명&gt;\n\n\n\n실행하면 설치위치에 ext4.vhdx 파일이 생성됩니다.\nwsl --import &lt;패포판 이름&gt; &lt;설치할 위치&gt; &lt;가져올 배포판 파일명&gt;"
   },
   {
     "objectID": "docs/blog/posts/2023/11/2023-11-14-pymongo/index.html",
