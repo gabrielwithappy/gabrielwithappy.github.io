@@ -33,6 +33,7 @@ curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.7.3/docker-compose.y
 ```
 
 이 파일에는 아래의 서비스를 포함합니다.
+
 - airflow-scheduler - 스케줄러는 모든 작업과 DAG를 모니터링하고 실행합니다.
 - airflow-webserver - http://localhost:8080 에서 실행되는 웹서버
 - airflow-worker - 스케쥴러가 제공하는 작업을 실행합니다.
