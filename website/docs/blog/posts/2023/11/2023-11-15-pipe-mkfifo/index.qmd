@@ -6,7 +6,7 @@ description:
 categories:
   - DevOps
 author: gabriel yang
-date: "10/15/2023"
+date: "11/15/2023"
 image: "https://picsum.photos/id/215/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
