@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-09-16">
-<meta name="description" content="날짜 범위 index 만들기">
+<meta name="dcterms.date" content="2023-11-20">
+<meta name="description" content="wsl 이미지 저장 위치 변경 및 백업">
 
-<title>BookShelf - 날짜 범위 index 만들기</title>
+<title>BookShelf - wsl 이미지 저장 위치 변경 및 백업</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,9 +107,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
@@ -165,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html">09</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-date-index/index.html">날짜 범위 index 만들기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html">wsl 이미지 저장 위치 변경 및 백업</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -188,13 +185,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">09</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html" class="sidebar-item-text sidebar-link">
@@ -203,7 +200,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-date-index/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-date-index/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">날짜 범위 index 만들기</span></a>
   </div>
 </li>
@@ -378,13 +375,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">11</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="sidebar-item-text sidebar-link">
@@ -399,7 +396,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">wsl 이미지 저장 위치 변경 및 백업</span></a>
   </div>
 </li>
@@ -441,28 +438,33 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#날짜-범위-index-만들기" id="toc-날짜-범위-index-만들기" class="nav-link active" data-scroll-target="#날짜-범위-index-만들기">날짜 범위 index 만들기</a>
+  <li><a href="#wsl-이미지-저장-위치-변경-및-백업" id="toc-wsl-이미지-저장-위치-변경-및-백업" class="nav-link active" data-scroll-target="#wsl-이미지-저장-위치-변경-및-백업">wsl 이미지 저장 위치 변경 및 백업</a>
   <ul class="collapse">
-  <li><a href="#참조" id="toc-참조" class="nav-link" data-scroll-target="#참조">참조</a></li>
+  <li><a href="#wsl-이미지-저장-위치-변경하기" id="toc-wsl-이미지-저장-위치-변경하기" class="nav-link" data-scroll-target="#wsl-이미지-저장-위치-변경하기">wsl 이미지 저장 위치 변경하기</a></li>
+  <li><a href="#wsl-이미지-백업하기" id="toc-wsl-이미지-백업하기" class="nav-link" data-scroll-target="#wsl-이미지-백업하기">WSL 이미지 백업하기</a>
+  <ul class="collapse">
+  <li><a href="#배포판-파일로-내보내기" id="toc-배포판-파일로-내보내기" class="nav-link" data-scroll-target="#배포판-파일로-내보내기">배포판 파일로 내보내기</a></li>
+  <li><a href="#배포판-파일에서-가져오기" id="toc-배포판-파일에서-가져오기" class="nav-link" data-scroll-target="#배포판-파일에서-가져오기">배포판 파일에서 가져오기</a></li>
+  </ul></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/09/2023-09-16-date-index/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">날짜 범위 index 만들기</h1>
-<p class="subtitle lead">날짜 범위 index 만들기</p>
+<h1 class="title">wsl 이미지 저장 위치 변경 및 백업</h1>
+<p class="subtitle lead">wsl 이미지 저장 위치 변경 및 백업</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Pandas</div>
+    <div class="quarto-category">DevOps</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    날짜 범위 index 만들기
+    wsl 이미지 저장 위치 변경 및 백업
   </div>
 </div>
 
@@ -479,7 +481,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2023</p>
+      <p class="date">November 20, 2023</p>
     </div>
   </div>
   
@@ -489,102 +491,34 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="날짜-범위-index-만들기" class="level1">
-<h1>날짜 범위 index 만들기</h1>
-<p>날짜 정보를 index로 넣는 경우 날짜 정보를 가진 series를 만들어야 합니다 이 때 <code>data_range()</code>함수를 사용할 수 있습니다. 연습을 위해서 과목의 성적을 갖는 데이터프레임을 만듭니다.</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'Math'</span> : [<span class="dv">100</span>,<span class="dv">80</span>,<span class="dv">80</span>,<span class="dv">70</span>,<span class="dv">90</span>],</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'Science'</span> : [<span class="dv">80</span>,<span class="dv">100</span>,<span class="dv">20</span>,<span class="dv">100</span>,<span class="dv">70</span>],</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'English'</span> : [<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">59</span>,<span class="dv">100</span>]})</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
+<section id="wsl-이미지-저장-위치-변경-및-백업" class="level1">
+<h1>wsl 이미지 저장 위치 변경 및 백업</h1>
+<p>WSL을 사용할 때 필요한 정보를 정리합니다.</p>
+<section id="wsl-이미지-저장-위치-변경하기" class="level2">
+<h2 class="anchored" data-anchor-id="wsl-이미지-저장-위치-변경하기">wsl 이미지 저장 위치 변경하기</h2>
+<p>[move-wsl] 깃 저장소에서 제공하는 파워쉘 스크립트를 이용하면 쉽게 wsl 이미지 위치를 변경할 수 있습니다. 스크립트로 이동 시 주의해야할 점은 <code>Docker WSL이 정지된 상태인지 확인하는 것</code>이라고 합니다. 정지되지 않은 상태에서 스크립트가 실행되는 경우 crash로 fatory default로 리셋될 수 있다고 합니다. (너무 무섭네요….)</p>
+</section>
+<section id="wsl-이미지-백업하기" class="level2">
+<h2 class="anchored" data-anchor-id="wsl-이미지-백업하기">WSL 이미지 백업하기</h2>
+<p>우선 설치된 모든 배포판을 확인합니다. 각 이미지의 상태도 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">-l</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>  NAME                   STATE           VERSION
+* Ubuntu-20.04           Running         2
+  docker-desktop         Running         2
+  docker-desktop-data    Running         2</code></pre>
+<p>배포판에 특정 유저이름으로 접속하는 경우 <code>유저이름</code>을 추가할 수 있습니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">-u</span> <span class="op">&lt;</span>유저이름<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="배포판-파일로-내보내기" class="level3">
+<h3 class="anchored" data-anchor-id="배포판-파일로-내보내기">배포판 파일로 내보내기</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--export</span> <span class="op">&lt;</span>배포판 이름<span class="op">&gt;</span> <span class="op">&lt;</span>파일명<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="배포판-파일에서-가져오기" class="level3">
+<h3 class="anchored" data-anchor-id="배포판-파일에서-가져오기">배포판 파일에서 가져오기</h3>
+<p>실행하면 <code>설치위치</code>에 <code>ext4.vhdx</code> 파일이 생성됩니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--import</span> <span class="op">&lt;</span>패포판 이름<span class="op">&gt;</span> <span class="op">&lt;</span>설치할 위치<span class="op">&gt;</span> <span class="op">&lt;</span>가져올 배포판 파일명<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Math</th>
-<th data-quarto-table-cell-role="th">Science</th>
-<th data-quarto-table-cell-role="th">English</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>100</td>
-<td>80</td>
-<td>70</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>80</td>
-<td>100</td>
-<td>80</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>80</td>
-<td>20</td>
-<td>90</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>70</td>
-<td>100</td>
-<td>59</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>90</td>
-<td>70</td>
-<td>100</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>각 과목의 점수는 시험이 진행된 시간으로 작성되는 것이 데이터 관리에 편리할 것 같습니다. <code>data_range()</code>함수로 날짜 인덱스를 만듭니다.</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pd.date_range(<span class="st">'2021-01-01'</span>, <span class="st">'2021-01-10'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>DatetimeIndex(['2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04',
-               '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08',
-               '2021-01-09', '2021-01-10'],
-              dtype='datetime64[ns]', freq='D')</code></pre>
-</div>
-</div>
-<p>DatetimeIndex를 생성했습니다. 날짜 인덱스가 데이터보다 많이 생성됐습니다. 정해진 갯수의 날짜를 생성합니다.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pd.date_range(start<span class="op">=</span><span class="st">'1/1/2018'</span>, periods<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>DatetimeIndex(['2018-01-01', '2018-01-02', '2018-01-03', '2018-01-04',
-               '2018-01-05'],
-              dtype='datetime64[ns]', freq='D')</code></pre>
-</div>
-</div>
-<p>이제 5개의 날짜 인덱스가 생성되었습니다. 각 과목의 점수는 2달마다 진행된다고 합니다. 인덱스가 시작날짜부터 2달 간격으로 늘어가면 좋겠습니다.</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.date_range(start<span class="op">=</span><span class="st">'1/1/2021'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'2M'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>DatetimeIndex(['2021-01-31', '2021-03-31', '2021-05-31', '2021-07-31',
-               '2021-09-30'],
-              dtype='datetime64[ns]', freq='2M')</code></pre>
-</div>
-</div>
-<p>함수에서 제공하는 <code>freq</code>를 이용해서 2달 간격 날짜 인덱스를 생성했습니다. frequency로 지원하는 시간정보는 [<a href="https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases">여기</a>]서 확인할 수 있습니다.</p>
-<section id="참조" class="level2">
-<h2 class="anchored" data-anchor-id="참조">참조</h2>
-<ol type="1">
-<li>https://pandas.pydata.org/docs/reference/api/pandas.date_range.html</li>
-</ol>
-
-
+</section>
 </section>
 </section>
 
@@ -824,16 +758,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
-
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Plotly 3D Plot만들기</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">MongoDB 명령어 정리하기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" class="pagination-link">
-        <span class="nav-page-text">Plotly Rador 차트 만들기</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="pagination-link">
+        <span class="nav-page-text">docker-compose로 airflow 설치하기</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
