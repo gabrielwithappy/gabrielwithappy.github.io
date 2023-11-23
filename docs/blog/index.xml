@@ -10,7 +10,47 @@
 <atom:link href="https://gabrielwithappy.github.io/docs/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A online bookstore</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 17 Nov 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 22 Nov 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>barrier로 윈도우, 우분투 마우스, 키보드 같이 사용</title>
+  <dc:creator>gabriel yang</dc:creator>
+  <link>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="barrier로-윈도우-우분투-마우스-키보드-같이-사용" class="level1">
+<h1>barrier로 윈도우, 우분투 마우스, 키보드 같이 사용</h1>
+<p><a href="https://sourceforge.net/projects/synergy-stable-builds/">웹페이지</a>에서 barrier를 윈도우와 우분투에 설치합니다. 설치 후 아래와 같은 화면서가 자신이 <code>Server</code>와 <code>Client</code>를 설정합니다.</p>
+<p>마우스와 키보드를 사용할 컴퓨터가 <code>Server</code>가 됩니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/images/paste-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>저는 윈도우를 <code>Server</code> 우분투를 <code>Client</code> 로 설정했습니다. <code>Server</code>에서 실행하는 Barrier에 IP가 표시됩니다. 이 정보로 <code>Client</code> 에서 실행된 barrier의 <code>Server IP</code>를 설정합니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/images/paste-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>우분투의 Barrier를 인식하기 위해서 우분투의 <code>Barrier</code> &gt; <code>Change Settings</code>를 선택해서 <code>Enable SSL</code>을 체크를 제거합니다. 외부에서 보안이 필요한 경우 필요하지만 내부에서 사용하는 경우라 제거합니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/images/paste-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>연결 후 마우스가 우분투에서 보이지 않는 경우가 있습니다. 이 경우 윈도우의 <code>시스템</code> &gt; <code>디스플레이</code>의 <code>배율</code>을 확인합니다. 배율이 <code>100%</code>가 아닌 경우 발생합니다.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>DevOps</category>
+  <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/index.html</guid>
+  <pubDate>Wed, 22 Nov 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://picsum.photos/id/223/200/150" medium="image"/>
+</item>
 <item>
   <title>docker-compose로 airflow 설치하기</title>
   <dc:creator>gabriel yang</dc:creator>
@@ -100,46 +140,6 @@ font-style: inherit;">docker</span> compose up</span></code></pre></div>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html</guid>
   <pubDate>Fri, 17 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/118/200/150" medium="image"/>
-</item>
-<item>
-  <title>barrier로 윈도우, 우분투 마우스, 키보드 같이 사용</title>
-  <dc:creator>gabriel yang</dc:creator>
-  <link>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<section id="barrier로-윈도우-우분투-마우스-키보드-같이-사용" class="level1">
-<h1>barrier로 윈도우, 우분투 마우스, 키보드 같이 사용</h1>
-<p><a href="https://sourceforge.net/projects/synergy-stable-builds/">웹페이지</a>에서 barrier를 윈도우와 우분투에 설치합니다. 설치 후 아래와 같은 화면서가 자신이 <code>Server</code>와 <code>Client</code>를 설정합니다.</p>
-<p>마우스와 키보드를 사용할 컴퓨터가 <code>Server</code>가 됩니다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/images/paste-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>저는 윈도우를 <code>Server</code> 우분투를 <code>Client</code> 로 설정했습니다. <code>Server</code>에서 실행하는 Barrier에 IP가 표시됩니다. 이 정보로 <code>Client</code> 에서 실행된 barrier의 <code>Server IP</code>를 설정합니다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/images/paste-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>우분투의 Barrier를 인식하기 위해서 우분투의 <code>Barrier</code> &gt; <code>Change Settings</code>를 선택해서 <code>Enable SSL</code>을 체크를 제거합니다. 외부에서 보안이 필요한 경우 필요하지만 내부에서 사용하는 경우라 제거합니다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/images/paste-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>연결 후 마우스가 우분투에서 보이지 않는 경우가 있습니다. 이 경우 윈도우의 <code>시스템</code> &gt; <code>디스플레이</code>의 <code>배율</code>을 확인합니다. 배율이 <code>100%</code>가 아닌 경우 발생합니다.</p>
-
-
-</section>
-
- ]]></description>
-  <category>DevOps</category>
-  <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-23-barrier/index.html</guid>
-  <pubDate>Fri, 17 Nov 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://picsum.photos/id/223/200/150" medium="image"/>
 </item>
 <item>
   <title>MongoDB 명령어 정리하기</title>

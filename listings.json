@@ -9,8 +9,8 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
-      "/docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html",
       "/docs/blog/posts/2023/11/2023-11-23-barrier/index.html",
+      "/docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html",
       "/docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
       "/docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html",
       "/docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html",
