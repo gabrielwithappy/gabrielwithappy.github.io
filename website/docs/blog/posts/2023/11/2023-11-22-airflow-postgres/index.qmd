@@ -1,0 +1,58 @@
+---
+title: airflow postgresoperator 사용하기
+subtitle: airflow postgresoperator 사용하기
+description:
+    airflow postgresoperator 사용하기
+categories:
+  - DevOps
+author: gabriel yang
+date: "11/20/2023"
+image: "https://picsum.photos/id/122/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+# wsl 이미지 저장 위치 변경 및 백업
+
+WSL을 사용할 때 필요한 정보를 정리합니다.
+
+## wsl 이미지 저장 위치 변경하기
+
+[move-wsl] 깃 저장소에서 제공하는 파워쉘 스크립트를 이용하면 쉽게 wsl 이미지 위치를 변경할 수 있습니다.
+스크립트로 이동 시 주의해야할 점은 `Docker WSL이 정지된 상태인지 확인하는 것`이라고 합니다. 정지되지 않은 상태에서
+스크립트가 실행되는 경우 crash로 fatory default로 리셋될 수 있다고 합니다. (너무 무섭네요....)
+
+## WSL 이미지 백업하기
+
+우선 설치된 모든 배포판을 확인합니다. 각 이미지의 상태도 확인할 수 있습니다.
+
+``` bash
+wsl -l -v
+```
+```
+  NAME                   STATE           VERSION
+* Ubuntu-20.04           Running         2
+  docker-desktop         Running         2
+  docker-desktop-data    Running         2
+```
+
+배포판에 특정 유저이름으로 접속하는 경우 `유저이름`을 추가할 수 있습니다.
+
+``` bash
+wsl -u <유저이름>
+```
+
+### 배포판 파일로 내보내기
+
+``` bash
+wsl --export <배포판 이름> <파일명>
+```
+
+### 배포판 파일에서 가져오기
+
+실행하면 `설치위치`에 `ext4.vhdx` 파일이 생성됩니다.
+
+``` bash
+wsl --import <패포판 이름> <설치할 위치> <가져올 배포판 파일명>
+```
+
