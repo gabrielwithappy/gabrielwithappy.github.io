@@ -10,7 +10,7 @@
 <atom:link href="https://gabrielwithappy.github.io/docs/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A online bookstore</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Mon, 20 Nov 2023 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 19 Nov 2023 15:00:00 GMT</lastBuildDate>
 <item>
   <title>wsl 이미지 저장 위치 변경 및 백업</title>
   <dc:creator>gabriel yang</dc:creator>
@@ -95,7 +95,7 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
  ]]></description>
   <category>DevOps</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html</guid>
-  <pubDate>Mon, 20 Nov 2023 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 19 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/120/200/150" medium="image"/>
 </item>
 <item>
@@ -108,7 +108,7 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
 
 <section id="wsl-이미지-저장-위치-변경-및-백업" class="level1">
 <h1>wsl 이미지 저장 위치 변경 및 백업</h1>
-<p>WSL을 사용할 때 필요한 정보를 정리합니다.</p>
+<p>WSL을 사용할 때 필요한 정보를 정리합니다. WS:로 작업한 내용을 복구하기 위해서 WSL 이미지를 원하는 위치로 변경합니다.</p>
 <section id="wsl-이미지-저장-위치-변경하기" class="level2">
 <h2 class="anchored" data-anchor-id="wsl-이미지-저장-위치-변경하기">wsl 이미지 저장 위치 변경하기</h2>
 <p>[move-wsl] 깃 저장소에서 제공하는 파워쉘 스크립트를 이용하면 쉽게 wsl 이미지 위치를 변경할 수 있습니다. 스크립트로 이동 시 주의해야할 점은 <code>Docker WSL이 정지된 상태인지 확인하는 것</code>이라고 합니다. 정지되지 않은 상태에서 스크립트가 실행되는 경우 crash로 fatory default로 리셋될 수 있다고 합니다. (너무 무섭네요….)</p>
@@ -182,7 +182,7 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
  ]]></description>
   <category>DevOps</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html</guid>
-  <pubDate>Mon, 20 Nov 2023 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 19 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/122/200/150" medium="image"/>
 </item>
 <item>
@@ -320,7 +320,7 @@ font-style: inherit;">docker</span> compose up</span></code></pre></div>
  ]]></description>
   <category>DevOps</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html</guid>
-  <pubDate>Sat, 18 Nov 2023 00:00:00 GMT</pubDate>
+  <pubDate>Fri, 17 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/118/200/150" medium="image"/>
 </item>
 <item>
@@ -1308,7 +1308,7 @@ font-style: inherit;">)</span></span></code></pre></div>
  ]]></description>
   <category>Database</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-13-mongodb/index.html</guid>
-  <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 14 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/113/200/150" medium="image"/>
 </item>
 <item>
@@ -1483,7 +1483,7 @@ font-style: inherit;">done</span></span></code></pre></div>
  ]]></description>
   <category>DevOps</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html</guid>
-  <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 14 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/215/200/150" medium="image"/>
 </item>
 <item>
@@ -1634,7 +1634,7 @@ font-style: inherit;">This</span> message shows that your installation appears t
  ]]></description>
   <category>DevOps</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html</guid>
-  <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 14 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/115/200/150" medium="image"/>
 </item>
 <item>
@@ -1931,7 +1931,7 @@ font-style: inherit;">""</span>)</span></code></pre></div>
  ]]></description>
   <category>Database</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-14-pymongo/index.html</guid>
-  <pubDate>Tue, 14 Nov 2023 00:00:00 GMT</pubDate>
+  <pubDate>Mon, 13 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/114/200/150" medium="image"/>
 </item>
 <item>
@@ -1967,7 +1967,7 @@ font-style: inherit;">""</span>)</span></code></pre></div>
  ]]></description>
   <category>DevOps</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-09-github-template/index.html</guid>
-  <pubDate>Mon, 09 Oct 2023 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 08 Oct 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/90/200/150" medium="image"/>
 </item>
 <item>
@@ -2599,7 +2599,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-08-plotly-line-shape/index.html</guid>
-  <pubDate>Sun, 08 Oct 2023 00:00:00 GMT</pubDate>
+  <pubDate>Sat, 07 Oct 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/80/200/150" medium="image"/>
 </item>
 <item>
@@ -2888,7 +2888,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html</guid>
-  <pubDate>Thu, 05 Oct 2023 00:00:00 GMT</pubDate>
+  <pubDate>Wed, 04 Oct 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/50/200/150" medium="image"/>
 </item>
 <item>
@@ -3038,7 +3038,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html</guid>
-  <pubDate>Wed, 04 Oct 2023 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 03 Oct 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/40/200/150" medium="image"/>
 </item>
 <item>
@@ -3296,7 +3296,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html</guid>
-  <pubDate>Wed, 04 Oct 2023 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 03 Oct 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/42/200/150" medium="image"/>
 </item>
 <item>
@@ -3734,7 +3734,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html</guid>
-  <pubDate>Tue, 03 Oct 2023 00:00:00 GMT</pubDate>
+  <pubDate>Mon, 02 Oct 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/30/200/150" medium="image"/>
 </item>
 <item>
@@ -4194,7 +4194,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html</guid>
-  <pubDate>Mon, 02 Oct 2023 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 01 Oct 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/20/200/150" medium="image"/>
 </item>
 <item>
@@ -4588,7 +4588,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html</guid>
-  <pubDate>Sat, 30 Sep 2023 00:00:00 GMT</pubDate>
+  <pubDate>Fri, 29 Sep 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/300/200/150" medium="image"/>
 </item>
 <item>
@@ -5045,7 +5045,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html</guid>
-  <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
+  <pubDate>Wed, 27 Sep 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/280/200/150" medium="image"/>
 </item>
 <item>
@@ -5539,7 +5539,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html</guid>
-  <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 24 Sep 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/250/200/150" medium="image"/>
 </item>
 <item>
@@ -5718,7 +5718,7 @@ font-style: inherit;">'jupyterlab'</span>)</span></code></pre></div>
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html</guid>
-  <pubDate>Sun, 24 Sep 2023 00:00:00 GMT</pubDate>
+  <pubDate>Sat, 23 Sep 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/240/200/150" medium="image"/>
 </item>
 <item>
@@ -6228,7 +6228,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html</guid>
-  <pubDate>Sat, 23 Sep 2023 00:00:00 GMT</pubDate>
+  <pubDate>Fri, 22 Sep 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/230/200/150" medium="image"/>
 </item>
 <item>
@@ -6716,7 +6716,7 @@ if (outputEl) {{
  ]]></description>
   <category>Data Visualization</category>
   <guid>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html</guid>
-  <pubDate>Fri, 22 Sep 2023 00:00:00 GMT</pubDate>
+  <pubDate>Thu, 21 Sep 2023 15:00:00 GMT</pubDate>
   <media:content url="https://picsum.photos/id/221/200/150" medium="image"/>
 </item>
 </channel>
