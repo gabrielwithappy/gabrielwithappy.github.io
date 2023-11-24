@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 7,
+      page: 5,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
@@ -106,7 +106,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
-</head>
+<link rel="alternate" type="application/rss+xml" title="BookShelf" href="index.xml"></head>
 
 <body class="nav-fixed">
 
@@ -185,13 +185,32 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1700833839393">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1700834307455">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html"> </a></p>
 </div>
@@ -211,7 +230,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1700833876086">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1700834320836">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html"> </a></p>
 </div>
@@ -231,7 +250,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1700833895918">
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1700834328592">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html"> </a></p>
 </div>
@@ -251,7 +270,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1700833926695">
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1700834342773">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html"> </a></p>
 </div>
@@ -271,7 +290,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1700833850037">
+<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1700834311271">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html"> </a></p>
 </div>
@@ -291,7 +310,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1700833905387">
+<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1700834333688">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html"> </a></p>
 </div>
@@ -311,7 +330,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1700833900326">
+<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1700834331180">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html"> </a></p>
 </div>
@@ -331,7 +350,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1700833920495">
+<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1700834339949">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-16-date-index/index.html"> </a></p>
 </div>
@@ -351,7 +370,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-16-date-index/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1700833864922">
+<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1700834315751">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html"> </a></p>
 </div>
@@ -371,7 +390,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1700833869922">
+<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1700834317364">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html"> </a></p>
 </div>
@@ -391,7 +410,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1700833855713">
+<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1700834312747">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html"> </a></p>
 </div>
@@ -411,7 +430,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-listing-file-modified-sort="1700833916151">
+<div class="quarto-post image-right" data-index="11" data-listing-file-modified-sort="1700834338449">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html"> </a></p>
 </div>
@@ -431,7 +450,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-listing-file-modified-sort="1700833885786">
+<div class="quarto-post image-right" data-index="12" data-listing-file-modified-sort="1700834325052">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html"> </a></p>
 </div>
@@ -451,7 +470,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-listing-file-modified-sort="1700833838097">
+<div class="quarto-post image-right" data-index="13" data-listing-file-modified-sort="1700834306075">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html"> </a></p>
 </div>
@@ -471,7 +490,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-listing-file-modified-sort="1700833880610">
+<div class="quarto-post image-right" data-index="14" data-listing-file-modified-sort="1700834322480">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html"> </a></p>
 </div>
@@ -491,7 +510,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-listing-file-modified-sort="1700833911251">
+<div class="quarto-post image-right" data-index="15" data-listing-file-modified-sort="1700834336029">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html"> </a></p>
 </div>
@@ -511,7 +530,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-listing-file-modified-sort="1700833871786">
+<div class="quarto-post image-right" data-index="16" data-listing-file-modified-sort="1700834319224">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html"> </a></p>
 </div>
@@ -531,7 +550,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-listing-file-modified-sort="1700833845637">
+<div class="quarto-post image-right" data-index="17" data-listing-file-modified-sort="1700834309583">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html"> </a></p>
 </div>
@@ -551,7 +570,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-listing-file-modified-sort="1700833891358">
+<div class="quarto-post image-right" data-index="18" data-listing-file-modified-sort="1700834326656">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html"> </a></p>
 </div>
@@ -571,7 +590,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-listing-file-modified-sort="1700833925239">
+<div class="quarto-post image-right" data-index="19" data-listing-file-modified-sort="1700834341545">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html"> </a></p>
 </div>
@@ -591,7 +610,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-listing-file-modified-sort="1700833859941">
+<div class="quarto-post image-right" data-index="20" data-listing-file-modified-sort="1700834314179">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html"> </a></p>
 </div>
@@ -611,7 +630,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-listing-file-modified-sort="1700833942080">
+<div class="quarto-post image-right" data-index="21" data-listing-file-modified-sort="1700834348269">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html"> </a></p>
 </div>
@@ -631,7 +650,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-listing-file-modified-sort="1700833954764">
+<div class="quarto-post image-right" data-index="22" data-listing-file-modified-sort="1700834352733">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html"> </a></p>
 </div>
@@ -651,7 +670,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-listing-file-modified-sort="1700833936055">
+<div class="quarto-post image-right" data-index="23" data-listing-file-modified-sort="1700834345637">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html"> </a></p>
 </div>
@@ -671,7 +690,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-listing-file-modified-sort="1700833946236">
+<div class="quarto-post image-right" data-index="24" data-listing-file-modified-sort="1700834349721">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html"> </a></p>
 </div>
@@ -691,7 +710,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-listing-file-modified-sort="1700833931391">
+<div class="quarto-post image-right" data-index="25" data-listing-file-modified-sort="1700834344201">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html"> </a></p>
 </div>
@@ -711,7 +730,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-listing-file-modified-sort="1700833950712">
+<div class="quarto-post image-right" data-index="26" data-listing-file-modified-sort="1700834351213">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/10/2023-10-08-plotly-line-shape/index.html"> </a></p>
 </div>
@@ -731,7 +750,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/10/2023-10-08-plotly-line-shape/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="27" data-listing-file-modified-sort="1700833937139">
+<div class="quarto-post image-right" data-index="27" data-listing-file-modified-sort="1700834346761">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html"> </a></p>
 </div>
@@ -751,7 +770,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="28" data-listing-file-modified-sort="1700833956020">
+<div class="quarto-post image-right" data-index="28" data-listing-file-modified-sort="1700834354045">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html"> </a></p>
 </div>
@@ -771,7 +790,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="29" data-listing-file-modified-sort="1700833964452">
+<div class="quarto-post image-right" data-index="29" data-listing-file-modified-sort="1700834360154">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html"> </a></p>
 </div>
@@ -791,7 +810,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="30" data-listing-file-modified-sort="1700833957276">
+<div class="quarto-post image-right" data-index="30" data-listing-file-modified-sort="1700834356218">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html"> </a></p>
 </div>
@@ -811,7 +830,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="31" data-listing-file-modified-sort="1700833965616">
+<div class="quarto-post image-right" data-index="31" data-listing-file-modified-sort="1700834361942">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html"> </a></p>
 </div>
@@ -831,7 +850,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="32" data-listing-file-modified-sort="1700833958536">
+<div class="quarto-post image-right" data-index="32" data-listing-file-modified-sort="1700834357390">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html"> </a></p>
 </div>
@@ -851,7 +870,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="33" data-listing-file-modified-sort="1700833966752">
+<div class="quarto-post image-right" data-index="33" data-listing-file-modified-sort="1700834363038">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html"> </a></p>
 </div>
@@ -871,7 +890,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="34" data-listing-file-modified-sort="1700833959656">
+<div class="quarto-post image-right" data-index="34" data-listing-file-modified-sort="1700834358654">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html"> </a></p>
 </div>
@@ -891,7 +910,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <a href="../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="35" data-categories="DevOps" data-listing-date-sort="1700406000000" data-listing-file-modified-sort="1700774863725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="35" data-categories="DevOps" data-listing-date-sort="1700406000000" data-listing-file-modified-sort="1700834207905" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html"> <img data-src="https://picsum.photos/id/120/200/150" class="thumbnail-image"> </a></p>
 </div>
@@ -926,7 +945,7 @@ gabriel yang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="36" data-categories="DevOps" data-listing-date-sort="1700406000000" data-listing-file-modified-sort="1700774912838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="36" data-categories="DevOps" data-listing-date-sort="1700406000000" data-listing-file-modified-sort="1700834207905" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html"> <img data-src="https://picsum.photos/id/122/200/150" class="thumbnail-image"> </a></p>
 </div>
@@ -961,7 +980,7 @@ gabriel yang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="37" data-categories="DevOps" data-listing-date-sort="1700233200000" data-listing-file-modified-sort="1700774863725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="37" data-categories="DevOps" data-listing-date-sort="1700233200000" data-listing-file-modified-sort="1700834207905" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html"> <img data-src="https://picsum.photos/id/118/200/150" class="thumbnail-image"> </a></p>
 </div>
@@ -1976,7 +1995,7 @@ Sep 13, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="66" data-categories="Quarto" data-listing-date-sort="1694444400000" data-listing-file-modified-sort="1700833236212" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="66" data-categories="Quarto" data-listing-date-sort="1694444400000" data-listing-file-modified-sort="1700834184736" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html"> <img data-src="https://picsum.photos/id/12/200/150" class="thumbnail-image"> </a></p>
 </div>
@@ -2046,7 +2065,7 @@ gabriel yang
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="68" data-categories="Quarto" data-listing-date-sort="1694271600000" data-listing-file-modified-sort="1700832598124" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="68" data-categories="Quarto" data-listing-date-sort="1694271600000" data-listing-file-modified-sort="1700834184736" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html"> <img data-src="https://picsum.photos/id/10/200/150" class="thumbnail-image"> </a></p>
 </div>
