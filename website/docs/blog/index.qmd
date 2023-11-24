@@ -3,13 +3,13 @@ title: Blog
 # subtitle:
 listing:
   sort: "date desc"
-  contents: "posts/*/*/*/index.*"
-  sort-ui: true
+  contents: "posts/*/*/*/index.qmd"
+  # sort-ui: true
   filter-ui: true
   categories: true
   type: default
   page-size: 5
-  feed: true
+  # feed: true
 # margin-header: signup.html
 # title-block-banner: "#00000"
 title-block-banner-color: body
