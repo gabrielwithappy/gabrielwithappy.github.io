@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-11-20">
-<meta name="description" content="wsl 이미지 저장 위치 변경 및 백업">
+<meta name="dcterms.date" content="2023-11-27">
+<meta name="description" content="우분투 docker, docker-compse 설치">
 
-<title>BookShelf - wsl 이미지 저장 위치 변경 및 백업</title>
+<title>BookShelf - 우분투 docker, docker-compse 설치</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,7 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -161,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html">wsl 이미지 저장 위치 변경 및 백업</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html">우분투 docker, docker-compse 설치</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -401,7 +402,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
   </div>
 </li>
@@ -431,7 +432,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">wsl 이미지 저장 위치 변경 및 백업</span></a>
   </div>
 </li>
@@ -449,25 +450,22 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wsl-이미지-저장-위치-변경-및-백업" id="toc-wsl-이미지-저장-위치-변경-및-백업" class="nav-link active" data-scroll-target="#wsl-이미지-저장-위치-변경-및-백업">wsl 이미지 저장 위치 변경 및 백업</a>
+  <li><a href="#우분투-docker-docker-compse-설치" id="toc-우분투-docker-docker-compse-설치" class="nav-link active" data-scroll-target="#우분투-docker-docker-compse-설치">우분투 docker, docker-compse 설치</a>
   <ul class="collapse">
-  <li><a href="#wsl-이미지-저장-위치-변경하기" id="toc-wsl-이미지-저장-위치-변경하기" class="nav-link" data-scroll-target="#wsl-이미지-저장-위치-변경하기">wsl 이미지 저장 위치 변경하기</a></li>
-  <li><a href="#wsl-이미지-백업하기" id="toc-wsl-이미지-백업하기" class="nav-link" data-scroll-target="#wsl-이미지-백업하기">WSL 이미지 백업하기</a>
-  <ul class="collapse">
-  <li><a href="#배포판-파일로-내보내기" id="toc-배포판-파일로-내보내기" class="nav-link" data-scroll-target="#배포판-파일로-내보내기">배포판 파일로 내보내기</a></li>
-  <li><a href="#배포판-파일에서-가져오기" id="toc-배포판-파일에서-가져오기" class="nav-link" data-scroll-target="#배포판-파일에서-가져오기">배포판 파일에서 가져오기</a></li>
-  </ul></li>
+  <li><a href="#필요한-패키지-설치" id="toc-필요한-패키지-설치" class="nav-link" data-scroll-target="#필요한-패키지-설치">필요한 패키지 설치</a></li>
+  <li><a href="#docker의-공식-gpg키와-저장소-추가" id="toc-docker의-공식-gpg키와-저장소-추가" class="nav-link" data-scroll-target="#docker의-공식-gpg키와-저장소-추가">Docker의 공식 GPG키와 저장소 추가</a></li>
+  <li><a href="#docker-설치" id="toc-docker-설치" class="nav-link" data-scroll-target="#docker-설치">Docker 설치</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">wsl 이미지 저장 위치 변경 및 백업</h1>
-<p class="subtitle lead">wsl 이미지 저장 위치 변경 및 백업</p>
+<h1 class="title">우분투 docker, docker-compse 설치</h1>
+<p class="subtitle lead">우분투 docker, docker-compse 설치</p>
   <div class="quarto-categories">
     <div class="quarto-category">DevOps</div>
   </div>
@@ -475,7 +473,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    wsl 이미지 저장 위치 변경 및 백업
+    우분투 docker, docker-compse 설치
   </div>
 </div>
 
@@ -492,7 +490,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 20, 2023</p>
+      <p class="date">November 27, 2023</p>
     </div>
   </div>
   
@@ -502,34 +500,24 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="wsl-이미지-저장-위치-변경-및-백업" class="level1">
-<h1>wsl 이미지 저장 위치 변경 및 백업</h1>
-<p>WSL을 사용할 때 필요한 정보를 정리합니다.</p>
-<section id="wsl-이미지-저장-위치-변경하기" class="level2">
-<h2 class="anchored" data-anchor-id="wsl-이미지-저장-위치-변경하기">wsl 이미지 저장 위치 변경하기</h2>
-<p>[move-wsl] 깃 저장소에서 제공하는 파워쉘 스크립트를 이용하면 쉽게 wsl 이미지 위치를 변경할 수 있습니다. 스크립트로 이동 시 주의해야할 점은 <code>Docker WSL이 정지된 상태인지 확인하는 것</code>이라고 합니다. 정지되지 않은 상태에서 스크립트가 실행되는 경우 crash로 fatory default로 리셋될 수 있다고 합니다. (너무 무섭네요….)</p>
+<section id="우분투-docker-docker-compse-설치" class="level1">
+<h1>우분투 docker, docker-compse 설치</h1>
+<section id="필요한-패키지-설치" class="level2">
+<h2 class="anchored" data-anchor-id="필요한-패키지-설치">필요한 패키지 설치</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="wsl-이미지-백업하기" class="level2">
-<h2 class="anchored" data-anchor-id="wsl-이미지-백업하기">WSL 이미지 백업하기</h2>
-<p>우선 설치된 모든 배포판을 확인합니다. 각 이미지의 상태도 확인할 수 있습니다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">-l</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>  NAME                   STATE           VERSION
-* Ubuntu-20.04           Running         2
-  docker-desktop         Running         2
-  docker-desktop-data    Running         2</code></pre>
-<p>배포판에 특정 유저이름으로 접속하는 경우 <code>유저이름</code>을 추가할 수 있습니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">-u</span> <span class="op">&lt;</span>유저이름<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="배포판-파일로-내보내기" class="level3">
-<h3 class="anchored" data-anchor-id="배포판-파일로-내보내기">배포판 파일로 내보내기</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--export</span> <span class="op">&lt;</span>배포판 이름<span class="op">&gt;</span> <span class="op">&lt;</span>파일명<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="docker의-공식-gpg키와-저장소-추가" class="level2">
+<h2 class="anchored" data-anchor-id="docker의-공식-gpg키와-저장소-추가">Docker의 공식 GPG키와 저장소 추가</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="kw">|</span> <span class="fu">sudo</span> apt-key add <span class="at">-</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="st">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="va">$(</span><span class="ex">lsb_release</span> <span class="at">-cs</span><span class="va">)</span><span class="st"> stable"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="배포판-파일에서-가져오기" class="level3">
-<h3 class="anchored" data-anchor-id="배포판-파일에서-가져오기">배포판 파일에서 가져오기</h3>
-<p>실행하면 <code>설치위치</code>에 <code>ext4.vhdx</code> 파일이 생성됩니다.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--import</span> <span class="op">&lt;</span>패포판 이름<span class="op">&gt;</span> <span class="op">&lt;</span>설치할 위치<span class="op">&gt;</span> <span class="op">&lt;</span>가져올 배포판 파일명<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="docker-설치" class="level2">
+<h2 class="anchored" data-anchor-id="docker-설치">Docker 설치</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install docker-ce docker-ce-cli containerd.io</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 </section>
 
@@ -771,11 +759,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">wsl2에 docker 설치하기</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">mkfifo를 이용한 IPC</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="pagination-link">
+        <span class="nav-page-text">docker-compose로 airflow 설치하기</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
