@@ -9,6 +9,7 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/2023/11/2023-11-28-dbever/index.html",
       "/docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html",
       "/docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html",
       "/docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html",
