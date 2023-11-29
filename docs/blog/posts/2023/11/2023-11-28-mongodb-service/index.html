@@ -8,9 +8,9 @@
 
 <meta name="author" content="gabriel yang">
 <meta name="dcterms.date" content="2023-11-28">
-<meta name="description" content="DB를 편리하기 보기, dbever">
+<meta name="description" content="mongoDB 서비스 시작/종료/상태확인">
 
-<title>BookShelf - DB를 편리하기 보기, dbever</title>
+<title>BookShelf - mongoDB 서비스 시작/종료/상태확인</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,7 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -161,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html">DB를 편리하기 보기, dbever</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html">mongoDB 서비스 시작/종료/상태확인</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -425,7 +426,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
   </div>
 </li>
@@ -443,7 +444,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DB를 편리하기 보기, dbever</span></a>
   </div>
 </li>
@@ -461,21 +462,22 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#db를-편리하기-보기-dbeaver" id="toc-db를-편리하기-보기-dbeaver" class="nav-link active" data-scroll-target="#db를-편리하기-보기-dbeaver">DB를 편리하기 보기, dbeaver</a>
+  <li><a href="#mongodb-서비스-시작종료상태확인" id="toc-mongodb-서비스-시작종료상태확인" class="nav-link active" data-scroll-target="#mongodb-서비스-시작종료상태확인">mongoDB 서비스 시작/종료/상태확인</a>
   <ul class="collapse">
-  <li><a href="#dbeaver-설치" id="toc-dbeaver-설치" class="nav-link" data-scroll-target="#dbeaver-설치">DBeaver 설치</a></li>
-  <li><a href="#mysql-db에-연결하기" id="toc-mysql-db에-연결하기" class="nav-link" data-scroll-target="#mysql-db에-연결하기">MySQL DB에 연결하기</a></li>
+  <li><a href="#로컬-서비스-상태확인" id="toc-로컬-서비스-상태확인" class="nav-link" data-scroll-target="#로컬-서비스-상태확인">로컬 서비스 상태확인</a></li>
+  <li><a href="#mongodb-docker-상태-확인하기" id="toc-mongodb-docker-상태-확인하기" class="nav-link" data-scroll-target="#mongodb-docker-상태-확인하기">mongodb Docker 상태 확인하기</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-28-dbever/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DB를 편리하기 보기, dbever</h1>
-<p class="subtitle lead">DB를 편리하기 보기, dbever</p>
+<h1 class="title">mongoDB 서비스 시작/종료/상태확인</h1>
+<p class="subtitle lead">mongoDB 서비스 시작/종료/상태확인</p>
   <div class="quarto-categories">
     <div class="quarto-category">Database</div>
   </div>
@@ -483,7 +485,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    DB를 편리하기 보기, dbever
+    mongoDB 서비스 시작/종료/상태확인
   </div>
 </div>
 
@@ -510,36 +512,38 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="db를-편리하기-보기-dbeaver" class="level1">
-<h1>DB를 편리하기 보기, dbeaver</h1>
-<p>Dbever는 데이터베이스 관리도구이며 다양한 데이터 베이스를 지원하는 오픈소스입니다. 데이터 편집과 시각화 기능을 제공할 뿐 아니라 ER다이어그램도 표현되기 때문에 데이터베이스를 관리하는데 유용합니다.</p>
-<section id="dbeaver-설치" class="level2">
-<h2 class="anchored" data-anchor-id="dbeaver-설치">DBeaver 설치</h2>
-<p>[DBeaver 공식사이트]에서 운영체제에 맞는 프로그램을 설치합니다. 우분투의 경우 dpkg 명령으로 설치할 수 있습니다. 무료 버전을 사용하는 경우 <code>Comminity</code> 버전을 다운로드합니다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dpkg</span> <span class="at">-i</span> dbeaver-ce_23.2.5.amd64.deb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>설치를 완료 하면 셈플 <code>sqlite</code> 데이터 베이스를 생성하여 여러가지 기능을 테스트 할 수 있습니다.</p>
-<p><img src="images/paste-1.png" class="img-fluid"></p>
+<section id="mongodb-서비스-시작종료상태확인" class="level1">
+<h1>mongoDB 서비스 시작/종료/상태확인</h1>
+<p>mongodb 서비스 실행/종료/상태 확인 방법을 정리합니다.</p>
+<section id="로컬-서비스-상태확인" class="level2">
+<h2 class="anchored" data-anchor-id="로컬-서비스-상태확인">로컬 서비스 상태확인</h2>
+<p>자신의 사용하는 운영체제에 설치된 mongodb 서비스의 상태확인 방법을 정리합니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> mongodb start <span class="co"># mongodb 서비스 실행</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> mongodb status <span class="co"># mongodb 서비스 상태확인</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> mongodb stop <span class="co"># mongodb 서비스 정지</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="mysql-db에-연결하기" class="level2">
-<h2 class="anchored" data-anchor-id="mysql-db에-연결하기">MySQL DB에 연결하기</h2>
-<p>MySQL DB에 연결하기 위해 새로운 데이터베이스 커넥션을 생성합니다. <code>데이터베이스</code> &gt; <code>새 데이터베이스 연결</code> 을 선택하고 <code>MySQL</code>을 선택합니다. 아래의 DB 선택화면에서 보이는 것처럼 많은 데이터 베이스를 지원하고 있습니다.</p>
-<p><img src="images/paste-2.png" class="img-fluid"></p>
-<p>데이터베이트 커넥션을 추가하면 연결을 위한 정보추가 메뉴로 넘어갑니다. DB를 설치한 <code>Server Host</code> 정보와 데이터베이스 접속을 위한 <code>Username</code>과 <code>password</code>를 입력합니다.</p>
-<p>MySQL 8.0이상인 경우 초기 연결 시 <code>Public Key Retrieval is not allowed</code> 라는 error와 함께 연결이 진행되지 않는 경우가 있다. 이 경우 커넥션의 <code>Driver properties</code> 탭에 정보 추가가 필요하다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/paste-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><code>Driver properties</code> 탭을 선택하고 마우스 우클릭으로 <code>Add user property</code>를 선택할 수 있다.</p>
-<ul>
-<li><p><code>allowPublicKeyRetrieval=true useSSL</code> 키를 등록하고 값을 <code>true</code>로 설정</p></li>
-<li><p><code>useSSL</code> 키를 등록하고 값을 <code>false</code>로 설정</p></li>
-</ul>
-<p>한 후 다시 connect를 실행하면 MySQL 데이터베이스 정보를 확인할 수 있다.</p>
+<section id="mongodb-docker-상태-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="mongodb-docker-상태-확인하기">mongodb Docker 상태 확인하기</h2>
+<p>도커로 실행된 mongodb의 상태를 확인하는 방법을 정리합니다. <code>docker ps</code>로 실행 중인 컨테이너 정보를 확인할 수 있습니다. <code>-a</code>옵션을 사용하면 현재 실행되지 않는 컨테이너 정보도 모두 출력됩니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>CONTAINER ID   IMAGE           COMMAND                   CREATED        STATUS          PORTS                                                  NAMES
+8d45ded6e5ef   mongo           "docker-entrypoint.s…"   10 hours ago   Up 10 minutes   0.0.0.0:27017-&gt;27017/tcp, :::27017-&gt;27017/tcp          mongodb</code></pre>
+<p>몽고 db 컨테이너에 접속을 위해 아래 명령을 사용합니다. 실행할 컨테이너 이름은 <code>docker ps</code>정보의 <code>NAMES</code>에서 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> mongodb bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>컨테이너에 진입 후 <code>ps -ef | grep mongodb</code>를 실행하면 현재 실행 중인 mongodb 프로세스를 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-ef</span> <span class="kw">|</span> <span class="fu">grep</span> mongodb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>root@8d45ded6e5ef:/# ps -ef | grep mongodb
+mongodb        1       0  0 Nov28 ?        00:00:06 mongod --auth --bind_ip_all
+root         206     196  0 00:12 pts/0    00:00:00 grep mongodb</code></pre>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li>https://blog.qvil.dev/docker/docker-mongo</li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -780,11 +784,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">wsl 이미지 저장 위치 변경 및 백업</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pymongo 명령어 정리하기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="pagination-link">
+        <span class="nav-page-text">wsl2에 docker 설치하기</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

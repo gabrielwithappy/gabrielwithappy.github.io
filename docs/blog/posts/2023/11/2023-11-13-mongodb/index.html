@@ -8,9 +8,9 @@
 
 <meta name="author" content="gabriel yang">
 <meta name="dcterms.date" content="2023-11-15">
-<meta name="description" content="MongoDB 명령어 정리하기">
+<meta name="description" content="MongoDB 설치 및 명령어 정리하기">
 
-<title>BookShelf - MongoDB 명령어 정리하기</title>
+<title>BookShelf - MongoDB 설치 및 명령어 정리하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -162,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">MongoDB 명령어 정리하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">MongoDB 설치 및 명령어 정리하기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -385,7 +385,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">MongoDB 명령어 정리하기</span></a>
+ <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -426,6 +426,12 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">wsl2에 docker 설치하기</span></a>
   </div>
@@ -456,7 +462,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#mongodb-정리하기" id="toc-mongodb-정리하기" class="nav-link active" data-scroll-target="#mongodb-정리하기">MongoDB 정리하기</a>
+  <li><a href="#mongodb-설치-및-명령어-정리" id="toc-mongodb-설치-및-명령어-정리" class="nav-link active" data-scroll-target="#mongodb-설치-및-명령어-정리">MongoDB 설치 및 명령어 정리</a>
   <ul class="collapse">
   <li><a href="#mongodb-도커로-설치하기" id="toc-mongodb-도커로-설치하기" class="nav-link" data-scroll-target="#mongodb-도커로-설치하기">MongoDB 도커로 설치하기</a></li>
   <li><a href="#mongodb의-명령어-정리" id="toc-mongodb의-명령어-정리" class="nav-link" data-scroll-target="#mongodb의-명령어-정리">MongoDB의 명령어 정리</a>
@@ -481,8 +487,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MongoDB 명령어 정리하기</h1>
-<p class="subtitle lead">MongoDB 명령어 정리하기</p>
+<h1 class="title">MongoDB 설치 및 명령어 정리하기</h1>
+<p class="subtitle lead">MongoDB 설치 및 명령어 정리하기</p>
   <div class="quarto-categories">
     <div class="quarto-category">Database</div>
   </div>
@@ -490,7 +496,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    MongoDB 명령어 정리하기
+    MongoDB 설치 및 명령어 정리하기
   </div>
 </div>
 
@@ -517,8 +523,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="mongodb-정리하기" class="level1">
-<h1>MongoDB 정리하기</h1>
+<section id="mongodb-설치-및-명령어-정리" class="level1">
+<h1>MongoDB 설치 및 명령어 정리</h1>
 <p>MongoDB(몽고디비)는 NoSQL 데이터베이스 시스템의 하나로, 문서 지향(Document-Oriented) 데이터베이스입니다. 이것은 데이터를 BSON(Binary JSON) 형식의 문서로 저장하며, 이러한 문서는 키-값 쌍(key-value pairs)으로 이루어져 있습니다. MongoDB는 관계형 데이터베이스와는 달리 스키마가 정의되지 않아 유연성이 높고, 데이터 모델의 변화에 적응하기 쉽습니다.</p>
 <p>SQL의 database, table, row를 mongoDB의 구조와 비교해서 테이블로 표시합니다.</p>
 <table class="table">
