@@ -9,6 +9,7 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html",
       "/docs/blog/posts/2023/11/2023-11-28-dbever/index.html",
       "/docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html",
       "/docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html",
