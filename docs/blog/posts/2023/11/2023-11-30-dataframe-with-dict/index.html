@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-09-14">
-<meta name="description" content="Pandas 모든 컬럼이 NaN일 때만 삭제하기">
+<meta name="dcterms.date" content="2023-11-29">
+<meta name="description" content="python datetime 사용법 정리">
 
-<title>BookShelf - Pandas 모든 컬럼이 NaN일 때만 삭제하기</title>
+<title>BookShelf - python datetime 사용법 정리</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,9 +107,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
@@ -165,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html">09</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html">Pandas 모든 컬럼이 NaN일 때만 삭제하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html">python datetime 사용법 정리</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -188,13 +185,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">09</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html" class="sidebar-item-text sidebar-link">
@@ -287,7 +284,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pandas 모든 컬럼이 NaN일 때만 삭제하기</span></a>
   </div>
 </li>
@@ -378,13 +375,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">11</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
@@ -411,7 +408,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">python datetime 사용법 정리</span></a>
   </div>
 </li>
@@ -477,23 +474,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#모든-컬럼이-nan일-때만-삭제하기" id="toc-모든-컬럼이-nan일-때만-삭제하기" class="nav-link active" data-scroll-target="#모든-컬럼이-nan일-때만-삭제하기">모든 컬럼이 NaN일 때만 삭제하기</a>
+  <li><a href="#python-datetime-사용법-정리" id="toc-python-datetime-사용법-정리" class="nav-link active" data-scroll-target="#python-datetime-사용법-정리">python datetime 사용법 정리</a>
   <ul class="collapse">
-  <li><a href="#테스트-데이터-생성하기" id="toc-테스트-데이터-생성하기" class="nav-link" data-scroll-target="#테스트-데이터-생성하기">테스트 데이터 생성하기</a></li>
-  <li><a href="#nan값-찾기" id="toc-nan값-찾기" class="nav-link" data-scroll-target="#nan값-찾기">NaN값 찾기</a></li>
-  <li><a href="#결측-데이터-삭제" id="toc-결측-데이터-삭제" class="nav-link" data-scroll-target="#결측-데이터-삭제">결측 데이터 삭제</a></li>
-  <li><a href="#참조" id="toc-참조" class="nav-link" data-scroll-target="#참조">참조</a></li>
+  <li><a href="#현재-시간-확인하기" id="toc-현재-시간-확인하기" class="nav-link" data-scroll-target="#현재-시간-확인하기">현재 시간 확인하기</a></li>
+  <li><a href="#원하는-형태의-문자로-변경" id="toc-원하는-형태의-문자로-변경" class="nav-link" data-scroll-target="#원하는-형태의-문자로-변경">원하는 형태의 문자로 변경</a></li>
+  <li><a href="#시간-변경하기" id="toc-시간-변경하기" class="nav-link" data-scroll-target="#시간-변경하기">시간 변경하기</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pandas 모든 컬럼이 NaN일 때만 삭제하기</h1>
-<p class="subtitle lead">Pandas 모든 컬럼이 NaN일 때만 삭제하기</p>
+<h1 class="title">python datetime 사용법 정리</h1>
+<p class="subtitle lead">python datetime 사용법 정리</p>
   <div class="quarto-categories">
     <div class="quarto-category">Pandas</div>
   </div>
@@ -501,7 +498,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Pandas 모든 컬럼이 NaN일 때만 삭제하기
+    python datetime 사용법 정리
   </div>
 </div>
 
@@ -518,7 +515,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 14, 2023</p>
+      <p class="date">November 29, 2023</p>
     </div>
   </div>
   
@@ -528,764 +525,80 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="모든-컬럼이-nan일-때만-삭제하기" class="level1">
-<h1>모든 컬럼이 NaN일 때만 삭제하기</h1>
-<p>pandas에서는 NaN의 값을 갖는 데이터를 누락된 데이터라고 합니다. NaN값은 해당 인덱스 레이블에 값이 없음을 의미합니다. 아래와 같이 NaN값을 가지는 데이터프레임을 생성하고 NaN으로 처리된 없는 값을 채우는 방법을 확인 해봅니다.</p>
-<section id="테스트-데이터-생성하기" class="level2">
-<h2 class="anchored" data-anchor-id="테스트-데이터-생성하기">테스트 데이터 생성하기</h2>
-<p>테스트를 위해서 데이터를 생성합니다.</p>
+<section id="python-datetime-사용법-정리" class="level1">
+<h1>python datetime 사용법 정리</h1>
+<p>Python의 datetime 모듈은 날짜와 시간을 다루기 위한 다양한 함수와 클래스를 제공합니다. 시간 데이터를 관리하기 위한 datetime정보를 정리합니다.</p>
+<section id="현재-시간-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="현재-시간-확인하기">현재 시간 확인하기</h2>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  np.arange(<span class="dv">0</span>, <span class="dv">30</span>).reshape(<span class="dv">10</span>,<span class="dv">3</span>),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  columns<span class="op">=</span>[<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>])</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> dt.datetime.now()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>now</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>9</td>
-<td>10</td>
-<td>11</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>12</td>
-<td>13</td>
-<td>14</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15</td>
-<td>16</td>
-<td>17</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18</td>
-<td>19</td>
-<td>20</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>21</td>
-<td>22</td>
-<td>23</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24</td>
-<td>25</td>
-<td>26</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>27</td>
-<td>28</td>
-<td>29</td>
-</tr>
-</tbody>
-</table>
-
+<pre><code>datetime.datetime(2023, 12, 1, 0, 15, 59, 906820)</code></pre>
 </div>
 </div>
-</div>
-<p><code>numpy</code>라이브러리로 0 부터 29까지 숫자를 생성하고 <code>reshape()</code>함수로 차원을 10, 3으로 변경합니다. 10개의 열과 3개의 컬럼을 갖는 형태로 변경되었습니다. 데이터프레임의 컬럼은 <code>a, b, c</code>로 리스트를 전달했습니다.</p>
+<p>datetime의 현재 시간정보를 보여준다. 시간 정보는 datetime 형태로 표현됩니다. 날짜에서 원하는 시간정보를 가져올 수 있습니다.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.loc[[<span class="dv">0</span>,<span class="dv">7</span>]] <span class="op">=</span> np.NaN</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>5.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>8.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>9.0</td>
-<td>10.0</td>
-<td>11.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>12.0</td>
-<td>13.0</td>
-<td>14.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>17.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18.0</td>
-<td>19.0</td>
-<td>20.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24.0</td>
-<td>25.0</td>
-<td>26.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>27.0</td>
-<td>28.0</td>
-<td>29.0</td>
-</tr>
-</tbody>
-</table>
-
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> dt.datetime.now()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>year<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>month<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>day<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>hour<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>minute<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>second<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>microsecond<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-12-01 00:15:59.928017
+2023
+12
+1
+0
+15
+59
+928017</code></pre>
 </div>
 </div>
-</div>
-<p>데이터프레임에 <code>NaN</code>을 추가하기 위해서 <code>np.NaN</code>을 사용했습니다. 위치는 0, 7번째 열에 추가하기 위해 <code>df.log[[0, 7]] = np.NaN</code>을 사용합니다.</p>
+</section>
+<section id="원하는-형태의-문자로-변경" class="level2">
+<h2 class="anchored" data-anchor-id="원하는-형태의-문자로-변경">원하는 형태의 문자로 변경</h2>
+<p>시간을 원하는 형태의 문자열 형태로 표현하는 경우가 많습니다. <code>strftime</code> 메서드를 이용해서 날짜를 표현할 표현형식을 변경합니다.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[(df <span class="op">&gt;</span> <span class="dv">10</span>) <span class="op">&amp;</span> (df <span class="op">&lt;</span> <span class="dv">13</span>)] <span class="op">=</span> np.NaN</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>5.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>8.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>9.0</td>
-<td>10.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
-<td>13.0</td>
-<td>14.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>17.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18.0</td>
-<td>19.0</td>
-<td>20.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24.0</td>
-<td>25.0</td>
-<td>26.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>27.0</td>
-<td>28.0</td>
-<td>29.0</td>
-</tr>
-</tbody>
-</table>
-
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(now.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-12-01 00:15:59</code></pre>
 </div>
 </div>
-</div>
-<p>전체 컬럼이 <code>NaN</code>일 때만 삭제되는 지 확인하기 위해서 일부 컬럼에만 <code>NaN</code>이 있는 경우도 만들겠습니다. <code>df[(df &gt; 10) &amp; (df &lt; 13)] = np.NaN</code>는 데이터프레임의 값이 10보다 크고 13보다 작은 위치에 <code>NaN</code>이 추가되었습니다.</p>
+</section>
+<section id="시간-변경하기" class="level2">
+<h2 class="anchored" data-anchor-id="시간-변경하기">시간 변경하기</h2>
+<p>정해진 기간의 시간을 더하거나 빼는 경우 <code>timedelta</code>를 사용합니다.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">9</span>, <span class="st">'b'</span>] <span class="op">=</span> np.NAN</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>5.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>8.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>9.0</td>
-<td>10.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
-<td>13.0</td>
-<td>14.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>17.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18.0</td>
-<td>19.0</td>
-<td>20.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24.0</td>
-<td>25.0</td>
-<td>26.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>27.0</td>
-<td>NaN</td>
-<td>29.0</td>
-</tr>
-</tbody>
-</table>
-
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"now: </span><span class="sc">{</span>now<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(days<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 day"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(hours<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 hour"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(minutes<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 min"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(seconds<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 sec"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(microseconds<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 micro sec"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>now: 2023-12-01 00:15:59.928017
+2023-12-02 00:15:59.928017 + 1 day
+2023-12-01 01:15:59.928017 + 1 hour
+2023-12-01 00:16:59.928017 + 1 min
+2023-12-01 00:16:00.928017 + 1 sec
+2023-12-01 00:15:59.928018 + 1 micro sec</code></pre>
 </div>
 </div>
-</div>
-<p>이제 컬럼정보와 index정보를 모두 이용해서 데이터를 수정합니다. 데이터프레임의 <code>index</code>가 <code>9</code>이고 컬럼이 <code>b</code>인 위치에 <code>NaN</code>을 추가합니다.</p>
 </section>
-<section id="nan값-찾기" class="level2">
-<h2 class="anchored" data-anchor-id="nan값-찾기">NaN값 찾기</h2>
-<p>데이터가 없는 NaN를 찾기 위해서는 isnull()을 사용합니다. isnull()을 사용하면 데이터프레임에서NaN으로 표시된 위치를 True로 표시한 데이터프레임을 반환합니다.</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>데이터프레임 중 <code>NaN</code>으로 표시된 부분이 <code>True</code>로 설정되었습니다.</p>
 </section>
-<section id="결측-데이터-삭제" class="level2">
-<h2 class="anchored" data-anchor-id="결측-데이터-삭제">결측 데이터 삭제</h2>
-<p>데이터 프레임에 .dropna()가 사용되면 NaN값이 하나 이상 있는 모은 로우가 삭제됩니다.</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>5.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>8.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>17.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18.0</td>
-<td>19.0</td>
-<td>20.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24.0</td>
-<td>25.0</td>
-<td>26.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p><code>NaN</code>을 포함하는 0, 3, 4, 7, 9 열이 삭제되었습니다. 모든값이 NaN인 로우만 삭제하고 싶을 경우에는 how=‘all’ 파라메터를 사용합니다.</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.dropna(how <span class="op">=</span> <span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>5.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>8.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>9.0</td>
-<td>10.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
-<td>13.0</td>
-<td>14.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>17.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18.0</td>
-<td>19.0</td>
-<td>20.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24.0</td>
-<td>25.0</td>
-<td>26.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>27.0</td>
-<td>NaN</td>
-<td>29.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>이번에는 모든 열이 <code>NaN</code>정보를 갖는 7번 열이 삭제되었습니다. 이제 컬럼 방향으로 모두 <code>NaN</code>인 경우를 알아봅니다. 컬럼이 모두 <code>NaN</code>이라면 해당 컬럼에 해당하는 정보를 사용할 수 없으니 삭제하는 것이 좋습니다.</p>
-<p>하지만 사용하고 있던 데이터가 공통으로 사용하는 원본 데이터프레임이라면 모두 <code>NaN</code>인 컬럼을 제외하여 새로운 데이터프레임을 생성하는 것이 더 좋을 수 있습니다.</p>
-<p>테스트를 위한 데이터프레임을 만들 때 컬럼이 모두 <code>NaN</code>인 경우는 없었습니다. 테스트를 위해 모든 컬럼값이 <code>NaN</code>인 경우를 만들어봅니다.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'d'</span>] <span class="op">=</span> np.NaN</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-<th data-quarto-table-cell-role="th">d</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>5.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>8.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>9.0</td>
-<td>10.0</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
-<td>13.0</td>
-<td>14.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>17.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18.0</td>
-<td>19.0</td>
-<td>20.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24.0</td>
-<td>25.0</td>
-<td>26.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>27.0</td>
-<td>NaN</td>
-<td>29.0</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>데이터프레임에 모든 값이 <code>NaN</code>인 <code>d</code> 컬럼을 추가했습니다. 이제 컬럼방향으로 모두 <code>NaN</code>값을 가진 컬럼만 삭제합니다.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.dropna(how<span class="op">=</span><span class="st">'all'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">a</th>
-<th data-quarto-table-cell-role="th">b</th>
-<th data-quarto-table-cell-role="th">c</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>5.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>8.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>9.0</td>
-<td>10.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
-<td>13.0</td>
-<td>14.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>17.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>18.0</td>
-<td>19.0</td>
-<td>20.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>24.0</td>
-<td>25.0</td>
-<td>26.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>27.0</td>
-<td>NaN</td>
-<td>29.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p><code>axis</code>를 <code>1</code>로 사용했습니다. 숫자는 데이터프레임의 shape의 순서 인덱스며 <code>1</code>은 컬럼 방향을 의미합니다.</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>(10, 4)</code></pre>
-</div>
-</div>
-<p>테스트에 사용한 데이터프레임의 <code>shape</code>를 확인하면 첫번째 정보는 열, 두 번째 정보는 컬럼의 크기를 의미합니다. 위의 코드에서 사용한 <code>axis</code>는 shape의 2번째 인덱스 방향인 컬럼방향을 의미합니다.</p>
-</section>
-<section id="참조" class="level2">
-<h2 class="anchored" data-anchor-id="참조">참조</h2>
+<section id="references" class="level1">
+<h1>References</h1>
 <ol type="1">
-<li>https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html</li>
+<li>https://blog.qvil.dev/docker/docker-mongo</li>
 </ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1526,13 +839,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pandas 중복 데이터 제거하기</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">우분투 docker, docker-compse 설치</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" class="pagination-link">
-        <span class="nav-page-text">Plotly Line Plot만들기</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="pagination-link">
+        <span class="nav-page-text">docker-compose로 airflow 설치하기</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

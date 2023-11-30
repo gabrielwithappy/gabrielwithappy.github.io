@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-11-29">
-<meta name="description" content="python datetime 사용법 정리">
+<meta name="dcterms.date" content="2023-11-30">
+<meta name="description" content="Dataframed을 Dict로 생성 및 변환">
 
-<title>BookShelf - python datetime 사용법 정리</title>
+<title>BookShelf - Dataframed을 Dict로 생성 및 변환</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,6 +107,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
@@ -162,7 +165,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html">python datetime 사용법 정리</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html">Dataframed을 Dict로 생성 및 변환</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -408,6 +411,12 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">python datetime 사용법 정리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
   </div>
@@ -427,7 +436,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">python datetime 사용법 정리</span></a>
+ <span class="menu-text">Dataframed을 Dict로 생성 및 변환</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -468,11 +477,12 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#python-datetime-사용법-정리" id="toc-python-datetime-사용법-정리" class="nav-link active" data-scroll-target="#python-datetime-사용법-정리">python datetime 사용법 정리</a>
+  <li><a href="#dataframed을-dict로-생성-및-변환" id="toc-dataframed을-dict로-생성-및-변환" class="nav-link active" data-scroll-target="#dataframed을-dict로-생성-및-변환">Dataframed을 Dict로 생성 및 변환</a></li>
+  <li><a href="#데이터프레임을-딕셔너리로-변환" id="toc-데이터프레임을-딕셔너리로-변환" class="nav-link" data-scroll-target="#데이터프레임을-딕셔너리로-변환">데이터프레임을 딕셔너리로 변환</a>
   <ul class="collapse">
-  <li><a href="#현재-시간-확인하기" id="toc-현재-시간-확인하기" class="nav-link" data-scroll-target="#현재-시간-확인하기">현재 시간 확인하기</a></li>
-  <li><a href="#원하는-형태의-문자로-변경" id="toc-원하는-형태의-문자로-변경" class="nav-link" data-scroll-target="#원하는-형태의-문자로-변경">원하는 형태의 문자로 변경</a></li>
-  <li><a href="#시간-변경하기" id="toc-시간-변경하기" class="nav-link" data-scroll-target="#시간-변경하기">시간 변경하기</a></li>
+  <li><a href="#dict-형식" id="toc-dict-형식" class="nav-link" data-scroll-target="#dict-형식">dict 형식</a></li>
+  <li><a href="#list-형식" id="toc-list-형식" class="nav-link" data-scroll-target="#list-형식">list 형식</a></li>
+  <li><a href="#records-형식" id="toc-records-형식" class="nav-link" data-scroll-target="#records-형식">records 형식</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -483,8 +493,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">python datetime 사용법 정리</h1>
-<p class="subtitle lead">python datetime 사용법 정리</p>
+<h1 class="title">Dataframed을 Dict로 생성 및 변환</h1>
+<p class="subtitle lead">Dataframed을 Dict로 생성 및 변환</p>
   <div class="quarto-categories">
     <div class="quarto-category">Pandas</div>
   </div>
@@ -492,7 +502,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    python datetime 사용법 정리
+    Dataframed을 Dict로 생성 및 변환
   </div>
 </div>
 
@@ -509,7 +519,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 29, 2023</p>
+      <p class="date">November 30, 2023</p>
     </div>
   </div>
   
@@ -519,69 +529,97 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="python-datetime-사용법-정리" class="level1">
-<h1>python datetime 사용법 정리</h1>
-<p>Python의 datetime 모듈은 날짜와 시간을 다루기 위한 다양한 함수와 클래스를 제공합니다. 시간 데이터를 관리하기 위한 datetime정보를 정리합니다.</p>
-<section id="현재-시간-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="현재-시간-확인하기">현재 시간 확인하기</h2>
+<section id="dataframed을-dict로-생성-및-변환" class="level1">
+<h1>Dataframed을 Dict로 생성 및 변환</h1>
+<p>파이썬 딕셔너리 데이터로 Dataframe을 생성하는 방법을 정리합니다.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> dt.datetime.now()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>now</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="57">
-<pre><code>datetime.datetime(2023, 11, 30, 0, 56, 34, 44027)</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"A"</span> : [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"B"</span> : [<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C"</span> : [<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>{'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]}</code></pre>
 </div>
 </div>
-<p>datetime의 현재 시간정보를 보여준다. 시간 정보는 datetime 형태로 표현됩니다. 날짜에서 원하는 시간정보를 가져올 수 있습니다.</p>
+<p>딕셔너리 데이터를 데이터프레임으로 변경하기 위해서 <code>from_dict</code>를 사용합니다.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> dt.datetime.now()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>year<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>month<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>day<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>hour<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>minute<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>second<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>microsecond<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2023-11-30 00:56:34.056474
-2023
-11
-30
-0
-56
-34
-56474</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame.from_dict(data)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">B</th>
+<th data-quarto-table-cell-role="th">C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>5</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>6</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 </section>
-<section id="원하는-형태의-문자로-변경" class="level2">
-<h2 class="anchored" data-anchor-id="원하는-형태의-문자로-변경">원하는 형태의 문자로 변경</h2>
-<p>시간을 원하는 형태의 문자열 형태로 표현하는 경우가 많습니다. <code>strftime</code> 메서드를 이용해서 날짜를 표현할 표현형식을 변경합니다.</p>
+<section id="데이터프레임을-딕셔너리로-변환" class="level1">
+<h1>데이터프레임을 딕셔너리로 변환</h1>
+<p>데이터프레임은 다시 딕셔너리로 변경이 가능합니다. 딕셔너리로 변경은 <code>to_dict</code>를 사용합니다. 데이터프레임을 딕셔너리로 변경하는 방식을 여러가지 <code>{dict, list, series, split, tight, records, index}</code>가 지원됩니다.</p>
+<section id="dict-형식" class="level2">
+<h2 class="anchored" data-anchor-id="dict-형식">dict 형식</h2>
+<p>변환 형식은 <code>orient</code>에 전달되고 기본값은 <code>dict</code> 형식입니다. 다만 index자 추가되는 <code>{column -&gt; {index-&gt;value}}</code>와 같은 형식을 갖습니다.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(now.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2023-11-30 00:56:34</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'dict'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<pre><code>{'A': {0: 1, 1: 2, 2: 3}, 'B': {0: 4, 1: 5, 2: 6}, 'C': {0: 7, 1: 8, 2: 9}}</code></pre>
 </div>
 </div>
 </section>
-<section id="시간-변경하기" class="level2">
-<h2 class="anchored" data-anchor-id="시간-변경하기">시간 변경하기</h2>
-<p>정해진 기간의 시간을 더하거나 빼는 경우 <code>timedelta</code>를 사용합니다.</p>
+<section id="list-형식" class="level2">
+<h2 class="anchored" data-anchor-id="list-형식">list 형식</h2>
+<p><code>list</code> 형식은 <code>{column -&gt; [value]}</code>와 같은 형식을 갖습니다. 일반적으로 딕셔너리에 index를 사용하지 않기 때문에 <code>list</code>형식으로 표현하는 것이 익숙합니다.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"now: </span><span class="sc">{</span>now<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(days<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 day"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(hours<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 hour"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(minutes<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 min"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(seconds<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 sec"</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(microseconds<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 micro sec"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>now: 2023-11-30 00:56:34.056474
-2023-12-01 00:56:34.056474 + 1 day
-2023-11-30 01:56:34.056474 + 1 hour
-2023-11-30 00:57:34.056474 + 1 min
-2023-11-30 00:56:35.056474 + 1 sec
-2023-11-30 00:56:34.056475 + 1 micro sec</code></pre>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'list'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>{'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]}</code></pre>
+</div>
+</div>
+</section>
+<section id="records-형식" class="level2">
+<h2 class="anchored" data-anchor-id="records-형식">records 형식</h2>
+<p><code>records</code> 형식은 <code>[{column-&gt;value}, ... , {column-&gt;value}]</code>와 같은 형식을 갖습니다. 각각의 열을 리스트로 표현하기 때문에 데이터베이스의 레코드와 비슷합니다.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'records'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>[{'A': 1, 'B': 4, 'C': 7}, {'A': 2, 'B': 5, 'C': 8}, {'A': 3, 'B': 6, 'C': 9}]</code></pre>
 </div>
 </div>
 </section>
@@ -589,7 +627,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <section id="references" class="level1">
 <h1>References</h1>
 <ol type="1">
-<li>https://blog.qvil.dev/docker/docker-mongo</li>
+<li>https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_dict.html</li>
 </ol>
 
 
