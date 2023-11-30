@@ -1,68 +1,71 @@
 ---
-title: python datetime 사용법 정리
-subtitle: python datetime 사용법 정리
+title: Dataframed을 Dict로 생성 및 변환
+subtitle: Dataframed을 Dict로 생성 및 변환
 description:
-    python datetime 사용법 정리
+    Dataframed을 Dict로 생성 및 변환
 categories:
   - Pandas
 # All, Data Visualization, Database, DevOps, Pandas, Quarto
 author: gabriel yang
-date: "11/29/2023"
-image: "https://picsum.photos/id/229/200/150"
+date: "11/30/2023"
+image: "https://picsum.photos/id/203/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
 # draft: true
 ---
 
-# python datetime 사용법 정리
+# Dataframed을 Dict로 생성 및 변환
 
-Python의 datetime 모듈은 날짜와 시간을 다루기 위한 다양한 함수와 클래스를 제공합니다. 시간 데이터를 관리하기 위한 datetime정보를 정리합니다.
-
-## 현재 시간 확인하기
+파이썬 딕셔너리 데이터로 Dataframe을 생성하는 방법을 정리합니다.
 
 ``` {python}
-import datetime as dt
-now = dt.datetime.now()
-now
+data = {
+  "A" : [1,2,3],
+  "B" : [4,5,6],
+  "C" : [7,8,9]
+}
+data
 ```
 
-datetime의 현재 시간정보를 보여준다. 시간 정보는 datetime 형태로 표현됩니다. 날짜에서 원하는 시간정보를 가져올 수 있습니다. 
+딕셔너리 데이터를 데이터프레임으로 변경하기 위해서 `from_dict`를 사용합니다.
+``` {python}
+import pandas as pd
+df = pd.DataFrame.from_dict(data)
+df
+```
+
+# 데이터프레임을 딕셔너리로 변환
+
+데이터프레임은 다시 딕셔너리로 변경이 가능합니다. 딕셔너리로 변경은 `to_dict`를 사용합니다. 데이터프레임을 딕셔너리로 변경하는 방식을 여러가지 `{dict, list, series, split, tight, records, index}`가 지원됩니다. 
+
+## dict 형식
+
+변환 형식은 `orient`에 전달되고 기본값은 `dict` 형식입니다. 다만 index자 추가되는 `{column -> {index->value}}`와 같은 형식을 갖습니다.
+``` {python}
+dict_from_dataframe = df.to_dict(orient='dict')
+dict_from_dataframe
+```
+
+
+
+## list 형식
+
+`list` 형식은 `{column -> [value]}`와 같은 형식을 갖습니다. 일반적으로 딕셔너리에 index를 사용하지 않기 때문에 `list`형식으로 표현하는 것이 익숙합니다.
 
 ``` {python}
-now = dt.datetime.now()
-print(f"{now}")
-print(f"{now.year}")
-print(f"{now.month}")
-print(f"{now.day}")
-print(f"{now.hour}")
-print(f"{now.minute}")
-print(f"{now.second}")
-print(f"{now.microsecond}")
+dict_from_dataframe = df.to_dict(orient='list')
+dict_from_dataframe
 ```
 
+## records 형식
 
-## 원하는 형태의 문자로 변경
-
-시간을 원하는 형태의 문자열 형태로 표현하는 경우가 많습니다. `strftime` 메서드를 이용해서 날짜를 표현할 표현형식을 변경합니다.
+`records` 형식은 `[{column->value}, ... , {column->value}]`와 같은 형식을 갖습니다. 각각의 열을 리스트로 표현하기 때문에 데이터베이스의 레코드와 비슷합니다. 
 
 ``` {python}
-print(now.strftime("%Y-%m-%d %H:%M:%S"))
+dict_from_dataframe = df.to_dict(orient='records')
+dict_from_dataframe
 ```
-
-## 시간 변경하기
-
-정해진 기간의 시간을 더하거나 빼는 경우 `timedelta`를 사용합니다.
-
-``` {python}
-print(f"now: {now}")
-print(f"{now + dt.timedelta(days=1)} + 1 day")
-print(f"{now + dt.timedelta(hours=1)} + 1 hour")
-print(f"{now + dt.timedelta(minutes=1)} + 1 min")
-print(f"{now + dt.timedelta(seconds=1)} + 1 sec")
-print(f"{now + dt.timedelta(microseconds=1)} + 1 micro sec")
-```
-
 
 
 # References
-1. https://blog.qvil.dev/docker/docker-mongo
+1. https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_dict.html

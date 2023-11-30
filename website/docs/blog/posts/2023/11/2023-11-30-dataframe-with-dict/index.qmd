@@ -1,0 +1,68 @@
+---
+title: python datetime 사용법 정리
+subtitle: python datetime 사용법 정리
+description:
+    python datetime 사용법 정리
+categories:
+  - Pandas
+# All, Data Visualization, Database, DevOps, Pandas, Quarto
+author: gabriel yang
+date: "11/29/2023"
+image: "https://picsum.photos/id/229/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# python datetime 사용법 정리
+
+Python의 datetime 모듈은 날짜와 시간을 다루기 위한 다양한 함수와 클래스를 제공합니다. 시간 데이터를 관리하기 위한 datetime정보를 정리합니다.
+
+## 현재 시간 확인하기
+
+``` {python}
+import datetime as dt
+now = dt.datetime.now()
+now
+```
+
+datetime의 현재 시간정보를 보여준다. 시간 정보는 datetime 형태로 표현됩니다. 날짜에서 원하는 시간정보를 가져올 수 있습니다. 
+
+``` {python}
+now = dt.datetime.now()
+print(f"{now}")
+print(f"{now.year}")
+print(f"{now.month}")
+print(f"{now.day}")
+print(f"{now.hour}")
+print(f"{now.minute}")
+print(f"{now.second}")
+print(f"{now.microsecond}")
+```
+
+
+## 원하는 형태의 문자로 변경
+
+시간을 원하는 형태의 문자열 형태로 표현하는 경우가 많습니다. `strftime` 메서드를 이용해서 날짜를 표현할 표현형식을 변경합니다.
+
+``` {python}
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+```
+
+## 시간 변경하기
+
+정해진 기간의 시간을 더하거나 빼는 경우 `timedelta`를 사용합니다.
+
+``` {python}
+print(f"now: {now}")
+print(f"{now + dt.timedelta(days=1)} + 1 day")
+print(f"{now + dt.timedelta(hours=1)} + 1 hour")
+print(f"{now + dt.timedelta(minutes=1)} + 1 min")
+print(f"{now + dt.timedelta(seconds=1)} + 1 sec")
+print(f"{now + dt.timedelta(microseconds=1)} + 1 micro sec")
+```
+
+
+
+# References
+1. https://blog.qvil.dev/docker/docker-mongo
