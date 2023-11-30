@@ -40,7 +40,7 @@ df
 
 ## dict 형식
 
-변환 형식은 `orient`에 전달되고 기본값은 `dict` 형식입니다. 다만 index자 추가되는 `{column -> {index->value}}`와 같은 형식을 갖습니다.
+변환 형식은 `orient`에 전달되고 기본값은 `dict` 형식입니다. index가 추가되는 `{column -> {index->value}}`와 같은 형식을 갖습니다.
 ``` {python}
 dict_from_dataframe = df.to_dict(orient='dict')
 dict_from_dataframe
