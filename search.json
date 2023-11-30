@@ -200,7 +200,7 @@
     "href": "docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html#dict-형식",
     "title": "Dataframed을 Dict로 생성 및 변환",
     "section": "dict 형식",
-    "text": "dict 형식\n변환 형식은 orient에 전달되고 기본값은 dict 형식입니다. 다만 index자 추가되는 {column -&gt; {index-&gt;value}}와 같은 형식을 갖습니다.\n\ndict_from_dataframe = df.to_dict(orient='dict')\ndict_from_dataframe\n\n{'A': {0: 1, 1: 2, 2: 3}, 'B': {0: 4, 1: 5, 2: 6}, 'C': {0: 7, 1: 8, 2: 9}}"
+    "text": "dict 형식\n변환 형식은 orient에 전달되고 기본값은 dict 형식입니다. index가 추가되는 {column -&gt; {index-&gt;value}}와 같은 형식을 갖습니다.\n\ndict_from_dataframe = df.to_dict(orient='dict')\ndict_from_dataframe\n\n{'A': {0: 1, 1: 2, 2: 3}, 'B': {0: 4, 1: 5, 2: 6}, 'C': {0: 7, 1: 8, 2: 9}}"
   },
   {
     "objectID": "docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html#list-형식",
