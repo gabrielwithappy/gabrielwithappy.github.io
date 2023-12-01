@@ -1,8 +1,8 @@
 ---
-title: Dataframed을 Dict로 생성 및 변환
-subtitle: Dataframed을 Dict로 생성 및 변환
+title: Dataframe을 Dict로 생성 및 변환
+subtitle: Dataframe을 Dict로 생성 및 변환
 description:
-    Dataframed을 Dict로 생성 및 변환
+    Dataframe을 Dict로 생성 및 변환
 categories:
   - Pandas
 # All, Data Visualization, Database, DevOps, Pandas, Quarto
@@ -14,7 +14,7 @@ page-layout: article
 # draft: true
 ---
 
-# Dataframed을 Dict로 생성 및 변환
+# Dataframe을 Dict로 생성 및 변환
 
 파이썬 딕셔너리 데이터로 Dataframe을 생성하는 방법을 정리합니다.
 
