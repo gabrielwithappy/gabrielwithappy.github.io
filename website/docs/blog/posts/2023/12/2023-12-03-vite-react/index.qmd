@@ -1,0 +1,112 @@
+---
+title: vite를 이용한 react 개발환경 세팅
+subtitle: vite를 이용한 react 개발환경 세팅
+description:
+    vite를 이용한 react 개발환경 세팅
+categories:
+  - Web
+# All, Data Visualization, Database, DevOps, Pandas, Quarto, Web
+author: gabriel yang
+date: "11/29/2023"
+image: "https://picsum.photos/id/229/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# vite를 이용한 react 개발환경 세팅
+
+npm은 Node Package Manager의 약자로, JavaScript 및 Node.js 프로젝트에서 패키지를 관리하는 도구입니다. npm은 JavaScript 패키지의 설치, 관리, 업데이트 및 삭제를 쉽게 수행할 수 있도록 도와주며, 프로젝트의 의존성 관리에 중요한 역할을 합니다.
+
+그럼 Node는 뭔가요?
+
+Node.js(노드 제이에스)는 JavaScript 런타임 환경으로, 서버 측 프로그래밍을 위해 설계되었습니다. 기존에는 브라우저에서만 실행되던 JavaScript를 서버 사이드에서도 실행할 수 있게끔 하는 환경을 제공합니다. 아래는 Node.js의 주요 특징과 기능입니다
+
+## Node.js와 npm 설치하기
+
+`apt-get`명령으로 nodejs와 npm을 설치하고 버전을 확인합니다.
+
+``` bash
+sudo apt-get update
+sudo apt-get install nodejs npm
+```
+
+node의 버전은 `12.22.09`입니다.
+
+``` bash
+nodejs -v
+v12.22.9
+```
+
+npm 버전은 `10.2.3`입니다.
+
+``` bash
+npm -v
+10.2.3
+```
+
+npm이 설치되었으면 node 버전을 최신으로 업데이트 합니다. `n`이라는 모듈은 node의 버전을 관리해줍니다. `-g` 옵션을 사용해서 gloal하게 설치합니다.
+
+``` bash
+sudo npm install -g n
+n -v
+v9.2.0
+```
+
+이제 `n`을 사용해서 node를 `lts`(Long Term Support) version으로 업데이트합니다
+
+``` bash
+sudo n lts
+```
+
+```         
+copying : node/20.10.0
+installed : v20.10.0 (with npm 10.2.3)
+```
+
+`v20.10.0`이 설치 되었습니다.
+
+## vite를 이용한 react 환경 install
+
+이제 react환경을 구성할 프로젝트 폴더를 생성합니다. react 환경을 구성할 프로젝트 폴더에서 아래의 명령을 수행합니다.
+
+자신이 생성할 프로젝트 명과 사용할 개발환경을 선택하면 프로젝트 폴더가 생성되고 프로젝트 구성을 위해 실행할 명령을 가이드 해줍니다.
+
+``` bash
+npm create vite
+```
+
+```         
+Need to install the following packages:
+create-vite@5.0.0
+Ok to proceed? (y) y
+✔ Project name: … nwitter-reloaded
+✔ Select a framework: › React
+? Select a variant: › - Use arrow-keys. Return to submit.
+    TypeScript
+❯   TypeScript + SWC
+    JavaScript
+    JavaScript + SWC
+
+Done. Now run:
+
+  cd nwitter-reloaded
+  npm install
+  npm run dev
+```
+
+이제 명령을 하나씩 수행합니다. `cd` 명령으로 프로젝트로 이동 후 `npm install`명령을 실행하고 프로젝트에 필요한 파일이 설치 완료되면 `npm run dev`를 실행합니다. 실행결과로 표시된 링크로 연결하면 react개발환경이 구축된 것을 확인할 수 있습니다.
+
+```         
+  VITE v5.0.4  ready in 447 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+![](images/paste-1.png){fig-align="center"}
+
+# References
+
+1.  https://tyoon9781.tistory.com/entry/react-start-2023
