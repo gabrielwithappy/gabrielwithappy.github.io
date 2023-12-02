@@ -50,34 +50,38 @@ wsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경
 docker-compose를 이용하여 mongodb를 사용할 수 있습니다. mongo db 이미지의 버전정보는 [몽고DB 도커사이트](https://hub.docker.com/_/mongo/tags)에서 확인할 수 있습니다.
 
 ``` bash
-version "3"
+version: "3"
 
 services:
   mongo-db:
     image: mongo
-    container_name: mongodb
+    container_name: mongo-db
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: <루트유저 이름>
-      MONGO_INITDB_ROOT_PASSWORD: <루트유저 패스워드>
-    volumes:
-      - /data:/data/db
     ports:
       - 27017:27017
+    volumes:
+      - ./data:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=DB admin 유저명>
+      - MONGO_INITDB_ROOT_PASSWORD=DB admin 암호>
+
   mongoexpress:
     image: mongo-express
     container_name: mongo-express
     restart: always
     depends_on:
-      - mongodb
-    ports:
+      - mongo-db
+    ports: 
       - 8081:8081
     environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME: <루트유저이름>
-      - ME_CONFIG_MONGODB_ADMINPASSWORD: <루트유저 패스워드>
-      - ME_CONFIG_MONGODB_URL=mongodb://<루트유저이름>:<루트유저 패스워드>@mongo-db:27017
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=<DB admin 유저명>
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=<DB admin 암호
+      - ME_CONFIG_MONGODB_SERVER=mongo-db
+      - ME_CONFIG_BASICAUTH_USERNAME=<mongo express 유저명>
+      - ME_CONFIG_BASICAUTH_PASSWORD=<mongo express 암호>
 ```
 
+이제 0.0.0.0:8081로 접속해서 유저명과 암호를 입력하면 mongo express를 통해서 mongo db 정보를 확인할 수 있습니다.
 
 
 
