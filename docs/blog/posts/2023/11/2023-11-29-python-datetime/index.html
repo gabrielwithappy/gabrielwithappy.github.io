@@ -8,9 +8,9 @@
 
 <meta name="author" content="gabriel yang">
 <meta name="dcterms.date" content="2023-11-30">
-<meta name="description" content="Dataframed을 Dict로 생성 및 변환">
+<meta name="description" content="Dataframe을 Dict로 생성 및 변환">
 
-<title>BookShelf - Dataframed을 Dict로 생성 및 변환</title>
+<title>BookShelf - Dataframe을 Dict로 생성 및 변환</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,7 +165,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html">Dataframed을 Dict로 생성 및 변환</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html">Dataframe을 Dict로 생성 및 변환</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -436,7 +436,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Dataframed을 Dict로 생성 및 변환</span></a>
+ <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -477,7 +477,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dataframed을-dict로-생성-및-변환" id="toc-dataframed을-dict로-생성-및-변환" class="nav-link active" data-scroll-target="#dataframed을-dict로-생성-및-변환">Dataframed을 Dict로 생성 및 변환</a></li>
+  <li><a href="#dataframe을-dict로-생성-및-변환" id="toc-dataframe을-dict로-생성-및-변환" class="nav-link active" data-scroll-target="#dataframe을-dict로-생성-및-변환">Dataframe을 Dict로 생성 및 변환</a></li>
   <li><a href="#데이터프레임을-딕셔너리로-변환" id="toc-데이터프레임을-딕셔너리로-변환" class="nav-link" data-scroll-target="#데이터프레임을-딕셔너리로-변환">데이터프레임을 딕셔너리로 변환</a>
   <ul class="collapse">
   <li><a href="#dict-형식" id="toc-dict-형식" class="nav-link" data-scroll-target="#dict-형식">dict 형식</a></li>
@@ -493,8 +493,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dataframed을 Dict로 생성 및 변환</h1>
-<p class="subtitle lead">Dataframed을 Dict로 생성 및 변환</p>
+<h1 class="title">Dataframe을 Dict로 생성 및 변환</h1>
+<p class="subtitle lead">Dataframe을 Dict로 생성 및 변환</p>
   <div class="quarto-categories">
     <div class="quarto-category">Pandas</div>
   </div>
@@ -502,7 +502,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Dataframed을 Dict로 생성 및 변환
+    Dataframe을 Dict로 생성 및 변환
   </div>
 </div>
 
@@ -529,8 +529,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="dataframed을-dict로-생성-및-변환" class="level1">
-<h1>Dataframed을 Dict로 생성 및 변환</h1>
+<section id="dataframe을-dict로-생성-및-변환" class="level1">
+<h1>Dataframe을 Dict로 생성 및 변환</h1>
 <p>파이썬 딕셔너리 데이터로 Dataframe을 생성하는 방법을 정리합니다.</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
