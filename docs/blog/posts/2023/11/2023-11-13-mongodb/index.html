@@ -578,32 +578,36 @@ mongo         latest    ee3b4d1239f1   5 weeks ago    748MB
 hello-world   latest    9c7a54a9a43c   6 months ago   13.3kB</code></pre>
 <p>wsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경우 <a href="https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-wsl-docker/">WSL에 docker설치</a>를 확인하세요.</p>
 <p>docker-compose를 이용하여 mongodb를 사용할 수 있습니다. mongo db 이미지의 버전정보는 <a href="https://hub.docker.com/_/mongo/tags">몽고DB 도커사이트</a>에서 확인할 수 있습니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">version</span> <span class="st">"3"</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">version:</span> <span class="st">"3"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">services:</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">mongo-db:</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">image:</span> mongo</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">container_name:</span> mongodb</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">container_name:</span> mongo-db</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">restart:</span> always</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">environment:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="ex">MONGO_INITDB_ROOT_USERNAME:</span> <span class="op">&lt;</span>루트유저 이름<span class="op">&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">MONGO_INITDB_ROOT_PASSWORD:</span> <span class="op">&lt;</span>루트유저 패스워드<span class="op">&gt;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">volumes:</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> /data:/data/db</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ports:</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> 27017:27017</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="ex">mongoexpress:</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">image:</span> mongo-express</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">container_name:</span> mongo-express</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">restart:</span> always</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">depends_on:</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> mongodb</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ports:</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> 8081:8081</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="ex">environment:</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_MONGODB_ADMINUSERNAME: <span class="op">&lt;</span>루트유저이름<span class="op">&gt;</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_MONGODB_ADMINPASSWORD: <span class="op">&lt;</span>루트유저 패스워드<span class="op">&gt;</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_MONGODB_URL=mongodb://<span class="op">&lt;</span>루트유저이름<span class="op">&gt;</span>:<span class="op">&lt;</span>루트유저 패스워드<span class="op">&gt;</span>@mongo-db:27017</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ports:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> 27017:27017</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">volumes:</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ./data:/data</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">environment:</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> MONGO_INITDB_ROOT_USERNAME=DB admin 유저명<span class="op">&gt;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> MONGO_INITDB_ROOT_PASSWORD=DB admin 암호<span class="op">&gt;</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="ex">mongoexpress:</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">image:</span> mongo-express</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">container_name:</span> mongo-express</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">restart:</span> always</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">depends_on:</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> mongo-db</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ports:</span> </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> 8081:8081</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="ex">environment:</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_MONGODB_ADMINUSERNAME=<span class="op">&lt;</span>DB admin 유저명<span class="op">&gt;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_MONGODB_ADMINPASSWORD=<span class="op">&lt;</span>DB admin 암호</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_MONGODB_SERVER=mongo-db</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_BASICAUTH_USERNAME=<span class="op">&lt;</span>mongo express 유저명<span class="op">&gt;</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> ME_CONFIG_BASICAUTH_PASSWORD=<span class="op">&lt;</span>mongo express 암호<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이제 0.0.0.0:8081로 접속해서 유저명과 암호를 입력하면 mongo express를 통해서 mongo db 정보를 확인할 수 있습니다.</p>
 </section>
 <section id="mongodb의-명령어-정리" class="level2">
 <h2 class="anchored" data-anchor-id="mongodb의-명령어-정리">MongoDB의 명령어 정리</h2>
