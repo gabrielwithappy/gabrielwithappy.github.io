@@ -47,6 +47,39 @@ hello-world   latest    9c7a54a9a43c   6 months ago   13.3kB
 ```
 wsl로 docker를 사용할 때 docker가 정상적으로 실행되지 않는 경우 [WSL에 docker설치](https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-wsl-docker/)를 확인하세요.
 
+docker-compose를 이용하여 mongodb를 사용할 수 있습니다. mongo db 이미지의 버전정보는 [몽고DB 도커사이트](https://hub.docker.com/_/mongo/tags)에서 확인할 수 있습니다.
+
+``` bash
+version "3"
+
+services:
+  mongo-db:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: <루트유저 이름>
+      MONGO_INITDB_ROOT_PASSWORD: <루트유저 패스워드>
+    volumes:
+      - /data:/data/db
+    ports:
+      - 27017:27017
+  mongoexpress:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME: <루트유저이름>
+      - ME_CONFIG_MONGODB_ADMINPASSWORD: <루트유저 패스워드>
+      - ME_CONFIG_MONGODB_URL=mongodb://<루트유저이름>:<루트유저 패스워드>@mongo-db:27017
+```
+
+
+
 
 ## MongoDB의 명령어 정리
 
