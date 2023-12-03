@@ -20,7 +20,7 @@ npm은 Node Package Manager의 약자로, JavaScript 및 Node.js 프로젝트에
 
 그럼 Node는 뭔가요?
 
-Node.js(노드 제이에스)는 JavaScript 런타임 환경으로, 서버 측 프로그래밍을 위해 설계되었습니다. 기존에는 브라우저에서만 실행되던 JavaScript를 서버 사이드에서도 실행할 수 있게끔 하는 환경을 제공합니다. 아래는 Node.js의 주요 특징과 기능입니다
+Node.js(노드 제이에스)는 JavaScript 런타임 환경으로, 서버 측 프로그래밍을 위해 설계되었습니다. 기존에는 브라우저에서만 실행되던 JavaScript를 서버 사이드에서도 실행할 수 있게끔 하는 환경을 제공합니다.
 
 ## Node.js와 npm 설치하기
 
