@@ -8,7 +8,7 @@ categories:
 # All, Data Visualization, Database, DevOps, Pandas, Quarto, Web
 author: gabriel yang
 date: "12/05/2023"
-image: "https://picsum.photos/id/205/200/150"
+image: "https://picsum.photos/id/221/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
 # draft: true
