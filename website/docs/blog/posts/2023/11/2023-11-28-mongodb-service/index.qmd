@@ -11,12 +11,13 @@ date: "11/28/2023"
 image: "https://picsum.photos/id/228/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
-# draft: true
+execute:
+  enabled: false
 ---
 
 # mongoDB 서비스 시작/종료/상태확인
 
-mongodb 서비스 실행/종료/상태 확인 방법을 정리합니다. 
+mongodb 서비스 실행/종료/상태 확인 방법을 정리합니다.
 
 ## 로컬 서비스 상태확인
 

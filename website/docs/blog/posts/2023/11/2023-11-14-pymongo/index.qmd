@@ -10,7 +10,8 @@ date: "11/14/2023"
 image: "https://picsum.photos/id/114/200/150"
 # image-alt: "deep learning glossary"
 page-layout: article
-# draft: true
+execute:
+  enabled: false
 ---
 
 # Pymongo 설치하기
@@ -59,7 +60,7 @@ client = pymongo.MongoClient(host="localhost", port=27017)
 
 admin 암호를 설정한 DB에 접속 시 유저명과 암호가 없는 경우 아래와 같은 에러가 발생합니다.
 
-```         
+```
 OperationFailure: Command listDatabases requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command listDatabases requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
 ```
 
