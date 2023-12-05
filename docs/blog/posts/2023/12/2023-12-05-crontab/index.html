@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-11-27">
-<meta name="description" content="우분투 docker, docker-compse 설치">
+<meta name="dcterms.date" content="2023-12-05">
+<meta name="description" content="crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신">
 
-<title>BookShelf - 우분투 docker, docker-compse 설치</title>
+<title>BookShelf - crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -162,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html">우분투 docker, docker-compse 설치</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -375,13 +375,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">11</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="sidebar-item-text sidebar-link">
@@ -456,7 +456,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
   </div>
 </li>
@@ -464,16 +464,16 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">12</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span></a>
   </div>
 </li>
@@ -497,22 +497,25 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#우분투-docker-docker-compse-설치" id="toc-우분투-docker-docker-compse-설치" class="nav-link active" data-scroll-target="#우분투-docker-docker-compse-설치">우분투 docker, docker-compse 설치</a>
+  <li><a href="#crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" id="toc-crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" class="nav-link active" data-scroll-target="#crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</a>
   <ul class="collapse">
-  <li><a href="#필요한-패키지-설치" id="toc-필요한-패키지-설치" class="nav-link" data-scroll-target="#필요한-패키지-설치">필요한 패키지 설치</a></li>
-  <li><a href="#docker의-공식-gpg키와-저장소-추가" id="toc-docker의-공식-gpg키와-저장소-추가" class="nav-link" data-scroll-target="#docker의-공식-gpg키와-저장소-추가">Docker의 공식 GPG키와 저장소 추가</a></li>
-  <li><a href="#docker-설치" id="toc-docker-설치" class="nav-link" data-scroll-target="#docker-설치">Docker 설치</a></li>
+  <li><a href="#crontab-새로운-명령어-만들기" id="toc-crontab-새로운-명령어-만들기" class="nav-link" data-scroll-target="#crontab-새로운-명령어-만들기">crontab 새로운 명령어 만들기</a></li>
+  <li><a href="#crontab-명령어-확인하기" id="toc-crontab-명령어-확인하기" class="nav-link" data-scroll-target="#crontab-명령어-확인하기">crontab 명령어 확인하기</a></li>
+  <li><a href="#crontab-시작중지재시작" id="toc-crontab-시작중지재시작" class="nav-link" data-scroll-target="#crontab-시작중지재시작">crontab 시작/중지/재시작</a></li>
+  <li><a href="#인증서-갱신-테스트" id="toc-인증서-갱신-테스트" class="nav-link" data-scroll-target="#인증서-갱신-테스트">인증서 갱신 테스트</a></li>
+  <li><a href="#인증서-갱신-날짜-확인하기" id="toc-인증서-갱신-날짜-확인하기" class="nav-link" data-scroll-target="#인증서-갱신-날짜-확인하기">인증서 갱신 날짜 확인하기</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-05-crontab/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">우분투 docker, docker-compse 설치</h1>
-<p class="subtitle lead">우분투 docker, docker-compse 설치</p>
+<h1 class="title">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</h1>
+<p class="subtitle lead">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</p>
   <div class="quarto-categories">
     <div class="quarto-category">DevOps</div>
   </div>
@@ -520,7 +523,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    우분투 docker, docker-compse 설치
+    crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신
   </div>
 </div>
 
@@ -537,7 +540,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 27, 2023</p>
+      <p class="date">December 5, 2023</p>
     </div>
   </div>
   
@@ -547,25 +550,59 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="우분투-docker-docker-compse-설치" class="level1">
-<h1>우분투 docker, docker-compse 설치</h1>
-<section id="필요한-패키지-설치" class="level2">
-<h2 class="anchored" data-anchor-id="필요한-패키지-설치">필요한 패키지 설치</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" class="level1">
+<h1>crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</h1>
+<p>crontab은 Unix 및 Unix 계열 운영 체제에서 주기적으로 실행되는 작업을 예약하는 데 사용되는 시스템 유틸리티입니다. crontab은 “크론 테이블”의 줄임말로, 사용자가 일정한 간격으로 명령을 실행하도록 예약할 수 있게 해줍니다. 이는 주기적으로 반복되는 작업을 자동화하는 데 유용합니다.</p>
+<section id="crontab-새로운-명령어-만들기" class="level2">
+<h2 class="anchored" data-anchor-id="crontab-새로운-명령어-만들기">crontab 새로운 명령어 만들기</h2>
+<p><code>-e</code>옵션으로 텍스트 폅집기로 명령을 수정하거나 추가할 수 있습니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>예제로 crontabb에 certbot을 이용하여 인증서를 갱신하는 명령을 추가합니다. crontab의 format은 아래와 같습니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span>   1    <span class="pp">*</span>   <span class="pp">*</span>     1       sudo certbot renew <span class="at">--nginx</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span>   <span class="kw">|</span>     <span class="kw">|</span>       <span class="kw">|</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">min</span> hour day month weekday 명령어</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">(</span><span class="ex">0은</span> 일요일<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="https://crontab.guru/">crontab guru</a>를 이용하면 시간 format의 주기를 확인할 수 있습니다. 위의 시간은 <code>At 01:00 on Monday</code>을 의미합니다.</p>
 </section>
-<section id="docker의-공식-gpg키와-저장소-추가" class="level2">
-<h2 class="anchored" data-anchor-id="docker의-공식-gpg키와-저장소-추가">Docker의 공식 GPG키와 저장소 추가</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="kw">|</span> <span class="fu">sudo</span> apt-key add <span class="at">-</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="st">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="va">$(</span><span class="ex">lsb_release</span> <span class="at">-cs</span><span class="va">)</span><span class="st"> stable"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="crontab-명령어-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="crontab-명령어-확인하기">crontab 명령어 확인하기</h2>
+<p><code>-l</code>옵션으로 텍스트 폅집기로 명령을 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>0 1 * * 1 sudo certbot renew --nginx</code></pre>
 </section>
-<section id="docker-설치" class="level2">
-<h2 class="anchored" data-anchor-id="docker-설치">Docker 설치</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install docker-ce docker-ce-cli containerd.io</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="crontab-시작중지재시작" class="level2">
+<h2 class="anchored" data-anchor-id="crontab-시작중지재시작">crontab 시작/중지/재시작</h2>
+<p>크론탭의 명령어를 추가하거나 변경했다면 crontab을 재시작해야 합니다. 아래 명령을 이용해서 cron 데몬의 상태 시작/중지/재시작 및 상태를 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron start</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron stop</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron restart</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="인증서-갱신-테스트" class="level2">
+<h2 class="anchored" data-anchor-id="인증서-갱신-테스트">인증서 갱신 테스트</h2>
+<p><code>--dry-run</code>옵션을 사용하면 실제 갱신 명령을 수행전에 오류를 확인할 수 있습니다. 갱신은 갱신종료일 20일 전에 가능합니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> certbot renew <span class="at">--dry-run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="인증서-갱신-날짜-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="인증서-갱신-날짜-확인하기">인증서 갱신 날짜 확인하기</h2>
+<p>갱신 명령을 수행하면 갱신 종료일이 얼마나 남았는 지 확인할 수 있습니다. 갱신종료까지 62일 남은 것을 알 수 있습니다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">certbot</span> certificates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: ...
+    Expiry Date: 2024-02-05 17:01:07+00:00 (VALID: 62 days)</code></pre>
+<p>갱신을 위한 명령을 추가합니다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span> 1 <span class="pp">*</span> <span class="pp">*</span> 1 sudo certbot renew <span class="at">--nginx</span> <span class="op">&gt;</span> ~/crontab-result.log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>매주 월요일 1시에 renew 명령을 수행합니다. 실행 결과는 <code>crontab-result.log</code>에서 확인할 수 있습니다.</p>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li>https://devlog.jwgo.kr/2019/04/16/how-to-lets-encrypt-ssl-renew/</li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -806,13 +843,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">wsl2에 docker 설치하기</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">우분투 docker, docker-compse 설치</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="pagination-link">
-        <span class="nav-page-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" class="pagination-link">
+        <span class="nav-page-text">vite를 이용한 react 개발환경 세팅</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

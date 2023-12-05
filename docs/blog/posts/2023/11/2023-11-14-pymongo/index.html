@@ -67,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -162,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html">Pymongo 명령어 정리하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html">Pymongo 명령어 정리하기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -194,110 +194,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Histogram Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto Callout Block</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Dash로 Table 표시하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Subpolt 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Animation 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Axis 포멧 변경하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Treemap 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Bubble chart 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Rador 차트 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 데이터 전처리</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly 3D Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Scatter Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Time Series 날짜 범위 UI 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 데이터프레임 머지</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 중복 데이터 제거하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 모든 컬럼이 NaN일 때만 삭제하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Line Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Box Plot만들기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -308,14 +206,116 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Rador 차트 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Axis 포멧 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly 마커 모양 변경하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 데이터프레임 머지</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Histogram Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 모든 컬럼이 NaN일 때만 삭제하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Time Series 날짜 범위 UI 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 중복 데이터 제거하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Markdown문법 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Bubble chart 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto Callout Block</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Scatter Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Animation 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Box Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Dash로 Table 표시하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 데이터 전처리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Treemap 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Subpolt 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Line Plot만들기</span></a>
   </div>
 </li>
       </ul>
@@ -331,32 +331,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 불릿차트</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly Funnel(깔대기) 차트 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Zoom Disable하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Hover 설정하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -367,8 +349,26 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly 불릿차트</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Hover 설정하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Zoom Disable하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
   </div>
 </li>
       </ul>
@@ -384,68 +384,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AWS 호스팅 EC2 와 Lightsail의 차이</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">mkfifo를 이용한 IPC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">python datetime 사용법 정리</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">airflow postgresoperator 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Pymongo 명령어 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">wsl2에 docker 설치하기</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -456,8 +402,62 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DB를 편리하기 보기, dbever</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">python datetime 사용법 정리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">airflow postgresoperator 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Pymongo 명령어 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AWS 호스팅 EC2 와 Lightsail의 차이</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">wsl2에 docker 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
   </div>
 </li>
       </ul>
@@ -471,6 +471,12 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" class="sidebar-item-text sidebar-link">
@@ -575,20 +581,20 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <section id="mongodb-서버에-연결" class="level2">
 <h2 class="anchored" data-anchor-id="mongodb-서버에-연결">MongoDB 서버에 연결</h2>
 <p>DB에 연결할 수 있는 clinet를 생성합니다.</p>
-<div class="cell" data-execution_count="1">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymongo</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> pymongo.MongoClient(host<span class="op">=</span><span class="st">"localhost"</span>, port<span class="op">=</span><span class="dv">27017</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>admin 암호를 설정한 DB에 접속 시 유저명과 암호가 없는 경우 아래와 같은 에러가 발생합니다.</p>
 <pre><code>OperationFailure: Command listDatabases requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command listDatabases requires authentication', 'code': 13, 'codeName': 'Unauthorized'}</code></pre>
 <p>DB 접근에 필요한 유저명과 이름을 함께 전달합니다.</p>
-<div class="cell" data-execution_count="2">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> pymongo.MongoClient(host<span class="op">=</span><span class="st">"localhost"</span>, username<span class="op">=</span><span class="st">'root'</span>, password<span class="op">=</span><span class="st">'1234'</span>, port<span class="op">=</span><span class="dv">27017</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="collection-삭제" class="level2">
 <h2 class="anchored" data-anchor-id="collection-삭제">collection 삭제</h2>
-<div class="cell" data-execution_count="3">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
@@ -601,7 +607,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <section id="데이터-베이스-삭제" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-베이스-삭제">데이터 베이스 삭제</h2>
 <p>생성된 데이터 베이스의 삭제는 <code>drop_database</code>를 사용합니다. 테스트을 위해 생성할 <code>test_db</code>가 있다면 데이터베이스를 삭제합니다.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  client.drop_database(<span class="st">'test_db'</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> e:</span>
@@ -611,7 +617,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <section id="데이터-베이스-생성" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-베이스-생성">데이터 베이스 생성</h2>
 <p>새로운 데이터베이스는 client의 key로 생성할 수 있습니다. 새롭게 <code>testdb</code>를 생성했지만 db에 데이터가 없는 경우 db가 표시되지 않습니다. <code>testdb</code>가 표시되지 않습니다.</p>
-<div class="cell" data-execution_count="5">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
@@ -619,56 +625,40 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'name': 'admin', 'sizeOnDisk': 102400, 'empty': False}
-{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
-{'name': 'local', 'sizeOnDisk': 73728, 'empty': False}</code></pre>
-</div>
 </div>
 </section>
 <section id="collection-생성" class="level2">
 <h2 class="anchored" data-anchor-id="collection-생성">collection 생성</h2>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> db.list_collections():</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> db.list_collections():</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="데이터베이스-확인" class="level2">
 <h2 class="anchored" data-anchor-id="데이터베이스-확인">데이터베이스 확인</h2>
 <p>MongoClient를 생성하고 데이터베이스 정보를 <code>list_databases</code>로 확인합니다. 기본적으로 생성된 데이터베이스를 확인할 수 있습니다.</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'name': 'admin', 'sizeOnDisk': 102400, 'empty': False}
-{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
-{'name': 'local', 'sizeOnDisk': 73728, 'empty': False}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="collection-및-document-생성" class="level2">
 <h2 class="anchored" data-anchor-id="collection-및-document-생성">collection 및 document 생성</h2>
 <p>새롭게 생성한 데이터베이스에 collection을 생성하고 document를 추가합니다. document가 추가되면 데이터베이스가 표시됩니다. document가 추가된 후 다시 데이터베이스를 확인하면 데이터베이스가 생성됨을 확인할 수 있습니다.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> e:</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"tony"</span>, <span class="st">"age"</span>: <span class="dv">20</span>}</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> collection.insert_one(document)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'name': 'admin', 'sizeOnDisk': 102400, 'empty': False}
-{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
-{'name': 'local', 'sizeOnDisk': 73728, 'empty': False}
-{'name': 'test_db', 'sizeOnDisk': 8192, 'empty': False}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> e:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"tony"</span>, <span class="st">"age"</span>: <span class="dv">20</span>}</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> collection.insert_one(document)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- {'name': 'admin', 'sizeOnDisk': 102400, 'empty': False}
 {'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
@@ -679,112 +669,84 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <section id="collection-확인하기" class="level2">
 <h2 class="anchored" data-anchor-id="collection-확인하기">collection 확인하기</h2>
 <p>db에 생성된 collection을 확인하는 방법을 정리합니다. <code>testdb</code>에 생성된 collection 정보를 확인합니다.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"fail"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>collection_names <span class="op">=</span> db.list_collection_names()</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> collection_names:</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>test_collection</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"fail"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>collection_names <span class="op">=</span> db.list_collection_names()</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> collection_names:</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- test_collection -->
 </section>
 <section id="document-확인하기" class="level2">
 <h2 class="anchored" data-anchor-id="document-확인하기">document 확인하기</h2>
 <p>PyMongo를 사용하여 MongoDB에서 문서(document)를 확인하는 방법은 find() 메서드를 사용하는 것입니다. 아래는 예시 코드입니다</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  documents <span class="op">=</span> collection.find({})</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"fail"</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('656ac37bb47e86390c0df65a'), 'name': 'tony', 'age': 20}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  documents <span class="op">=</span> collection.find({})</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"fail"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- {'_id': ObjectId('656abd3b4a97a4dfd0fa7e88'), 'name': 'tony', 'age': 20} -->
 <p>특정 조건을 만족하는 document만 확인하는 방법은 query정보를 딕셔너리 형태로 전달합니다. 검색조건 확인을 위해서 document를 조금 더 추가합니다. 3개의 document가 생성됩니다.</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"bill"</span>, <span class="st">"age"</span>: <span class="dv">51</span>}</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('656ac37bb47e86390c0df65a'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('656ac37cb47e86390c0df65b'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac37cb47e86390c0df65c'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac37cb47e86390c0df65d'), 'name': 'bill', 'age': 51}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"bill"</span>, <span class="st">"age"</span>: <span class="dv">51</span>}</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- {'_id': ObjectId('656abded4a97a4dfd0fa7e8e'), 'name': 'tony', 'age': 20}
 {'_id': ObjectId('656abded4a97a4dfd0fa7e8f'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('656abded4a97a4dfd0fa7e90'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('656abded4a97a4dfd0fa7e91'), 'name': 'bill', 'age': 51} -->
 <p>collection에서 검색하는 document중 하나만 선택 시 <code>find_one</code>을 사용합니다.</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> collection.find_one({<span class="st">"name"</span>:<span class="st">"mike"</span>})</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('656ac37cb47e86390c0df65b'), 'name': 'mike', 'age': 30}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> collection.find_one({<span class="st">"name"</span>:<span class="st">"mike"</span>})</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- {'_id': ObjectId('656abdfb4a97a4dfd0fa7e95'), 'name': 'mike', 'age': 30} -->
 </section>
 <section id="조건으로-document-확인하기" class="level2">
 <h2 class="anchored" data-anchor-id="조건으로-document-확인하기">조건으로 document 확인하기</h2>
 <p><code>age</code> 필드에서 나이가 <code>30</code>에 이상이 document를 찾는 경우 <code>$gte</code>를 사용할 수 있습니다.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$gte"</span>:<span class="dv">30</span>}})</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('656ac37cb47e86390c0df65b'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac37cb47e86390c0df65c'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac37cb47e86390c0df65d'), 'name': 'bill', 'age': 51}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$gte"</span>:<span class="dv">30</span>}})</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- {'_id': ObjectId('656ac343b47e86390c0df655'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('656ac343b47e86390c0df656'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('656ac343b47e86390c0df657'), 'name': 'bill', 'age': 51} -->
 <p><code>age</code> 필드의 값이 <code>30</code> 또는 <code>51</code>을 포함한 document를 찾는 경우 <code>$in</code>을 사용합니다.</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$in"</span>:[<span class="dv">30</span>, <span class="dv">51</span>]}})</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('656ac37cb47e86390c0df65b'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac37cb47e86390c0df65c'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac37cb47e86390c0df65d'), 'name': 'bill', 'age': 51}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$in"</span>:[<span class="dv">30</span>, <span class="dv">51</span>]}})</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- {'_id': ObjectId('656ac343b47e86390c0df655'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('656ac343b47e86390c0df656'), 'name': 'mike', 'age': 30}
 {'_id': ObjectId('656ac343b47e86390c0df657'), 'name': 'bill', 'age': 51} -->
 <p><code>age</code> 필드의 값이 <code>30</code> 또는 <code>51</code>을 포함하지 않는 document를 찾는 경우 <code>$nin</code>을 사용합니다.</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$nin"</span>:[<span class="dv">30</span>, <span class="dv">51</span>]}})</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'_id': ObjectId('656ac37bb47e86390c0df65a'), 'name': 'tony', 'age': 20}</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$nin"</span>:[<span class="dv">30</span>, <span class="dv">51</span>]}})</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- {'_id': ObjectId('656ac343b47e86390c0df654'), 'name': 'tony', 'age': 20} -->
 <p>Query Operators는 아래와 같습니다.</p>
@@ -1089,13 +1051,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">airflow postgresoperator 사용하기</span>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">mongoDB 서비스 시작/종료/상태확인</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="pagination-link">
-        <span class="nav-page-text">Dataframe을 Dict로 생성 및 변환</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="pagination-link">
+        <span class="nav-page-text">AWS 호스팅 EC2 와 Lightsail의 차이</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
