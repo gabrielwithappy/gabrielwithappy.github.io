@@ -44,7 +44,7 @@ MySQL 8.0이상인 경우 초기 연결 시 `Public Key Retrieval is not allowed
 
 `Driver properties` 탭을 선택하고 마우스 우클릭으로 `Add user property`를 선택할 수 있다.
 
--   `allowPublicKeyRetrieval=true useSSL` 키를 등록하고 값을 `true`로 설정
+-   `allowPublicKeyRetrieval` 키를 등록하고 값을 `true`로 설정
 
 -   `useSSL` 키를 등록하고 값을 `false`로 설정
 
