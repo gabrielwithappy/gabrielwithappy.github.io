@@ -1,7 +1,17 @@
 [
   {
+    "listing": "/docs/book_blog/index.html",
+    "items": [
+      "/docs/book_blog/posts/2023-09-03-data-visualization/index.html",
+      "/docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
+      "/docs/book_blog/posts/2023-08-25-hf-examples/index.html",
+      "/docs/book_blog/posts/2023-08-27-korean-study/index.html"
+    ]
+  },
+  {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html",
       "/docs/blog/posts/2023/12/2023-12-06-mysql/index.html",
       "/docs/blog/posts/2023/12/2023-12-05-crontab/index.html",
       "/docs/blog/posts/2023/12/2023-12-03-vite-react/index.html",
@@ -45,15 +55,6 @@
       "/docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html",
       "/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html",
       "/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html"
-    ]
-  },
-  {
-    "listing": "/docs/book_blog/index.html",
-    "items": [
-      "/docs/book_blog/posts/2023-09-03-data-visualization/index.html",
-      "/docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
-      "/docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-      "/docs/book_blog/posts/2023-08-27-korean-study/index.html"
     ]
   },
   {

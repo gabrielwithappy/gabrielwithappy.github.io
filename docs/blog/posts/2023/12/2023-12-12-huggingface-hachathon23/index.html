@@ -7,10 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-12-05">
-<meta name="description" content="crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신">
+<meta name="dcterms.date" content="2023-12-12">
 
-<title>BookShelf - crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</title>
+<title>BookShelf - 23년 허깅페이스 헤커톤 운영후기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -67,8 +32,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -162,7 +126,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html">23년 허깅페이스 헤커톤 운영후기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -473,7 +437,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span></a>
   </div>
 </li>
@@ -491,7 +455,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">23년 허깅페이스 헤커톤 운영후기</span></a>
   </div>
 </li>
@@ -509,35 +473,28 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" id="toc-crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" class="nav-link active" data-scroll-target="#crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</a>
+  <li><a href="#년-허깅페이스-헤커톤-운영후기" id="toc-년-허깅페이스-헤커톤-운영후기" class="nav-link active" data-scroll-target="#년-허깅페이스-헤커톤-운영후기">2023년 허깅페이스 헤커톤 운영후기</a>
   <ul class="collapse">
-  <li><a href="#crontab-새로운-명령어-만들기" id="toc-crontab-새로운-명령어-만들기" class="nav-link" data-scroll-target="#crontab-새로운-명령어-만들기">crontab 새로운 명령어 만들기</a></li>
-  <li><a href="#crontab-명령어-확인하기" id="toc-crontab-명령어-확인하기" class="nav-link" data-scroll-target="#crontab-명령어-확인하기">crontab 명령어 확인하기</a></li>
-  <li><a href="#crontab-시작중지재시작" id="toc-crontab-시작중지재시작" class="nav-link" data-scroll-target="#crontab-시작중지재시작">crontab 시작/중지/재시작</a></li>
-  <li><a href="#인증서-갱신-테스트" id="toc-인증서-갱신-테스트" class="nav-link" data-scroll-target="#인증서-갱신-테스트">인증서 갱신 테스트</a></li>
-  <li><a href="#인증서-갱신-날짜-확인하기" id="toc-인증서-갱신-날짜-확인하기" class="nav-link" data-scroll-target="#인증서-갱신-날짜-확인하기">인증서 갱신 날짜 확인하기</a></li>
+  <li><a href="#쉽지않은-대회운영" id="toc-쉽지않은-대회운영" class="nav-link" data-scroll-target="#쉽지않은-대회운영">쉽지않은 대회운영</a></li>
+  <li><a href="#다양한-나라-사람들과-협업하기" id="toc-다양한-나라-사람들과-협업하기" class="nav-link" data-scroll-target="#다양한-나라-사람들과-협업하기">다양한 나라 사람들과 협업하기</a></li>
+  <li><a href="#오프라인-발표" id="toc-오프라인-발표" class="nav-link" data-scroll-target="#오프라인-발표">오프라인 발표</a></li>
+  <li><a href="#대회를-통해서-얻은-것" id="toc-대회를-통해서-얻은-것" class="nav-link" data-scroll-target="#대회를-통해서-얻은-것">대회를 통해서 얻은 것</a></li>
+  <li><a href="#헤커톤-데모가-궁금합니다." id="toc-헤커톤-데모가-궁금합니다." class="nav-link" data-scroll-target="#헤커톤-데모가-궁금합니다.">헤커톤 데모가 궁금합니다.</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-05-crontab/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</h1>
-<p class="subtitle lead">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</p>
+<h1 class="title">23년 허깅페이스 헤커톤 운영후기</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">DevOps</div>
+    <div class="quarto-category">HuggingFace</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -552,7 +509,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 5, 2023</p>
+      <p class="date">December 12, 2023</p>
     </div>
   </div>
   
@@ -562,59 +519,55 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" class="level1">
-<h1>crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</h1>
-<p>crontab은 Unix 및 Unix 계열 운영 체제에서 주기적으로 실행되는 작업을 예약하는 데 사용되는 시스템 유틸리티입니다. crontab은 “크론 테이블”의 줄임말로, 사용자가 일정한 간격으로 명령을 실행하도록 예약할 수 있게 해줍니다. 이는 주기적으로 반복되는 작업을 자동화하는 데 유용합니다.</p>
-<section id="crontab-새로운-명령어-만들기" class="level2">
-<h2 class="anchored" data-anchor-id="crontab-새로운-명령어-만들기">crontab 새로운 명령어 만들기</h2>
-<p><code>-e</code>옵션으로 텍스트 폅집기로 명령을 수정하거나 추가할 수 있습니다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>예제로 crontabb에 certbot을 이용하여 인증서를 갱신하는 명령을 추가합니다. crontab의 format은 아래와 같습니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span>   1    <span class="pp">*</span>   <span class="pp">*</span>     1       sudo certbot renew <span class="at">--nginx</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span>   <span class="kw">|</span>     <span class="kw">|</span>       <span class="kw">|</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">min</span> hour day month weekday 명령어</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">(</span><span class="ex">0은</span> 일요일<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="https://crontab.guru/">crontab guru</a>를 이용하면 시간 format의 주기를 확인할 수 있습니다. 위의 시간은 <code>At 01:00 on Monday</code>을 의미합니다.</p>
+<section id="년-허깅페이스-헤커톤-운영후기" class="level1">
+<h1>2023년 허깅페이스 헤커톤 운영후기</h1>
+<p>인공지능에 관심이 있는 분이라면 트랜스포머와 허깅페이스에 대해서 들어본 경험이 있으실 것 같습니다. 허깅페이스는 AI와 머신러닝을 쉽게 접근하고 활용할 수 있는 플랫폼입니다. 허깅페이스 KREW팀은 허깅페이스에 대해 공부하는 사람들의 모임입니다. 초기 허깅페이스 문서번역을 통해서 오픈소스에 기여하는 활동을 시작으로 허깅페이스를 잘 활용하기 위한 여러 가지 스터디를 하고 있습니다.</p>
+<p>공식문서의 많은 부분을 번역하면서 허깅페이스에 문서 번역에 대한 기여가 많아졌고 허깅페이스의 지원을 통해서 ’2023 Everyday AI Hackathon’을 운영하게 되었습니다. 이 글을 통해서 대회 운영을 통해서 느꼈던 점을 정리합니다.</p>
+<section id="쉽지않은-대회운영" class="level2">
+<h2 class="anchored" data-anchor-id="쉽지않은-대회운영">쉽지않은 대회운영</h2>
+<p>사실 큰 행사를 운영해본 경험도 없었고 허깅페이스의 실제 데모 운영경험이 많지 않아 실수도 있었고 고생도 많았습니다. 특히 헤커톤의 주제를 결정하는 과정이 가장 어려웠습니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>대회 정보 공유를 위한 홈페이지 작성도 힘들었던 부분이었습니다. <strong><code>원형</code></strong>님의 노력 덕분에 한글과 영문을 모두 지원하는 홈페이지도 만들 수 있었습니다. 홈페이지의 왼쪽을 화려하게 장식하는 <strong><code>소현</code></strong>님의 갓쓴 허깅페이스 이모티콘은 언제 봐도 귀엽군요. (헤커톤 당일 준비해주신 스티커도 너무 예쁘고 감사했습니다.)</p>
+<p>여러 가지 방향을 고민한 후 특정 모델의 성능을 비교하는 상대적인 대회보다는 서로 응원하는 경험을 제공할 수 있으면 좋겠다고 생각했습니다. 좀 더 많은 분들이 허깅페이스를 경험하고 자신의 일상생활에 적용할 수 있도록 함께 발전하는 모습을 생각했습니다.</p>
 </section>
-<section id="crontab-명령어-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="crontab-명령어-확인하기">crontab 명령어 확인하기</h2>
-<p><code>-l</code>옵션으로 텍스트 폅집기로 명령을 확인할 수 있습니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>0 1 * * 1 sudo certbot renew --nginx</code></pre>
+<section id="다양한-나라-사람들과-협업하기" class="level2">
+<h2 class="anchored" data-anchor-id="다양한-나라-사람들과-협업하기">다양한 나라 사람들과 협업하기</h2>
+<p>대회가 시작되면서 해외 유저들의 참가도 있었습니다. 한국어와 영어를 함께 사용하면서 같이 협업하는 참가자도 생기고 해외 참가자들이 관심을 자신의 주제를 소개하기도 했습니다. 한국 참가자는 경제 기사 요약, 교육용 GPT 활용, 개인 이미지 생성 등 다양한 분야의 데모를 만들었습니다. 다른 참가자의 데모를 보면서 우리 일상에 어떻게 사용될 수 있는 지 고민하는 과정도 중요함을 느낄 수 있었습니다.</p>
 </section>
-<section id="crontab-시작중지재시작" class="level2">
-<h2 class="anchored" data-anchor-id="crontab-시작중지재시작">crontab 시작/중지/재시작</h2>
-<p>크론탭의 명령어를 추가하거나 변경했다면 crontab을 재시작해야 합니다. 아래 명령을 이용해서 cron 데몬의 상태 시작/중지/재시작 및 상태를 확인할 수 있습니다.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron start</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron stop</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron restart</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="오프라인-발표" class="level2">
+<h2 class="anchored" data-anchor-id="오프라인-발표">오프라인 발표</h2>
+<p>허깅페이스 헤커톤은 2023년 슈도랩과 같이 진행했습니다. 발표 장소 세팅과 발표 준비와 소개 세션이 필요했습니다. <strong><code>우준</code></strong>님 께서는 허깅페이스에 대한 소개자료를 만들어서 공유해 주셨습니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>예쁜 깃헙과 허깅페이스 이모티콘과 함께 실제 코드로 멋지게 설명해 주셨지만….</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-3.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
+<p>제가 잘 몰라서 혹은 글로 쓰기 귀찮아서 그런 건 정말 아닙니다…….</p>
 </section>
-<section id="인증서-갱신-테스트" class="level2">
-<h2 class="anchored" data-anchor-id="인증서-갱신-테스트">인증서 갱신 테스트</h2>
-<p><code>--dry-run</code>옵션을 사용하면 실제 갱신 명령을 수행전에 오류를 확인할 수 있습니다. 갱신은 갱신종료일 20일 전에 가능합니다.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> certbot renew <span class="at">--dry-run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="대회를-통해서-얻은-것" class="level2">
+<h2 class="anchored" data-anchor-id="대회를-통해서-얻은-것">대회를 통해서 얻은 것</h2>
+<p>이 해커톤을 통해 얻은 가장 큰 장점은 실제로 동작하는 데모를 하나씩 만들어가며 배우는 경험이었습니다. 작은 성공들을 통해 점진적으로 성장하는 것이 얼마나 중요한지 깨달을 수 있었습니다. 이러한 경험은 제가 허깅페이스를 통해 AI와 머신러닝을 보다 실용적으로 활용하는 방법을 이해하는 데 큰 도움이 된 것 같습니다.</p>
+<p>자신의 데모를 발표하는 멋진 모습을 상상해보세요.</p>
+<p>매우 떨리는 일이지만 꼭 해보고 싶은 일 중 하나인 많은 사람들 앞에서 발표하는 것입니다. 스티브 잡스처럼 멋진 프리젠테이션은 아니더라도 내가 스스로 만든 데모를 사람들에게 소개하는 일은 정말 멋진일입니다. 다음에는 좀 더 많은 참가자들이 이런 경험을 느낄 수 있도록 운영해보고 싶습니다.</p>
 </section>
-<section id="인증서-갱신-날짜-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="인증서-갱신-날짜-확인하기">인증서 갱신 날짜 확인하기</h2>
-<p>갱신 명령을 수행하면 갱신 종료일이 얼마나 남았는 지 확인할 수 있습니다. 갱신종료까지 62일 남은 것을 알 수 있습니다.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">certbot</span> certificates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Found the following certs:
-  Certificate Name: ...
-    Expiry Date: 2024-02-05 17:01:07+00:00 (VALID: 62 days)</code></pre>
-<p>갱신을 위한 명령을 추가합니다.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span> 1 <span class="pp">*</span> <span class="pp">*</span> 1 sudo certbot renew <span class="at">--nginx</span> <span class="op">&gt;</span> ~/crontab-result.log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>매주 월요일 1시에 renew 명령을 수행합니다. 실행 결과는 <code>crontab-result.log</code>에서 확인할 수 있습니다.</p>
-</section>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
-<ol type="1">
-<li>https://devlog.jwgo.kr/2019/04/16/how-to-lets-encrypt-ssl-renew/</li>
-</ol>
+<section id="헤커톤-데모가-궁금합니다." class="level2">
+<h2 class="anchored" data-anchor-id="헤커톤-데모가-궁금합니다.">헤커톤 데모가 궁금합니다.</h2>
+<p>글을 읽으시며 어떤 데모가 있었는 지 궁금해지셨나요?</p>
+<p>헤커톤 발표자들의 자료는 <a href="https://pseudo-lab.github.io/huggingface-hackathon23/ko/">대회 홈페이지</a>에서 확인할 수 있습니다. 시간을 쪼개어 발표자료를 만들고 공유까지 해주신 발표자 분들께 감사드립니다. 대회에 상품이나 상금은 없지만 스스로 데모를 만들어보는 뿌듯함과 허깅페이스 수료증을 위해 많은 참가자와 발표자가 노력했습니다. 헤커톤 발표자료는 홈페이지에서 확인할 수 있으니 한번 확인해보세요.</p>
+<p>여러분도 허깅페이스를 활용하여 사용자 친화적인 AI 프로젝트를 만들어볼 수 있습니다. AI는 단지 기술적인 도구가 아니라, 실생활 속 문제 해결의 열쇠입니다. 이 흥미로운 여정에 여러분도 함께해보세요.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -855,14 +808,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">우분투 docker, docker-compse 설치</span>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" class="pagination-link">
-        <span class="nav-page-text">vite를 이용한 react 개발환경 세팅</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
