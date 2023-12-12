@@ -14,22 +14,6 @@ page-layout: article
 # draft: true
 ---
 
----
-title: "23년 허깅페이스 헤커톤 운영 후기"
-subtitle: 23년 허깅페이스 헤커톤 운영 후기
-description:
-    23년 허깅페이스 헤커톤 운영 후기
-categories:
-  - HuggingFace
-# All, Data Visualization, Database, DevOps, Pandas, Quarto, Web, HuggingFace
-author: gabriel yang
-date: "12/12/2023"
-image: "https://picsum.photos/id/112/200/150"
-# image-alt: "deep learning glossary"
-page-layout: article
-# draft: true
----
-
 # 2023년 허깅페이스 해커톤 운영 후기
 
 인공지능에 관심 있는 분이라면 '트랜스포머'와 '허깅페이스'라는 용어를 들어보셨을 겁니다. 허깅페이스는 AI와 머신러닝에 쉽게 접근하고 활용할 수 있는 플랫폼입니다. 저희 허깅페이스 KREW팀은 이 플랫폼을 공부하는 사람들의 모임이며, 문서 번역을 시작으로 다양한 스터디 활동을 진행해왔습니다.
