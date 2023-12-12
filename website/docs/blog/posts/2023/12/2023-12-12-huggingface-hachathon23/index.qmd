@@ -1,8 +1,8 @@
 ---
 title: "23년 허깅페이스 헤커톤 운영후기"
-# subtitle: MySQL 도커로 설치하고 테스트 DB 사용하기
-# description:
-#     MySQL 도커로 설치하고 테스트 DB 사용하기
+subtitle: "23년 허깅페이스 헤커톤 운영후기"
+description:
+    "23년 허깅페이스 헤커톤 운영후기"
 categories:
   - HuggingFace
 # All, Data Visualization, Database, DevOps, Pandas, Quarto, Web, HuggingFace
