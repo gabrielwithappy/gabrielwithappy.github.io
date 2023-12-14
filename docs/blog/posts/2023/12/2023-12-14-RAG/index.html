@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-11-14">
-<meta name="description" content="Pymongo 명령어 정리하기">
+<meta name="dcterms.date" content="2023-12-06">
+<meta name="description" content="MySQL 도커로 설치하고 테스트 DB 사용하기">
 
-<title>BookShelf - Pymongo 명령어 정리하기</title>
+<title>BookShelf - MySQL 도커로 설치하고 테스트 DB 사용하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -162,7 +161,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html">Pymongo 명령어 정리하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html">MySQL 도커로 설치하고 테스트 DB 사용하기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -375,13 +374,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">11</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="sidebar-item-text sidebar-link">
@@ -438,7 +437,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pymongo 명령어 정리하기</span></a>
   </div>
 </li>
@@ -464,13 +463,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">12</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link">
@@ -497,7 +496,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span></a>
   </div>
 </li>
@@ -515,30 +514,28 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pymongo-설치하기" id="toc-pymongo-설치하기" class="nav-link active" data-scroll-target="#pymongo-설치하기">Pymongo 설치하기</a>
+  <li><a href="#mysql-도커로-설치하고-테스트-db-사용하기" id="toc-mysql-도커로-설치하고-테스트-db-사용하기" class="nav-link active" data-scroll-target="#mysql-도커로-설치하고-테스트-db-사용하기">MySQL 도커로 설치하고 테스트 DB 사용하기</a>
   <ul class="collapse">
-  <li><a href="#mongodb-서버에-연결" id="toc-mongodb-서버에-연결" class="nav-link" data-scroll-target="#mongodb-서버에-연결">MongoDB 서버에 연결</a></li>
-  <li><a href="#collection-삭제" id="toc-collection-삭제" class="nav-link" data-scroll-target="#collection-삭제">collection 삭제</a></li>
-  <li><a href="#데이터-베이스-삭제" id="toc-데이터-베이스-삭제" class="nav-link" data-scroll-target="#데이터-베이스-삭제">데이터 베이스 삭제</a></li>
-  <li><a href="#데이터-베이스-생성" id="toc-데이터-베이스-생성" class="nav-link" data-scroll-target="#데이터-베이스-생성">데이터 베이스 생성</a></li>
-  <li><a href="#collection-생성" id="toc-collection-생성" class="nav-link" data-scroll-target="#collection-생성">collection 생성</a></li>
-  <li><a href="#데이터베이스-확인" id="toc-데이터베이스-확인" class="nav-link" data-scroll-target="#데이터베이스-확인">데이터베이스 확인</a></li>
-  <li><a href="#collection-및-document-생성" id="toc-collection-및-document-생성" class="nav-link" data-scroll-target="#collection-및-document-생성">collection 및 document 생성</a></li>
-  <li><a href="#collection-확인하기" id="toc-collection-확인하기" class="nav-link" data-scroll-target="#collection-확인하기">collection 확인하기</a></li>
-  <li><a href="#document-확인하기" id="toc-document-확인하기" class="nav-link" data-scroll-target="#document-확인하기">document 확인하기</a></li>
-  <li><a href="#조건으로-document-확인하기" id="toc-조건으로-document-확인하기" class="nav-link" data-scroll-target="#조건으로-document-확인하기">조건으로 document 확인하기</a></li>
+  <li><a href="#데이터베이스-구조" id="toc-데이터베이스-구조" class="nav-link" data-scroll-target="#데이터베이스-구조">데이터베이스 구조</a></li>
+  <li><a href="#데이터베이스-확인하기" id="toc-데이터베이스-확인하기" class="nav-link" data-scroll-target="#데이터베이스-확인하기">데이터베이스 확인하기</a></li>
+  <li><a href="#데이터베이스-생성" id="toc-데이터베이스-생성" class="nav-link" data-scroll-target="#데이터베이스-생성">데이터베이스 생성</a></li>
+  <li><a href="#데이터베이스-사용자-생성" id="toc-데이터베이스-사용자-생성" class="nav-link" data-scroll-target="#데이터베이스-사용자-생성">데이터베이스 사용자 생성</a></li>
+  <li><a href="#데이터베이스-접속" id="toc-데이터베이스-접속" class="nav-link" data-scroll-target="#데이터베이스-접속">데이터베이스 접속</a></li>
+  <li><a href="#데이터베이스-선택-및-확인" id="toc-데이터베이스-선택-및-확인" class="nav-link" data-scroll-target="#데이터베이스-선택-및-확인">데이터베이스 선택 및 확인</a></li>
+  <li><a href="#데이터베이스의-테이블-확인하기" id="toc-데이터베이스의-테이블-확인하기" class="nav-link" data-scroll-target="#데이터베이스의-테이블-확인하기">데이터베이스의 테이블 확인하기</a></li>
+  <li><a href="#테이블-생성-및-확인" id="toc-테이블-생성-및-확인" class="nav-link" data-scroll-target="#테이블-생성-및-확인">테이블 생성 및 확인</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-14-pymongo/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-14-RAG/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pymongo 명령어 정리하기</h1>
-<p class="subtitle lead">Pymongo 명령어 정리하기</p>
+<h1 class="title">MySQL 도커로 설치하고 테스트 DB 사용하기</h1>
+<p class="subtitle lead">MySQL 도커로 설치하고 테스트 DB 사용하기</p>
   <div class="quarto-categories">
     <div class="quarto-category">Database</div>
   </div>
@@ -546,7 +543,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Pymongo 명령어 정리하기
+    MySQL 도커로 설치하고 테스트 DB 사용하기
   </div>
 </div>
 
@@ -563,7 +560,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 14, 2023</p>
+      <p class="date">December 6, 2023</p>
     </div>
   </div>
   
@@ -573,259 +570,135 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="pymongo-설치하기" class="level1">
-<h1>Pymongo 설치하기</h1>
-<p>Pymongo를 사용하기위해서 mongo DB를 설치해야합니다. docker를 이용해서 mongo DB를 설치합니다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mongo image 다운로드</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull mongo</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 다운로드한 docker image 확인</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> images</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">REPOSITORY</span>    TAG       IMAGE ID       CREATED        SIZE</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">mongo</span>         latest    ee3b4d1239f1   4 weeks ago    748MB</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">hello-world</span>   latest    9c7a54a9a43c   6 months ago   13.3kB</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>도커 이미지가 다운로드 완료되면 <code>docker images</code>명령으로 <code>mongo</code>이미지가 다운로드 된 것을 확인할 수 있습니다. VSCODE에서 docker extension을 설치하면 container를 쉽게 실행할 수 있습니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --name : 컨테이너에 이름 부여</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># -p : 호스트와 컨테이너 간의 포터의 배포/바인드를 위해 사용</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -e : 컨테이너의 환경변수 설정</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ex) docker run -e FOO=bar python</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -v : 호스트와 컨테이너 간의 볼륨 설정을 위해 사용</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -w : 도커의 작업 디렉토리를 변경</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ex) docker run -w /etc python (컨테이너의 작업 디렉토리를 /etc로 변경)</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -d : 도커를 백그라운드에서 사용하는 경우</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-p</span> 27017:27017 <span class="at">--name</span> mongodb <span class="at">-v</span> .:/data/db <span class="at">-d</span> mongo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>이제 백그라운드로 실해되고 있는 mongodb container에 접속합니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> mongodb bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="mongodb-서버에-연결" class="level2">
-<h2 class="anchored" data-anchor-id="mongodb-서버에-연결">MongoDB 서버에 연결</h2>
-<p>DB에 연결할 수 있는 clinet를 생성합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymongo</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> pymongo.MongoClient(host<span class="op">=</span><span class="st">"localhost"</span>, port<span class="op">=</span><span class="dv">27017</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="mysql-도커로-설치하고-테스트-db-사용하기" class="level1">
+<h1>MySQL 도커로 설치하고 테스트 DB 사용하기</h1>
+<p>MySQL DB를 연습하기 위해서 도커로 MySQL 이미지를 다운로드 및 실행합니다. 우선 MySQL이미지를 <a href="https://hub.docker.com/search?q=mysql">도커 허브</a>에서 찾습니다.</p>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
+<p><code>mysql</code> 이미지 이름을 다운로드 할 수 있습니다. DB 볼륨을 로컬컴퓨터에서 확인하고 파일을 관리하기 위한 볼륨을 마운트하기 위해서 <code>docker-compose.yml</code>파일을 만들어서 관리합니다.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>docker-compose.yml</strong></pre>
 </div>
-<p>admin 암호를 설정한 DB에 접속 시 유저명과 암호가 없는 경우 아래와 같은 에러가 발생합니다.</p>
-<pre><code>OperationFailure: Command listDatabases requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command listDatabases requires authentication', 'code': 13, 'codeName': 'Unauthorized'}</code></pre>
-<p>DB 접근에 필요한 유저명과 이름을 함께 전달합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> pymongo.MongoClient(host<span class="op">=</span><span class="st">"localhost"</span>, username<span class="op">=</span><span class="st">'root'</span>, password<span class="op">=</span><span class="st">'1234'</span>, port<span class="op">=</span><span class="dv">27017</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">version:</span> <span class="st">'3'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">services:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">mysqldb:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">container_name:</span> mysqldb</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="ex">image:</span> mysql</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="ex">ports:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> <span class="st">"3306:3306"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="ex">volumes:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> ./mysqldb:/var/lib/mysql</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">env_file:</span> .env</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">environment:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> MYSQL_ROOT_PASSWORD=1234</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> TZ=Asia/Seoul</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">restart:</span> always</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>docker-compose를 아래의 명령으로 실행합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>DB를 편리하게 사용하기 위해서 DBeaver를 설치합니다. 설치방법은 <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html">mysql설치</a>를 확인합니다.</p>
+<p>DBeaver를 이용해서 설치한 DB에 연결합니다. <code>데이터베이스</code> &gt; <code>새 데이터베이스 연결</code>을 선택해서 DB에 연결합니다. 연결이 완료되었으니 이제 docker의 데이터베이스에 접속합니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker exec <span class="at">-it</span> <span class="op">&lt;</span>docker서비스명<span class="op">&gt;</span>  bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>MySQL을 container생성을 위해 사용한 root 계정의 암호를 입력하여 mysql에 접속합니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql</span> <span class="at">-u</span> root <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="데이터베이스-구조" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-구조">데이터베이스 구조</h2>
+<p>데이터베이스는 내부에 테이블을 갖습니다. 테이블은 MySQL의 가장 작은 데이터베이스 단위 입니다. 테이블은 엑설처럼 데이터를 나타내는 특정 유형의 테이터를 나타내는 열과 각 데이터 레코드를 나타내는 행으로 구성됩니다. 각 열은 데이터의 유형과 속성정보를 갖습니다.</p>
 </section>
-<section id="collection-삭제" class="level2">
-<h2 class="anchored" data-anchor-id="collection-삭제">collection 삭제</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  collection.drop()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"fail"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="데이터베이스-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-확인하기">데이터베이스 확인하기</h2>
+<p>기본으로 생성된 database를 확인합니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SHOW</span> DATABASES<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>+--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)</code></pre>
 </section>
-<section id="데이터-베이스-삭제" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-베이스-삭제">데이터 베이스 삭제</h2>
-<p>생성된 데이터 베이스의 삭제는 <code>drop_database</code>를 사용합니다. 테스트을 위해 생성할 <code>test_db</code>가 있다면 데이터베이스를 삭제합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  client.drop_database(<span class="st">'test_db'</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> e:</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="데이터베이스-생성" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-생성">데이터베이스 생성</h2>
+<p>DB연습을 위한 데이터베이스를 생성합니다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CREATE</span> DATABASE test_db<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Query OK, 1 row affected (0.24 sec)</code></pre>
 </section>
-<section id="데이터-베이스-생성" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-베이스-생성">데이터 베이스 생성</h2>
-<p>새로운 데이터베이스는 client의 key로 생성할 수 있습니다. 새롭게 <code>testdb</code>를 생성했지만 db에 데이터가 없는 경우 db가 표시되지 않습니다. <code>testdb</code>가 표시되지 않습니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(fail)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="데이터베이스-사용자-생성" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-사용자-생성">데이터베이스 사용자 생성</h2>
+<p>유저이름은 <code>test_id</code>, 암호는 <code>test1234</code>를 갖는 유저를 생성합니다. <code>%</code>를 사용해서 유저는 모든 클라이언트에서 접속 가능하도록 설정합니다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CREATE</span> USER <span class="st">'test_id'</span>@<span class="st">'%'</span> IDENTIFIED BY <span class="st">'test1234'</span><span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>유저가 사용할 수 있는 데이터베이스와 권한을 설정합니다.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GRANT</span> ALL PREVILEGES ON test_db.<span class="pp">*</span> TO <span class="st">'test_id'</span>@<span class="st">'%'</span><span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>test_db의 모든 테이블에 권한을 부여하기 위해 <code>test_db.*</code>을 사용했습니다. 이제 새로 생성한 유저로 접속해서 test_db를 사용할 수 있는 지 확인합니다.</p>
 </section>
-<section id="collection-생성" class="level2">
-<h2 class="anchored" data-anchor-id="collection-생성">collection 생성</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> db.list_collections():</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="데이터베이스-접속" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-접속">데이터베이스 접속</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql</span> <span class="at">-u</span> test_id <span class="at">-p</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql</span><span class="op">&gt;</span> SHOW DATABASES<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>+--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| performance_schema |
+| test_db            |
++--------------------+
+3 rows in set (0.01 sec)</code></pre>
+<p>새로 생성한 사용자로 접속 시 새로 생성된 database를 확인할 수 있습니다.</p>
 </section>
-<section id="데이터베이스-확인" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스-확인">데이터베이스 확인</h2>
-<p>MongoClient를 생성하고 데이터베이스 정보를 <code>list_databases</code>로 확인합니다. 기본적으로 생성된 데이터베이스를 확인할 수 있습니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="데이터베이스-선택-및-확인" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스-선택-및-확인">데이터베이스 선택 및 확인</h2>
+<p>현재 선택된 데이터베이스가 있는 지 확인합니다.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> DATABASE<span class="er">(</span><span class="kw">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>+------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)</code></pre>
+<p>아직 선택된 데이터베이스가 없습니다.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">USE</span> test_db<span class="kw">;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> DATABASE<span class="er">(</span><span class="kw">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>+------------+
+| DATABASE() |
++------------+
+| test_db    |
++------------+</code></pre>
+<p>이제 데이터베이스가 변경되었으며 현재 사용중인 데이터베이스는 <code>test_db</code>로 표시됩니다.</p>
 </section>
-<section id="collection-및-document-생성" class="level2">
-<h2 class="anchored" data-anchor-id="collection-및-document-생성">collection 및 document 생성</h2>
-<p>새롭게 생성한 데이터베이스에 collection을 생성하고 document를 추가합니다. document가 추가되면 데이터베이스가 표시됩니다. document가 추가된 후 다시 데이터베이스를 확인하면 데이터베이스가 생성됨을 확인할 수 있습니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> e:</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"tony"</span>, <span class="st">"age"</span>: <span class="dv">20</span>}</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> collection.insert_one(document)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> client.list_databases():</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- {'name': 'admin', 'sizeOnDisk': 102400, 'empty': False}
-{'name': 'config', 'sizeOnDisk': 110592, 'empty': False}
-{'name': 'local', 'sizeOnDisk': 73728, 'empty': False}
-{'name': 'test_db', 'sizeOnDisk': 8192, 'empty': False} -->
-<p>document가 추가되었으니 데이터베이스를 다시 확인합니다. 새롭게 생성된 <code>test_db</code>를 확인할 수 있습니다.</p>
+<section id="데이터베이스의-테이블-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="데이터베이스의-테이블-확인하기">데이터베이스의 테이블 확인하기</h2>
+<p>데이터 베이스의 TABLE을 확인합니다. 생성된 테이블이 없는 상태입니다.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SHOW</span> TABLES<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Empty set (0.00 sec)</code></pre>
 </section>
-<section id="collection-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="collection-확인하기">collection 확인하기</h2>
-<p>db에 생성된 collection을 확인하는 방법을 정리합니다. <code>testdb</code>에 생성된 collection 정보를 확인합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"fail"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>collection_names <span class="op">=</span> db.list_collection_names()</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> collection_names:</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- test_collection -->
-</section>
-<section id="document-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="document-확인하기">document 확인하기</h2>
-<p>PyMongo를 사용하여 MongoDB에서 문서(document)를 확인하는 방법은 find() 메서드를 사용하는 것입니다. 아래는 예시 코드입니다</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  db <span class="op">=</span> client[<span class="st">'test_db'</span>]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  collection <span class="op">=</span> db[<span class="st">'test_collection'</span>]</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  documents <span class="op">=</span> collection.find({})</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"fail"</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- {'_id': ObjectId('656abd3b4a97a4dfd0fa7e88'), 'name': 'tony', 'age': 20} -->
-<p>특정 조건을 만족하는 document만 확인하는 방법은 query정보를 딕셔너리 형태로 전달합니다. 검색조건 확인을 위해서 document를 조금 더 추가합니다. 3개의 document가 생성됩니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"mike"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"bill"</span>, <span class="st">"age"</span>: <span class="dv">51</span>}</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>collection.insert_one(document)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find()</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> document <span class="kw">in</span> documents:</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- {'_id': ObjectId('656abded4a97a4dfd0fa7e8e'), 'name': 'tony', 'age': 20}
-{'_id': ObjectId('656abded4a97a4dfd0fa7e8f'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656abded4a97a4dfd0fa7e90'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656abded4a97a4dfd0fa7e91'), 'name': 'bill', 'age': 51} -->
-<p>collection에서 검색하는 document중 하나만 선택 시 <code>find_one</code>을 사용합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> collection.find_one({<span class="st">"name"</span>:<span class="st">"mike"</span>})</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(document)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- {'_id': ObjectId('656abdfb4a97a4dfd0fa7e95'), 'name': 'mike', 'age': 30} -->
-</section>
-<section id="조건으로-document-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="조건으로-document-확인하기">조건으로 document 확인하기</h2>
-<p><code>age</code> 필드에서 나이가 <code>30</code>에 이상이 document를 찾는 경우 <code>$gte</code>를 사용할 수 있습니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$gte"</span>:<span class="dv">30</span>}})</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- {'_id': ObjectId('656ac343b47e86390c0df655'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac343b47e86390c0df656'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac343b47e86390c0df657'), 'name': 'bill', 'age': 51} -->
-<p><code>age</code> 필드의 값이 <code>30</code> 또는 <code>51</code>을 포함한 document를 찾는 경우 <code>$in</code>을 사용합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$in"</span>:[<span class="dv">30</span>, <span class="dv">51</span>]}})</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- {'_id': ObjectId('656ac343b47e86390c0df655'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac343b47e86390c0df656'), 'name': 'mike', 'age': 30}
-{'_id': ObjectId('656ac343b47e86390c0df657'), 'name': 'bill', 'age': 51} -->
-<p><code>age</code> 필드의 값이 <code>30</code> 또는 <code>51</code>을 포함하지 않는 document를 찾는 경우 <code>$nin</code>을 사용합니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> collection.find({<span class="st">"age"</span>:{<span class="st">"$nin"</span>:[<span class="dv">30</span>, <span class="dv">51</span>]}})</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doc <span class="kw">in</span> documents:</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- {'_id': ObjectId('656ac343b47e86390c0df654'), 'name': 'tony', 'age': 20} -->
-<p>Query Operators는 아래와 같습니다.</p>
-<table class="table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 37%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Query Operator</th>
-<th></th>
-<th>Col2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>$eq</td>
-<td>x = value (equal)</td>
-<td>{ &lt;field&gt;: { $eq: &lt;value&gt;} }</td>
-</tr>
-<tr class="even">
-<td>$gte</td>
-<td>x &gt;= value (grater than or equal)</td>
-<td>{ &lt;field&gt;: { $gte: &lt;value&gt;} }</td>
-</tr>
-<tr class="odd">
-<td>$gt</td>
-<td>x &gt; value (greter than)</td>
-<td>{ &lt;field&gt;: { $gt: &lt;value&gt;} }</td>
-</tr>
-<tr class="even">
-<td>$lte</td>
-<td>x &lt;= value (less then or equal)</td>
-<td>{ &lt;field&gt;: { $lte: &lt;value&gt;} }</td>
-</tr>
-<tr class="odd">
-<td>$lt</td>
-<td>x &lt; value (less then)</td>
-<td>{ &lt;field&gt;: { $lt: &lt;value&gt;} }</td>
-</tr>
-<tr class="even">
-<td>$in</td>
-<td>compares each parameter to each document in the collection</td>
-<td>{ field: { $in: [<value1>, <value2>, … <valuen> ] } }</valuen></value2></value1></td>
-</tr>
-<tr class="odd">
-<td>$nin</td>
-<td>select the documents whose <code>field</code> holds an array with no element equal to a value in the specified array.</td>
-<td>{ field: { $nin: [<value1>, <value2>, … <valuen> ] } }</valuen></value2></value1></td>
-</tr>
-</tbody>
-</table>
+<section id="테이블-생성-및-확인" class="level2">
+<h2 class="anchored" data-anchor-id="테이블-생성-및-확인">테이블 생성 및 확인</h2>
+<p>테이블을 생성하고 생성된 테이블 정보를 확인합니다.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CREATE</span> TABLE test_table <span class="er">(</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">id</span> INT PRIMARY KEY AUTO_INCREMENT,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">name</span> VARCHAR<span class="er">(</span><span class="ex">100</span><span class="kw">)</span> <span class="ex">NOT</span> NULL,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">phone</span> VARCHAR<span class="er">(</span><span class="ex">50</span><span class="kw">)</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>생성된 테이블 정보는 <code>describe</code>으로 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">describe</span> test_table<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>+-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(100) | NO   |     | NULL    |                |
+| phone | varchar(50)  | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)</code></pre>
+<p>3개의 열이 있는 테이블에 대한 정보를 확인할 수 있습니다.</p>
 </section>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
 <ol type="1">
-<li>https://www.tutorialspoint.com/mongodb/index.htm</li>
-<li>https://www.tutorialspoint.com/mongodb/index.htm</li>
+<li>https://wecandev.tistory.com/107</li>
+<li>https://devdhjo.github.io/mysql/2020/01/29/database-mysql-002.html</li>
 </ol>
 
 
@@ -1069,14 +942,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">mongoDB 서비스 시작/종료/상태확인</span>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">23년 허깅페이스 헤커톤 운영후기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="pagination-link">
-        <span class="nav-page-text">AWS 호스팅 EC2 와 Lightsail의 차이</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
