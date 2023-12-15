@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-12-06">
-<meta name="description" content="MySQL 도커로 설치하고 테스트 DB 사용하기">
+<meta name="dcterms.date" content="2023-12-14">
+<meta name="description" content="RAG(Retrieval Argumented Generation) 정리하기">
 
-<title>BookShelf - MySQL 도커로 설치하고 테스트 DB 사용하기</title>
+<title>BookShelf - RAG(Retrieval Argumented Generation) 정리하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -161,7 +127,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html">MySQL 도커로 설치하고 테스트 DB 사용하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html">RAG(Retrieval Argumented Generation) 정리하기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -497,7 +463,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span></a>
+ <span class="menu-text">RAG(Retrieval Argumented Generation) 정리하기</span></a>
   </div>
 </li>
       </ul>
@@ -514,18 +480,11 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#mysql-도커로-설치하고-테스트-db-사용하기" id="toc-mysql-도커로-설치하고-테스트-db-사용하기" class="nav-link active" data-scroll-target="#mysql-도커로-설치하고-테스트-db-사용하기">MySQL 도커로 설치하고 테스트 DB 사용하기</a>
+  <li><a href="#ragretrieval-argumented-generation-정리하기" id="toc-ragretrieval-argumented-generation-정리하기" class="nav-link active" data-scroll-target="#ragretrieval-argumented-generation-정리하기">RAG(Retrieval Argumented Generation) 정리하기</a>
   <ul class="collapse">
-  <li><a href="#데이터베이스-구조" id="toc-데이터베이스-구조" class="nav-link" data-scroll-target="#데이터베이스-구조">데이터베이스 구조</a></li>
-  <li><a href="#데이터베이스-확인하기" id="toc-데이터베이스-확인하기" class="nav-link" data-scroll-target="#데이터베이스-확인하기">데이터베이스 확인하기</a></li>
-  <li><a href="#데이터베이스-생성" id="toc-데이터베이스-생성" class="nav-link" data-scroll-target="#데이터베이스-생성">데이터베이스 생성</a></li>
-  <li><a href="#데이터베이스-사용자-생성" id="toc-데이터베이스-사용자-생성" class="nav-link" data-scroll-target="#데이터베이스-사용자-생성">데이터베이스 사용자 생성</a></li>
-  <li><a href="#데이터베이스-접속" id="toc-데이터베이스-접속" class="nav-link" data-scroll-target="#데이터베이스-접속">데이터베이스 접속</a></li>
-  <li><a href="#데이터베이스-선택-및-확인" id="toc-데이터베이스-선택-및-확인" class="nav-link" data-scroll-target="#데이터베이스-선택-및-확인">데이터베이스 선택 및 확인</a></li>
-  <li><a href="#데이터베이스의-테이블-확인하기" id="toc-데이터베이스의-테이블-확인하기" class="nav-link" data-scroll-target="#데이터베이스의-테이블-확인하기">데이터베이스의 테이블 확인하기</a></li>
-  <li><a href="#테이블-생성-및-확인" id="toc-테이블-생성-및-확인" class="nav-link" data-scroll-target="#테이블-생성-및-확인">테이블 생성 및 확인</a></li>
+  <li><a href="#rag가-무엇인가요" id="toc-rag가-무엇인가요" class="nav-link" data-scroll-target="#rag가-무엇인가요">RAG가 무엇인가요?</a></li>
+  <li><a href="#langchain은-무엇인가요" id="toc-langchain은-무엇인가요" class="nav-link" data-scroll-target="#langchain은-무엇인가요">LangChain은 무엇인가요?</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-14-RAG/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -534,16 +493,16 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MySQL 도커로 설치하고 테스트 DB 사용하기</h1>
-<p class="subtitle lead">MySQL 도커로 설치하고 테스트 DB 사용하기</p>
+<h1 class="title">RAG(Retrieval Argumented Generation) 정리하기</h1>
+<p class="subtitle lead">RAG(Retrieval Argumented Generation) 정리하기</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Database</div>
+    <div class="quarto-category">AI</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    MySQL 도커로 설치하고 테스트 DB 사용하기
+    RAG(Retrieval Argumented Generation) 정리하기
   </div>
 </div>
 
@@ -560,7 +519,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 6, 2023</p>
+      <p class="date">December 14, 2023</p>
     </div>
   </div>
   
@@ -570,138 +529,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="mysql-도커로-설치하고-테스트-db-사용하기" class="level1">
-<h1>MySQL 도커로 설치하고 테스트 DB 사용하기</h1>
-<p>MySQL DB를 연습하기 위해서 도커로 MySQL 이미지를 다운로드 및 실행합니다. 우선 MySQL이미지를 <a href="https://hub.docker.com/search?q=mysql">도커 허브</a>에서 찾습니다.</p>
-<p><img src="images/paste-1.png" class="img-fluid"></p>
-<p><code>mysql</code> 이미지 이름을 다운로드 할 수 있습니다. DB 볼륨을 로컬컴퓨터에서 확인하고 파일을 관리하기 위한 볼륨을 마운트하기 위해서 <code>docker-compose.yml</code>파일을 만들어서 관리합니다.</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>docker-compose.yml</strong></pre>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">version:</span> <span class="st">'3'</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">services:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">mysqldb:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">container_name:</span> mysqldb</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="ex">image:</span> mysql</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="ex">ports:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> <span class="st">"3306:3306"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="ex">volumes:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> ./mysqldb:/var/lib/mysql</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">env_file:</span> .env</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">environment:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> MYSQL_ROOT_PASSWORD=1234</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="ex">-</span> TZ=Asia/Seoul</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">restart:</span> always</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>docker-compose를 아래의 명령으로 실행합니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>DB를 편리하게 사용하기 위해서 DBeaver를 설치합니다. 설치방법은 <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html">mysql설치</a>를 확인합니다.</p>
-<p>DBeaver를 이용해서 설치한 DB에 연결합니다. <code>데이터베이스</code> &gt; <code>새 데이터베이스 연결</code>을 선택해서 DB에 연결합니다. 연결이 완료되었으니 이제 docker의 데이터베이스에 접속합니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker exec <span class="at">-it</span> <span class="op">&lt;</span>docker서비스명<span class="op">&gt;</span>  bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>MySQL을 container생성을 위해 사용한 root 계정의 암호를 입력하여 mysql에 접속합니다.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql</span> <span class="at">-u</span> root <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="데이터베이스-구조" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스-구조">데이터베이스 구조</h2>
-<p>데이터베이스는 내부에 테이블을 갖습니다. 테이블은 MySQL의 가장 작은 데이터베이스 단위 입니다. 테이블은 엑설처럼 데이터를 나타내는 특정 유형의 테이터를 나타내는 열과 각 데이터 레코드를 나타내는 행으로 구성됩니다. 각 열은 데이터의 유형과 속성정보를 갖습니다.</p>
+<section id="ragretrieval-argumented-generation-정리하기" class="level1">
+<h1>RAG(Retrieval Argumented Generation) 정리하기</h1>
+<section id="rag가-무엇인가요" class="level2">
+<h2 class="anchored" data-anchor-id="rag가-무엇인가요">RAG가 무엇인가요?</h2>
+<p>“Retrieval-Augmented Generation” (RAG)는 자연어 처리 분야에서 사용되는 기술로, 특히 질문에 대한 답변이나 문장 생성과 같은 작업을 수행할 때 기존의 텍스트 생성 모델과 정보 검색을 결합하는 방법입니다. RAG는 크게 두 가지 주요 구성 요소로 나눌 수 있습니다: 정보 검색(retrieval)과 생성(generation).</p>
+<p>정보 검색 (Retrieval): 이 단계에서는 주어진 질문이나 입력에 가장 관련이 높은 문서나 데이터를 검색합니다. 이 과정은 대규모의 데이터베이스나 문서 집합에서 특정 키워드나 문맥에 기반하여 가장 적절한 정보를 찾는 것을 포함합니다.</p>
+<p>생성 (Generation): 검색된 정보를 바탕으로, 언어 모델이 자연스러운, 일관된 답변이나 문장을 생성합니다. 이 단계에서는 전통적인 언어 모델링 기법이 사용되며, 검색된 결과를 참조하여 보다 정확하고 상세한 정보를 제공하는 데 도움이 됩니다.</p>
+<p>RAG의 핵심은 정보 검색과 생성 두 부분을 통합하여, 단순한 텍스트 생성을 넘어서 사용자의 질문이나 요구에 맞는 구체적이고 상세한 답변을 제공하는 것입니다. 이 기술은 질문-답변 시스템, 챗봇, 기사 생성, 요약 생성 등 다양한 분야에서 활용됩니다.</p>
+<p>RAG 시스템의 성능은 검색하는 데이터베이스의 질과 크기, 그리고 언어 모델의 능력에 크게 의존합니다. 이러한 시스템은 대량의 정보에 접근하고, 그 정보를 바탕으로 사용자에게 보다 정확하고 유용한 답변을 제공할 수 있는 잠재력을 가지고 있습니다</p>
 </section>
-<section id="데이터베이스-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스-확인하기">데이터베이스 확인하기</h2>
-<p>기본으로 생성된 database를 확인합니다.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SHOW</span> DATABASES<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.00 sec)</code></pre>
-</section>
-<section id="데이터베이스-생성" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스-생성">데이터베이스 생성</h2>
-<p>DB연습을 위한 데이터베이스를 생성합니다.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CREATE</span> DATABASE test_db<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>Query OK, 1 row affected (0.24 sec)</code></pre>
-</section>
-<section id="데이터베이스-사용자-생성" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스-사용자-생성">데이터베이스 사용자 생성</h2>
-<p>유저이름은 <code>test_id</code>, 암호는 <code>test1234</code>를 갖는 유저를 생성합니다. <code>%</code>를 사용해서 유저는 모든 클라이언트에서 접속 가능하도록 설정합니다.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CREATE</span> USER <span class="st">'test_id'</span>@<span class="st">'%'</span> IDENTIFIED BY <span class="st">'test1234'</span><span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>유저가 사용할 수 있는 데이터베이스와 권한을 설정합니다.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GRANT</span> ALL PREVILEGES ON test_db.<span class="pp">*</span> TO <span class="st">'test_id'</span>@<span class="st">'%'</span><span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>test_db의 모든 테이블에 권한을 부여하기 위해 <code>test_db.*</code>을 사용했습니다. 이제 새로 생성한 유저로 접속해서 test_db를 사용할 수 있는 지 확인합니다.</p>
-</section>
-<section id="데이터베이스-접속" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스-접속">데이터베이스 접속</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql</span> <span class="at">-u</span> test_id <span class="at">-p</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql</span><span class="op">&gt;</span> SHOW DATABASES<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| performance_schema |
-| test_db            |
-+--------------------+
-3 rows in set (0.01 sec)</code></pre>
-<p>새로 생성한 사용자로 접속 시 새로 생성된 database를 확인할 수 있습니다.</p>
-</section>
-<section id="데이터베이스-선택-및-확인" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스-선택-및-확인">데이터베이스 선택 및 확인</h2>
-<p>현재 선택된 데이터베이스가 있는 지 확인합니다.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> DATABASE<span class="er">(</span><span class="kw">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>+------------+
-| database() |
-+------------+
-| NULL       |
-+------------+
-1 row in set (0.00 sec)</code></pre>
-<p>아직 선택된 데이터베이스가 없습니다.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">USE</span> test_db<span class="kw">;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> DATABASE<span class="er">(</span><span class="kw">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>+------------+
-| DATABASE() |
-+------------+
-| test_db    |
-+------------+</code></pre>
-<p>이제 데이터베이스가 변경되었으며 현재 사용중인 데이터베이스는 <code>test_db</code>로 표시됩니다.</p>
-</section>
-<section id="데이터베이스의-테이블-확인하기" class="level2">
-<h2 class="anchored" data-anchor-id="데이터베이스의-테이블-확인하기">데이터베이스의 테이블 확인하기</h2>
-<p>데이터 베이스의 TABLE을 확인합니다. 생성된 테이블이 없는 상태입니다.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SHOW</span> TABLES<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>Empty set (0.00 sec)</code></pre>
-</section>
-<section id="테이블-생성-및-확인" class="level2">
-<h2 class="anchored" data-anchor-id="테이블-생성-및-확인">테이블 생성 및 확인</h2>
-<p>테이블을 생성하고 생성된 테이블 정보를 확인합니다.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CREATE</span> TABLE test_table <span class="er">(</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">id</span> INT PRIMARY KEY AUTO_INCREMENT,</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">name</span> VARCHAR<span class="er">(</span><span class="ex">100</span><span class="kw">)</span> <span class="ex">NOT</span> NULL,</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">phone</span> VARCHAR<span class="er">(</span><span class="ex">50</span><span class="kw">)</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>생성된 테이블 정보는 <code>describe</code>으로 확인할 수 있습니다.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">describe</span> test_table<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>+-------+--------------+------+-----+---------+----------------+
-| Field | Type         | Null | Key | Default | Extra          |
-+-------+--------------+------+-----+---------+----------------+
-| id    | int          | NO   | PRI | NULL    | auto_increment |
-| name  | varchar(100) | NO   |     | NULL    |                |
-| phone | varchar(50)  | YES  |     | NULL    |                |
-+-------+--------------+------+-----+---------+----------------+
-3 rows in set (0.00 sec)</code></pre>
-<p>3개의 열이 있는 테이블에 대한 정보를 확인할 수 있습니다.</p>
-</section>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
-<ol type="1">
-<li>https://wecandev.tistory.com/107</li>
-<li>https://devdhjo.github.io/mysql/2020/01/29/database-mysql-002.html</li>
-</ol>
+<section id="langchain은-무엇인가요" class="level2">
+<h2 class="anchored" data-anchor-id="langchain은-무엇인가요">LangChain은 무엇인가요?</h2>
+<p>LangChain은 언어 모델과 에이전트의 개발 및 분석을 용이하게 하는 다기능 파이썬 라이브러리입니다. 이 라이브러리는 특히 응용 프로그램에서 Retrieval-Augmented Generation (RAG) 패턴을 구현하는 데 유용합니다. LangChain을 사용하면 “문서” 객체를 통해 여러 다른 소스에서 온 데이터를 정규화할 수 있으며, 이는 다양한 체인에서 데이터를 구조화된 방식으로 처리하고 전달하는 데 필수적입니다.</p>
+<p>LangChain의 핵심 아이디어는 AI 행동을 특정 순서대로 배열하여 처리 파이프라인을 만드는 것입니다. RAG 패턴의 맥락에서는 사용자가 질문을 제출하는 것으로 시작하여, 임베딩 생성, 추가 맥락을 위한 벡터 데이터베이스 조회, 그리고 마지막으로 언어 모델을 위한 프롬프트 생성의 순서를 따릅니다. LangChain의 “체인” 구성은 이러한 단계들을 특정 구성으로 연결하여 처리 파이프라인의 원활한 흐름과 오류 처리를 보장합니다.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
