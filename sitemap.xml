@@ -2,298 +2,302 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gabrielwithappy.github.io/index.html</loc>
-    <lastmod>2023-12-23T12:58:15.506Z</lastmod>
+    <lastmod>2023-12-23T13:53:00.845Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/about.html</loc>
-    <lastmod>2023-12-23T12:58:14.566Z</lastmod>
+    <lastmod>2023-12-23T13:52:59.785Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-09-03-data-visualization/index.html</loc>
-    <lastmod>2023-12-23T12:58:12.138Z</lastmod>
+    <lastmod>2023-12-23T13:52:57.629Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-08-27-korean-study/index.html</loc>
-    <lastmod>2023-12-23T12:58:11.278Z</lastmod>
+    <lastmod>2023-12-23T13:52:55.933Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/slide_blog/index.html</loc>
-    <lastmod>2023-12-23T12:58:10.438Z</lastmod>
+    <lastmod>2023-12-23T13:52:54.989Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/slide_blog/posts/2023-08-27-quarto-introduction/index.html</loc>
-    <lastmod>2023-12-23T12:58:09.318Z</lastmod>
+    <lastmod>2023-12-23T13:52:53.901Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/data_visualization/time_series_basic.html</loc>
-    <lastmod>2023-12-23T12:58:06.530Z</lastmod>
+    <lastmod>2023-12-23T13:52:51.414Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/data_visualization/references.html</loc>
-    <lastmod>2023-12-23T12:58:03.290Z</lastmod>
+    <lastmod>2023-12-23T13:52:47.646Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/data_visualization/intro.html</loc>
-    <lastmod>2023-12-23T12:57:51.274Z</lastmod>
+    <lastmod>2023-12-23T13:52:44.571Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/hf-examples/index.html</loc>
-    <lastmod>2023-12-23T12:57:49.038Z</lastmod>
+    <lastmod>2023-12-23T13:52:42.315Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/glossary/index.html</loc>
-    <lastmod>2023-12-23T12:57:48.274Z</lastmod>
+    <lastmod>2023-12-23T13:52:41.575Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/korean/index.html</loc>
-    <lastmod>2023-12-23T12:57:46.226Z</lastmod>
+    <lastmod>2023-12-23T13:52:39.975Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/korean/subway.html</loc>
-    <lastmod>2023-12-23T12:57:44.062Z</lastmod>
+    <lastmod>2023-12-23T13:52:37.880Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/slideshelf/quarto-introduction/index.html</loc>
-    <lastmod>2023-12-23T12:57:42.342Z</lastmod>
+    <lastmod>2023-12-23T13:52:36.344Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-28-dbever/index.html</loc>
-    <lastmod>2023-12-23T12:57:35.862Z</lastmod>
+    <lastmod>2023-12-23T13:52:29.361Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html</loc>
-    <lastmod>2023-12-23T12:57:33.358Z</lastmod>
+    <lastmod>2023-12-23T13:52:26.809Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html</loc>
-    <lastmod>2023-12-23T12:57:31.102Z</lastmod>
+    <lastmod>2023-12-23T13:52:24.673Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html</loc>
-    <lastmod>2023-12-23T12:57:26.890Z</lastmod>
+    <lastmod>2023-12-23T13:52:21.102Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html</loc>
-    <lastmod>2023-12-23T12:57:24.446Z</lastmod>
+    <lastmod>2023-12-23T13:52:18.266Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html</loc>
-    <lastmod>2023-12-23T12:57:21.238Z</lastmod>
+    <lastmod>2023-12-23T13:52:15.451Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-13-mongodb/index.html</loc>
-    <lastmod>2023-12-23T12:57:18.598Z</lastmod>
+    <lastmod>2023-12-23T13:52:12.963Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-08-plotly-line-shape/index.html</loc>
-    <lastmod>2023-12-23T12:57:15.302Z</lastmod>
+    <lastmod>2023-12-23T13:52:10.076Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html</loc>
-    <lastmod>2023-12-23T12:57:11.866Z</lastmod>
+    <lastmod>2023-12-23T13:52:06.468Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html</loc>
-    <lastmod>2023-12-23T12:57:08.954Z</lastmod>
+    <lastmod>2023-12-23T13:52:03.649Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-12-markdown/index.html</loc>
-    <lastmod>2023-12-23T12:57:05.794Z</lastmod>
+    <lastmod>2023-12-23T13:52:00.161Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-16-date-index/index.html</loc>
-    <lastmod>2023-12-23T12:57:01.930Z</lastmod>
+    <lastmod>2023-12-23T13:51:57.262Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html</loc>
-    <lastmod>2023-12-23T12:56:58.278Z</lastmod>
+    <lastmod>2023-12-23T13:51:54.070Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html</loc>
-    <lastmod>2023-12-23T12:56:53.950Z</lastmod>
+    <lastmod>2023-12-23T13:51:49.475Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html</loc>
-    <lastmod>2023-12-23T12:56:50.466Z</lastmod>
+    <lastmod>2023-12-23T13:51:46.091Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html</loc>
-    <lastmod>2023-12-23T12:56:46.730Z</lastmod>
+    <lastmod>2023-12-23T13:51:41.724Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html</loc>
-    <lastmod>2023-12-23T12:56:43.182Z</lastmod>
+    <lastmod>2023-12-23T13:51:38.077Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html</loc>
-    <lastmod>2023-12-23T12:56:38.550Z</lastmod>
+    <lastmod>2023-12-23T13:51:34.565Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html</loc>
-    <lastmod>2023-12-23T12:56:35.234Z</lastmod>
+    <lastmod>2023-12-23T13:51:31.462Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html</loc>
-    <lastmod>2023-12-23T12:56:31.966Z</lastmod>
+    <lastmod>2023-12-23T13:51:28.226Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html</loc>
-    <lastmod>2023-12-23T12:56:28.194Z</lastmod>
+    <lastmod>2023-12-23T13:51:24.927Z</lastmod>
   </url>
   <url>
-    <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html</loc>
-    <lastmod>2023-12-23T12:56:24.970Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-05-crontab/index.html</loc>
-    <lastmod>2023-12-23T12:56:12.978Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-06-mysql/index.html</loc>
-    <lastmod>2023-12-23T12:56:11.326Z</lastmod>
+    <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html</loc>
+    <lastmod>2023-12-23T13:51:22.156Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html</loc>
-    <lastmod>2023-12-23T12:56:23.410Z</lastmod>
+    <lastmod>2023-12-23T13:51:19.252Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-06-mysql/index.html</loc>
+    <lastmod>2023-12-23T13:51:14.100Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-05-crontab/index.html</loc>
+    <lastmod>2023-12-23T13:51:15.976Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html</loc>
+    <lastmod>2023-12-23T13:51:20.612Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/12/2023-12-03-vite-react/index.html</loc>
-    <lastmod>2023-12-23T12:56:26.278Z</lastmod>
+    <lastmod>2023-12-23T13:51:23.351Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html</loc>
-    <lastmod>2023-12-23T12:56:29.738Z</lastmod>
+    <lastmod>2023-12-23T13:51:26.191Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html</loc>
-    <lastmod>2023-12-23T12:56:33.534Z</lastmod>
+    <lastmod>2023-12-23T13:51:29.786Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html</loc>
-    <lastmod>2023-12-23T12:56:36.822Z</lastmod>
+    <lastmod>2023-12-23T13:51:32.882Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html</loc>
-    <lastmod>2023-12-23T12:56:40.466Z</lastmod>
+    <lastmod>2023-12-23T13:51:36.125Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html</loc>
-    <lastmod>2023-12-23T12:56:45.038Z</lastmod>
+    <lastmod>2023-12-23T13:51:39.736Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html</loc>
-    <lastmod>2023-12-23T12:56:48.590Z</lastmod>
+    <lastmod>2023-12-23T13:51:43.848Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html</loc>
-    <lastmod>2023-12-23T12:56:52.210Z</lastmod>
+    <lastmod>2023-12-23T13:51:47.915Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html</loc>
-    <lastmod>2023-12-23T12:56:56.242Z</lastmod>
+    <lastmod>2023-12-23T13:51:51.978Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html</loc>
-    <lastmod>2023-12-23T12:57:00.170Z</lastmod>
+    <lastmod>2023-12-23T13:51:55.690Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html</loc>
-    <lastmod>2023-12-23T12:57:04.118Z</lastmod>
+    <lastmod>2023-12-23T13:51:58.841Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html</loc>
-    <lastmod>2023-12-23T12:57:07.482Z</lastmod>
+    <lastmod>2023-12-23T13:52:02.177Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-09-github-template/index.html</loc>
-    <lastmod>2023-12-23T12:57:10.162Z</lastmod>
+    <lastmod>2023-12-23T13:52:04.772Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html</loc>
-    <lastmod>2023-12-23T12:57:13.882Z</lastmod>
+    <lastmod>2023-12-23T13:52:08.476Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html</loc>
-    <lastmod>2023-12-23T12:57:17.198Z</lastmod>
+    <lastmod>2023-12-23T13:52:11.579Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html</loc>
-    <lastmod>2023-12-23T12:57:19.818Z</lastmod>
+    <lastmod>2023-12-23T13:52:14.275Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html</loc>
-    <lastmod>2023-12-23T12:57:22.838Z</lastmod>
+    <lastmod>2023-12-23T13:52:16.635Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html</loc>
-    <lastmod>2023-12-23T12:57:25.638Z</lastmod>
+    <lastmod>2023-12-23T13:52:20.022Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-14-pymongo/index.html</loc>
-    <lastmod>2023-12-23T12:57:29.414Z</lastmod>
+    <lastmod>2023-12-23T13:52:22.946Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html</loc>
-    <lastmod>2023-12-23T12:57:32.254Z</lastmod>
+    <lastmod>2023-12-23T13:52:25.725Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html</loc>
-    <lastmod>2023-12-23T12:57:34.646Z</lastmod>
+    <lastmod>2023-12-23T13:52:28.141Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/blog/index.html</loc>
-    <lastmod>2023-12-23T12:57:40.886Z</lastmod>
+    <lastmod>2023-12-23T13:52:34.712Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/slideshelf/deeplearning-translation/index.html</loc>
-    <lastmod>2023-12-23T12:57:42.866Z</lastmod>
+    <lastmod>2023-12-23T13:52:36.776Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/korean/qna.html</loc>
-    <lastmod>2023-12-23T12:57:44.982Z</lastmod>
+    <lastmod>2023-12-23T13:52:39.063Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/korean/reference-site.html</loc>
-    <lastmod>2023-12-23T12:57:47.842Z</lastmod>
+    <lastmod>2023-12-23T13:52:41.203Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/hf-examples/NLP/finance_news_sentiment.html</loc>
-    <lastmod>2023-12-23T12:57:48.670Z</lastmod>
+    <lastmod>2023-12-23T13:52:41.943Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/data_visualization/summary.html</loc>
-    <lastmod>2023-12-23T12:57:50.090Z</lastmod>
+    <lastmod>2023-12-23T13:52:43.319Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/data_visualization/time_series_visualization.html</loc>
-    <lastmod>2023-12-23T12:58:02.438Z</lastmod>
+    <lastmod>2023-12-23T13:52:46.666Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/data_visualization/index.html</loc>
-    <lastmod>2023-12-23T12:58:04.734Z</lastmod>
+    <lastmod>2023-12-23T13:52:49.346Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/bookshelf/data_visualization/time_series_analysis.html</loc>
-    <lastmod>2023-12-23T12:58:08.938Z</lastmod>
+    <lastmod>2023-12-23T13:52:53.541Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/slide_blog/posts/2023-10-09-deeplearning-translation/index.html</loc>
-    <lastmod>2023-12-23T12:58:09.710Z</lastmod>
+    <lastmod>2023-12-23T13:52:54.357Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-07-23-dl-glossary/index.html</loc>
-    <lastmod>2023-12-23T12:58:10.810Z</lastmod>
+    <lastmod>2023-12-23T13:52:55.417Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/book_blog/posts/2023-08-25-hf-examples/index.html</loc>
-    <lastmod>2023-12-23T12:58:11.778Z</lastmod>
+    <lastmod>2023-12-23T13:52:57.101Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/docs/book_blog/index.html</loc>
-    <lastmod>2023-12-23T12:58:13.094Z</lastmod>
+    <lastmod>2023-12-23T13:52:58.733Z</lastmod>
   </url>
   <url>
     <loc>https://gabrielwithappy.github.io/books.html</loc>
-    <lastmod>2023-12-23T12:58:15.066Z</lastmod>
+    <lastmod>2023-12-23T13:53:00.385Z</lastmod>
   </url>
 </urlset>
