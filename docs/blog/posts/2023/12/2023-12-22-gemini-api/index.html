@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-11-18">
-<meta name="description" content="docker-compose로 airflow 설치하기">
+<meta name="dcterms.date" content="2023-12-22">
+<meta name="description" content="Google Gemeni API Key 얻기">
 
-<title>BookShelf - docker-compose로 airflow 설치하기</title>
+<title>BookShelf - Google Gemeni API Key 얻기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -162,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html">11</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html">docker-compose로 airflow 설치하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html">Google Gemeni API Key 얻기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -375,13 +375,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">11</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
@@ -414,7 +414,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
   </div>
 </li>
@@ -464,13 +464,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">12</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html" class="sidebar-item-text sidebar-link">
@@ -485,7 +485,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Google Gemeni API Key 얻기</span></a>
   </div>
 </li>
@@ -515,31 +515,31 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#docker-compose로-airflow-설치하기" id="toc-docker-compose로-airflow-설치하기" class="nav-link active" data-scroll-target="#docker-compose로-airflow-설치하기">docker-compose로 airflow 설치하기</a>
+  <li><a href="#google-gemeni-api-key-얻기" id="toc-google-gemeni-api-key-얻기" class="nav-link active" data-scroll-target="#google-gemeni-api-key-얻기">Google Gemeni API Key 얻기</a>
   <ul class="collapse">
-  <li><a href="#docker-compose-yaml-다운로드" id="toc-docker-compose-yaml-다운로드" class="nav-link" data-scroll-target="#docker-compose-yaml-다운로드">docker-compose yaml 다운로드</a></li>
-  <li><a href="#데이터-베이스-초기화" id="toc-데이터-베이스-초기화" class="nav-link" data-scroll-target="#데이터-베이스-초기화">데이터 베이스 초기화</a></li>
-  <li><a href="#도커-실행" id="toc-도커-실행" class="nav-link" data-scroll-target="#도커-실행">도커 실행</a></li>
+  <li><a href="#google-gemini는-무엇인가요" id="toc-google-gemini는-무엇인가요" class="nav-link" data-scroll-target="#google-gemini는-무엇인가요">Google Gemini는 무엇인가요?</a></li>
+  <li><a href="#gemini-api키-만들기" id="toc-gemini-api키-만들기" class="nav-link" data-scroll-target="#gemini-api키-만들기">Gemini API키 만들기</a></li>
+  <li><a href="#gemini-api키-python에서-사용하기" id="toc-gemini-api키-python에서-사용하기" class="nav-link" data-scroll-target="#gemini-api키-python에서-사용하기">Gemini API키 python에서 사용하기</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-22-gemini-api/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">docker-compose로 airflow 설치하기</h1>
-<p class="subtitle lead">docker-compose로 airflow 설치하기</p>
+<h1 class="title">Google Gemeni API Key 얻기</h1>
+<p class="subtitle lead">Google Gemeni API Key 얻기</p>
   <div class="quarto-categories">
-    <div class="quarto-category">DevOps</div>
+    <div class="quarto-category">AI</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    docker-compose로 airflow 설치하기
+    Google Gemeni API Key 얻기
   </div>
 </div>
 
@@ -556,7 +556,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 18, 2023</p>
+      <p class="date">December 22, 2023</p>
     </div>
   </div>
   
@@ -566,95 +566,91 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="docker-compose로-airflow-설치하기" class="level1">
-<h1>docker-compose로 airflow 설치하기</h1>
-<p>airflow <a href="https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html">공식홈페이지</a>에서는 airflow 설치를 위한 다양한 방법을 제공합니다.</p>
-<p>Production 도커 이미지를 사용하는 방법은 Container/Docker 스택에 익숙할 때 유용합니다. 종속성을 쉽게 유지 관리하여 동일한 물리적 또는 가상 머신에서 실행되는 다른 소프트웨어와 별도로 Airflow 구성 요소를 실행하는 기능을 제공합니다.</p>
-<p>이 설치 방법은 Container/Docker 스택에 익숙할 뿐만 아니라 Kubernetes를 사용하고 Helm 차트를 통해 커뮤니티 관리 Kubernetes 설치 메커니즘을 사용하여 Airflow를 설치 및 유지 관리하려는 경우에 유용합니다.</p>
-<p>설치를 위해서 - Docker Compose v1.29.1 또는 최신버전을 설치해야합니다.</p>
-<section id="docker-compose-yaml-다운로드" class="level2">
-<h2 class="anchored" data-anchor-id="docker-compose-yaml-다운로드">docker-compose yaml 다운로드</h2>
-<p>Airflow docker compose를 사용하기 위해서 yaml파일을 다운로드 합니다.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LfO</span> <span class="st">'https://airflow.apache.org/docs/apache-airflow/2.7.3/docker-compose.yaml'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>이 파일에는 아래의 서비스를 포함합니다.</p>
-<ul>
-<li>airflow-scheduler - 스케줄러는 모든 작업과 DAG를 모니터링하고 실행합니다.</li>
-<li>airflow-webserver - http://localhost:8080 에서 실행되는 웹서버</li>
-<li>airflow-worker - 스케쥴러가 제공하는 작업을 실행합니다.</li>
-<li>airflow-triggerer - 지연될 수 있는 작업에 대한 이벤트 루프를 생성합니다.</li>
-<li>airflow-init - 서비스를 초기화 합니다.</li>
-<li>postgres - 데이터베이스</li>
-<li>redis - The redis - 스케줄러에서 작업자에게 메세지를 전달하는 브로커입니다.</li>
-</ul>
-<p>airflow를 설치할 위치에서 도커 이미지의 airflow 폴더와 싱크되는 폴더를 생성합니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ./dags ./logs ./plugins ./config</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="st">"AIRFLOW_UID=</span><span class="va">$(</span><span class="fu">id</span> <span class="at">-u</span><span class="va">)</span><span class="st">"</span>  . env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>airflow에서 사용하는 <a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#docker-compose-env-variables">환경변수</a>에서 세부내용을 확인할 수 있습니다.</p>
+<section id="google-gemeni-api-key-얻기" class="level1">
+<h1>Google Gemeni API Key 얻기</h1>
+<p>Google Gemini에 대해서 알아보고 API키를 사용하는 방법을 정리합니다.</p>
+<section id="google-gemini는-무엇인가요" class="level2">
+<h2 class="anchored" data-anchor-id="google-gemini는-무엇인가요">Google Gemini는 무엇인가요?</h2>
+<p>Google Gemini는 Google DeepMind가 개발한 고도로 진보된 다중모달 AI 모델입니다. 텍스트, 코드, 오디오, 이미지 및 비디오와 같은 다양한 유형의 정보를 처리하고 이해할 수 있는 능력을 갖추고 있어, 기존의 많은 AI 모델보다 독특하고 다재다능합니다.</p>
+<p>이 모델은 Ultra, Pro, Nano라는 세 가지 버전으로 제공되며, 각각 다른 복잡성과 장치 호환성에 맞게 맞춤화되어 있습니다. Gemini Ultra는 가장 복잡한 작업을 위해 설계된 가장 큰 모델입니다. Gemini Pro는 다양한 응용 프로그램에서 확장 가능한 범위의 작업에 최적화되어 있습니다. Gemini Nano는 스마트폰과 같은 장치에서의 작업을 위해 고안된 가장 효율적인 모델입니다​. Gemini의 주요 강점 중 하나는 다양한 AI 벤치마크에서의 성능입니다. 특히 MMLU 벤치마크와 같은 테스트에서 인간 전문가를 능가하는 결과를 보여주었습니다.</p>
 </section>
-<section id="데이터-베이스-초기화" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-베이스-초기화">데이터 베이스 초기화</h2>
-<p>데이터베이스 마이그레이션을 실행하고 첫 번째 사용자 계정을 생성해야 합니다. 아래의 <code>airflow-init</code>을 수행합니다. 초기 설정되는 ID와 PW는 모두 <code>airflow</code>로 설정됩니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up airflow-init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="gemini-api키-만들기" class="level2">
+<h2 class="anchored" data-anchor-id="gemini-api키-만들기">Gemini API키 만들기</h2>
+<p>Gemeni API를 사용할 수 있도록 <a href="https://ai.google.dev/">Google Gemini API</a> 페이지로 이동합니다. <img src="images/paste-1.png" class="img-fluid"></p>
+<p>홈페이지에 들어가서 약관에 동의하면 Gemini를 사용할 수 있는 <code>Use Google AI Studio</code>, <code>Develop in your own environment</code> 두 가지 방법을 가이드 합니다. API를 생성하기 위해서 <code>Develop in your own environment</code>와 <code>Create API key in new project</code>를 선택합니다. 생성된 API키가 노출되지 않도록 잘 저장합니다.</p>
 </section>
-<section id="도커-실행" class="level2">
-<h2 class="anchored" data-anchor-id="도커-실행">도커 실행</h2>
-<p>도커 서비스를 실행합니다.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="images/paste-1.png" class="img-fluid"></p>
-<p>docker compose에서 사용되는 명령어를 함께 정리합니다. 백그라운드에서 airflow를 동작하는 경우 <code>docker compose up -d</code>를 사용합니다.</p>
+<section id="gemini-api키-python에서-사용하기" class="level2">
+<h2 class="anchored" data-anchor-id="gemini-api키-python에서-사용하기">Gemini API키 python에서 사용하기</h2>
+<p>API를 파이썬에서 사용하기 위해서 라이브러리를 설치합니다.</p>
+<pre class="{bash}"><code>pip install google-generativeai</code></pre>
+<p>API키를 코드에 바로 사용하는 경우 API키가 노출될 수 있습니다. 환경변수에 KEY를 저장하고 환경변수를 이용해서 API키를 사용합니다. 환경변수(Environment Variable)는 운영 체제에서 사용되는 변수로, 프로그램이나 쉘(shell)이 실행되는 환경에 관한 정보를 포함합니다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 41%">
-<col style="width: 58%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 61%">
 </colgroup>
 <thead>
 <tr class="header">
+<th>운영 체제</th>
 <th>명령어</th>
-<th>의미</th>
+<th>설명</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>docker compose build &lt;service&gt;</td>
-<td>docker-compose.yaml 파일의 build로 표현된 서비스를 빌드합니다.</td>
+<td>Windows</td>
+<td><code>set API_KEY=12345678910</code></td>
+<td>Windows에서는 <code>set</code> 명령어를 사용하여 <code>API_KEY</code>라는 환경변수에 ‘12345678910’ 값을 설정합니다.</td>
 </tr>
 <tr class="even">
-<td>docker compose up</td>
-<td><strong><code>docker-compose.yml</code></strong> 파일을 기반으로 서비스를 시작합니다.</td>
-</tr>
-<tr class="odd">
-<td>docker compose up -d</td>
-<td>백그라운드에서 서비스를 시작합니다.</td>
-</tr>
-<tr class="even">
-<td>docker compose down</td>
-<td>서비스를 중지하고 관련된 리소스(컨테이너, 네트워크, 볼륨 등)를 제거합니다.</td>
-</tr>
-<tr class="odd">
-<td>docker-compose logs [service]</td>
-<td>지정된 서비스의 로그를 표시합니다. 서비스를 지정하지 않으면 모든 서비스의 로그를 표시합니다.</td>
-</tr>
-<tr class="even">
-<td>docker-compose start</td>
-<td>중지된 서비스를 시작합니다.</td>
-</tr>
-<tr class="odd">
-<td>docker-compose stop</td>
-<td>지정된 서비스를 중지합니다.</td>
-</tr>
-<tr class="even">
-<td>docker-compose restart</td>
-<td>지정된 서비스를 재시작합니다.</td>
+<td>Ubuntu</td>
+<td><code>export API_KEY=12345678910</code></td>
+<td>Ubuntu에서는 <code>export</code> 명령어로 같은 환경변수를 설정합니다. 이 명령어는 터미널에서 사용됩니다.</td>
 </tr>
 </tbody>
 </table>
+<p>아래는 API 키가 <code>12345678910</code>인 경우 환경변수를 설정하는 코드입니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">API_KEY</span><span class="op">=</span>12345678910</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이제 API키를 이용하여 간단한 테스트를 진행합니다. API통해 사용할 수 있는 모델 정보를 확인합니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> google.generativeai <span class="im">as</span> genai</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>GOOGLE_API_KEY<span class="op">=</span>os.getenv(<span class="st">'GOOGLE_API_KEY'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>genai.configure(api_key<span class="op">=</span>GOOGLE_API_KEY)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> model <span class="kw">in</span> genai.list_models():</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="st">'generateContent'</span> <span class="kw">in</span> model.supported_generation_methods:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(model.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">models/gemini-pro</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">models/gemini-pro-vision</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>위와 같이 <code>gemini-pro</code>와 <code>gemini-pro-vision</code>을 사용할 수 있습니다. Text 입력을 사용하는 <code>gemini-pro</code>를 사용합니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> genai.GenerativeModel(<span class="st">'gemini-pro'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> model.generate_content(<span class="st">"google의 AI gemini 에 대해서 알려줘"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>출력은 <code>Markdown</code>으로 표현됩니다. markdown 형식을 표현하기 위해서 <code>to_markdown()</code>함수를 사용합니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> to_markdown(text):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  text <span class="op">=</span> text.replace(<span class="st">'•'</span>, <span class="st">'  *'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Markdown( textwrap.indent(text, <span class="st">'&gt; '</span>, predicate<span class="op">=</span><span class="kw">lambda</span> _: <span class="va">True</span>) )</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>to_markdown(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>구글의 AI 제미니(Gemini)는 제품의 전반적인 품질과 사용자 경험을 개선하기 위해 머신 러닝을 사용하는 AI 도구입니다. 제미니는 제품 테스터와 엔지니어가 거의 노력 없이 수백만 개의 자동화된 테스트를 실행하고, 문제를 식별하고, 이러한 문제를 해결할 수 있도록 돕습니다. 제미니는 다음과 같은 주요 기능을 제공합니다.</p>
+<ul>
+<li><strong>자동화된 테스트:</strong> 제미니는 웹사이트, 모바일 앱, 하드웨어 제품을 포함한 다양한 유형의 제품에 대해 자동화된 테스트를 수행할 수 있습니다. 제미니는 사용자 입력, 인터페이스 요소, 성능 등 다양한 요소를 테스트할 수 있습니다.</li>
+<li><strong>문제 식별:</strong> 제미니는 테스트 결과를 분석하고 문제를 식별합니다. 이러한 문제에는 버그, 성능 문제, 사용성 문제가 포함될 수 있습니다.</li>
+<li><strong>문제 해결:</strong> 제미니는 문제를 식별한 후 해결할 수 있는 권장 사항을 제공합니다. 이러한 권장 사항은 코드 변경, 구성 변경 또는 사용자 인터페이스 변경일 수 있습니다.</li>
+</ul>
+<p>제미니는 다양한 업계에서 광범위한 제품을 테스트하는 데 사용되고 있습니다. 예를 들어, 제미니는 구글의 자체 제품인 안드로이드, 크롬, 구글 픽셀을 테스트하는 데 사용됩니다. 제미니는 또한 삼성, LG, 페이스북, 마이크로소프트 등의 기업에서 사용됩니다.</p>
+<p>제미니는 제품의 전반적인 품질과 사용자 경험을 개선하는 데 도움이 되는 강력한 도구입니다. 제미니는 자동화된 테스트, 문제 식별 및 문제 해결을 통해 제품 테스터와 엔지니어가 제품의 품질을 보다 빠르고 효율적으로 개선할 수 있도록 도와줍니다.</p>
+</blockquote>
 </section>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
 <ol type="1">
-<li>https://airflow.apache.org/docs/apache-airflow/stable/start.html</li>
-<li>https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html</li>
+<li>https://ai.google.dev/tutorials/python_quickstart</li>
 </ol>
 
 
@@ -898,13 +894,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">python datetime 사용법 정리</span>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="pagination-link">
-        <span class="nav-page-text">airflow postgresoperator 사용하기</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="pagination-link">
+        <span class="nav-page-text">23년 허깅페이스 헤커톤 운영후기</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
