@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/docs/slide_blog/index.html",
+    "items": [
+      "/docs/slide_blog/posts/2023-10-09-deeplearning-translation/index.html",
+      "/docs/slide_blog/posts/2023-08-27-quarto-introduction/index.html"
+    ]
+  },
+  {
     "listing": "/docs/book_blog/index.html",
     "items": [
       "/docs/book_blog/posts/2023-09-03-data-visualization/index.html",
@@ -14,7 +21,6 @@
       "/docs/blog/posts/2023/12/2023-12-31-samba/index.html",
       "/docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html",
       "/docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html",
-      "/docs/blog/posts/2023/12/2023-12-21-mysql-filtering-text/index.html",
       "/docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html",
       "/docs/blog/posts/2023/12/2023-12-06-mysql/index.html",
       "/docs/blog/posts/2023/12/2023-12-05-crontab/index.html",
@@ -59,13 +65,6 @@
       "/docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html",
       "/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html",
       "/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html"
-    ]
-  },
-  {
-    "listing": "/docs/slide_blog/index.html",
-    "items": [
-      "/docs/slide_blog/posts/2023-10-09-deeplearning-translation/index.html",
-      "/docs/slide_blog/posts/2023-08-27-quarto-introduction/index.html"
     ]
   }
 ]

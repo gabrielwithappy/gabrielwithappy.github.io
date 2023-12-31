@@ -266,7 +266,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   <li><a href="#resample" id="toc-resample" class="nav-link" data-scroll-target="#resample">resample()</a></li>
   <li><a href="#rolling" id="toc-rolling" class="nav-link" data-scroll-target="#rolling">rolling()</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/bookshelf/data_visualization/time_series_analysis.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/docs/bookshelf/data_visualization/time_series_analysis.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -317,11 +317,19 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <th data-quarto-table-cell-role="th">High</th>
 <th data-quarto-table-cell-role="th">Low</th>
 <th data-quarto-table-cell-role="th">Close</th>
-<th data-quarto-table-cell-role="th">Adj Close</th>
 <th data-quarto-table-cell-role="th">Volume</th>
+<th data-quarto-table-cell-role="th">Change</th>
+<th data-quarto-table-cell-role="th">UpDown</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">Amount</th>
+<th data-quarto-table-cell-role="th">MarCap</th>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -332,49 +340,69 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </thead>
 <tbody>
 <tr class="odd">
+<td data-quarto-table-cell-role="th">2022-01-03</td>
+<td>2998.32</td>
+<td>3010.77</td>
+<td>2979.42</td>
+<td>2988.77</td>
+<td>435825854</td>
+<td>0.0037</td>
+<td>1</td>
+<td>11.12</td>
+<td>8193887264228</td>
+<td>2211373367405162</td>
+</tr>
+<tr class="even">
 <td data-quarto-table-cell-role="th">2022-01-04</td>
-<td>2991.969971</td>
-<td>2995.250000</td>
-<td>2973.080078</td>
-<td>2989.239990</td>
-<td>2989.239990</td>
-<td>621200</td>
+<td>2991.97</td>
+<td>2995.25</td>
+<td>2973.08</td>
+<td>2989.24</td>
+<td>621549385</td>
+<td>0.0002</td>
+<td>1</td>
+<td>0.47</td>
+<td>9991473942836</td>
+<td>2212087919930193</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">2022-01-05</td>
-<td>2984.050049</td>
-<td>2986.199951</td>
-<td>2936.729980</td>
-<td>2953.969971</td>
-<td>2953.969971</td>
-<td>786900</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-06</td>
-<td>2925.399902</td>
-<td>2952.540039</td>
-<td>2915.379883</td>
-<td>2920.530029</td>
-<td>2920.530029</td>
-<td>785500</td>
+<td>2984.05</td>
+<td>2986.20</td>
+<td>2936.73</td>
+<td>2953.97</td>
+<td>787346121</td>
+<td>-0.0118</td>
+<td>2</td>
+<td>-35.27</td>
+<td>15428422516445</td>
+<td>2186715367040906</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2022-01-07</td>
-<td>2933.780029</td>
-<td>2959.030029</td>
-<td>2933.100098</td>
-<td>2954.889893</td>
-<td>2954.889893</td>
-<td>545800</td>
+<td data-quarto-table-cell-role="th">2022-01-06</td>
+<td>2925.40</td>
+<td>2952.54</td>
+<td>2915.38</td>
+<td>2920.53</td>
+<td>786045066</td>
+<td>-0.0113</td>
+<td>2</td>
+<td>-33.44</td>
+<td>13297135242112</td>
+<td>2162437324139180</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-10</td>
-<td>2947.370117</td>
-<td>2951.120117</td>
-<td>2910.899902</td>
-<td>2926.719971</td>
-<td>2926.719971</td>
-<td>477000</td>
+<td data-quarto-table-cell-role="th">2022-01-07</td>
+<td>2933.78</td>
+<td>2959.03</td>
+<td>2933.10</td>
+<td>2954.89</td>
+<td>546172478</td>
+<td>0.0118</td>
+<td>1</td>
+<td>34.36</td>
+<td>10582421237357</td>
+<td>2187560533655431</td>
 </tr>
 </tbody>
 </table>
@@ -411,29 +439,29 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-04</td>
-<td>2989.239990</td>
+<td data-quarto-table-cell-role="th">2022-01-03</td>
+<td>2988.77</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2022-01-05</td>
-<td>2953.969971</td>
-<td>2989.239990</td>
+<td data-quarto-table-cell-role="th">2022-01-04</td>
+<td>2989.24</td>
+<td>2988.77</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-06</td>
-<td>2920.530029</td>
-<td>2953.969971</td>
+<td data-quarto-table-cell-role="th">2022-01-05</td>
+<td>2953.97</td>
+<td>2989.24</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2022-01-07</td>
-<td>2954.889893</td>
-<td>2920.530029</td>
+<td data-quarto-table-cell-role="th">2022-01-06</td>
+<td>2920.53</td>
+<td>2953.97</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-10</td>
-<td>2926.719971</td>
-<td>2954.889893</td>
+<td data-quarto-table-cell-role="th">2022-01-07</td>
+<td>2954.89</td>
+<td>2920.53</td>
 </tr>
 </tbody>
 </table>
@@ -461,12 +489,20 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <th data-quarto-table-cell-role="th">High</th>
 <th data-quarto-table-cell-role="th">Low</th>
 <th data-quarto-table-cell-role="th">Close</th>
-<th data-quarto-table-cell-role="th">Adj Close</th>
 <th data-quarto-table-cell-role="th">Volume</th>
+<th data-quarto-table-cell-role="th">Change</th>
+<th data-quarto-table-cell-role="th">UpDown</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">Amount</th>
+<th data-quarto-table-cell-role="th">MarCap</th>
 <th data-quarto-table-cell-role="th">Close+1</th>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -486,26 +522,38 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-02-28</td>
-<td>2663.000000</td>
-<td>2699.179932</td>
-<td>2658.250000</td>
-<td>2699.179932</td>
-<td>2699.179932</td>
-<td>613300.0</td>
-<td>2676.760010</td>
+<td>2663.00</td>
+<td>2699.18</td>
+<td>2658.25</td>
+<td>2699.18</td>
+<td>6.134703e+08</td>
+<td>0.0084</td>
+<td>1.0</td>
+<td>22.42</td>
+<td>1.289425e+13</td>
+<td>2.120188e+15</td>
+<td>2676.76</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-03-31</td>
-<td>2743.239990</td>
-<td>2765.199951</td>
-<td>2743.199951</td>
-<td>2757.649902</td>
-<td>2757.649902</td>
-<td>1029500.0</td>
-<td>2746.739990</td>
+<td>2743.24</td>
+<td>2765.20</td>
+<td>2743.20</td>
+<td>2757.65</td>
+<td>1.030289e+09</td>
+<td>0.0040</td>
+<td>1.0</td>
+<td>10.91</td>
+<td>9.729367e+12</td>
+<td>2.164963e+15</td>
+<td>2746.74</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-04-30</td>
@@ -516,16 +564,24 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-05-31</td>
-<td>2666.879883</td>
-<td>2685.899902</td>
-<td>2654.320068</td>
-<td>2685.899902</td>
-<td>2685.899902</td>
-<td>670700.0</td>
-<td>2669.659912</td>
+<td>2666.88</td>
+<td>2685.90</td>
+<td>2654.32</td>
+<td>2685.90</td>
+<td>6.716791e+08</td>
+<td>0.0061</td>
+<td>1.0</td>
+<td>16.24</td>
+<td>1.397090e+13</td>
+<td>2.113784e+15</td>
+<td>2669.66</td>
 </tr>
 </tbody>
 </table>
@@ -550,12 +606,20 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <th data-quarto-table-cell-role="th">High</th>
 <th data-quarto-table-cell-role="th">Low</th>
 <th data-quarto-table-cell-role="th">Close</th>
-<th data-quarto-table-cell-role="th">Adj Close</th>
 <th data-quarto-table-cell-role="th">Volume</th>
+<th data-quarto-table-cell-role="th">Change</th>
+<th data-quarto-table-cell-role="th">UpDown</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">Amount</th>
+<th data-quarto-table-cell-role="th">MarCap</th>
 <th data-quarto-table-cell-role="th">Close+1</th>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -568,43 +632,59 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-01-28</td>
-<td>2617.870117</td>
-<td>2668.590088</td>
-<td>2591.530029</td>
-<td>2663.340088</td>
-<td>2663.340088</td>
-<td>433700</td>
-<td>2614.489990</td>
+<td>2617.87</td>
+<td>2668.59</td>
+<td>2591.53</td>
+<td>2663.34</td>
+<td>434186972</td>
+<td>0.0187</td>
+<td>1</td>
+<td>48.85</td>
+<td>13753057379762</td>
+<td>2094859102056597</td>
+<td>2614.49</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-02-03</td>
-<td>2706.340088</td>
-<td>2735.340088</td>
-<td>2702.780029</td>
-<td>2707.820068</td>
-<td>2707.820068</td>
-<td>435300</td>
-<td>2663.340088</td>
+<td>2706.34</td>
+<td>2735.34</td>
+<td>2702.78</td>
+<td>2707.82</td>
+<td>435709933</td>
+<td>0.0167</td>
+<td>1</td>
+<td>44.48</td>
+<td>12472536011223</td>
+<td>2129673299167339</td>
+<td>2663.34</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-02-04</td>
-<td>2714.830078</td>
-<td>2751.800049</td>
-<td>2712.870117</td>
-<td>2750.260010</td>
-<td>2750.260010</td>
-<td>535900</td>
-<td>2707.820068</td>
+<td>2714.83</td>
+<td>2751.80</td>
+<td>2712.87</td>
+<td>2750.26</td>
+<td>536148768</td>
+<td>0.0157</td>
+<td>1</td>
+<td>42.44</td>
+<td>11393256143290</td>
+<td>2162189762255563</td>
+<td>2707.82</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-02-07</td>
-<td>2750.699951</td>
-<td>2750.699951</td>
-<td>2718.939941</td>
-<td>2745.060059</td>
-<td>2745.060059</td>
-<td>417600</td>
-<td>2750.260010</td>
+<td>2750.70</td>
+<td>2750.70</td>
+<td>2718.94</td>
+<td>2745.06</td>
+<td>417838468</td>
+<td>-0.0019</td>
+<td>2</td>
+<td>-5.20</td>
+<td>11291947751742</td>
+<td>2157575112311001</td>
+<td>2750.26</td>
 </tr>
 </tbody>
 </table>
@@ -644,12 +724,20 @@ Tip
 <th data-quarto-table-cell-role="th">High</th>
 <th data-quarto-table-cell-role="th">Low</th>
 <th data-quarto-table-cell-role="th">Close</th>
-<th data-quarto-table-cell-role="th">Adj Close</th>
 <th data-quarto-table-cell-role="th">Volume</th>
+<th data-quarto-table-cell-role="th">Change</th>
+<th data-quarto-table-cell-role="th">UpDown</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">Amount</th>
+<th data-quarto-table-cell-role="th">MarCap</th>
 <th data-quarto-table-cell-role="th">Close+1</th>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -662,53 +750,73 @@ Tip
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-01-31</td>
-<td>2617.870117</td>
-<td>2668.590088</td>
-<td>2591.530029</td>
-<td>2663.340088</td>
-<td>2663.340088</td>
-<td>433700</td>
-<td>2614.489990</td>
+<td>2617.87</td>
+<td>2668.59</td>
+<td>2591.53</td>
+<td>2663.34</td>
+<td>434186972</td>
+<td>0.0187</td>
+<td>1</td>
+<td>48.85</td>
+<td>13753057379762</td>
+<td>2094859102056597</td>
+<td>2614.49</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-02-28</td>
-<td>2663.000000</td>
-<td>2699.179932</td>
-<td>2658.250000</td>
-<td>2699.179932</td>
-<td>2699.179932</td>
-<td>613300</td>
-<td>2676.760010</td>
+<td>2663.00</td>
+<td>2699.18</td>
+<td>2658.25</td>
+<td>2699.18</td>
+<td>613470298</td>
+<td>0.0084</td>
+<td>1</td>
+<td>22.42</td>
+<td>12894247765178</td>
+<td>2120187753790735</td>
+<td>2676.76</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-03-31</td>
-<td>2743.239990</td>
-<td>2765.199951</td>
-<td>2743.199951</td>
-<td>2757.649902</td>
-<td>2757.649902</td>
-<td>1029500</td>
-<td>2746.739990</td>
+<td>2743.24</td>
+<td>2765.20</td>
+<td>2743.20</td>
+<td>2757.65</td>
+<td>1030288741</td>
+<td>0.0040</td>
+<td>1</td>
+<td>10.91</td>
+<td>9729367389375</td>
+<td>2164962823835125</td>
+<td>2746.74</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-04-30</td>
-<td>2669.179932</td>
-<td>2696.100098</td>
-<td>2664.060059</td>
-<td>2695.050049</td>
-<td>2695.050049</td>
-<td>975000</td>
-<td>2667.489990</td>
+<td>2669.18</td>
+<td>2696.10</td>
+<td>2664.06</td>
+<td>2695.05</td>
+<td>975253172</td>
+<td>0.0103</td>
+<td>1</td>
+<td>27.56</td>
+<td>12664752150376</td>
+<td>2119864985287662</td>
+<td>2667.49</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-05-31</td>
-<td>2666.879883</td>
-<td>2685.899902</td>
-<td>2654.320068</td>
-<td>2685.899902</td>
-<td>2685.899902</td>
-<td>670700</td>
-<td>2669.659912</td>
+<td>2666.88</td>
+<td>2685.90</td>
+<td>2654.32</td>
+<td>2685.90</td>
+<td>671679086</td>
+<td>0.0061</td>
+<td>1</td>
+<td>16.24</td>
+<td>13970895517957</td>
+<td>2113784328537123</td>
+<td>2669.66</td>
 </tr>
 </tbody>
 </table>
@@ -737,12 +845,20 @@ Tip
 <th data-quarto-table-cell-role="th">High</th>
 <th data-quarto-table-cell-role="th">Low</th>
 <th data-quarto-table-cell-role="th">Close</th>
-<th data-quarto-table-cell-role="th">Adj Close</th>
 <th data-quarto-table-cell-role="th">Volume</th>
+<th data-quarto-table-cell-role="th">Change</th>
+<th data-quarto-table-cell-role="th">UpDown</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">Amount</th>
+<th data-quarto-table-cell-role="th">MarCap</th>
 <th data-quarto-table-cell-role="th">Close+1</th>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -755,53 +871,73 @@ Tip
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-01-31</td>
-<td>2617.870117</td>
-<td>2668.590088</td>
-<td>2591.530029</td>
-<td>2663.340088</td>
-<td>2663.340088</td>
-<td>433700</td>
-<td>2614.489990</td>
+<td>2617.87</td>
+<td>2668.59</td>
+<td>2591.53</td>
+<td>2663.34</td>
+<td>434186972</td>
+<td>0.0187</td>
+<td>1</td>
+<td>48.85</td>
+<td>13753057379762</td>
+<td>2094859102056597</td>
+<td>2614.49</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-02-28</td>
-<td>2663.000000</td>
-<td>2699.179932</td>
-<td>2658.250000</td>
-<td>2699.179932</td>
-<td>2699.179932</td>
-<td>613300</td>
-<td>2676.760010</td>
+<td>2663.00</td>
+<td>2699.18</td>
+<td>2658.25</td>
+<td>2699.18</td>
+<td>613470298</td>
+<td>0.0084</td>
+<td>1</td>
+<td>22.42</td>
+<td>12894247765178</td>
+<td>2120187753790735</td>
+<td>2676.76</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-03-31</td>
-<td>2743.239990</td>
-<td>2765.199951</td>
-<td>2743.199951</td>
-<td>2757.649902</td>
-<td>2757.649902</td>
-<td>1029500</td>
-<td>2746.739990</td>
+<td>2743.24</td>
+<td>2765.20</td>
+<td>2743.20</td>
+<td>2757.65</td>
+<td>1030288741</td>
+<td>0.0040</td>
+<td>1</td>
+<td>10.91</td>
+<td>9729367389375</td>
+<td>2164962823835125</td>
+<td>2746.74</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-04-30</td>
-<td>2669.179932</td>
-<td>2696.100098</td>
-<td>2664.060059</td>
-<td>2695.050049</td>
-<td>2695.050049</td>
-<td>975000</td>
-<td>2667.489990</td>
+<td>2669.18</td>
+<td>2696.10</td>
+<td>2664.06</td>
+<td>2695.05</td>
+<td>975253172</td>
+<td>0.0103</td>
+<td>1</td>
+<td>27.56</td>
+<td>12664752150376</td>
+<td>2119864985287662</td>
+<td>2667.49</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-05-31</td>
-<td>2666.879883</td>
-<td>2685.899902</td>
-<td>2654.320068</td>
-<td>2685.899902</td>
-<td>2685.899902</td>
-<td>670700</td>
-<td>2669.659912</td>
+<td>2666.88</td>
+<td>2685.90</td>
+<td>2654.32</td>
+<td>2685.90</td>
+<td>671679086</td>
+<td>0.0061</td>
+<td>1</td>
+<td>16.24</td>
+<td>13970895517957</td>
+<td>2113784328537123</td>
+<td>2669.66</td>
 </tr>
 </tbody>
 </table>
@@ -827,12 +963,20 @@ Tip
 <th data-quarto-table-cell-role="th">High</th>
 <th data-quarto-table-cell-role="th">Low</th>
 <th data-quarto-table-cell-role="th">Close</th>
-<th data-quarto-table-cell-role="th">Adj Close</th>
 <th data-quarto-table-cell-role="th">Volume</th>
+<th data-quarto-table-cell-role="th">Change</th>
+<th data-quarto-table-cell-role="th">UpDown</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">Amount</th>
+<th data-quarto-table-cell-role="th">MarCap</th>
 <th data-quarto-table-cell-role="th">Close+1</th>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -845,53 +989,73 @@ Tip
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-01-31</td>
-<td>2872.972116</td>
-<td>2886.611598</td>
-<td>2842.880525</td>
-<td>2859.066830</td>
-<td>2859.066830</td>
-<td>5.516632e+05</td>
-<td>2869.940538</td>
+<td>2879.239500</td>
+<td>2892.819500</td>
+<td>2849.707500</td>
+<td>2865.552000</td>
+<td>5.462810e+08</td>
+<td>-0.005475</td>
+<td>1.650000</td>
+<td>-15.715500</td>
+<td>1.128273e+13</td>
+<td>2.134283e+15</td>
+<td>2876.194737</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-02-28</td>
-<td>2722.530002</td>
-<td>2740.107788</td>
-<td>2703.206665</td>
-<td>2724.015015</td>
-<td>2724.015015</td>
-<td>5.617500e+05</td>
-<td>2722.023912</td>
+<td>2722.530000</td>
+<td>2740.107778</td>
+<td>2703.206667</td>
+<td>2724.015000</td>
+<td>5.621077e+08</td>
+<td>0.000822</td>
+<td>1.388889</td>
+<td>1.991111</td>
+<td>1.095019e+13</td>
+<td>2.141472e+15</td>
+<td>2722.023889</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-03-31</td>
-<td>2699.054316</td>
-<td>2710.955694</td>
-<td>2684.923840</td>
-<td>2698.716192</td>
-<td>2698.716192</td>
-<td>6.851857e+05</td>
-<td>2695.931908</td>
+<td>2699.054286</td>
+<td>2710.955714</td>
+<td>2684.923810</td>
+<td>2698.716190</td>
+<td>6.860661e+08</td>
+<td>0.001076</td>
+<td>1.428571</td>
+<td>2.784286</td>
+<td>1.107965e+13</td>
+<td>2.119365e+15</td>
+<td>2695.931905</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2022-04-30</td>
-<td>2700.210007</td>
-<td>2711.937163</td>
-<td>2688.504790</td>
-<td>2703.242850</td>
-<td>2703.242850</td>
-<td>1.048310e+06</td>
-<td>2706.223796</td>
+<td>2700.210000</td>
+<td>2711.937143</td>
+<td>2688.504762</td>
+<td>2703.242857</td>
+<td>1.048852e+09</td>
+<td>-0.001062</td>
+<td>1.523810</td>
+<td>-2.980952</td>
+<td>1.086670e+13</td>
+<td>2.121792e+15</td>
+<td>2706.223810</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2022-05-31</td>
-<td>2628.057971</td>
-<td>2642.537500</td>
-<td>2613.529016</td>
-<td>2629.215002</td>
-<td>2629.215002</td>
-<td>7.979600e+05</td>
-<td>2629.672510</td>
+<td>2628.356190</td>
+<td>2642.547619</td>
+<td>2613.174286</td>
+<td>2628.338571</td>
+<td>8.032383e+08</td>
+<td>-0.000105</td>
+<td>1.571429</td>
+<td>-0.435714</td>
+<td>9.558871e+12</td>
+<td>2.068683e+15</td>
+<td>2628.774286</td>
 </tr>
 </tbody>
 </table>
@@ -922,8 +1086,12 @@ Tip
 <th data-quarto-table-cell-role="th">High</th>
 <th data-quarto-table-cell-role="th">Low</th>
 <th data-quarto-table-cell-role="th">Close</th>
-<th data-quarto-table-cell-role="th">Adj Close</th>
 <th data-quarto-table-cell-role="th">Volume</th>
+<th data-quarto-table-cell-role="th">Change</th>
+<th data-quarto-table-cell-role="th">UpDown</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">Amount</th>
+<th data-quarto-table-cell-role="th">MarCap</th>
 <th data-quarto-table-cell-role="th">Close+1</th>
 </tr>
 <tr class="odd">
@@ -935,58 +1103,82 @@ Tip
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-04</td>
-<td>2991.969971</td>
-<td>2995.250000</td>
-<td>2973.080078</td>
-<td>2989.239990</td>
-<td>2989.239990</td>
-<td>621200.0</td>
+<td data-quarto-table-cell-role="th">2022-01-03</td>
+<td>2998.320000</td>
+<td>3010.770000</td>
+<td>2979.420000</td>
+<td>2988.770000</td>
+<td>435825854.0</td>
+<td>0.003700</td>
+<td>1.000000</td>
+<td>11.120000</td>
+<td>8.193887e+12</td>
+<td>2.211373e+15</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2022-01-05</td>
-<td>2988.010010</td>
-<td>2990.724976</td>
-<td>2954.905029</td>
-<td>2971.604981</td>
-<td>2971.604981</td>
-<td>704050.0</td>
-<td>2989.239990</td>
+<td data-quarto-table-cell-role="th">2022-01-04</td>
+<td>2995.145000</td>
+<td>3003.010000</td>
+<td>2976.250000</td>
+<td>2989.005000</td>
+<td>528687619.5</td>
+<td>0.001950</td>
+<td>1.000000</td>
+<td>5.795000</td>
+<td>9.092681e+12</td>
+<td>2.211731e+15</td>
+<td>2988.770000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-06</td>
-<td>2967.139974</td>
-<td>2977.996663</td>
-<td>2941.729980</td>
-<td>2954.579997</td>
-<td>2954.579997</td>
-<td>731200.0</td>
-<td>2971.604981</td>
+<td data-quarto-table-cell-role="th">2022-01-05</td>
+<td>2991.446667</td>
+<td>2997.406667</td>
+<td>2963.076667</td>
+<td>2977.326667</td>
+<td>614907120.0</td>
+<td>-0.002633</td>
+<td>1.333333</td>
+<td>-7.893333</td>
+<td>1.120459e+13</td>
+<td>2.203392e+15</td>
+<td>2989.005000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2022-01-07</td>
-<td>2958.799988</td>
-<td>2973.255005</td>
-<td>2939.572510</td>
-<td>2954.657471</td>
-<td>2954.657471</td>
-<td>684850.0</td>
-<td>2954.579997</td>
+<td data-quarto-table-cell-role="th">2022-01-06</td>
+<td>2974.935000</td>
+<td>2986.190000</td>
+<td>2951.152500</td>
+<td>2963.127500</td>
+<td>657691606.5</td>
+<td>-0.004800</td>
+<td>1.500000</td>
+<td>-14.280000</td>
+<td>1.172773e+13</td>
+<td>2.193153e+15</td>
+<td>2977.326667</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2022-01-10</td>
-<td>2956.514014</td>
-<td>2968.828027</td>
-<td>2933.837988</td>
-<td>2949.069971</td>
-<td>2949.069971</td>
-<td>643280.0</td>
-<td>2954.657471</td>
+<td data-quarto-table-cell-role="th">2022-01-07</td>
+<td>2966.704000</td>
+<td>2980.758000</td>
+<td>2947.542000</td>
+<td>2961.480000</td>
+<td>635387780.8</td>
+<td>-0.001480</td>
+<td>1.400000</td>
+<td>-4.552000</td>
+<td>1.149867e+13</td>
+<td>2.192035e+15</td>
+<td>2963.127500</td>
 </tr>
 </tbody>
 </table>
@@ -1232,7 +1424,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
