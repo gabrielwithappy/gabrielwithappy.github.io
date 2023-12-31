@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-12-23">
-<meta name="description" content="인공지능이란 무엇인가?">
+<meta name="dcterms.date" content="2023-12-31">
+<meta name="description" content="우분투와 윈도우 파일 공유하기 (samba)">
 
-<title>BookShelf - 인공지능이란 무엇인가?</title>
+<title>BookShelf - 우분투와 윈도우 파일 공유하기 (samba)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +67,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-23-aboutAI/index.html">인공지능이란 무엇인가?</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-31-samba/index.html">우분투와 윈도우 파일 공유하기 (samba)</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -160,110 +194,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Histogram Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto Callout Block</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Dash로 Table 표시하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Subpolt 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Animation 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Axis 포멧 변경하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Treemap 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Bubble chart 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Rador 차트 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 데이터 전처리</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly 3D Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Scatter Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Time Series 날짜 범위 UI 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 데이터프레임 머지</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 중복 데이터 제거하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 모든 컬럼이 NaN일 때만 삭제하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Line Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Box Plot만들기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -274,14 +206,116 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Rador 차트 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Axis 포멧 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly 마커 모양 변경하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 데이터프레임 머지</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Histogram Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 모든 컬럼이 NaN일 때만 삭제하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Time Series 날짜 범위 UI 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 중복 데이터 제거하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Markdown문법 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Bubble chart 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto Callout Block</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Scatter Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Animation 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Box Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Dash로 Table 표시하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 데이터 전처리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Treemap 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Subpolt 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Line Plot만들기</span></a>
   </div>
 </li>
       </ul>
@@ -297,32 +331,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 불릿차트</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly Funnel(깔대기) 차트 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Zoom Disable하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Hover 설정하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -333,8 +349,26 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly 불릿차트</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Hover 설정하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Zoom Disable하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
   </div>
 </li>
       </ul>
@@ -350,68 +384,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AWS 호스팅 EC2 와 Lightsail의 차이</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">mkfifo를 이용한 IPC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">python datetime 사용법 정리</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">airflow postgresoperator 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pymongo 명령어 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">wsl2에 docker 설치하기</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -422,8 +402,62 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DB를 편리하기 보기, dbever</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">python datetime 사용법 정리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">airflow postgresoperator 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pymongo 명령어 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AWS 호스팅 EC2 와 Lightsail의 차이</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">wsl2에 docker 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
   </div>
 </li>
       </ul>
@@ -439,32 +473,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Google Gemeni API Key 얻기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">23년 허깅페이스 헤커톤 운영후기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-23-aboutAI/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">인공지능이란 무엇인가?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -475,8 +485,38 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-31-samba/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">우분투와 윈도우 파일 공유하기 (samba)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">vite를 이용한 react 개발환경 세팅</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-21-mysql-filtering-text/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAG(Retrieval Argumented Generation) 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23년 허깅페이스 헤커톤 운영후기</span></a>
   </div>
 </li>
       </ul>
@@ -493,34 +533,31 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#인공지능이란-무엇인가" id="toc-인공지능이란-무엇인가" class="nav-link active" data-scroll-target="#인공지능이란-무엇인가">인공지능이란 무엇인가?</a>
+  <li><a href="#우분투와-윈도우-운영체제-사이의-파일-공유하기" id="toc-우분투와-윈도우-운영체제-사이의-파일-공유하기" class="nav-link active" data-scroll-target="#우분투와-윈도우-운영체제-사이의-파일-공유하기">우분투와 윈도우 운영체제 사이의 파일 공유하기</a>
   <ul class="collapse">
-  <li><a href="#ai란-무엇인가" id="toc-ai란-무엇인가" class="nav-link" data-scroll-target="#ai란-무엇인가">AI란 무엇인가?</a></li>
-  <li><a href="#ai의-주요-유형" id="toc-ai의-주요-유형" class="nav-link" data-scroll-target="#ai의-주요-유형">AI의 주요 유형</a></li>
-  <li><a href="#ai의-일상-예" id="toc-ai의-일상-예" class="nav-link" data-scroll-target="#ai의-일상-예">AI의 일상 예</a></li>
-  <li><a href="#딥-러닝이란" id="toc-딥-러닝이란" class="nav-link" data-scroll-target="#딥-러닝이란">딥 러닝이란?</a>
-  <ul class="collapse">
-  <li><a href="#최근-유행하는-딥-러닝-모델" id="toc-최근-유행하는-딥-러닝-모델" class="nav-link" data-scroll-target="#최근-유행하는-딥-러닝-모델">최근 유행하는 딥 러닝 모델</a></li>
-  </ul></li>
+  <li><a href="#왜-samba를-사용해야-하나요" id="toc-왜-samba를-사용해야-하나요" class="nav-link" data-scroll-target="#왜-samba를-사용해야-하나요">왜 SAMBA를 사용해야 하나요?</a></li>
+  <li><a href="#우분투에-samba-설치하기" id="toc-우분투에-samba-설치하기" class="nav-link" data-scroll-target="#우분투에-samba-설치하기">우분투에 SAMBA 설치하기</a></li>
+  <li><a href="#samba-설정하기" id="toc-samba-설정하기" class="nav-link" data-scroll-target="#samba-설정하기">SAMBA 설정하기</a></li>
+  <li><a href="#윈도우에서-우분투-공유폴더-접근하기" id="toc-윈도우에서-우분투-공유폴더-접근하기" class="nav-link" data-scroll-target="#윈도우에서-우분투-공유폴더-접근하기">윈도우에서 우분투 공유폴더 접근하기</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-23-aboutAI/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-31-samba/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">인공지능이란 무엇인가?</h1>
-<p class="subtitle lead">인공지능이란 무엇인가?</p>
+<h1 class="title">우분투와 윈도우 파일 공유하기 (samba)</h1>
+<p class="subtitle lead">우분투와 윈도우 파일 공유하기 (samba)</p>
   <div class="quarto-categories">
-    <div class="quarto-category">AI</div>
+    <div class="quarto-category">DevOps</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    인공지능이란 무엇인가?
+    우분투와 윈도우 파일 공유하기 (samba)
   </div>
 </div>
 
@@ -537,7 +574,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 23, 2023</p>
+      <p class="date">December 31, 2023</p>
     </div>
   </div>
   
@@ -547,50 +584,60 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="인공지능이란-무엇인가" class="level1">
-<h1>인공지능이란 무엇인가?</h1>
-<p>인공지능(AI)은 오늘날 우리 생활의 많은 부분에서 중요한 역할을 하고 있습니다. 하지만 AI가 정확히 무엇인지, 어떻게 작동하는지에 대해 이해하기는 종종 어렵습니다. 이 글에서는 AI의 기본 개념을 쉽게 설명하고, 이 기술이 우리의 삶에 어떻게 영향을 미치는지 살펴보겠습니다.</p>
-<section id="ai란-무엇인가" class="level2">
-<h2 class="anchored" data-anchor-id="ai란-무엇인가">AI란 무엇인가?</h2>
-<p>AI, 즉 인공지능은 컴퓨터나 기계가 인간처럼 학습하고, 문제를 해결하며, 의사결정을 내릴 수 있도록 하는 기술입니다. 이를 통해 기계는 스스로 학습하고, 데이터를 분석하며, 경험을 통해 성능을 향상시킬 수 있습니다.</p>
+<section id="우분투와-윈도우-운영체제-사이의-파일-공유하기" class="level1">
+<h1>우분투와 윈도우 운영체제 사이의 파일 공유하기</h1>
+<p>우분투와 윈도우 운영체제 사이에 파일을 공유하는 방법을 정리합니다.</p>
+<section id="왜-samba를-사용해야-하나요" class="level2">
+<h2 class="anchored" data-anchor-id="왜-samba를-사용해야-하나요">왜 SAMBA를 사용해야 하나요?</h2>
+<p>다양한 운영체제 간의 호환성은 파일 공유의 업무 효율성을 올려줍니다. 우리가 흔히 사용하는 윈도우, 맥OS, 리눅스(예: 우분투) 등은 각기 다른 파일 시스템을 사용하기 때문에 파일 공유를 위해서는 특정 도구나 소프트웨어(예: SAMBA)가 필요합니다. 저의 경우 윈도우 노트북에서 리눅스 서버 사이의 파일 공유를 위해 Samba를 사용하고 있습니다.</p>
+<p>파일 공유를 이야기 하면 가장먼저 떠오르는 방식은 FTP(File Transper Protocol)입니다. FTP는 주로 대용량 파일 전송이나 웹사이트 파일 관리 등에 사용되고 FTP 클라이언트를 통해서 접속이 가능합니다. 윈도우와 우분투 운영체제 사이의 파일공유는 SAMBA가 편리합니다. 파일 및 프린트 공유가 가능하며 FTP와 달리 FTP클라이언트 설치없이 사용가능한 장점이 있습니다.</p>
 </section>
-<section id="ai의-주요-유형" class="level2">
-<h2 class="anchored" data-anchor-id="ai의-주요-유형">AI의 주요 유형</h2>
-<ol type="1">
-<li>규칙 기반 AI: 특정 규칙과 명령에 따라 작동하는 기초적인 AI 형태입니다.</li>
-<li>머신 러닝: 데이터를 분석하고 학습하여 특정 작업을 수행하는 AI의 한 분야입니다.</li>
-<li>딥 러닝: 뇌의 신경망을 모방한 알고리즘을 사용하여 복잡한 문제를 해결하는 더 진보된 AI 형태입니다.</li>
-</ol>
+<section id="우분투에-samba-설치하기" class="level2">
+<h2 class="anchored" data-anchor-id="우분투에-samba-설치하기">우분투에 SAMBA 설치하기</h2>
+<p>우분투에 SAMBA를 설치하여 윈도우에서 우분투 공유 폴더를 접속할 수 있습니다. 설치를 위해서 우분투 시스템의 패키지를 최신 상태로 업데이트 합니다. (우분투에서 <code>패키지</code>는 소프트웨어나 어플리케이션을 설치하고 관리하기 위한 정보의 모음) 아래의 명령으로 패키지 업데이트와 <code>samba</code>설치를 진행합니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install samba</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>설치가 완료되었는 지 확인을 위해 아래 명령으로 서비스 상태를 확인합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl status smbd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Active: active (running) since Sun 2023-12-31 13:24:19 KST; 1h 53min ago</code></pre>
+<p>서비스 동작 상태가 정상적으로 <code>Active</code>로 동작하도록 설치를 완료 했습니다.</p>
 </section>
-<section id="ai의-일상-예" class="level2">
-<h2 class="anchored" data-anchor-id="ai의-일상-예">AI의 일상 예</h2>
-<ul>
-<li>음성 인식: 스마트폰의 음성 비서나 스마트 스피커는 AI를 사용하여 사용자의 명령을 이해하고 응답합니다.</li>
-<li>추천 시스템: 넷플릭스나 유튜브의 추천 알고리즘은 사용자의 시청 습관을 분석하여 관심있을 만한 콘텐츠를 제안합니다.</li>
-<li>자율 주행 자동차: 자동차가 스스로 운전하고, 주변 환경을 인식하여 안전하게 목적지까지 이동합니다.</li>
-</ul>
+<section id="samba-설정하기" class="level2">
+<h2 class="anchored" data-anchor-id="samba-설정하기">SAMBA 설정하기</h2>
+<p>SAMBA를 통한 공유폴더 및 프린트를 네트워크에 공유하는 과정에 보안을 위해서 SAMBA이 설정정보를 업데이트 해야합니다. 우선 기존 SAMBA 설정파일을 백업하고 <code>smb.conf</code>설정 파일을 수정합니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp /etc/samba/smb.conf /etc/samba/smb.conf.backup</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vi /etc/samba/smb.conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>설정파일인 <code>smb.conf</code>의 가장 하단에 공유를 위한 폴더위치 및 세부 정보를 아래와 같이 작성합니다. 공유폴더 이름은 <code>MyShareFolder</code>로 정했습니다. <code>path</code>에는 자신이 공유할 폴더위치를 사용하세요~</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[SharedFolder]</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">path</span> = /home/<span class="pp">[</span><span class="ss">자신의유저명</span><span class="pp">]</span>/MyShareFolder</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">read</span> <span class="va">only</span> <span class="op">=</span> <span class="va">no</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">browsable</span> = yes</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">writable</span> = yes</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">public</span> = no:writable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>변경된 설정정보를 적용하가 위해서 SAMBA 서비스를 재시작 합니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart smbd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이제 폴더에 접근가능한 <code>유저정보</code>를 정의합니다.</p>
+<pre><code>sudo smbpasswd -a [사용할 사용자명]</code></pre>
+<p><code>[사용할 사용자명]</code>은 우분투 시스템의 사용자 명입니다. 이 명령어는 해당 사용자는 SAMBA 사용자로 추가합니다. 생성되면 암호를 물어봅니다. SAMBA접속 시 필요한 내용이니 잘 정리해두세요.</p>
 </section>
-<section id="딥-러닝이란" class="level2">
-<h2 class="anchored" data-anchor-id="딥-러닝이란">딥 러닝이란?</h2>
-<p>딥 러닝은 인공 신경망을 기반으로 하는 머신 러닝의 한 분야입니다. 이는 데이터에서 복잡한 패턴을 학습하고, 이를 바탕으로 예측이나 결정을 내리는 데 사용됩니다.</p>
-<section id="최근-유행하는-딥-러닝-모델" class="level3">
-<h3 class="anchored" data-anchor-id="최근-유행하는-딥-러닝-모델">최근 유행하는 딥 러닝 모델</h3>
-<ul>
-<li>GPT (Generative Pre-trained Transformer): 텍스트를 생성하는 데 사용되며, 대화, 글 작성, 번역 등에 활용됩니다.</li>
-<li>BERT (Bidirectional Encoder Representations from Transformers): 텍스트의 문맥을 더 잘 이해하기 위해 사용되며, 검색 엔진 최적화, 감성 분석 등에 적용됩니다.</li>
-<li>CNN (Convolutional Neural Networks): 이미지 인식과 처리에 주로 사용되며, 의료 영상 분석, 자율 주행 차량 등에 활용됩니다.</li>
-</ul>
-<p>이 중 GPT는 생성 모델로 이야기됩니다. 생성 모델이 사용되는 예를 알아봅니다.</p>
-<ol type="1">
-<li><p>자연어 처리(NLP): 생성 모델은 기계 번역 시스템에서 사용되어 한 언어에서 다른 언어로 텍스트를 자동으로 번역하거나 답변을 생성하는 데 사용됩니다.</p></li>
-<li><p>이미지 생성 및 처리: 스타일 변환: 생성 모델은 이미지 스타일을 변환하거나, 그림을 그리거나, 사진을 필터링하는 데 사용됩니다. GAN (Generative Adversarial Network)과 같은 생성 모델은 새로운 이미지를 생성하고, 일러스트레이션 및 아트워크를 자동으로 생성합니다.</p></li>
-<li><p>음성 합성: 생성 모델은 음성을 합성하거나 음성 억양을 변경하여 음성 텍스트를 생성합니다. 음성 합성을 통해 특정 화자의 음성을 다른 화자의 음성으로 변환할 수 있습니다.</p></li>
-<li><p>의료 분야: 생성 모델은 의료 영상 데이터를 분석하여 질병 진단 및 예측에 사용됩니다. 새로운 의약품 및 분자를 디자인하고 최적화하는 데 활용됩니다.</p></li>
-<li><p>예술 및 창작: 생성 모델은 음악, 시, 회화, 조각 및 기타 예술 작품을 생성하는 데 사용됩니다. 작가, 화가, 음악가 등은 생성 모델을 활용하여 창작 프로세스를 지원합니다.</p></li>
-</ol>
+<section id="윈도우에서-우분투-공유폴더-접근하기" class="level2">
+<h2 class="anchored" data-anchor-id="윈도우에서-우분투-공유폴더-접근하기">윈도우에서 우분투 공유폴더 접근하기</h2>
+<p>윈도우에서는 우분투에 생성된 SAMBA 공유폴더에 접근할 수 있습니다. 접근할 공유폴더가 생성된 우분투의 ip정보를 확인합니다. 우분투에서 <code>ip a</code>명령을 사용하면 우분투 서버의 ip주소를 확인할 수 있습니다. 예시로 작성한 아래 코드에선 <code>192.123.123.123</code>이 우분투 서버 주소입니다.</p>
+<pre><code>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp4s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 74:11:11:11:11:f0 brd ff:ff:ff:ff:ff:ff
+    inet 192.123.123.123/24 brd 192.123.123.255 scope global dynamic noprefixroute enp4s0
+       valid_lft 78753sec preferred_lft 78753sec
+    inet6 fe80::e78b:acd3:ea2a:cafb/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever</code></pre>
+<p>윈도우 탐색기에서 <code>\\192.123.123.123</code> 주소를 입력하면 삼바 공유폴더로 설정한 폴더가 보이고 선택 시 설정한 SAMBA 유저명과 암호로 접속 가능합니다.</p>
 
 
-</section>
 </section>
 </section>
 
@@ -828,17 +875,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">23년 허깅페이스 헤커톤 운영후기</span>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">ChatGPT3.5와 ChatGPT4의 차이점</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html" class="pagination-link">
-        <span class="nav-page-text">ChatGPT3.5와 ChatGPT4의 차이점</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="pagination-link">
+        <span class="nav-page-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

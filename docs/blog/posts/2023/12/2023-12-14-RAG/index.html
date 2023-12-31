@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-12-22">
-<meta name="description" content="Google Gemeni API Key 얻기">
+<meta name="dcterms.date" content="2023-12-14">
+<meta name="description" content="RAG(Retrieval Argumented Generation) 정리하기">
 
-<title>BookShelf - Google Gemeni API Key 얻기</title>
+<title>BookShelf - RAG(Retrieval Argumented Generation) 정리하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -67,8 +33,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -162,7 +127,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-21-mysql-filtering text/index.html">Google Gemeni API Key 얻기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html">12</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html">RAG(Retrieval Argumented Generation) 정리하기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -194,110 +159,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Histogram Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto Callout Block</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Dash로 Table 표시하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Subpolt 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Animation 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Axis 포멧 변경하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Treemap 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Bubble chart 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Rador 차트 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 데이터 전처리</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly 3D Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Scatter Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Time Series 날짜 범위 UI 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 데이터프레임 머지</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 중복 데이터 제거하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pandas 모든 컬럼이 NaN일 때만 삭제하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Line Plot만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Box Plot만들기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -308,14 +171,116 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-23-plotly-dynamic-table/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Rador 차트 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Axis 포멧 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly 마커 모양 변경하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 데이터프레임 머지</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Histogram Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 모든 컬럼이 NaN일 때만 삭제하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Time Series 날짜 범위 UI 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 중복 데이터 제거하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/09/2023-09-12-markdown/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Markdown문법 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Bubble chart 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto Callout Block</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-scatterplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Scatter Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Animation 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Box Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-24-plotly-dash/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Dash로 Table 표시하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 데이터 전처리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Treemap 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Subpolt 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Line Plot만들기</span></a>
   </div>
 </li>
       </ul>
@@ -331,32 +296,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 불릿차트</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotly Funnel(깔대기) 차트 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Zoom Disable하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly Hover 설정하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -367,8 +314,26 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plotly 불릿차트</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Hover 설정하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Zoom Disable하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
   </div>
 </li>
       </ul>
@@ -384,68 +349,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AWS 호스팅 EC2 와 Lightsail의 차이</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">mkfifo를 이용한 IPC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">python datetime 사용법 정리</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">airflow postgresoperator 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pymongo 명령어 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">wsl2에 docker 설치하기</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-13-mongodb/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -456,8 +367,62 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-dbever/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DB를 편리하기 보기, dbever</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">python datetime 사용법 정리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">airflow postgresoperator 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-14-pymongo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pymongo 명령어 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AWS 호스팅 EC2 와 Lightsail의 차이</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">wsl2에 docker 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
   </div>
 </li>
       </ul>
@@ -473,20 +438,20 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-21-mysql-filtering text/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Google Gemeni API Key 얻기</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vite를 이용한 react 개발환경 세팅</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-06-mysql/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -497,8 +462,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-03-vite-react/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">vite를 이용한 react 개발환경 세팅</span></a>
+  <a href="../../../../../../docs/blog/posts/2023/12/2023-12-14-RAG/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">RAG(Retrieval Argumented Generation) 정리하기</span></a>
   </div>
 </li>
       </ul>
@@ -515,23 +480,21 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#google-gemeni-api-key-얻기" id="toc-google-gemeni-api-key-얻기" class="nav-link active" data-scroll-target="#google-gemeni-api-key-얻기">Google Gemeni API Key 얻기</a>
+  <li><a href="#ragretrieval-argumented-generation-정리하기" id="toc-ragretrieval-argumented-generation-정리하기" class="nav-link active" data-scroll-target="#ragretrieval-argumented-generation-정리하기">RAG(Retrieval Argumented Generation) 정리하기</a>
   <ul class="collapse">
-  <li><a href="#google-gemini는-무엇인가요" id="toc-google-gemini는-무엇인가요" class="nav-link" data-scroll-target="#google-gemini는-무엇인가요">Google Gemini는 무엇인가요?</a></li>
-  <li><a href="#gemini-api키-만들기" id="toc-gemini-api키-만들기" class="nav-link" data-scroll-target="#gemini-api키-만들기">Gemini API키 만들기</a></li>
-  <li><a href="#gemini-api키-python에서-사용하기" id="toc-gemini-api키-python에서-사용하기" class="nav-link" data-scroll-target="#gemini-api키-python에서-사용하기">Gemini API키 python에서 사용하기</a></li>
+  <li><a href="#rag가-무엇인가요" id="toc-rag가-무엇인가요" class="nav-link" data-scroll-target="#rag가-무엇인가요">RAG가 무엇인가요?</a></li>
+  <li><a href="#langchain은-무엇인가요" id="toc-langchain은-무엇인가요" class="nav-link" data-scroll-target="#langchain은-무엇인가요">LangChain은 무엇인가요?</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-21-mysql-filtering text/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/books/edit/main/website/docs/blog/posts/2023/12/2023-12-14-RAG/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Google Gemeni API Key 얻기</h1>
-<p class="subtitle lead">Google Gemeni API Key 얻기</p>
+<h1 class="title">RAG(Retrieval Argumented Generation) 정리하기</h1>
+<p class="subtitle lead">RAG(Retrieval Argumented Generation) 정리하기</p>
   <div class="quarto-categories">
     <div class="quarto-category">AI</div>
   </div>
@@ -539,7 +502,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Google Gemeni API Key 얻기
+    RAG(Retrieval Argumented Generation) 정리하기
   </div>
 </div>
 
@@ -556,7 +519,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 22, 2023</p>
+      <p class="date">December 14, 2023</p>
     </div>
   </div>
   
@@ -566,94 +529,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="google-gemeni-api-key-얻기" class="level1">
-<h1>Google Gemeni API Key 얻기</h1>
-<p>Google Gemini에 대해서 알아보고 API키를 사용하는 방법을 정리합니다.</p>
-<section id="google-gemini는-무엇인가요" class="level2">
-<h2 class="anchored" data-anchor-id="google-gemini는-무엇인가요">Google Gemini는 무엇인가요?</h2>
-<p>Google Gemini는 Google DeepMind가 개발한 고도로 진보된 다중모달 AI 모델입니다. 텍스트, 코드, 오디오, 이미지 및 비디오와 같은 다양한 유형의 정보를 처리하고 이해할 수 있는 능력을 갖추고 있어, 기존의 많은 AI 모델보다 독특하고 다재다능합니다.</p>
-<p>이 모델은 Ultra, Pro, Nano라는 세 가지 버전으로 제공되며, 각각 다른 복잡성과 장치 호환성에 맞게 맞춤화되어 있습니다. Gemini Ultra는 가장 복잡한 작업을 위해 설계된 가장 큰 모델입니다. Gemini Pro는 다양한 응용 프로그램에서 확장 가능한 범위의 작업에 최적화되어 있습니다. Gemini Nano는 스마트폰과 같은 장치에서의 작업을 위해 고안된 가장 효율적인 모델입니다​. Gemini의 주요 강점 중 하나는 다양한 AI 벤치마크에서의 성능입니다. 특히 MMLU 벤치마크와 같은 테스트에서 인간 전문가를 능가하는 결과를 보여주었습니다.</p>
+<section id="ragretrieval-argumented-generation-정리하기" class="level1">
+<h1>RAG(Retrieval Argumented Generation) 정리하기</h1>
+<section id="rag가-무엇인가요" class="level2">
+<h2 class="anchored" data-anchor-id="rag가-무엇인가요">RAG가 무엇인가요?</h2>
+<p>“Retrieval-Augmented Generation” (RAG)는 자연어 처리 분야에서 사용되는 기술로, 특히 질문에 대한 답변이나 문장 생성과 같은 작업을 수행할 때 기존의 텍스트 생성 모델과 정보 검색을 결합하는 방법입니다. RAG는 크게 두 가지 주요 구성 요소로 나눌 수 있습니다: 정보 검색(retrieval)과 생성(generation).</p>
+<p>정보 검색 (Retrieval): 이 단계에서는 주어진 질문이나 입력에 가장 관련이 높은 문서나 데이터를 검색합니다. 이 과정은 대규모의 데이터베이스나 문서 집합에서 특정 키워드나 문맥에 기반하여 가장 적절한 정보를 찾는 것을 포함합니다.</p>
+<p>생성 (Generation): 검색된 정보를 바탕으로, 언어 모델이 자연스러운, 일관된 답변이나 문장을 생성합니다. 이 단계에서는 전통적인 언어 모델링 기법이 사용되며, 검색된 결과를 참조하여 보다 정확하고 상세한 정보를 제공하는 데 도움이 됩니다.</p>
+<p>RAG의 핵심은 정보 검색과 생성 두 부분을 통합하여, 단순한 텍스트 생성을 넘어서 사용자의 질문이나 요구에 맞는 구체적이고 상세한 답변을 제공하는 것입니다. 이 기술은 질문-답변 시스템, 챗봇, 기사 생성, 요약 생성 등 다양한 분야에서 활용됩니다.</p>
+<p>RAG 시스템의 성능은 검색하는 데이터베이스의 질과 크기, 그리고 언어 모델의 능력에 크게 의존합니다. 이러한 시스템은 대량의 정보에 접근하고, 그 정보를 바탕으로 사용자에게 보다 정확하고 유용한 답변을 제공할 수 있는 잠재력을 가지고 있습니다</p>
 </section>
-<section id="gemini-api키-만들기" class="level2">
-<h2 class="anchored" data-anchor-id="gemini-api키-만들기">Gemini API키 만들기</h2>
-<p>Gemeni API를 사용할 수 있도록 <a href="https://ai.google.dev/">Google Gemini API</a> 페이지로 이동합니다. <img src="images/paste-1.png" class="img-fluid"></p>
-<p>홈페이지에 들어가서 약관에 동의하면 Gemini를 사용할 수 있는 <code>Use Google AI Studio</code>, <code>Develop in your own environment</code> 두 가지 방법을 가이드 합니다. API를 생성하기 위해서 <code>Develop in your own environment</code>와 <code>Create API key in new project</code>를 선택합니다. 생성된 API키가 노출되지 않도록 잘 저장합니다.</p>
-</section>
-<section id="gemini-api키-python에서-사용하기" class="level2">
-<h2 class="anchored" data-anchor-id="gemini-api키-python에서-사용하기">Gemini API키 python에서 사용하기</h2>
-<p>API를 파이썬에서 사용하기 위해서 라이브러리를 설치합니다.</p>
-<pre class="{bash}"><code>pip install google-generativeai</code></pre>
-<p>API키를 코드에 바로 사용하는 경우 API키가 노출될 수 있습니다. 환경변수에 KEY를 저장하고 환경변수를 이용해서 API키를 사용합니다. 환경변수(Environment Variable)는 운영 체제에서 사용되는 변수로, 프로그램이나 쉘(shell)이 실행되는 환경에 관한 정보를 포함합니다.</p>
-<table class="table">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 61%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>운영 체제</th>
-<th>명령어</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Windows</td>
-<td><code>set API_KEY=12345678910</code></td>
-<td>Windows에서는 <code>set</code> 명령어를 사용하여 <code>API_KEY</code>라는 환경변수에 ‘12345678910’ 값을 설정합니다.</td>
-</tr>
-<tr class="even">
-<td>Ubuntu</td>
-<td><code>export API_KEY=12345678910</code></td>
-<td>Ubuntu에서는 <code>export</code> 명령어로 같은 환경변수를 설정합니다. 이 명령어는 터미널에서 사용됩니다.</td>
-</tr>
-</tbody>
-</table>
-<p>아래는 API 키가 <code>12345678910</code>인 경우 환경변수를 설정하는 코드입니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">API_KEY</span><span class="op">=</span>12345678910</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>이제 API키를 이용하여 간단한 테스트를 진행합니다. API통해 사용할 수 있는 모델 정보를 확인합니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> google.generativeai <span class="im">as</span> genai</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>GOOGLE_API_KEY<span class="op">=</span>os.getenv(<span class="st">'GOOGLE_API_KEY'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>genai.configure(api_key<span class="op">=</span>GOOGLE_API_KEY)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> model <span class="kw">in</span> genai.list_models():</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="st">'generateContent'</span> <span class="kw">in</span> model.supported_generation_methods:</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(model.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">models/gemini-pro</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">models/gemini-pro-vision</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>위와 같이 <code>gemini-pro</code>와 <code>gemini-pro-vision</code>을 사용할 수 있습니다. Text 입력을 사용하는 <code>gemini-pro</code>를 사용합니다.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> genai.GenerativeModel(<span class="st">'gemini-pro'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> model.generate_content(<span class="st">"google의 AI gemini 에 대해서 알려줘"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>출력은 <code>Markdown</code>으로 표현됩니다. markdown 형식을 표현하기 위해서 <code>to_markdown()</code>함수를 사용합니다.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> to_markdown(text):</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  text <span class="op">=</span> text.replace(<span class="st">'•'</span>, <span class="st">'  *'</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Markdown( textwrap.indent(text, <span class="st">'&gt; '</span>, predicate<span class="op">=</span><span class="kw">lambda</span> _: <span class="va">True</span>) )</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>to_markdown(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p>구글의 AI 제미니(Gemini)는 제품의 전반적인 품질과 사용자 경험을 개선하기 위해 머신 러닝을 사용하는 AI 도구입니다. 제미니는 제품 테스터와 엔지니어가 거의 노력 없이 수백만 개의 자동화된 테스트를 실행하고, 문제를 식별하고, 이러한 문제를 해결할 수 있도록 돕습니다. 제미니는 다음과 같은 주요 기능을 제공합니다.</p>
-<ul>
-<li><strong>자동화된 테스트:</strong> 제미니는 웹사이트, 모바일 앱, 하드웨어 제품을 포함한 다양한 유형의 제품에 대해 자동화된 테스트를 수행할 수 있습니다. 제미니는 사용자 입력, 인터페이스 요소, 성능 등 다양한 요소를 테스트할 수 있습니다.</li>
-<li><strong>문제 식별:</strong> 제미니는 테스트 결과를 분석하고 문제를 식별합니다. 이러한 문제에는 버그, 성능 문제, 사용성 문제가 포함될 수 있습니다.</li>
-<li><strong>문제 해결:</strong> 제미니는 문제를 식별한 후 해결할 수 있는 권장 사항을 제공합니다. 이러한 권장 사항은 코드 변경, 구성 변경 또는 사용자 인터페이스 변경일 수 있습니다.</li>
-</ul>
-<p>제미니는 다양한 업계에서 광범위한 제품을 테스트하는 데 사용되고 있습니다. 예를 들어, 제미니는 구글의 자체 제품인 안드로이드, 크롬, 구글 픽셀을 테스트하는 데 사용됩니다. 제미니는 또한 삼성, LG, 페이스북, 마이크로소프트 등의 기업에서 사용됩니다.</p>
-<p>제미니는 제품의 전반적인 품질과 사용자 경험을 개선하는 데 도움이 되는 강력한 도구입니다. 제미니는 자동화된 테스트, 문제 식별 및 문제 해결을 통해 제품 테스터와 엔지니어가 제품의 품질을 보다 빠르고 효율적으로 개선할 수 있도록 도와줍니다.</p>
-</blockquote>
-</section>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
-<ol type="1">
-<li>https://ai.google.dev/tutorials/python_quickstart</li>
-</ol>
+<section id="langchain은-무엇인가요" class="level2">
+<h2 class="anchored" data-anchor-id="langchain은-무엇인가요">LangChain은 무엇인가요?</h2>
+<p>LangChain은 언어 모델과 에이전트의 개발 및 분석을 용이하게 하는 다기능 파이썬 라이브러리입니다. 이 라이브러리는 특히 응용 프로그램에서 Retrieval-Augmented Generation (RAG) 패턴을 구현하는 데 유용합니다. LangChain을 사용하면 “문서” 객체를 통해 여러 다른 소스에서 온 데이터를 정규화할 수 있으며, 이는 다양한 체인에서 데이터를 구조화된 방식으로 처리하고 전달하는 데 필수적입니다.</p>
+<p>LangChain의 핵심 아이디어는 AI 행동을 특정 순서대로 배열하여 처리 파이프라인을 만드는 것입니다. RAG 패턴의 맥락에서는 사용자가 질문을 제출하는 것으로 시작하여, 임베딩 생성, 추가 맥락을 위한 벡터 데이터베이스 조회, 그리고 마지막으로 언어 모델을 위한 프롬프트 생성의 순서를 따릅니다. LangChain의 “체인” 구성은 이러한 단계들을 특정 구성으로 연결하여 처리 파이프라인의 원활한 흐름과 오류 처리를 보장합니다.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -894,14 +786,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-05-crontab/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">23년 허깅페이스 헤커톤 운영후기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html" class="pagination-link">
-        <span class="nav-page-text">23년 허깅페이스 헤커톤 운영후기</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
