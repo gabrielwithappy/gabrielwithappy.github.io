@@ -2,6 +2,7 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/2024/01/2024-01-03-javascript-defer/index.html",
       "/docs/blog/posts/2023/12/2023-12-31-asyncio/index.html",
       "/docs/blog/posts/2023/12/2023-12-31-samba/index.html",
       "/docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html",
