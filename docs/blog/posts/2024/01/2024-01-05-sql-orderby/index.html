@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-10-09">
-<meta name="description" content="Github Pull Request 템플릿을 적용하는 방법을 정리합니다.">
+<meta name="dcterms.date" content="2024-01-05">
+<meta name="description" content="SQL 정렬 명령 order by">
 
-<title>BookShelf - Github Pull Request 템플릿 적용하기</title>
+<title>BookShelf - SQL 정렬 명령 order by</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +67,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../../../">
-<link href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" rel="next">
-<link href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" rel="prev">
+<link href="../../../../../../docs/blog/posts/2024/01/2024-01-03-javascript-defer/index.html" rel="next">
+<link href="../../../../../../docs/blog/posts/2023/12/2023-12-31-asyncio/index.html" rel="prev">
 <script src="../../../../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +162,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2023</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html">10</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html">Github Pull Request 템플릿 적용하기</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2024</li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2024/01/2024-01-05-sql-orderby/index.html">01</a></li><li class="breadcrumb-item"><a href="../../../../../../docs/blog/posts/2024/01/2024-01-05-sql-orderby/index.html">SQL 정렬 명령 order by</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -276,13 +310,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">10</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html" class="sidebar-item-text sidebar-link">
@@ -321,7 +355,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../../docs/blog/posts/2023/10/2023-10-09-github-template/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
   </div>
 </li>
@@ -494,16 +528,16 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
  <span class="menu-text">01</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../docs/blog/posts/2024/01/2024-01-05-sql-orderby/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../docs/blog/posts/2024/01/2024-01-05-sql-orderby/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SQL 정렬 명령 order by</span></a>
   </div>
 </li>
@@ -527,29 +561,31 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#github-pull-request-템플릿-적용하기" id="toc-github-pull-request-템플릿-적용하기" class="nav-link active" data-scroll-target="#github-pull-request-템플릿-적용하기">Github Pull Request 템플릿 적용하기</a>
+  <li><a href="#sql-레코드-정렬하기" id="toc-sql-레코드-정렬하기" class="nav-link active" data-scroll-target="#sql-레코드-정렬하기">SQL 레코드 정렬하기</a>
   <ul class="collapse">
-  <li><a href="#pull-request-탬플릿-파일-생성" id="toc-pull-request-탬플릿-파일-생성" class="nav-link" data-scroll-target="#pull-request-탬플릿-파일-생성">Pull Request 탬플릿 파일 생성</a></li>
-  <li><a href="#pull-request-템플릿-결과-확인" id="toc-pull-request-템플릿-결과-확인" class="nav-link" data-scroll-target="#pull-request-템플릿-결과-확인">Pull Request 템플릿 결과 확인</a></li>
+  <li><a href="#가상-데이터-구조" id="toc-가상-데이터-구조" class="nav-link" data-scroll-target="#가상-데이터-구조">가상 데이터 구조</a></li>
+  <li><a href="#전공major을-기준으로-오름차순-정렬" id="toc-전공major을-기준으로-오름차순-정렬" class="nav-link" data-scroll-target="#전공major을-기준으로-오름차순-정렬">전공(Major)을 기준으로 오름차순 정렬</a></li>
+  <li><a href="#나이age를-기준으로-내림차순-정렬" id="toc-나이age를-기준으로-내림차순-정렬" class="nav-link" data-scroll-target="#나이age를-기준으로-내림차순-정렬">나이(Age)를 기준으로 내림차순 정렬</a></li>
+  <li><a href="#한개이상-정보를-사용하여-정렬하기" id="toc-한개이상-정보를-사용하여-정렬하기" class="nav-link" data-scroll-target="#한개이상-정보를-사용하여-정렬하기">한개이상 정보를 사용하여 정렬하기</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/docs/blog/posts/2023/10/2023-10-09-github-template/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/docs/blog/posts/2024/01/2024-01-05-sql-orderby/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Github Pull Request 템플릿 적용하기</h1>
-<p class="subtitle lead">Github Pull Request 템플릿 적용하기</p>
+<h1 class="title">SQL 정렬 명령 order by</h1>
+<p class="subtitle lead">SQL 정렬 명령 order by</p>
   <div class="quarto-categories">
-    <div class="quarto-category">DevOps</div>
+    <div class="quarto-category">Database</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Github Pull Request 템플릿을 적용하는 방법을 정리합니다.
+    SQL 정렬 명령 order by
   </div>
 </div>
 
@@ -566,7 +602,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 9, 2023</p>
+      <p class="date">January 5, 2024</p>
     </div>
   </div>
   
@@ -576,23 +612,174 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="github-pull-request-템플릿-적용하기" class="level1">
-<h1>Github Pull Request 템플릿 적용하기</h1>
-<p>Github의 Pull Request 진행 시 적용되는 문서 탬플릿을 작성하고 적용하는 방법을 정리합니다.</p>
-<section id="pull-request-탬플릿-파일-생성" class="level2">
-<h2 class="anchored" data-anchor-id="pull-request-탬플릿-파일-생성">Pull Request 탬플릿 파일 생성</h2>
-<p>Pull Request 탬플릿을 작성하기 위해서 탬플릿 문서를 작성합니다.</p>
-<p><img src="images/paste-1.png" class="img-fluid"></p>
-<p>문서 생성을 위해서 위와 같이 Github 레포지토리 상단의 <code>Add file</code> &gt; <code>Create new file</code> 버튼을 선택합니다.</p>
-<p><img src="images/paste-3.png" class="img-fluid"></p>
-<p>버튼을 선택하면 파일의 내용과 파일명을 저장할 수 있는 Text Editor 페이지가 위와 같이 생성됩니다. 탬플릿 문서를 특정 위치에 저장됩니다. 이를 위해서 레포지토리 루트폴더에 <code>.github</code> 폴더를 만들고 이 폴더에 <code>pull_request_template.md</code> 파일을 생성합니다.</p>
-<p>이 문서 내부에 작성하는 내용은 <code>Pull Request(PR)</code> 을 작성하는 commiter가 PR을 작성하면 이 템플릿의 내용을 Text Editor에 자동으로 추가됩니다. 필요한 내용을 모두 작성했다면 <code>Commit chages</code> 버튼을 눌러 수정한 내용을 저장합니다.</p>
+<section id="sql-레코드-정렬하기" class="level1">
+<h1>SQL 레코드 정렬하기</h1>
+<p>이 글에서는 SQL의 ORDER BY 구문을 사용하는 실제 예시를 살펴보겠습니다. 먼저, 간단한 가상의 데이터베이스 정보를 설정하고, 이를 기반으로 ORDER BY 구문을 사용하는 다양한 쿼리와 그 결과를 보여드리겠습니다. 이를 통해, ORDER BY 구문의 사용방법을 정리합니다.</p>
+<section id="가상-데이터-구조" class="level2">
+<h2 class="anchored" data-anchor-id="가상-데이터-구조">가상 데이터 구조</h2>
+<p>가상 데이터베이스 “StudentDB”를 사용하여 ORDER BY의 다중 정렬 기능을 살펴보겠습니다. “StudentDB”는 ‘Student’ 테이블을 포함하며, 이름, 나이, 전공 등의 정보를 담고 있습니다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Major</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Jim</td>
+<td>20</td>
+<td>Computer Science</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Yuna</td>
+<td>19</td>
+<td>Mathematics</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Hoseok</td>
+<td>20</td>
+<td>Physics</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Seong</td>
+<td>21</td>
+<td>English Literature</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Min</td>
+<td>20</td>
+<td>Biology</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="pull-request-템플릿-결과-확인" class="level2">
-<h2 class="anchored" data-anchor-id="pull-request-템플릿-결과-확인">Pull Request 템플릿 결과 확인</h2>
-<p>PR을 생성할 때 새롭게 작성한 템플릿 내용이 작성되었는 지 확인합니다. 이를 위해서 기본 레포지토리를 <code>Fork</code>해서 수정 내용을 작성하고 <code>Pull Requset</code> 를 진행합니다.</p>
-<p><img src="images/paste-6.png" class="img-fluid"></p>
-<p>위와같이 PR을 생성하면 템플릿으로 작성한 내용이 기본적으로 제공됩니다. 레포지토리에 머지를 요청할 때 전달할 내용과 확인이 필요한 내용을 탬플릿으로 작성하면 PR리뷰에 필요한 내용을 잘 확인할 수 있습니다.</p>
+<section id="전공major을-기준으로-오름차순-정렬" class="level2">
+<h2 class="anchored" data-anchor-id="전공major을-기준으로-오름차순-정렬">전공(Major)을 기준으로 오름차순 정렬</h2>
+<p>전공 컬럼을 오름차순으로 정렬하는 코드입니다. 전체 컬럼 정보를 <code>Student</code> 테이블에서 선택하고 <code>Major</code>컬럼을 오름차순으로 정렬합니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM Student</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ORDER</span> BY Major ASC<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Major</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Jim</td>
+<td>20</td>
+<td>Computer Science</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Min</td>
+<td>20</td>
+<td>Biology</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Seong</td>
+<td>21</td>
+<td>English Literature</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Yuna</td>
+<td>19</td>
+<td>Mathematics</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Hoseok</td>
+<td>20</td>
+<td>Physics</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="나이age를-기준으로-내림차순-정렬" class="level2">
+<h2 class="anchored" data-anchor-id="나이age를-기준으로-내림차순-정렬">나이(Age)를 기준으로 내림차순 정렬</h2>
+<p>나이 컬럼을 내림차순으로 정렬하는 코드입니다. <code>Student</code> 테이블에서 <code>Name</code>, <code>Age</code>컬럼을 선택하고 <code>Age</code>컬럼을 내림차순으로 정렬합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> Name, Age FROM Student</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ORDER</span> BY Age DESC<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Seong</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>Jim</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Hoseok</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>Min</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Yuna</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="한개이상-정보를-사용하여-정렬하기" class="level2">
+<h2 class="anchored" data-anchor-id="한개이상-정보를-사용하여-정렬하기">한개이상 정보를 사용하여 정렬하기</h2>
+<p>나이로 오름차순 정렬 후, 동일 나이일 경우 이름으로 내림차순 정렬하는 코드입니다. <code>Name</code>과 <code>Age</code> 컬럼을 선택했습니다. 나이가 <code>20</code>인 <code>Min</code>, <code>Jim</code>, <code>Hosok</code>은 내림차순으로 정렬됩니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> Name, Age FROM Student</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ORDER</span> BY Age ASC, Name DESC<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yuna</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>Min</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Jim</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>Hoseok</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Seong</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -836,13 +1023,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../../../docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span>
+      <a href="../../../../../../docs/blog/posts/2023/12/2023-12-31-asyncio/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">코루틴(coroutine)과 이벤트 루프</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../../../docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html" class="pagination-link">
-        <span class="nav-page-text">mkfifo를 이용한 IPC</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../../../../docs/blog/posts/2024/01/2024-01-03-javascript-defer/index.html" class="pagination-link">
+        <span class="nav-page-text">Javascript의 defer 속성은 왜 사용하는가?</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
