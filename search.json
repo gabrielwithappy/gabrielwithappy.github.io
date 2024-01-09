@@ -763,11 +763,18 @@
     "text": "&lt;/div&gt;\n\n&lt;!-- &lt;/table&gt; --&gt;\n&lt;!-- ::: --&gt;\n&lt;!--\n &lt;iframe src=\"iframe.html\" id=\"iframe\" onload=\"Height();\" frameborder=\"0\" scrolling=\"no\" style=\"overflow-x:hidden; overflow:auto; width:100%; min-height:500px;\"&gt; --&gt;"
   },
   {
-    "objectID": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
-    "href": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
-    "title": "Korean Study Book",
+    "objectID": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
+    "href": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
+    "title": "HuggingFace Examples",
     "section": "",
-    "text": "It is the book for Korean Study"
+    "text": "허깅페이스 예제코드를 정리하는 온라인 책입니다."
+  },
+  {
+    "objectID": "docs/book_blog/posts/2024-01-09-elementary-english-vocabulary_2/index.html",
+    "href": "docs/book_blog/posts/2024-01-09-elementary-english-vocabulary_2/index.html",
+    "title": "초등 필수 영단어 따라쓰기 노트 2 (mp3)",
+    "section": "",
+    "text": "초등 필수 영단어 따라쓰기 노트 2 (mp3) 는 Happy House의 초등 필수 영단어 따라쓰기 노트 2의 MP3파일을 정리합니다."
   },
   {
     "objectID": "docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
@@ -882,11 +889,193 @@
     "text": "시계열 데이터 시각화는 시계열 데이터를 시각화하는 방법을 정리합니다."
   },
   {
-    "objectID": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-    "href": "docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-    "title": "HuggingFace Examples",
+    "objectID": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
+    "href": "docs/book_blog/posts/2023-08-27-korean-study/index.html",
+    "title": "Korean Study Book",
     "section": "",
-    "text": "허깅페이스 예제코드를 정리하는 온라인 책입니다."
+    "text": "It is the book for Korean Study"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-1",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-1",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 1",
+    "text": "Track 1"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-2",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-2",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 2",
+    "text": "Track 2"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-3",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-3",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 3",
+    "text": "Track 3"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-4",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-4",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 4",
+    "text": "Track 4"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-5",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-5",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 5",
+    "text": "Track 5"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-6",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-6",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 6",
+    "text": "Track 6"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-7",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-7",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 7",
+    "text": "Track 7"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-8",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-8",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 8",
+    "text": "Track 8"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-9",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-9",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 9",
+    "text": "Track 9"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-10",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-10",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 10",
+    "text": "Track 10"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-11",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-11",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 11",
+    "text": "Track 11"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-12",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-12",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 12",
+    "text": "Track 12"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-13",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-13",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 13",
+    "text": "Track 13"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-14",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-14",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 14",
+    "text": "Track 14"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-15",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-15",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 15",
+    "text": "Track 15"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-16",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-16",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 16",
+    "text": "Track 16"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-17",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-17",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 17",
+    "text": "Track 17"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-18",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-18",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 18",
+    "text": "Track 18"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-19",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-19",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 19",
+    "text": "Track 19"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-20",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-20",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 20",
+    "text": "Track 20"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-21",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-21",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 21",
+    "text": "Track 21"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-22",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-22",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 22",
+    "text": "Track 22"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-23",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-23",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 23",
+    "text": "Track 23"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-24",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-24",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 24",
+    "text": "Track 24"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-25",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-25",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 25",
+    "text": "Track 25"
+  },
+  {
+    "objectID": "docs/bookshelf/elementry-english-voca-2/index.html#track-26",
+    "href": "docs/bookshelf/elementry-english-voca-2/index.html#track-26",
+    "title": "초등필수영단어따라쓰기 노트2 (mp3)",
+    "section": "Track 26",
+    "text": "Track 26"
   },
   {
     "objectID": "docs/bookshelf/data_visualization/time_series_analysis.html",
