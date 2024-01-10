@@ -2,6 +2,7 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/2024/01/2024-01-10-javascript-fileupload/index.html",
       "/docs/blog/posts/2024/01/2024-01-05-sql-orderby/index.html",
       "/docs/blog/posts/2024/01/2024-01-03-javascript-defer/index.html",
       "/docs/blog/posts/2023/12/2023-12-31-asyncio/index.html",
@@ -56,7 +57,6 @@
   {
     "listing": "/docs/book_blog/index.html",
     "items": [
-      "/docs/book_blog/posts/2024-01-09-elementary-english-vocabulary_2/index.html",
       "/docs/book_blog/posts/2023-09-03-data-visualization/index.html",
       "/docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
       "/docs/book_blog/posts/2023-08-25-hf-examples/index.html",
