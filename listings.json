@@ -1,59 +1,5 @@
 [
   {
-    "listing": "/docs/blog/index.html",
-    "items": [
-      "/docs/blog/posts/2024/01/2024-01-05-sql-orderby/index.html",
-      "/docs/blog/posts/2024/01/2024-01-03-javascript-defer/index.html",
-      "/docs/blog/posts/2023/12/2023-12-31-asyncio/index.html",
-      "/docs/blog/posts/2023/12/2023-12-31-samba/index.html",
-      "/docs/blog/posts/2023/12/2023-12-23-gpt-version-compare/index.html",
-      "/docs/blog/posts/2023/12/2023-12-22-gemini-api/index.html",
-      "/docs/blog/posts/2023/12/2023-12-21-RAG/index.html",
-      "/docs/blog/posts/2023/12/2023-12-12-huggingface-hachathon23/index.html",
-      "/docs/blog/posts/2023/12/2023-12-06-mysql/index.html",
-      "/docs/blog/posts/2023/12/2023-12-05-crontab/index.html",
-      "/docs/blog/posts/2023/12/2023-12-03-vite-react/index.html",
-      "/docs/blog/posts/2023/11/2023-11-29-python-datetime/index.html",
-      "/docs/blog/posts/2023/11/2023-11-30-dataframe-with-dict/index.html",
-      "/docs/blog/posts/2023/11/2023-11-28-dbever/index.html",
-      "/docs/blog/posts/2023/11/2023-11-28-mongodb-service/index.html",
-      "/docs/blog/posts/2023/11/2023-11-27-ubuntu-docker-dockercompose/index.html",
-      "/docs/blog/posts/2023/11/2023-11-26-aws-ec2-ligtsail/index.html",
-      "/docs/blog/posts/2023/11/2023-11-20-moving-wsl/index.html",
-      "/docs/blog/posts/2023/11/2023-11-22-airflow-postgres/index.html",
-      "/docs/blog/posts/2023/11/2023-11-18-dockercompose-airflow/index.html",
-      "/docs/blog/posts/2023/11/2023-11-13-mongodb/index.html",
-      "/docs/blog/posts/2023/11/2023-11-15-pipe-mkfifo/index.html",
-      "/docs/blog/posts/2023/11/2023-11-15-wsl-docker/index.html",
-      "/docs/blog/posts/2023/11/2023-11-14-pymongo/index.html",
-      "/docs/blog/posts/2023/10/2023-10-09-github-template/index.html",
-      "/docs/blog/posts/2023/10/2023-10-08-plotly-line-shape/index.html",
-      "/docs/blog/posts/2023/10/2023-10-05-funnel-chart/index.html",
-      "/docs/blog/posts/2023/10/2023-10-04-disabling-pan-n-zoom/index.html",
-      "/docs/blog/posts/2023/10/2023-10-04-xtick-angle/index.html",
-      "/docs/blog/posts/2023/10/2023-10-03-bullet-chart/index.html",
-      "/docs/blog/posts/2023/10/2023-10-02-hover-mode/index.html",
-      "/docs/blog/posts/2023/09/2023-09-30-plotly-axis-style/index.html",
-      "/docs/blog/posts/2023/09/2023-09-28-styling-marker/index.html",
-      "/docs/blog/posts/2023/09/2023-09-25-plotly-timeseries-daterange/index.html",
-      "/docs/blog/posts/2023/09/2023-09-22-plotly-3dplot/index.html",
-      "/docs/blog/posts/2023/09/2023-09-22-plotly-lineplot/index.html",
-      "/docs/blog/posts/2023/09/2023-09-21-plotly-histogram/index.html",
-      "/docs/blog/posts/2023/09/2023-09-18-plotly-animation/index.html",
-      "/docs/blog/posts/2023/09/2023-09-19-plotly-boxplot/index.html",
-      "/docs/blog/posts/2023/09/2023-09-16-subplots-in-dash/index.html",
-      "/docs/blog/posts/2023/09/2023-09-17-plotly-bubblechart/index.html",
-      "/docs/blog/posts/2023/09/2023-09-16-date-index/index.html",
-      "/docs/blog/posts/2023/09/2023-09-14-Dataframe-all-NaN/index.html",
-      "/docs/blog/posts/2023/09/2023-09-14-panda-dulicated-data/index.html",
-      "/docs/blog/posts/2023/09/2023-09-13-plotly-subplot/index.html",
-      "/docs/blog/posts/2023/09/2023-09-12-markdown/index.html",
-      "/docs/blog/posts/2023/09/2023-09-11-pandas-merge/index.html",
-      "/docs/blog/posts/2023/09/2023-09-10-quarto-callout/index.html",
-      "/docs/blog/posts/2023/09/2023-09-11-pandas-datatype-transform/index.html"
-    ]
-  },
-  {
     "listing": "/docs/book_blog/index.html",
     "items": [
       "/docs/book_blog/posts/2024-01-09-elementary-english-vocabulary_2/index.html",
@@ -62,6 +8,10 @@
       "/docs/book_blog/posts/2023-08-25-hf-examples/index.html",
       "/docs/book_blog/posts/2023-08-27-korean-study/index.html"
     ]
+  },
+  {
+    "listing": "/docs/blog/index.html",
+    "items": []
   },
   {
     "listing": "/docs/slide_blog/index.html",

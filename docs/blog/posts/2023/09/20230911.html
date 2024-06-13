@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2023-09-11">
+<meta name="description" content="Pandas 데이터프레임을 머지하는 방법을 정리합니다.">
 
-<title>BookShelf - Books</title>
+<title>BookShelf - Pandas 데이터프레임 머지</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../../">
+<script src="../../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,35 +96,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-N916ZQ0D0N"></script>
 
 <script type="text/javascript">
@@ -101,11 +107,9 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
-<link rel="alternate" type="application/rss+xml" title="BookShelf" href="index.xml"></head>
+<link rel="stylesheet" href="../../../../../styles.css">
+</head>
 
 <body class="nav-fixed">
 
@@ -114,7 +118,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -125,23 +129,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="../../../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docs/blog/index.html" rel="" target="">
+    <a class="nav-link" href="../../../../../docs/blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../docs/book_blog/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../../../docs/book_blog/index.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docs/slide_blog/index.html" rel="" target="">
+    <a class="nav-link" href="../../../../../docs/slide_blog/index.html" rel="" target="">
  <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link" href="../../../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -156,22 +160,51 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Language">Language <span class="quarto-category-count">(1)</span></div><div class="category" data-category="english">english <span class="quarto-category-count">(1)</span></div><div class="category" data-category="딥러닝">딥러닝 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="시각화">시각화 <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#테이터프레임-머지하기" id="toc-테이터프레임-머지하기" class="nav-link active" data-scroll-target="#테이터프레임-머지하기">테이터프레임 머지하기</a>
+  <ul class="collapse">
+  <li><a href="#데이터-로드하기" id="toc-데이터-로드하기" class="nav-link" data-scroll-target="#데이터-로드하기">데이터 로드하기</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/gabrielwithappy/gabrielwithappy.github.io/blob/main/website/docs/blog/posts/2023/09/20230911.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Books</h1>
-<p class="subtitle lead">다양한 온라인 북을 찾아보세요</p>
-</div>
+<h1 class="title">Pandas 데이터프레임 머지</h1>
+<p class="subtitle lead">Pandas 데이터프레임 머지하기</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Pandas</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Pandas 데이터프레임을 머지하는 방법을 정리합니다.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 11, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -179,167 +212,43 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
+<section id="테이터프레임-머지하기" class="level1">
+<h1>테이터프레임 머지하기</h1>
+<p>병합은 서로다른 데이터프레임 객체에 동일하게 존재하는 값을 통해 양쪽 데이터를 연관 지어 하나의 데이터프레임으로 모델링할 수 있는 유용한 방법입니다. 연습을 위해서 데이터를 준비합니다.</p>
+<p><code>Yahoo Finance</code>에서는 미국뿐 아니라 한국 주식에 대한 정보를 제공합니다. <code>KOSPI</code>주식 정보를 csv형태로 저장해서 데이터프레임 머지 연습에 사용할께요. <a href="https://finance.yahoo.com/quote/%5EKS11?p=%5EKS11&amp;.tsrc=fin-srch">Yahoo Finance</a>로 이동해서 <code>historica l data</code> 탭을 선택합니다.</p>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
+<p><code>Historical Data</code> 를 선택하면 위와 같이 <code>KOSPI</code> 에 대한 시계열 데이터를 얻을 수 있습니다. <code>download</code>를 눌러 다운로드하여 저장합니다. 혹은 [<a href="../../../../../website/docs/blog/posts/2023/09/2023-09-11-pandas-merge/KS11.csv">KS11.csv</a>]에서 다운로드 하세요.</p>
+<section id="데이터-로드하기" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-로드하기">데이터 로드하기</h2>
+<p>csv파일을 불러와서 데이터프레임 형태를 확인합니다. 시계열데이터의 경우 날짜정보를 데이터프레임의 <code>index</code>로 사용하면 편리합니다. <code>data</code>컬럼을 index로 설정합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>kospi <span class="op">=</span> pd.read_csv(<span class="st">"./^KS11.csv"</span>, index_col <span class="op">=</span><span class="st">'Date'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>kospi.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>날짜정보가 index로 설정된 데이터프레임을 생성했습니다. 이제 연결을 위한 새로운 데이터프레임을 생성합니다. 데이트 프레임을 연결할 정보를 <code>Ticker</code>라는 컬럼으로 설정하고 기존 데이터프레임의 <code>Volume</code>컬럼을 추가합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>kospi_volume <span class="op">=</span> pd.DataFrame ({<span class="st">'Ticker'</span>: <span class="st">'kospi'</span>, <span class="st">'Volume'</span> : kospi[<span class="st">'Volume'</span>]})</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>kospi_volume.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>2개의 데이터프레임이 함께 갖는 컬럼인 ’Ticker’를 통해서 병합을 진행하고 이를 통해서 <code>Volume</code>정보를 추가하려고 합니다. 올바르게 동작하는 지 확인하기 위해서 기존 데이터프레임의 <code>Volume</code> 컬럼을 삭제합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>kospi[<span class="st">'Ticker'</span>] <span class="op">=</span> <span class="st">'kospi'</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>kospi.pop(<span class="st">'Volume'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>kospi.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>Volume</code>컬럼이 삭제되었으니 병합을 진행합니다. <code>pd.merge()</code>함수를 사용하고 공통 컬럼인 <code>Ticker</code>컬럼을 전달합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(kospi, kospi_volume, on<span class="op">=</span><span class="st">'Ticker'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>merged_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>이제 새로운 <code>merged_df</code> 데이터프레임은 2개의 데이터프레임을 연결하여 <code>Volume</code>정보를 추가 하였습니다.</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="english" data-listing-date-sort="1725116400000" data-listing-file-modified-sort="1718238797387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="../../docs/book_blog/posts/2024-01-09-elementary-english-vocabulary_2/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../docs/book_blog/posts/2024-01-09-elementary-english-vocabulary_2/elemtry_note_2_cover.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-초등 필수 영단어 따라쓰기 노트 2 (mp3)
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('english'); return false;">
-english
-</div>
-</div>
-<div class="card-text listing-description">
-초등 필수 영단어 따라쓰기 노트 2 (mp3)
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Happy House
-</div>
-<div class="listing-date">
-Sep 1, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="시각화" data-listing-date-sort="1693666800000" data-listing-file-modified-sort="1699886593161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="../../docs/book_blog/posts/2023-09-03-data-visualization/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../docs/book_blog/posts/2023-09-03-data-visualization/data_visualization.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="deep learning glossary">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-시계열 데이터 시각화
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('시각화'); return false;">
-시각화
-</div>
-</div>
-<div class="card-text listing-description">
-시계열 데이터의 시각화 방법을 정리합니다.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-양성모
-</div>
-<div class="listing-date">
-Sep 3, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="딥러닝" data-listing-date-sort="1690038000000" data-listing-file-modified-sort="1699886593161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="../../docs/book_blog/posts/2023-07-23-dl-glossary/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../docs/book_blog/posts/2023-07-23-dl-glossary/glossary.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="deep learning glossary">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-딥러닝 용어 사전
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('딥러닝'); return false;">
-딥러닝
-</div>
-</div>
-<div class="card-text listing-description">
-딥러닝에 프로젝트에 사용되는 한국어 용어 사전
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-용어사전 기여자들
-</div>
-<div class="listing-date">
-Jul 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="딥러닝" data-listing-date-sort="1690038000000" data-listing-file-modified-sort="1699886593161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="../../docs/book_blog/posts/2023-08-25-hf-examples/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../docs/book_blog/posts/2023-08-25-hf-examples/huggingface.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-HuggingFace Examples
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('딥러닝'); return false;">
-딥러닝
-</div>
-</div>
-<div class="card-text listing-description">
-HuggingFace Example을 정리합니다.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Gabriel Yang
-</div>
-<div class="listing-date">
-Jul 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Language" data-listing-date-sort="1690038000000" data-listing-file-modified-sort="1699886593161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="../../docs/book_blog/posts/2023-08-27-korean-study/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../docs/book_blog/posts/2023-08-27-korean-study/korean.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Korean Study Book
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Language'); return false;">
-Language
-</div>
-</div>
-<div class="card-text listing-description">
-it collects information to learn Korean.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Gabriel Yang
-</div>
-<div class="listing-date">
-Jul 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -573,13 +482,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/docs/book_blog/index.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    <div class="nav-footer-center">gabrielwithhappy@gmail.com</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
