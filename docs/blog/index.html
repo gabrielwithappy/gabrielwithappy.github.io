@@ -71,9 +71,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 5,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -157,7 +158,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(42)</span></div><div class="category" data-category="AI">AI <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Data Visualization">Data Visualization <span class="quarto-category-count">(15)</span></div><div class="category" data-category="Database">Database <span class="quarto-category-count">(5)</span></div><div class="category" data-category="DevOps">DevOps <span class="quarto-category-count">(10)</span></div><div class="category" data-category="HuggingFace">HuggingFace <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Pandas">Pandas <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Web">Web <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -190,11 +191,1483 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     </div>
 </div>
 <div class="list quarto-listing-default">
-
+<div class="quarto-post image-right" data-index="0" data-categories="Database" data-listing-date-sort="1704380400000" data-listing-file-modified-sort="1718238797387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2024/01/20240105.html"> <img src="https://picsum.photos/id/115/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2024/01/20240105.html">
+<h3 class="no-anchor listing-title">
+SQL 정렬 명령 order by
+</h3>
+<div class="listing-subtitle">
+SQL 정렬 명령 order by
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Database'); return false;">
+Database
+</div>
+</div>
+<a href="../../docs/blog/posts/2024/01/20240105.html">
+<div class="listing-description">
+<p>SQL 정렬 명령 order by</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2024/01/20240105.html">
+<div class="listing-date">
+Jan 5, 2024
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Web" data-listing-date-sort="1704207600000" data-listing-file-modified-sort="1718238797377" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2024/01/20240103.html"> <img src="https://picsum.photos/id/213/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2024/01/20240103.html">
+<h3 class="no-anchor listing-title">
+Javascript의 defer 속성은 왜 사용하는가?
+</h3>
+<div class="listing-subtitle">
+Javascript의 defer 속성은 왜 사용하는가?
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Web'); return false;">
+Web
+</div>
+</div>
+<a href="../../docs/blog/posts/2024/01/20240103.html">
+<div class="listing-description">
+<p>Javascript의 defer 속성은 왜 사용하는가?</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2024/01/20240103.html">
+<div class="listing-date">
+Jan 3, 2024
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Python" data-listing-date-sort="1704034800000" data-listing-file-modified-sort="1718240062957" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231231.html"> <img src="https://picsum.photos/id/214/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231231.html">
+<h3 class="no-anchor listing-title">
+코루틴(coroutine)과 이벤트 루프
+</h3>
+<div class="listing-subtitle">
+코루틴(coroutine)과 이벤트 루프
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231231.html">
+<div class="listing-description">
+<p>코루틴(coroutine)과 이벤트 루프</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231231.html">
+<div class="listing-date">
+Jan 1, 2024
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="DevOps" data-listing-date-sort="1703948400000" data-listing-file-modified-sort="1718238797377" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231231-1.html"> <img src="https://picsum.photos/id/131/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231231-1.html">
+<h3 class="no-anchor listing-title">
+우분투와 윈도우 파일 공유하기 (samba)
+</h3>
+<div class="listing-subtitle">
+우분투와 윈도우 파일 공유하기 (samba)
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231231-1.html">
+<div class="listing-description">
+<p>우분투와 윈도우 파일 공유하기 (samba)</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231231-1.html">
+<div class="listing-date">
+Dec 31, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="AI" data-listing-date-sort="1703257200000" data-listing-file-modified-sort="1718238797377" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231223.html"> <img src="https://picsum.photos/id/123/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231223.html">
+<h3 class="no-anchor listing-title">
+ChatGPT3.5와 ChatGPT4의 차이점
+</h3>
+<div class="listing-subtitle">
+ChatGPT3.5와 ChatGPT4의 차이점
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('AI'); return false;">
+AI
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231223.html">
+<div class="listing-description">
+<p>ChatGPT3.5와 ChatGPT4의 차이점</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231223.html">
+<div class="listing-date">
+Dec 23, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="AI" data-listing-date-sort="1703170800000" data-listing-file-modified-sort="1718240003377" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231222.html"> <img data-src="https://picsum.photos/id/122/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231222.html">
+<h3 class="no-anchor listing-title">
+Google Gemeni API Key 얻기
+</h3>
+<div class="listing-subtitle">
+Google Gemeni API Key 얻기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('AI'); return false;">
+AI
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231222.html">
+<div class="listing-description">
+<p>Google Gemeni API Key 얻기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231222.html">
+<div class="listing-date">
+Dec 22, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="AI" data-listing-date-sort="1702479600000" data-listing-file-modified-sort="1718238797367" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231221.html"> <img data-src="https://picsum.photos/id/114/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231221.html">
+<h3 class="no-anchor listing-title">
+RAG(Retrieval Argumented Generation) 정리하기
+</h3>
+<div class="listing-subtitle">
+RAG(Retrieval Argumented Generation) 정리하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('AI'); return false;">
+AI
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231221.html">
+<div class="listing-description">
+<p>RAG(Retrieval Argumented Generation) 정리하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231221.html">
+<div class="listing-date">
+Dec 14, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="HuggingFace" data-listing-date-sort="1702306800000" data-listing-file-modified-sort="1718239815117" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231212.html"> <img data-src="https://picsum.photos/id/112/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231212.html">
+<h3 class="no-anchor listing-title">
+23년 허깅페이스 헤커톤 운영후기
+</h3>
+<div class="listing-subtitle">
+23년 허깅페이스 헤커톤 운영후기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('HuggingFace'); return false;">
+HuggingFace
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231212.html">
+<div class="listing-description">
+<p>23년 허깅페이스 헤커톤 운영후기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231212.html">
+<div class="listing-date">
+Dec 12, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="Database" data-listing-date-sort="1701788400000" data-listing-file-modified-sort="1718239768627" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231206.html"> <img data-src="https://picsum.photos/id/106/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231206.html">
+<h3 class="no-anchor listing-title">
+MySQL 도커로 설치하고 테스트 DB 사용하기
+</h3>
+<div class="listing-subtitle">
+MySQL 도커로 설치하고 테스트 DB 사용하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Database'); return false;">
+Database
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231206.html">
+<div class="listing-description">
+<p>MySQL 도커로 설치하고 테스트 DB 사용하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231206.html">
+<div class="listing-date">
+Dec 6, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="DevOps" data-listing-date-sort="1701702000000" data-listing-file-modified-sort="1718238797337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231205.html"> <img data-src="https://picsum.photos/id/221/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231205.html">
+<h3 class="no-anchor listing-title">
+crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신
+</h3>
+<div class="listing-subtitle">
+crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231205.html">
+<div class="listing-description">
+<p>crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231205.html">
+<div class="listing-date">
+Dec 5, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="Web" data-listing-date-sort="1701529200000" data-listing-file-modified-sort="1718239723387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/12/20231203.html"> <img data-src="https://picsum.photos/id/229/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/12/20231203.html">
+<h3 class="no-anchor listing-title">
+vite를 이용한 react 개발환경 세팅
+</h3>
+<div class="listing-subtitle">
+vite를 이용한 react 개발환경 세팅
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Web'); return false;">
+Web
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/12/20231203.html">
+<div class="listing-description">
+<p>vite를 이용한 react 개발환경 세팅</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/12/20231203.html">
+<div class="listing-date">
+Dec 3, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="Pandas" data-listing-date-sort="1701270000000" data-listing-file-modified-sort="1718238797327" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231129.html"> <img data-src="https://picsum.photos/id/203/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231129.html">
+<h3 class="no-anchor listing-title">
+Dataframe을 Dict로 생성 및 변환
+</h3>
+<div class="listing-subtitle">
+Dataframe을 Dict로 생성 및 변환
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Pandas'); return false;">
+Pandas
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231129.html">
+<div class="listing-description">
+<p>Dataframe을 Dict로 생성 및 변환</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231129.html">
+<div class="listing-date">
+Nov 30, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="Pandas" data-listing-date-sort="1701183600000" data-listing-file-modified-sort="1718238797327" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231130.html"> <img data-src="https://picsum.photos/id/229/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231130.html">
+<h3 class="no-anchor listing-title">
+python datetime 사용법 정리
+</h3>
+<div class="listing-subtitle">
+python datetime 사용법 정리
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Pandas'); return false;">
+Pandas
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231130.html">
+<div class="listing-description">
+<p>python datetime 사용법 정리</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231130.html">
+<div class="listing-date">
+Nov 29, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="Database" data-listing-date-sort="1701097200000" data-listing-file-modified-sort="1718238797327" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231128.html"> <img data-src="https://picsum.photos/id/228/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231128.html">
+<h3 class="no-anchor listing-title">
+mongoDB 서비스 시작/종료/상태확인
+</h3>
+<div class="listing-subtitle">
+mongoDB 서비스 시작/종료/상태확인
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Database'); return false;">
+Database
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231128.html">
+<div class="listing-description">
+<p>mongoDB 서비스 시작/종료/상태확인</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231128.html">
+<div class="listing-date">
+Nov 28, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="DevOps" data-listing-date-sort="1701010800000" data-listing-file-modified-sort="1718238797317" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231127.html"> <img data-src="https://picsum.photos/id/227/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231127.html">
+<h3 class="no-anchor listing-title">
+우분투 docker, docker-compse 설치
+</h3>
+<div class="listing-subtitle">
+우분투 docker, docker-compse 설치
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231127.html">
+<div class="listing-description">
+<p>우분투 docker, docker-compse 설치</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231127.html">
+<div class="listing-date">
+Nov 27, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="DevOps" data-listing-date-sort="1700924400000" data-listing-file-modified-sort="1718238797317" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231126.html"> <img data-src="https://picsum.photos/id/222/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231126.html">
+<h3 class="no-anchor listing-title">
+AWS 호스팅 EC2 와 Lightsail의 차이
+</h3>
+<div class="listing-subtitle">
+AWS 호스팅 EC2 와 Lightsail의 차이
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231126.html">
+<div class="listing-description">
+<p>AWS 호스팅 EC2 와 Lightsail의 차이</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231126.html">
+<div class="listing-date">
+Nov 26, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="DevOps" data-listing-date-sort="1700406000000" data-listing-file-modified-sort="1718238797317" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231120.html"> <img data-src="https://picsum.photos/id/120/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231120.html">
+<h3 class="no-anchor listing-title">
+wsl 이미지 저장 위치 변경 및 백업
+</h3>
+<div class="listing-subtitle">
+wsl 이미지 저장 위치 변경 및 백업
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231120.html">
+<div class="listing-description">
+<p>wsl 이미지 저장 위치 변경 및 백업</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231120.html">
+<div class="listing-date">
+Nov 20, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="DevOps" data-listing-date-sort="1700406000000" data-listing-file-modified-sort="1718238797317" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231122.html"> <img data-src="https://picsum.photos/id/122/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231122.html">
+<h3 class="no-anchor listing-title">
+airflow postgresoperator 사용하기
+</h3>
+<div class="listing-subtitle">
+airflow postgresoperator 사용하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231122.html">
+<div class="listing-description">
+<p>airflow postgresoperator 사용하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231122.html">
+<div class="listing-date">
+Nov 20, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="DevOps" data-listing-date-sort="1700233200000" data-listing-file-modified-sort="1718239502977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231118.html"> <img data-src="https://picsum.photos/id/118/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231118.html">
+<h3 class="no-anchor listing-title">
+docker-compose로 airflow 설치하기
+</h3>
+<div class="listing-subtitle">
+docker-compose로 airflow 설치하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231118.html">
+<div class="listing-description">
+<p>docker-compose로 airflow 설치하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231118.html">
+<div class="listing-date">
+Nov 18, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="Database" data-listing-date-sort="1699974000000" data-listing-file-modified-sort="1718238797297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231113.html"> <img data-src="https://picsum.photos/id/113/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231113.html">
+<h3 class="no-anchor listing-title">
+MongoDB 설치 및 명령어 정리하기
+</h3>
+<div class="listing-subtitle">
+MongoDB 설치 및 명령어 정리하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Database'); return false;">
+Database
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231113.html">
+<div class="listing-description">
+<p>MongoDB 설치 및 명령어 정리하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231113.html">
+<div class="listing-date">
+Nov 15, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="DevOps" data-listing-date-sort="1699974000000" data-listing-file-modified-sort="1718238797307" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231115.html"> <img data-src="https://picsum.photos/id/215/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231115.html">
+<h3 class="no-anchor listing-title">
+mkfifo를 이용한 IPC
+</h3>
+<div class="listing-subtitle">
+mkfifo를 이용한 IPC
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231115.html">
+<div class="listing-description">
+<p>mkfifo를 이용한 IPC</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231115.html">
+<div class="listing-date">
+Nov 15, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="DevOps" data-listing-date-sort="1699974000000" data-listing-file-modified-sort="1718238797307" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/29231115.html"> <img data-src="https://picsum.photos/id/115/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/29231115.html">
+<h3 class="no-anchor listing-title">
+wsl2에 docker 설치하기
+</h3>
+<div class="listing-subtitle">
+wsl2에 docker 설치하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/29231115.html">
+<div class="listing-description">
+<p>wsl2에 docker 설치하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/29231115.html">
+<div class="listing-date">
+Nov 15, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-categories="Database" data-listing-date-sort="1699887600000" data-listing-file-modified-sort="1718238797307" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/11/20231114.html"> <img data-src="https://picsum.photos/id/114/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/11/20231114.html">
+<h3 class="no-anchor listing-title">
+Pymongo 명령어 정리하기
+</h3>
+<div class="listing-subtitle">
+Pymongo 명령어 정리하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Database'); return false;">
+Database
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/11/20231114.html">
+<div class="listing-description">
+<p>Pymongo 명령어 정리하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/11/20231114.html">
+<div class="listing-date">
+Nov 14, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-categories="DevOps" data-listing-date-sort="1696777200000" data-listing-file-modified-sort="1718238797297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/10/20231009.html"> <img data-src="https://picsum.photos/id/90/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/10/20231009.html">
+<h3 class="no-anchor listing-title">
+Github Pull Request 템플릿 적용하기
+</h3>
+<div class="listing-subtitle">
+Github Pull Request 템플릿 적용하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DevOps'); return false;">
+DevOps
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/10/20231009.html">
+<div class="listing-description">
+<p>Github Pull Request 템플릿을 적용하는 방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/10/20231009.html">
+<div class="listing-date">
+Oct 9, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-categories="Data Visualization" data-listing-date-sort="1696690800000" data-listing-file-modified-sort="1718238797297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/10/20231008.html"> <img data-src="https://picsum.photos/id/80/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/10/20231008.html">
+<h3 class="no-anchor listing-title">
+Plotly line, shape 그리기
+</h3>
+<div class="listing-subtitle">
+Plotly line, shape 그리기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/10/20231008.html">
+<div class="listing-description">
+<p>Plotly line, shape를 그리는 방법에 대해서 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/10/20231008.html">
+<div class="listing-date">
+Oct 8, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="25" data-categories="Data Visualization" data-listing-date-sort="1696431600000" data-listing-file-modified-sort="1718238797297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/10/20231005.html"> <img data-src="https://picsum.photos/id/50/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/10/20231005.html">
+<h3 class="no-anchor listing-title">
+Plotly Funnel(깔대기) 차트 만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Funnel(깔대기) 차트 만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/10/20231005.html">
+<div class="listing-description">
+<p>Plotly Funnel(깔대기) 차트를 만드는 방법에 대해서 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/10/20231005.html">
+<div class="listing-date">
+Oct 5, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="26" data-categories="Data Visualization" data-listing-date-sort="1696345200000" data-listing-file-modified-sort="1718238797297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/10/20231004.html"> <img data-src="https://picsum.photos/id/42/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/10/20231004.html">
+<h3 class="no-anchor listing-title">
+Plotly 차트의 축 tick 회전 및 폰트 변경하기
+</h3>
+<div class="listing-subtitle">
+Plotly x축 tick 회전 및 폰트 변경하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/10/20231004.html">
+<div class="listing-description">
+<p>Plotly의 x축 tick을 변경하는 방법에 대해서 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/10/20231004.html">
+<div class="listing-date">
+Oct 4, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="27" data-categories="Data Visualization" data-listing-date-sort="1696258800000" data-listing-file-modified-sort="1718238797297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/10/20231003.html"> <img data-src="https://picsum.photos/id/30/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/10/20231003.html">
+<h3 class="no-anchor listing-title">
+Plotly 불릿차트
+</h3>
+<div class="listing-subtitle">
+Plotly 불릿차트
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/10/20231003.html">
+<div class="listing-description">
+<p>Plotly 불릿차트에 대해서 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/10/20231003.html">
+<div class="listing-date">
+Oct 3, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="28" data-categories="Data Visualization" data-listing-date-sort="1696172400000" data-listing-file-modified-sort="1718238797297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/10/20231002.html"> <img data-src="https://picsum.photos/id/20/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/10/20231002.html">
+<h3 class="no-anchor listing-title">
+Plotly Hover 설정하기
+</h3>
+<div class="listing-subtitle">
+Plotly Hover 설정하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/10/20231002.html">
+<div class="listing-description">
+<p>Plotly Hover 레이블을 설정하는 방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/10/20231002.html">
+<div class="listing-date">
+Oct 2, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="29" data-categories="Data Visualization" data-listing-date-sort="1695999600000" data-listing-file-modified-sort="1718238797287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230930.html"> <img data-src="https://picsum.photos/id/300/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230930.html">
+<h3 class="no-anchor listing-title">
+Plotly Axis 포멧 변경하기
+</h3>
+<div class="listing-subtitle">
+Plotly Axis 포멧 변경하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230930.html">
+<div class="listing-description">
+<p>Plotly Axis 포멧 변경하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230930.html">
+<div class="listing-date">
+Sep 30, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="30" data-categories="Data Visualization" data-listing-date-sort="1695826800000" data-listing-file-modified-sort="1718238797287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230928.html"> <img data-src="https://picsum.photos/id/280/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230928.html">
+<h3 class="no-anchor listing-title">
+Plotly 마커 모양 변경하기
+</h3>
+<div class="listing-subtitle">
+Plotly 마커 모양 변경하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230928.html">
+<div class="listing-description">
+<p>Plotly 마커 모양을 변경하는 방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230928.html">
+<div class="listing-date">
+Sep 28, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="31" data-categories="Data Visualization" data-listing-date-sort="1695567600000" data-listing-file-modified-sort="1718238797287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230925.html"> <img data-src="https://picsum.photos/id/250/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230925.html">
+<h3 class="no-anchor listing-title">
+Plotly Time Series 날짜 범위 UI 사용하기
+</h3>
+<div class="listing-subtitle">
+Plotly Time Series 날짜 범위 UI 사용하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230925.html">
+<div class="listing-description">
+<p>Plotly Time Series 날짜 범위를 지정하는 방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230925.html">
+<div class="listing-date">
+Sep 25, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="32" data-categories="Data Visualization" data-listing-date-sort="1695308400000" data-listing-file-modified-sort="1718238797267" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230922.html"> <img data-src="https://picsum.photos/id/220/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230922.html">
+<h3 class="no-anchor listing-title">
+Plotly Line Plot만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Line Plot만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230922.html">
+<div class="listing-description">
+<p>Plotly Line Plot의 사용방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230922.html">
+<div class="listing-date">
+Sep 22, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="33" data-categories="Data Visualization" data-listing-date-sort="1695222000000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230921.html"> <img data-src="https://picsum.photos/id/210/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230921.html">
+<h3 class="no-anchor listing-title">
+Plotly Histogram Plot만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Histogram Plot만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230921.html">
+<div class="listing-description">
+<p>Plotly Histogram Plot의 사용방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230921.html">
+<div class="listing-date">
+Sep 21, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="34" data-categories="Data Visualization" data-listing-date-sort="1694962800000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230918.html"> <img data-src="https://picsum.photos/id/18/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230918.html">
+<h3 class="no-anchor listing-title">
+Plotly Animation 만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Animation 만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230918.html">
+<div class="listing-description">
+<p>Plotly Animation의 사용방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230918.html">
+<div class="listing-date">
+Sep 18, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="35" data-categories="Data Visualization" data-listing-date-sort="1694962800000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230919.html"> <img data-src="https://picsum.photos/id/191/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230919.html">
+<h3 class="no-anchor listing-title">
+Plotly Box Plot만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Box Plot만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230919.html">
+<div class="listing-description">
+<p>Plotly Bar Plot의 사용방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230919.html">
+<div class="listing-date">
+Sep 18, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="36" data-categories="Data Visualization" data-listing-date-sort="1694876400000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230916.html"> <img data-src="https://picsum.photos/id/17/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230916.html">
+<h3 class="no-anchor listing-title">
+Plotly Treemap 만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Treemap 만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230916.html">
+<div class="listing-description">
+<p>Plotly Treemap의 사용방법과 생상변경 방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230916.html">
+<div class="listing-date">
+Sep 17, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="37" data-categories="Data Visualization" data-listing-date-sort="1694876400000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230917.html"> <img data-src="https://picsum.photos/id/171/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230917.html">
+<h3 class="no-anchor listing-title">
+Plotly Bubble chart 만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Bubble chart 만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230917.html">
+<div class="listing-description">
+<p>Plotly Bubble chart의 사용방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230917.html">
+<div class="listing-date">
+Sep 17, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="38" data-categories="Pandas" data-listing-date-sort="1694617200000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230914.html"> <img data-src="https://picsum.photos/id/14/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230914.html">
+<h3 class="no-anchor listing-title">
+Pandas 중복 데이터 제거하기
+</h3>
+<div class="listing-subtitle">
+Pandas 중복 데이터 제거하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Pandas'); return false;">
+Pandas
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230914.html">
+<div class="listing-description">
+<p>Pandas 중복 데이터 제거하기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230914.html">
+<div class="listing-date">
+Sep 14, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="39" data-categories="Data Visualization" data-listing-date-sort="1694530800000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230913.html"> <img data-src="https://picsum.photos/id/131/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230913.html">
+<h3 class="no-anchor listing-title">
+Plotly Subpolt 만들기
+</h3>
+<div class="listing-subtitle">
+Plotly Subpolt 만들기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230913.html">
+<div class="listing-description">
+<p>Plotly Subplt 만들기</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230913.html">
+<div class="listing-date">
+Sep 13, 2023
+</div>
+<div class="listing-author">
+양성모
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="40" data-categories="Quarto" data-listing-date-sort="1694444400000" data-listing-file-modified-sort="1718238797257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230912.html"> <img data-src="https://picsum.photos/id/12/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230912.html">
+<h3 class="no-anchor listing-title">
+Markdown문법 정리하기
+</h3>
+<div class="listing-subtitle">
+Markdown문법 정리하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
+Quarto
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230912.html">
+<div class="listing-description">
+<p>Markdown문법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230912.html">
+<div class="listing-date">
+Sep 12, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="41" data-categories="Quarto" data-listing-date-sort="1694271600000" data-listing-file-modified-sort="1718238797217" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="../../docs/blog/posts/2023/09/20230910.html"> <img data-src="https://picsum.photos/id/10/200/150" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../../docs/blog/posts/2023/09/20230910.html">
+<h3 class="no-anchor listing-title">
+Quarto Callout Block
+</h3>
+<div class="listing-subtitle">
+Callout Block으로 내용 강조하기
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
+Quarto
+</div>
+</div>
+<a href="../../docs/blog/posts/2023/09/20230910.html">
+<div class="listing-description">
+<p>Quarto Callout으로 내용 강조하는 방법을 정리합니다.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/2023/09/20230910.html">
+<div class="listing-date">
+Sep 10, 2023
+</div>
+<div class="listing-author">
+gabriel yang
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
