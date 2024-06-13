@@ -66,7 +66,7 @@ docker compose up airflow-init
 docker compose up
 ```
 
-![](images/paste-1.png)
+![](2023-11-18-dockercompose-airflow/images/paste-1.png)
 
 docker compose에서 사용되는 명령어를 함께 정리합니다. 백그라운드에서 airflow를 동작하는 경우 `docker compose up -d`를 사용합니다.
 

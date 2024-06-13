@@ -3,7 +3,7 @@ title: Blog
 # subtitle:
 listing:
   sort: "date desc"
-  contents: "posts/*/*/*/index.qmd"
+  contents: "posts/*/*/*.qmd"
   # sort-ui: true
   filter-ui: true
   categories: true

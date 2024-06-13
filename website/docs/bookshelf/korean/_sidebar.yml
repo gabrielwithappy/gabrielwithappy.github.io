@@ -6,7 +6,7 @@ website:
       style: "floating"
       collapse-level: 1
       contents:
-        - docs/bookshelf/korean/index.qmd
+        - docs/bookshelf/korean/korean-book.qmd
         - section: 'Transportation'
           contents:
           - docs/bookshelf/korean/subway.qmd

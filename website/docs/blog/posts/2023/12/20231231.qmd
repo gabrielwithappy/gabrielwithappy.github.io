@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
 시퀀스 다이어그램으로 동작을 확인합니다. `asyncio.gather()`는 say_hello함수 3개가 동시에 실행될 수 있도록 합니다.
 
-![](images/paste-2.png)
+![](2023-12-31-asyncio/images/paste-2.png)
 
 `gather`함수가 3개의 say_hello 함수 실행을 완료한 시간은 총 1초입니다. 동기함수로 구현되어 sleep을 사용했다면 1초의 대기 시간동안 다른 함수의 실행이 불가능하지만 비동기 함수로 구현하여 대기 시간동안 다른 함수가 실행됩니다.
 

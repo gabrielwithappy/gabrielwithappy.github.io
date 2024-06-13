@@ -18,7 +18,7 @@ page-layout: article
 
 MySQL DB를 연습하기 위해서 도커로 MySQL 이미지를 다운로드 및 실행합니다. 우선 MySQL이미지를 [도커 허브](https://hub.docker.com/search?q=mysql)에서 찾습니다.
 
-![](images/paste-1.png)
+![](2023-12-06-mysql/images/paste-1.png)
 
 `mysql` 이미지 이름을 다운로드 할 수 있습니다. DB 볼륨을 로컬컴퓨터에서 확인하고 파일을 관리하기 위한 볼륨을 마운트하기 위해서 `docker-compose.yml`파일을 만들어서 관리합니다.
 

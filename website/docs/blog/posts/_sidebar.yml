@@ -4,4 +4,4 @@ website:
     - id: blog
       style: "floating"
       collapse-level: 2
-      contents: "docs/blog/posts/*/*/*/index.*"
+      contents: "docs/blog/posts/*/*/*.qmd"
