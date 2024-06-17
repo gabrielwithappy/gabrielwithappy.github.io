@@ -12,7 +12,7 @@ image-alt: "deep learning glossary"
 page-layout: article
 ---
 
-[시계열 데이터 시각화](../../../bookshelf/data_visualization/index.qmd)는 시계열 데이터를 시각화하는 방법을 정리합니다.
+[시계열 데이터 시각화](../../../bookshelf/data_visualization/data_visualization.qmd)는 시계열 데이터를 시각화하는 방법을 정리합니다.
 
 
 

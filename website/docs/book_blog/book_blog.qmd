@@ -3,7 +3,7 @@ title: Books
 subtitle: 다양한 온라인 북을 찾아보세요
 listing:
   sort: "date desc"
-  contents: "posts/*/index.qmd"
+  contents: "posts/*/*.qmd"
   sort-ui: false
   filter-ui: false
   categories: true

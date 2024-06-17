@@ -24,9 +24,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - docs/blog/index.qmd
-      - docs/book_blog/index.qmd
-      - docs/slide_blog/index.qmd
+      - docs/blog/blog.qmd
+      - docs/book_blog/book_blog.qmd
+      - docs/slide_blog/slide_blog.qmd
       - about.qmd
 
 execute:

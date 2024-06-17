@@ -7,7 +7,7 @@ website:
       style: "floating"
       collapse-level: 1
       contents:
-        - docs/bookshelf/data_visualization/index.qmd
+        - docs/bookshelf/data_visualization/data_visualization.qmd
         - docs/bookshelf/data_visualization/intro.qmd
         - section: "Part 1. 데이터 기본구조"
           contents:
