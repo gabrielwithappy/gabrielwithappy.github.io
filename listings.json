@@ -1,16 +1,6 @@
 [
   {
-    "listing": "/docs/book_blog/index.html",
-    "items": [
-      "/docs/book_blog/posts/2024-01-09-elementary-english-vocabulary_2/index.html",
-      "/docs/book_blog/posts/2023-09-03-data-visualization/index.html",
-      "/docs/book_blog/posts/2023-07-23-dl-glossary/index.html",
-      "/docs/book_blog/posts/2023-08-25-hf-examples/index.html",
-      "/docs/book_blog/posts/2023-08-27-korean-study/index.html"
-    ]
-  },
-  {
-    "listing": "/docs/blog/index.html",
+    "listing": "/docs/blog/blog.html",
     "items": [
       "/docs/blog/posts/2024/01/20240105.html",
       "/docs/blog/posts/2024/01/20240103.html",
@@ -57,10 +47,13 @@
     ]
   },
   {
-    "listing": "/docs/slide_blog/index.html",
+    "listing": "/docs/book_blog/book_blog.html",
     "items": [
-      "/docs/slide_blog/posts/2023-10-09-deeplearning-translation/index.html",
-      "/docs/slide_blog/posts/2023-08-27-quarto-introduction/index.html"
+      "/docs/book_blog/posts/2023-09-03-data-visualization/data_visualization.html"
     ]
+  },
+  {
+    "listing": "/docs/slide_blog/slide_blog.html",
+    "items": []
   }
 ]
