@@ -1,5 +1,17 @@
 [
   {
+    "listing": "/docs/dashboard_blog/dashboard_blog.html",
+    "items": [
+      "/docs/dashboard_blog/posts/commercial/commercial.html"
+    ]
+  },
+  {
+    "listing": "/docs/book_blog/book_blog.html",
+    "items": [
+      "/docs/book_blog/posts/2023-09-03-data-visualization/data_visualization.html"
+    ]
+  },
+  {
     "listing": "/docs/blog/blog.html",
     "items": [
       "/docs/blog/posts/2024/06/20240623.html",
@@ -46,15 +58,5 @@
       "/docs/blog/posts/2023/09/20230912.html",
       "/docs/blog/posts/2023/09/20230910.html"
     ]
-  },
-  {
-    "listing": "/docs/book_blog/book_blog.html",
-    "items": [
-      "/docs/book_blog/posts/2023-09-03-data-visualization/data_visualization.html"
-    ]
-  },
-  {
-    "listing": "/docs/slide_blog/slide_blog.html",
-    "items": []
   }
 ]

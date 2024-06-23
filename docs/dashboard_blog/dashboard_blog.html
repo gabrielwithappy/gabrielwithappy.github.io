@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BookShelf - Slides</title>
+<title>BookShelf - DashBoard</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,9 +71,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -105,7 +105,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
-<link rel="alternate" type="application/rss+xml" title="BookShelf" href="slide_blog.xml"></head>
+<link rel="alternate" type="application/rss+xml" title="BookShelf" href="dashboard_blog.xml"></head>
 
 <body class="nav-fixed">
 
@@ -137,8 +137,8 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../docs/slide_blog/slide_blog.html" rel="" target="" aria-current="page">
- <span class="menu-text">Slides</span></a>
+    <a class="nav-link active" href="../../docs/dashboard_blog/dashboard_blog.html" rel="" target="" aria-current="page">
+ <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html" rel="" target="">
@@ -157,14 +157,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="시각화">시각화 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Slides</h1>
-<p class="subtitle lead">Slide를 정리합니다.</p>
+<h1 class="title">DashBoard</h1>
+<p class="subtitle lead">Visualization DashBoard</p>
 </div>
 
 
@@ -185,7 +185,36 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-
+<div class="g-col-1" data-index="0" data-categories="시각화" data-listing-date-sort="1762354800000" data-listing-file-modified-sort="1719164737624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="../../docs/dashboard_blog/posts/commercial/commercial.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../docs/dashboard_blog/posts/commercial/data_visualization.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+상권분석
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('시각화'); return false;">
+시각화
+</div>
+</div>
+<div class="card-text listing-description">
+상권분석
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+양성모
+</div>
+<div class="listing-date">
+Nov 6, 2025
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
@@ -430,7 +459,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/docs/slide_blog/slide_blog.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/docs/dashboard_blog/dashboard_blog.qmd" class="toc-action">Edit this page</a></p></div></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
