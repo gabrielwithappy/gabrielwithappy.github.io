@@ -508,6 +508,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">06</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../docs/blog/posts/2024/06/20240623.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Robots.txt 작성방법</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -581,7 +598,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> dt.datetime.now()</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>now</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>datetime.datetime(2024, 6, 13, 9, 58, 41, 529353)</code></pre>
+<pre><code>datetime.datetime(2024, 6, 23, 23, 56, 13, 406518)</code></pre>
 </div>
 </div>
 <p>datetime의 현재 시간정보를 보여준다. 시간 정보는 datetime 형태로 표현됩니다. 날짜에서 원하는 시간정보를 가져올 수 있습니다.</p>
@@ -596,14 +613,14 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>second<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now<span class="sc">.</span>microsecond<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2024-06-13 09:58:41.536281
+<pre><code>2024-06-23 23:56:13.414888
 2024
 6
+23
+23
+56
 13
-9
-58
-41
-536281</code></pre>
+414888</code></pre>
 </div>
 </div>
 </section>
@@ -613,7 +630,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(now.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2024-06-13 09:58:41</code></pre>
+<pre><code>2024-06-23 23:56:13</code></pre>
 </div>
 </div>
 </section>
@@ -628,12 +645,12 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(seconds<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 sec"</span>)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>now <span class="op">+</span> dt<span class="sc">.</span>timedelta(microseconds<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss"> + 1 micro sec"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>now: 2024-06-13 09:58:41.536281
-2024-06-14 09:58:41.536281 + 1 day
-2024-06-13 10:58:41.536281 + 1 hour
-2024-06-13 09:59:41.536281 + 1 min
-2024-06-13 09:58:42.536281 + 1 sec
-2024-06-13 09:58:41.536282 + 1 micro sec</code></pre>
+<pre><code>now: 2024-06-23 23:56:13.414888
+2024-06-24 23:56:13.414888 + 1 day
+2024-06-24 00:56:13.414888 + 1 hour
+2024-06-23 23:57:13.414888 + 1 min
+2024-06-23 23:56:14.414888 + 1 sec
+2024-06-23 23:56:13.414889 + 1 micro sec</code></pre>
 </div>
 </div>
 </section>
