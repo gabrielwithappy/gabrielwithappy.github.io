@@ -3,5 +3,5 @@ website:
   sidebar:
     - id: blog
       style: "floating"
-      collapse-level: 2
+      collapse-level: 1
       contents: "docs/blog/posts/*/*/*.qmd"
