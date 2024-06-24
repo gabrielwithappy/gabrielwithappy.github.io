@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2023-12-14">
+<meta name="description" content="RAG(Retrieval Argumented Generation) 정리하기">
 
-<title>BookShelf - Public BookShelf</title>
+<title>BookShelf - RAG(Retrieval Argumented Generation) 정리하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +74,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +84,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -92,23 +95,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/blog.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./book_blog/book_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../book_blog/book_blog.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard_blog/dashboard_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../dashboard_blog/dashboard_blog.html" rel="" target="">
  <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -123,21 +126,52 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ragretrieval-argumented-generation-정리하기" id="toc-ragretrieval-argumented-generation-정리하기" class="nav-link active" data-scroll-target="#ragretrieval-argumented-generation-정리하기">RAG(Retrieval Argumented Generation) 정리하기</a>
+  <ul class="collapse">
+  <li><a href="#rag가-무엇인가요" id="toc-rag가-무엇인가요" class="nav-link" data-scroll-target="#rag가-무엇인가요">RAG가 무엇인가요?</a></li>
+  <li><a href="#langchain은-무엇인가요" id="toc-langchain은-무엇인가요" class="nav-link" data-scroll-target="#langchain은-무엇인가요">LangChain은 무엇인가요?</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20231221.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Public BookShelf</h1>
-</div>
+<h1 class="title">RAG(Retrieval Argumented Generation) 정리하기</h1>
+<p class="subtitle lead">RAG(Retrieval Argumented Generation) 정리하기</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">AI</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    RAG(Retrieval Argumented Generation) 정리하기
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 14, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -145,15 +179,24 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<div class="get-started">
-<div class="content-block">
-<p>온라인 책장입니다. 공부한 내용을 정리하고 차근차근 모아 책으로 만듭니다.</p>
-<p>추가하고 싶은 책이 있다면 블로그에 하나씩 글을 모으는 것으로 시작합니다. 느리게 작지만 꾸준히 글쓰기를 연습합니다.</p>
-<p><a href="./google2af1b7ec19db0372.html"></a> <a href="./ads.txt"></a></p>
-</div>
-</div>
+<section id="ragretrieval-argumented-generation-정리하기" class="level1">
+<h1>RAG(Retrieval Argumented Generation) 정리하기</h1>
+<section id="rag가-무엇인가요" class="level2">
+<h2 class="anchored" data-anchor-id="rag가-무엇인가요">RAG가 무엇인가요?</h2>
+<p>“Retrieval-Augmented Generation” (RAG)는 자연어 처리 분야에서 사용되는 기술로, 특히 질문에 대한 답변이나 문장 생성과 같은 작업을 수행할 때 기존의 텍스트 생성 모델과 정보 검색을 결합하는 방법입니다. RAG는 크게 두 가지 주요 구성 요소로 나눌 수 있습니다: 정보 검색(retrieval)과 생성(generation).</p>
+<p>정보 검색 (Retrieval): 이 단계에서는 주어진 질문이나 입력에 가장 관련이 높은 문서나 데이터를 검색합니다. 이 과정은 대규모의 데이터베이스나 문서 집합에서 특정 키워드나 문맥에 기반하여 가장 적절한 정보를 찾는 것을 포함합니다.</p>
+<p>생성 (Generation): 검색된 정보를 바탕으로, 언어 모델이 자연스러운, 일관된 답변이나 문장을 생성합니다. 이 단계에서는 전통적인 언어 모델링 기법이 사용되며, 검색된 결과를 참조하여 보다 정확하고 상세한 정보를 제공하는 데 도움이 됩니다.</p>
+<p>RAG의 핵심은 정보 검색과 생성 두 부분을 통합하여, 단순한 텍스트 생성을 넘어서 사용자의 질문이나 요구에 맞는 구체적이고 상세한 답변을 제공하는 것입니다. 이 기술은 질문-답변 시스템, 챗봇, 기사 생성, 요약 생성 등 다양한 분야에서 활용됩니다.</p>
+<p>RAG 시스템의 성능은 검색하는 데이터베이스의 질과 크기, 그리고 언어 모델의 능력에 크게 의존합니다. 이러한 시스템은 대량의 정보에 접근하고, 그 정보를 바탕으로 사용자에게 보다 정확하고 유용한 답변을 제공할 수 있는 잠재력을 가지고 있습니다</p>
+</section>
+<section id="langchain은-무엇인가요" class="level2">
+<h2 class="anchored" data-anchor-id="langchain은-무엇인가요">LangChain은 무엇인가요?</h2>
+<p>LangChain은 언어 모델과 에이전트의 개발 및 분석을 용이하게 하는 다기능 파이썬 라이브러리입니다. 이 라이브러리는 특히 응용 프로그램에서 Retrieval-Augmented Generation (RAG) 패턴을 구현하는 데 유용합니다. LangChain을 사용하면 “문서” 객체를 통해 여러 다른 소스에서 온 데이터를 정규화할 수 있으며, 이는 다양한 체인에서 데이터를 구조화된 방식으로 처리하고 전달하는 데 필수적입니다.</p>
+<p>LangChain의 핵심 아이디어는 AI 행동을 특정 순서대로 배열하여 처리 파이프라인을 만드는 것입니다. RAG 패턴의 맥락에서는 사용자가 질문을 제출하는 것으로 시작하여, 임베딩 생성, 추가 맥락을 위한 벡터 데이터베이스 조회, 그리고 마지막으로 언어 모델을 위한 프롬프트 생성의 순서를 따릅니다. LangChain의 “체인” 구성은 이러한 단계들을 특정 구성으로 연결하여 처리 파이프라인의 원활한 흐름과 오류 처리를 보장합니다.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -389,13 +432,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/index.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    <div class="nav-footer-center">gabrielwithhappy@gmail.com</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

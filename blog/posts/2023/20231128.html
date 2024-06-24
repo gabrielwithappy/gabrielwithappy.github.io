@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2023-11-28">
+<meta name="description" content="mongoDB 서비스 시작/종료/상태확인">
 
-<title>BookShelf - Public BookShelf</title>
+<title>BookShelf - mongoDB 서비스 시작/종료/상태확인</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +108,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +118,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -92,23 +129,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/blog.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./book_blog/book_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../book_blog/book_blog.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard_blog/dashboard_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../dashboard_blog/dashboard_blog.html" rel="" target="">
  <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -123,21 +160,53 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#mongodb-서비스-시작종료상태확인" id="toc-mongodb-서비스-시작종료상태확인" class="nav-link active" data-scroll-target="#mongodb-서비스-시작종료상태확인">mongoDB 서비스 시작/종료/상태확인</a>
+  <ul class="collapse">
+  <li><a href="#로컬-서비스-상태확인" id="toc-로컬-서비스-상태확인" class="nav-link" data-scroll-target="#로컬-서비스-상태확인">로컬 서비스 상태확인</a></li>
+  <li><a href="#mongodb-docker-상태-확인하기" id="toc-mongodb-docker-상태-확인하기" class="nav-link" data-scroll-target="#mongodb-docker-상태-확인하기">mongodb Docker 상태 확인하기</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20231128.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Public BookShelf</h1>
-</div>
+<h1 class="title">mongoDB 서비스 시작/종료/상태확인</h1>
+<p class="subtitle lead">mongoDB 서비스 시작/종료/상태확인</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Database</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    mongoDB 서비스 시작/종료/상태확인
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 28, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -145,15 +214,39 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<div class="get-started">
-<div class="content-block">
-<p>온라인 책장입니다. 공부한 내용을 정리하고 차근차근 모아 책으로 만듭니다.</p>
-<p>추가하고 싶은 책이 있다면 블로그에 하나씩 글을 모으는 것으로 시작합니다. 느리게 작지만 꾸준히 글쓰기를 연습합니다.</p>
-<p><a href="./google2af1b7ec19db0372.html"></a> <a href="./ads.txt"></a></p>
-</div>
-</div>
+<section id="mongodb-서비스-시작종료상태확인" class="level1">
+<h1>mongoDB 서비스 시작/종료/상태확인</h1>
+<p>mongodb 서비스 실행/종료/상태 확인 방법을 정리합니다.</p>
+<section id="로컬-서비스-상태확인" class="level2">
+<h2 class="anchored" data-anchor-id="로컬-서비스-상태확인">로컬 서비스 상태확인</h2>
+<p>자신의 사용하는 운영체제에 설치된 mongodb 서비스의 상태확인 방법을 정리합니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> mongodb start <span class="co"># mongodb 서비스 실행</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> mongodb status <span class="co"># mongodb 서비스 상태확인</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> mongodb stop <span class="co"># mongodb 서비스 정지</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="mongodb-docker-상태-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="mongodb-docker-상태-확인하기">mongodb Docker 상태 확인하기</h2>
+<p>도커로 실행된 mongodb의 상태를 확인하는 방법을 정리합니다. <code>docker ps</code>로 실행 중인 컨테이너 정보를 확인할 수 있습니다. <code>-a</code>옵션을 사용하면 현재 실행되지 않는 컨테이너 정보도 모두 출력됩니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>CONTAINER ID   IMAGE           COMMAND                   CREATED        STATUS          PORTS                                                  NAMES
+8d45ded6e5ef   mongo           "docker-entrypoint.s…"   10 hours ago   Up 10 minutes   0.0.0.0:27017-&gt;27017/tcp, :::27017-&gt;27017/tcp          mongodb</code></pre>
+<p>몽고 db 컨테이너에 접속을 위해 아래 명령을 사용합니다. 실행할 컨테이너 이름은 <code>docker ps</code>정보의 <code>NAMES</code>에서 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> mongodb bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>컨테이너에 진입 후 <code>ps -ef | grep mongodb</code>를 실행하면 현재 실행 중인 mongodb 프로세스를 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-ef</span> <span class="kw">|</span> <span class="fu">grep</span> mongodb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>root@8d45ded6e5ef:/# ps -ef | grep mongodb
+mongodb        1       0  0 Nov28 ?        00:00:06 mongod --auth --bind_ip_all
+root         206     196  0 00:12 pts/0    00:00:00 grep mongodb</code></pre>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li>https://blog.qvil.dev/docker/docker-mongo</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -389,13 +482,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/index.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    <div class="nav-footer-center">gabrielwithhappy@gmail.com</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

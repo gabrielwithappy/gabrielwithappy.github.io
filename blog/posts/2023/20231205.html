@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2023-12-05">
+<meta name="description" content="crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신">
 
-<title>BookShelf - About</title>
+<title>BookShelf - crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +108,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +118,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -92,23 +129,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/blog.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./book_blog/book_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../book_blog/book_blog.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard_blog/dashboard_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../dashboard_blog/dashboard_blog.html" rel="" target="">
  <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -127,28 +164,52 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#프로젝트" id="toc-프로젝트" class="nav-link active" data-scroll-target="#프로젝트">프로젝트</a>
+  <li><a href="#crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" id="toc-crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" class="nav-link active" data-scroll-target="#crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</a>
   <ul class="collapse">
-  <li><a href="#딥러닝-용어사전" id="toc-딥러닝-용어사전" class="nav-link" data-scroll-target="#딥러닝-용어사전">딥러닝 용어사전</a></li>
-  <li><a href="#공공데이터-시각화" id="toc-공공데이터-시각화" class="nav-link" data-scroll-target="#공공데이터-시각화">공공데이터 시각화</a></li>
-  <li><a href="#huggingface-krew" id="toc-huggingface-krew" class="nav-link" data-scroll-target="#huggingface-krew">HuggingFace KREW</a></li>
+  <li><a href="#crontab-새로운-명령어-만들기" id="toc-crontab-새로운-명령어-만들기" class="nav-link" data-scroll-target="#crontab-새로운-명령어-만들기">crontab 새로운 명령어 만들기</a></li>
+  <li><a href="#crontab-명령어-확인하기" id="toc-crontab-명령어-확인하기" class="nav-link" data-scroll-target="#crontab-명령어-확인하기">crontab 명령어 확인하기</a></li>
+  <li><a href="#crontab-시작중지재시작" id="toc-crontab-시작중지재시작" class="nav-link" data-scroll-target="#crontab-시작중지재시작">crontab 시작/중지/재시작</a></li>
+  <li><a href="#인증서-갱신-테스트" id="toc-인증서-갱신-테스트" class="nav-link" data-scroll-target="#인증서-갱신-테스트">인증서 갱신 테스트</a></li>
+  <li><a href="#인증서-갱신-날짜-확인하기" id="toc-인증서-갱신-날짜-확인하기" class="nav-link" data-scroll-target="#인증서-갱신-날짜-확인하기">인증서 갱신 날짜 확인하기</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/about.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20231205.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
+<h1 class="title">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</h1>
+<p class="subtitle lead">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">DevOps</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 5, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -156,24 +217,59 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<p>온라인에 책을 만들고 싶다는 생각에 배운 것을 정리하는 사이트입니다. <a href="https://linktr.ee/sungmo.yang">링크트리</a>와 함께 작업한 내용을 정리하고 있습니다.</p>
-<section id="프로젝트" class="level2">
-<h2 class="anchored" data-anchor-id="프로젝트">프로젝트</h2>
-<p>진행하고 있는 프로젝트를 소개합니다 관심있는 분들은 홈페이지 하단의 이메일로 연락 부탁드립니다.</p>
-<section id="딥러닝-용어사전" class="level3">
-<h3 class="anchored" data-anchor-id="딥러닝-용어사전">딥러닝 용어사전</h3>
-<p><a href="https://pseudo-lab.github.io/deep-learning-glossary/">딥러닝용어사전</a>은 다양한 딥러닝 문서를 한국어 번역하면서 중요한 딥러닝 용어를 한국어로 번역하는 오픈소스 용어사전입니다.</p>
+<section id="crontab을-이용해서-lets-encrypt-ssl-인증서-자동갱신" class="level1">
+<h1>crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</h1>
+<p>crontab은 Unix 및 Unix 계열 운영 체제에서 주기적으로 실행되는 작업을 예약하는 데 사용되는 시스템 유틸리티입니다. crontab은 “크론 테이블”의 줄임말로, 사용자가 일정한 간격으로 명령을 실행하도록 예약할 수 있게 해줍니다. 이는 주기적으로 반복되는 작업을 자동화하는 데 유용합니다.</p>
+<section id="crontab-새로운-명령어-만들기" class="level2">
+<h2 class="anchored" data-anchor-id="crontab-새로운-명령어-만들기">crontab 새로운 명령어 만들기</h2>
+<p><code>-e</code>옵션으로 텍스트 폅집기로 명령을 수정하거나 추가할 수 있습니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>예제로 crontabb에 certbot을 이용하여 인증서를 갱신하는 명령을 추가합니다. crontab의 format은 아래와 같습니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span>   1    <span class="pp">*</span>   <span class="pp">*</span>     1       sudo certbot renew <span class="at">--nginx</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span>   <span class="kw">|</span>     <span class="kw">|</span>       <span class="kw">|</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">min</span> hour day month weekday 명령어</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">(</span><span class="ex">0은</span> 일요일<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="https://crontab.guru/">crontab guru</a>를 이용하면 시간 format의 주기를 확인할 수 있습니다. 위의 시간은 <code>At 01:00 on Monday</code>을 의미합니다.</p>
 </section>
-<section id="공공데이터-시각화" class="level3">
-<h3 class="anchored" data-anchor-id="공공데이터-시각화">공공데이터 시각화</h3>
-<p><a href="https://www.publickrbook.com/">공공데이터 시각화</a>사이트는 공공 데이터 중 관심있는 데이터를 시각화하는 사이트 입니다. 많은 사람들이 궁금해하는 데이터 또는 공공의 이익 위한 데이터를 고민하고 표현하는 연습을 하는 사이트 입니다.</p>
+<section id="crontab-명령어-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="crontab-명령어-확인하기">crontab 명령어 확인하기</h2>
+<p><code>-l</code>옵션으로 텍스트 폅집기로 명령을 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>0 1 * * 1 sudo certbot renew --nginx</code></pre>
 </section>
-<section id="huggingface-krew" class="level3">
-<h3 class="anchored" data-anchor-id="huggingface-krew">HuggingFace KREW</h3>
-<p><a href="https://pseudo-lab.github.io/huggingface_krew/">허깅페이스 KREW팀</a>은 허깅페이스에 대해 공부하는 사람들의 모임입니다. 초기 허깅페이스 문서번역을 통해서 오픈소스에 기여하는 활동을 시작으로 허깅페이스를 잘 활용하기 위한 여러 가지 스터디를 하고 있습니다.</p>
+<section id="crontab-시작중지재시작" class="level2">
+<h2 class="anchored" data-anchor-id="crontab-시작중지재시작">crontab 시작/중지/재시작</h2>
+<p>크론탭의 명령어를 추가하거나 변경했다면 crontab을 재시작해야 합니다. 아래 명령을 이용해서 cron 데몬의 상태 시작/중지/재시작 및 상태를 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron start</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron stop</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron restart</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> cron status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="인증서-갱신-테스트" class="level2">
+<h2 class="anchored" data-anchor-id="인증서-갱신-테스트">인증서 갱신 테스트</h2>
+<p><code>--dry-run</code>옵션을 사용하면 실제 갱신 명령을 수행전에 오류를 확인할 수 있습니다. 갱신은 갱신종료일 20일 전에 가능합니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> certbot renew <span class="at">--dry-run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="인증서-갱신-날짜-확인하기" class="level2">
+<h2 class="anchored" data-anchor-id="인증서-갱신-날짜-확인하기">인증서 갱신 날짜 확인하기</h2>
+<p>갱신 명령을 수행하면 갱신 종료일이 얼마나 남았는 지 확인할 수 있습니다. 갱신종료까지 62일 남은 것을 알 수 있습니다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">certbot</span> certificates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: ...
+    Expiry Date: 2024-02-05 17:01:07+00:00 (VALID: 62 days)</code></pre>
+<p>갱신을 위한 명령을 추가합니다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span> 1 <span class="pp">*</span> <span class="pp">*</span> 1 sudo certbot renew <span class="at">--nginx</span> <span class="op">&gt;</span> ~/crontab-result.log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>매주 월요일 1시에 renew 명령을 수행합니다. 실행 결과는 <code>crontab-result.log</code>에서 확인할 수 있습니다.</p>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li>https://devlog.jwgo.kr/2019/04/16/how-to-lets-encrypt-ssl-renew/</li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2023-11-30">
+<meta name="description" content="Dataframe을 Dict로 생성 및 변환">
 
-<title>BookShelf - About</title>
+<title>BookShelf - Dataframe을 Dict로 생성 및 변환</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,10 +105,13 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +121,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -92,23 +132,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/blog.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./book_blog/book_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../book_blog/book_blog.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard_blog/dashboard_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../dashboard_blog/dashboard_blog.html" rel="" target="">
  <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -127,28 +167,51 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#프로젝트" id="toc-프로젝트" class="nav-link active" data-scroll-target="#프로젝트">프로젝트</a>
+  <li><a href="#dataframe을-dict로-생성-및-변환" id="toc-dataframe을-dict로-생성-및-변환" class="nav-link active" data-scroll-target="#dataframe을-dict로-생성-및-변환">Dataframe을 Dict로 생성 및 변환</a></li>
+  <li><a href="#데이터프레임을-딕셔너리로-변환" id="toc-데이터프레임을-딕셔너리로-변환" class="nav-link" data-scroll-target="#데이터프레임을-딕셔너리로-변환">데이터프레임을 딕셔너리로 변환</a>
   <ul class="collapse">
-  <li><a href="#딥러닝-용어사전" id="toc-딥러닝-용어사전" class="nav-link" data-scroll-target="#딥러닝-용어사전">딥러닝 용어사전</a></li>
-  <li><a href="#공공데이터-시각화" id="toc-공공데이터-시각화" class="nav-link" data-scroll-target="#공공데이터-시각화">공공데이터 시각화</a></li>
-  <li><a href="#huggingface-krew" id="toc-huggingface-krew" class="nav-link" data-scroll-target="#huggingface-krew">HuggingFace KREW</a></li>
+  <li><a href="#dict-형식" id="toc-dict-형식" class="nav-link" data-scroll-target="#dict-형식">dict 형식</a></li>
+  <li><a href="#list-형식" id="toc-list-형식" class="nav-link" data-scroll-target="#list-형식">list 형식</a></li>
+  <li><a href="#records-형식" id="toc-records-형식" class="nav-link" data-scroll-target="#records-형식">records 형식</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/about.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20231129.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
+<h1 class="title">Dataframe을 Dict로 생성 및 변환</h1>
+<p class="subtitle lead">Dataframe을 Dict로 생성 및 변환</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Pandas</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Dataframe을 Dict로 생성 및 변환
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 30, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -156,24 +219,108 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<p>온라인에 책을 만들고 싶다는 생각에 배운 것을 정리하는 사이트입니다. <a href="https://linktr.ee/sungmo.yang">링크트리</a>와 함께 작업한 내용을 정리하고 있습니다.</p>
-<section id="프로젝트" class="level2">
-<h2 class="anchored" data-anchor-id="프로젝트">프로젝트</h2>
-<p>진행하고 있는 프로젝트를 소개합니다 관심있는 분들은 홈페이지 하단의 이메일로 연락 부탁드립니다.</p>
-<section id="딥러닝-용어사전" class="level3">
-<h3 class="anchored" data-anchor-id="딥러닝-용어사전">딥러닝 용어사전</h3>
-<p><a href="https://pseudo-lab.github.io/deep-learning-glossary/">딥러닝용어사전</a>은 다양한 딥러닝 문서를 한국어 번역하면서 중요한 딥러닝 용어를 한국어로 번역하는 오픈소스 용어사전입니다.</p>
-</section>
-<section id="공공데이터-시각화" class="level3">
-<h3 class="anchored" data-anchor-id="공공데이터-시각화">공공데이터 시각화</h3>
-<p><a href="https://www.publickrbook.com/">공공데이터 시각화</a>사이트는 공공 데이터 중 관심있는 데이터를 시각화하는 사이트 입니다. 많은 사람들이 궁금해하는 데이터 또는 공공의 이익 위한 데이터를 고민하고 표현하는 연습을 하는 사이트 입니다.</p>
-</section>
-<section id="huggingface-krew" class="level3">
-<h3 class="anchored" data-anchor-id="huggingface-krew">HuggingFace KREW</h3>
-<p><a href="https://pseudo-lab.github.io/huggingface_krew/">허깅페이스 KREW팀</a>은 허깅페이스에 대해 공부하는 사람들의 모임입니다. 초기 허깅페이스 문서번역을 통해서 오픈소스에 기여하는 활동을 시작으로 허깅페이스를 잘 활용하기 위한 여러 가지 스터디를 하고 있습니다.</p>
+<section id="dataframe을-dict로-생성-및-변환" class="level1">
+<h1>Dataframe을 Dict로 생성 및 변환</h1>
+<p>파이썬 딕셔너리 데이터로 Dataframe을 생성하는 방법을 정리합니다.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"A"</span> : [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"B"</span> : [<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C"</span> : [<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>{'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]}</code></pre>
+</div>
+</div>
+<p>딕셔너리 데이터를 데이터프레임으로 변경하기 위해서 <code>from_dict</code>를 사용합니다.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame.from_dict(data)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
 
 
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">B</th>
+<th data-quarto-table-cell-role="th">C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>5</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>6</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
+<section id="데이터프레임을-딕셔너리로-변환" class="level1">
+<h1>데이터프레임을 딕셔너리로 변환</h1>
+<p>데이터프레임은 다시 딕셔너리로 변경이 가능합니다. 딕셔너리로 변경은 <code>to_dict</code>를 사용합니다. 데이터프레임을 딕셔너리로 변경하는 방식을 여러가지 <code>{dict, list, series, split, tight, records, index}</code>가 지원됩니다.</p>
+<section id="dict-형식" class="level2">
+<h2 class="anchored" data-anchor-id="dict-형식">dict 형식</h2>
+<p>변환 형식은 <code>orient</code>에 전달되고 기본값은 <code>dict</code> 형식입니다. index가 추가되는 <code>{column -&gt; {index-&gt;value}}</code>와 같은 형식을 갖습니다.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'dict'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>{'A': {0: 1, 1: 2, 2: 3}, 'B': {0: 4, 1: 5, 2: 6}, 'C': {0: 7, 1: 8, 2: 9}}</code></pre>
+</div>
+</div>
+</section>
+<section id="list-형식" class="level2">
+<h2 class="anchored" data-anchor-id="list-형식">list 형식</h2>
+<p><code>list</code> 형식은 <code>{column -&gt; [value]}</code>와 같은 형식을 갖습니다. 일반적으로 딕셔너리에 index를 사용하지 않기 때문에 <code>list</code>형식으로 표현하는 것이 익숙합니다.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'list'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>{'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]}</code></pre>
+</div>
+</div>
+</section>
+<section id="records-형식" class="level2">
+<h2 class="anchored" data-anchor-id="records-형식">records 형식</h2>
+<p><code>records</code> 형식은 <code>[{column-&gt;value}, ... , {column-&gt;value}]</code>와 같은 형식을 갖습니다. 각각의 열을 리스트로 표현하기 때문에 데이터베이스의 레코드와 비슷합니다.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'records'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dict_from_dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>[{'A': 1, 'B': 4, 'C': 7}, {'A': 2, 'B': 5, 'C': 8}, {'A': 3, 'B': 6, 'C': 9}]</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li>https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_dict.html</li>
+</ol>
+
+
 </section>
 
 </main> <!-- /main -->

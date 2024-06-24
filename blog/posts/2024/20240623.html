@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2025-11-06">
+<meta name="description" content="Robots.txt 작성방법">
 
-<title>BookShelf - Public BookShelf</title>
+<title>BookShelf - Robots.txt 작성방법</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +108,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +118,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -92,23 +129,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/blog.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./book_blog/book_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../book_blog/book_blog.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard_blog/dashboard_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../dashboard_blog/dashboard_blog.html" rel="" target="">
  <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -123,21 +160,57 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#robots.txt-웹사이트의-문지기" id="toc-robots.txt-웹사이트의-문지기" class="nav-link active" data-scroll-target="#robots.txt-웹사이트의-문지기">Robots.txt: 웹사이트의 문지기</a>
+  <ul class="collapse">
+  <li><a href="#개요" id="toc-개요" class="nav-link" data-scroll-target="#개요">1. 개요</a></li>
+  <li><a href="#robots.txt란" id="toc-robots.txt란" class="nav-link" data-scroll-target="#robots.txt란">2. Robots.txt란?</a></li>
+  <li><a href="#robots.txt의-구성-요소" id="toc-robots.txt의-구성-요소" class="nav-link" data-scroll-target="#robots.txt의-구성-요소">3. Robots.txt의 구성 요소</a></li>
+  <li><a href="#robots.txt-예제" id="toc-robots.txt-예제" class="nav-link" data-scroll-target="#robots.txt-예제">4. Robots.txt 예제</a></li>
+  <li><a href="#robots.txt-작성-시-주의사항" id="toc-robots.txt-작성-시-주의사항" class="nav-link" data-scroll-target="#robots.txt-작성-시-주의사항">5. Robots.txt 작성 시 주의사항</a></li>
+  <li><a href="#robots.txt와-seo" id="toc-robots.txt와-seo" class="nav-link" data-scroll-target="#robots.txt와-seo">6. Robots.txt와 SEO</a></li>
+  <li><a href="#결론" id="toc-결론" class="nav-link" data-scroll-target="#결론">7. 결론</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2024/20240623.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Public BookShelf</h1>
-</div>
+<h1 class="title">Robots.txt 작성방법</h1>
+<p class="subtitle lead">Robots.txt 작성방법</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Web</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Robots.txt 작성방법
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 6, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -145,15 +218,57 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<div class="get-started">
-<div class="content-block">
-<p>온라인 책장입니다. 공부한 내용을 정리하고 차근차근 모아 책으로 만듭니다.</p>
-<p>추가하고 싶은 책이 있다면 블로그에 하나씩 글을 모으는 것으로 시작합니다. 느리게 작지만 꾸준히 글쓰기를 연습합니다.</p>
-<p><a href="./google2af1b7ec19db0372.html"></a> <a href="./ads.txt"></a></p>
-</div>
-</div>
+<section id="robots.txt-웹사이트의-문지기" class="level1">
+<h1>Robots.txt: 웹사이트의 문지기</h1>
+<section id="개요" class="level2">
+<h2 class="anchored" data-anchor-id="개요">1. 개요</h2>
+<p>웹사이트의 트래픽을 늘리기 위해 검색 엔진 최적화(SEO)가 중요한 역할을 합니다. 검색 엔진은 웹 크롤러를 통해 웹사이트의 콘텐츠를 수집하고 색인합니다. 하지만 모든 페이지가 크롤링되는 것은 바람직하지 않을 수 있습니다. 이때 필요한 것이 바로 <code>robots.txt</code> 파일입니다. 이 파일은 웹사이트 소유자가 웹 크롤러에 대해 특정 페이지나 섹션의 접근을 제한할 수 있도록 도와줍니다.</p>
+</section>
+<section id="robots.txt란" class="level2">
+<h2 class="anchored" data-anchor-id="robots.txt란">2. Robots.txt란?</h2>
+<p><code>robots.txt</code>는 웹사이트의 루트 디렉토리에 위치한 텍스트 파일로, 검색 엔진의 웹 크롤러에게 어떤 페이지를 크롤링할 수 있는지, 또는 크롤링할 수 없는지를 지시하는 역할을 합니다. 예를 들어, 민감한 정보를 포함한 페이지나, 중복된 콘텐츠 페이지 등이 검색 엔진에 의해 인덱싱되는 것을 막기 위해 사용됩니다.</p>
+</section>
+<section id="robots.txt의-구성-요소" class="level2">
+<h2 class="anchored" data-anchor-id="robots.txt의-구성-요소">3. Robots.txt의 구성 요소</h2>
+<p><code>robots.txt</code> 파일은 기본적으로 다음과 같은 지시어들로 구성됩니다:</p>
+<ul>
+<li><code>User-agent</code>: 크롤러의 이름을 지정합니다. 모든 크롤러에게 적용하고자 할 때는 <code>*</code>를 사용합니다.</li>
+<li><code>Disallow</code>: 특정 페이지나 디렉토리를 크롤링하지 않도록 지시합니다.</li>
+<li><code>Allow</code>: 특정 파일이나 디렉토리를 크롤링하도록 허용합니다(일부 크롤러에만 해당).</li>
+<li><code>Sitemap</code>: 사이트맵 파일의 위치를 지정하여 크롤러가 웹사이트 구조를 쉽게 이해할 수 있도록 합니다.</li>
+</ul>
+</section>
+<section id="robots.txt-예제" class="level2">
+<h2 class="anchored" data-anchor-id="robots.txt-예제">4. Robots.txt 예제</h2>
+<p>다음은 <code>robots.txt</code> 파일의 간단한 예제입니다:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>User-agent: *</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Disallow: /private/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Disallow: /tmp/</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Allow: /public/</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Sitemap: http://example.com/sitemap.xml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이 예제에서는 모든 크롤러(<code>User-agent: *</code>)에게 <code>/private/</code>와 <code>/tmp/</code> 디렉토리를 크롤링하지 말 것을 지시하고, <code>/public/</code> 디렉토리는 크롤링하도록 허용합니다. 또한, 사이트맵 파일의 위치를 지정하고 있습니다.</p>
+</section>
+<section id="robots.txt-작성-시-주의사항" class="level2">
+<h2 class="anchored" data-anchor-id="robots.txt-작성-시-주의사항">5. Robots.txt 작성 시 주의사항</h2>
+<p><code>robots.txt</code> 파일을 작성할 때는 몇 가지 주의사항을 염두에 두어야 합니다:</p>
+<ul>
+<li><strong>위치</strong>: <code>robots.txt</code> 파일은 반드시 웹사이트의 루트 디렉토리에 있어야 합니다. 예를 들어, <code>http://example.com/robots.txt</code>와 같은 위치에 있어야 합니다.</li>
+<li><strong>대소문자 구분</strong>: <code>robots.txt</code> 파일 내의 지시어는 대소문자를 구분합니다. 잘못된 대소문자 사용은 의도한 대로 작동하지 않을 수 있습니다.</li>
+<li><strong>기본 허용</strong>: 명시적으로 <code>Disallow</code> 지시어를 사용하지 않으면, 기본적으로 모든 페이지가 크롤링될 수 있습니다.</li>
+<li><strong>안전성</strong>: 민감한 정보가 포함된 페이지는 <code>robots.txt</code>에만 의존하여 보호하지 마세요. URL이 노출될 수 있습니다. 대신 서버 측 인증을 통해 보호하는 것이 좋습니다.</li>
+</ul>
+</section>
+<section id="robots.txt와-seo" class="level2">
+<h2 class="anchored" data-anchor-id="robots.txt와-seo">6. Robots.txt와 SEO</h2>
+<p><code>robots.txt</code> 파일은 웹사이트의 SEO 전략에 중요한 역할을 합니다. 잘 설계된 <code>robots.txt</code> 파일은 검색 엔진이 중요한 페이지를 효과적으로 크롤링하고, 불필요한 페이지는 무시하도록 함으로써 웹사이트의 검색 엔진 순위를 개선할 수 있습니다.</p>
+</section>
+<section id="결론" class="level2">
+<h2 class="anchored" data-anchor-id="결론">7. 결론</h2>
+<p><code>robots.txt</code> 파일은 웹사이트 관리자가 검색 엔진 크롤러의 접근을 제어할 수 있는 강력한 도구입니다. 올바르게 설정된 <code>robots.txt</code> 파일은 웹사이트의 보안과 효율성을 높이는 데 기여할 수 있으며, SEO 최적화에도 중요한 역할을 합니다. 웹사이트의 구조와 콘텐츠에 따라 적절한 설정을 통해 최상의 결과를 얻으시길 바랍니다.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -389,13 +504,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/index.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    <div class="nav-footer-center">gabrielwithhappy@gmail.com</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

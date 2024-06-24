@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2023-09-10">
+<meta name="description" content="Quarto Callout으로 내용 강조하는 방법을 정리합니다.">
 
-<title>BookShelf - About</title>
+<title>BookShelf - Quarto Callout Block</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +108,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +118,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -92,23 +129,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/blog.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./book_blog/book_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../book_blog/book_blog.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard_blog/dashboard_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../dashboard_blog/dashboard_blog.html" rel="" target="">
  <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -127,28 +164,49 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#프로젝트" id="toc-프로젝트" class="nav-link active" data-scroll-target="#프로젝트">프로젝트</a>
+  <li><a href="#callout-종류" id="toc-callout-종류" class="nav-link active" data-scroll-target="#callout-종류">Callout 종류</a></li>
+  <li><a href="#다양한-사용자-설정" id="toc-다양한-사용자-설정" class="nav-link" data-scroll-target="#다양한-사용자-설정">다양한 사용자 설정</a>
   <ul class="collapse">
-  <li><a href="#딥러닝-용어사전" id="toc-딥러닝-용어사전" class="nav-link" data-scroll-target="#딥러닝-용어사전">딥러닝 용어사전</a></li>
-  <li><a href="#공공데이터-시각화" id="toc-공공데이터-시각화" class="nav-link" data-scroll-target="#공공데이터-시각화">공공데이터 시각화</a></li>
-  <li><a href="#huggingface-krew" id="toc-huggingface-krew" class="nav-link" data-scroll-target="#huggingface-krew">HuggingFace KREW</a></li>
+  <li><a href="#제목-추가하기" id="toc-제목-추가하기" class="nav-link" data-scroll-target="#제목-추가하기">제목 추가하기</a></li>
+  <li><a href="#형태-변경하기" id="toc-형태-변경하기" class="nav-link" data-scroll-target="#형태-변경하기">형태 변경하기</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/about.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20230910.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
+<h1 class="title">Quarto Callout Block</h1>
+<p class="subtitle lead">Callout Block으로 내용 강조하기</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Quarto</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Quarto Callout으로 내용 강조하는 방법을 정리합니다.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 10, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -156,21 +214,164 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<p>온라인에 책을 만들고 싶다는 생각에 배운 것을 정리하는 사이트입니다. <a href="https://linktr.ee/sungmo.yang">링크트리</a>와 함께 작업한 내용을 정리하고 있습니다.</p>
-<section id="프로젝트" class="level2">
-<h2 class="anchored" data-anchor-id="프로젝트">프로젝트</h2>
-<p>진행하고 있는 프로젝트를 소개합니다 관심있는 분들은 홈페이지 하단의 이메일로 연락 부탁드립니다.</p>
-<section id="딥러닝-용어사전" class="level3">
-<h3 class="anchored" data-anchor-id="딥러닝-용어사전">딥러닝 용어사전</h3>
-<p><a href="https://pseudo-lab.github.io/deep-learning-glossary/">딥러닝용어사전</a>은 다양한 딥러닝 문서를 한국어 번역하면서 중요한 딥러닝 용어를 한국어로 번역하는 오픈소스 용어사전입니다.</p>
+<p>Quarto를 이용해 문서를 작성하는 과정에서 강조할 내용이 있는 경우 <code>Callout Block</code>을 사용하는 것이 좋습니다. 자산이 작성한 글에 집중이 필요한 내용을 명확하게 나타낼 수 있습니다. 공부한 내용을 정리합니다.</p>
+<section id="callout-종류" class="level2">
+<h2 class="anchored" data-anchor-id="callout-종류">Callout 종류</h2>
+<p><code>Callout Block</code>은 총 아래의 <code>note</code>, <code>warning</code>, <code>important</code>, <code>tip</code>, <code>caution</code> 5가지 종류를 갖습니다. 실제 어떻게 적용되는지 아래에서 살펴보세요.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Callout <code>note</code> 타입을 사용합니다.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Callout <code>warning</code> 타입을 사용합니다.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Callout <code>important</code> 타입을 사용합니다.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Callout <code>tip</code> 타입을 사용합니다.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Callout <code>caution</code> 타입을 사용합니다.</p>
+</div>
+</div>
+<p>Markdown으로 어떻게 구현하는 지 확인해봅시다. <code>:::</code> 키워드를 사용했고 <code>Callout Block</code>형식은 <code>{}</code>로 표시합니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># 제목을 추가합니다.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Callout <span class="in">`caution`</span> 타입을 사용합니다.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+제목을 추가합니다.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Callout <code>caution</code> 타입을 사용합니다.</p>
+</div>
+</div>
 </section>
-<section id="공공데이터-시각화" class="level3">
-<h3 class="anchored" data-anchor-id="공공데이터-시각화">공공데이터 시각화</h3>
-<p><a href="https://www.publickrbook.com/">공공데이터 시각화</a>사이트는 공공 데이터 중 관심있는 데이터를 시각화하는 사이트 입니다. 많은 사람들이 궁금해하는 데이터 또는 공공의 이익 위한 데이터를 고민하고 표현하는 연습을 하는 사이트 입니다.</p>
+<section id="다양한-사용자-설정" class="level2">
+<h2 class="anchored" data-anchor-id="다양한-사용자-설정">다양한 사용자 설정</h2>
+<section id="제목-추가하기" class="level3">
+<h3 class="anchored" data-anchor-id="제목-추가하기">제목 추가하기</h3>
+<p>아이콘은 유지하고 제목을 변경하고 싶은 경우가 있습니다. 이 경우 <code>header</code> 마크다운을 사용합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># 제목을 추가합니다.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Callout <span class="in">`caution`</span> 타입을 사용합니다.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+제목을 추가합니다.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Callout <code>caution</code> 타입을 사용합니다.</p>
+</div>
+</div>
 </section>
-<section id="huggingface-krew" class="level3">
-<h3 class="anchored" data-anchor-id="huggingface-krew">HuggingFace KREW</h3>
-<p><a href="https://pseudo-lab.github.io/huggingface_krew/">허깅페이스 KREW팀</a>은 허깅페이스에 대해 공부하는 사람들의 모임입니다. 초기 허깅페이스 문서번역을 통해서 오픈소스에 기여하는 활동을 시작으로 허깅페이스를 잘 활용하기 위한 여러 가지 스터디를 하고 있습니다.</p>
+<section id="형태-변경하기" class="level3">
+<h3 class="anchored" data-anchor-id="형태-변경하기">형태 변경하기</h3>
+<p><code>Callout Block</code>의 외형은 <code>default</code>, <code>simple</code>, <code>minimam</code> 형태를 지원합니다. 각각이 어떻게 표현되는지 알아봅니다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Default 외형
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>default 외형을 확인합니다.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+simple 외형
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>simple 외형을 확인합니다.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+minimal 외형
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>minimal 외형을 확인합니다.</p>
+</div>
+</div>
+<p>코드는 아래와 같이 사용합니다. <code>appearance</code>가 추가되었습니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="minimal"}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># Default 외형</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>default 외형을 확인합니다.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

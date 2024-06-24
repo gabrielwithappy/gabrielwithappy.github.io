@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="gabriel yang">
+<meta name="dcterms.date" content="2023-11-18">
+<meta name="description" content="docker-compose로 airflow 설치하기">
 
-<title>BookShelf - Public BookShelf</title>
+<title>BookShelf - docker-compose로 airflow 설치하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +108,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +118,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BookShelf</span>
     </a>
   </div>
@@ -92,23 +129,23 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/blog.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./book_blog/book_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../book_blog/book_blog.html" rel="" target="">
  <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dashboard_blog/dashboard_blog.html" rel="" target="">
+    <a class="nav-link" href="../../../dashboard_blog/dashboard_blog.html" rel="" target="">
  <span class="menu-text">DashBoard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -123,21 +160,54 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#docker-compose로-airflow-설치하기" id="toc-docker-compose로-airflow-설치하기" class="nav-link active" data-scroll-target="#docker-compose로-airflow-설치하기">docker-compose로 airflow 설치하기</a>
+  <ul class="collapse">
+  <li><a href="#docker-compose-yaml-다운로드" id="toc-docker-compose-yaml-다운로드" class="nav-link" data-scroll-target="#docker-compose-yaml-다운로드">docker-compose yaml 다운로드</a></li>
+  <li><a href="#데이터-베이스-초기화" id="toc-데이터-베이스-초기화" class="nav-link" data-scroll-target="#데이터-베이스-초기화">데이터 베이스 초기화</a></li>
+  <li><a href="#도커-실행" id="toc-도커-실행" class="nav-link" data-scroll-target="#도커-실행">도커 실행</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20231118.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Public BookShelf</h1>
-</div>
+<h1 class="title">docker-compose로 airflow 설치하기</h1>
+<p class="subtitle lead">docker-compose로 airflow 설치하기</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">DevOps</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    docker-compose로 airflow 설치하기
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>gabriel yang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 18, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -145,15 +215,99 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<div class="get-started">
-<div class="content-block">
-<p>온라인 책장입니다. 공부한 내용을 정리하고 차근차근 모아 책으로 만듭니다.</p>
-<p>추가하고 싶은 책이 있다면 블로그에 하나씩 글을 모으는 것으로 시작합니다. 느리게 작지만 꾸준히 글쓰기를 연습합니다.</p>
-<p><a href="./google2af1b7ec19db0372.html"></a> <a href="./ads.txt"></a></p>
-</div>
-</div>
+<section id="docker-compose로-airflow-설치하기" class="level1">
+<h1>docker-compose로 airflow 설치하기</h1>
+<p>airflow <a href="https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html">공식홈페이지</a>에서는 airflow 설치를 위한 다양한 방법을 제공합니다.</p>
+<p>Production 도커 이미지를 사용하는 방법은 Container/Docker 스택에 익숙할 때 유용합니다. 종속성을 쉽게 유지 관리하여 동일한 물리적 또는 가상 머신에서 실행되는 다른 소프트웨어와 별도로 Airflow 구성 요소를 실행하는 기능을 제공합니다.</p>
+<p>이 설치 방법은 Container/Docker 스택에 익숙할 뿐만 아니라 Kubernetes를 사용하고 Helm 차트를 통해 커뮤니티 관리 Kubernetes 설치 메커니즘을 사용하여 Airflow를 설치 및 유지 관리하려는 경우에 유용합니다.</p>
+<p>설치를 위해서 - Docker Compose v1.29.1 또는 최신버전을 설치해야합니다.</p>
+<section id="docker-compose-yaml-다운로드" class="level2">
+<h2 class="anchored" data-anchor-id="docker-compose-yaml-다운로드">docker-compose yaml 다운로드</h2>
+<p>Airflow docker compose를 사용하기 위해서 yaml파일을 다운로드 합니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LfO</span> <span class="st">'https://airflow.apache.org/docs/apache-airflow/2.7.3/docker-compose.yaml'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이 파일에는 아래의 서비스를 포함합니다.</p>
+<ul>
+<li>airflow-scheduler - 스케줄러는 모든 작업과 DAG를 모니터링하고 실행합니다.</li>
+<li>airflow-webserver - http://localhost:8080 에서 실행되는 웹서버</li>
+<li>airflow-worker - 스케쥴러가 제공하는 작업을 실행합니다.</li>
+<li>airflow-triggerer - 지연될 수 있는 작업에 대한 이벤트 루프를 생성합니다.</li>
+<li>airflow-init - 서비스를 초기화 합니다.</li>
+<li>postgres - 데이터베이스</li>
+<li>redis - The redis - 스케줄러에서 작업자에게 메세지를 전달하는 브로커입니다.</li>
+</ul>
+<p>airflow를 설치할 위치에서 도커 이미지의 airflow 폴더와 싱크되는 폴더를 생성합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ./dags ./logs ./plugins ./config</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="st">"AIRFLOW_UID=</span><span class="va">$(</span><span class="fu">id</span> <span class="at">-u</span><span class="va">)</span><span class="st">"</span>  . env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>airflow에서 사용하는 <a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#docker-compose-env-variables">환경변수</a>에서 세부내용을 확인할 수 있습니다.</p>
+</section>
+<section id="데이터-베이스-초기화" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-베이스-초기화">데이터 베이스 초기화</h2>
+<p>데이터베이스 마이그레이션을 실행하고 첫 번째 사용자 계정을 생성해야 합니다. 아래의 <code>airflow-init</code>을 수행합니다. 초기 설정되는 ID와 PW는 모두 <code>airflow</code>로 설정됩니다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up airflow-init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="도커-실행" class="level2">
+<h2 class="anchored" data-anchor-id="도커-실행">도커 실행</h2>
+<p>도커 서비스를 실행합니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="2023-11-18-dockercompose-airflow/images/paste-1.png" class="img-fluid"></p>
+<p>docker compose에서 사용되는 명령어를 함께 정리합니다. 백그라운드에서 airflow를 동작하는 경우 <code>docker compose up -d</code>를 사용합니다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>명령어</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>docker compose build &lt;service&gt;</td>
+<td>docker-compose.yaml 파일의 build로 표현된 서비스를 빌드합니다.</td>
+</tr>
+<tr class="even">
+<td>docker compose up</td>
+<td><strong><code>docker-compose.yml</code></strong> 파일을 기반으로 서비스를 시작합니다.</td>
+</tr>
+<tr class="odd">
+<td>docker compose up -d</td>
+<td>백그라운드에서 서비스를 시작합니다.</td>
+</tr>
+<tr class="even">
+<td>docker compose down</td>
+<td>서비스를 중지하고 관련된 리소스(컨테이너, 네트워크, 볼륨 등)를 제거합니다.</td>
+</tr>
+<tr class="odd">
+<td>docker-compose logs [service]</td>
+<td>지정된 서비스의 로그를 표시합니다. 서비스를 지정하지 않으면 모든 서비스의 로그를 표시합니다.</td>
+</tr>
+<tr class="even">
+<td>docker-compose start</td>
+<td>중지된 서비스를 시작합니다.</td>
+</tr>
+<tr class="odd">
+<td>docker-compose stop</td>
+<td>지정된 서비스를 중지합니다.</td>
+</tr>
+<tr class="even">
+<td>docker-compose restart</td>
+<td>지정된 서비스를 재시작합니다.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li>https://airflow.apache.org/docs/apache-airflow/stable/start.html</li>
+<li>https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -389,13 +543,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/index.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    <div class="nav-footer-center">gabrielwithhappy@gmail.com</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
