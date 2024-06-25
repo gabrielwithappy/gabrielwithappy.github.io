@@ -67,6 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
+<link href="../../../blog/posts/2023/20231008.html" rel="next">
+<link href="../../../blog/posts/2023/20231004.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -132,7 +134,7 @@ require(['plotly'], function(Plotly) {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -175,10 +177,315 @@ require(['plotly'], function(Plotly) {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../blog/posts/2023/20230910.html">2023</a></li><li class="breadcrumb-item"><a href="../../../blog/posts/2023/20231005.html">Plotly Funnel(깔대기) 차트 만들기</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">2023</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230910.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto Callout Block</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230912.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown문법 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230913.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Subpolt 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230914.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas 중복 데이터 제거하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230916.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Treemap 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230917.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Bubble chart 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230918.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Animation 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230919.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Box Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230921.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Histogram Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230922.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Line Plot만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230925.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Time Series 날짜 범위 UI 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230928.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 마커 모양 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20230930.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Axis 포멧 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231002.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly Hover 설정하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231003.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 불릿차트</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231004.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231005.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Plotly Funnel(깔대기) 차트 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231008.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotly line, shape 그리기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231009.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Github Pull Request 템플릿 적용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231113.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MongoDB 설치 및 명령어 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231114.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pymongo 명령어 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231115.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">mkfifo를 이용한 IPC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231115-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">wsl2에 docker 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231118.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">docker-compose로 airflow 설치하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231120.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">wsl 이미지 저장 위치 변경 및 백업</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231122.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">airflow postgresoperator 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231126.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AWS 호스팅 EC2 와 Lightsail의 차이</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231127.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231128.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">mongoDB 서비스 시작/종료/상태확인</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231129.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataframe을 Dict로 생성 및 변환</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231130.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">python datetime 사용법 정리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231203.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vite를 이용한 react 개발환경 세팅</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231205.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">crontab을 이용해서 Let’s Encrypt SSL 인증서 자동갱신</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231206.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MySQL 도커로 설치하고 테스트 DB 사용하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231212.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23년 허깅페이스 헤커톤 운영후기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231221.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAG(Retrieval Argumented Generation) 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231222.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Google Gemeni API Key 얻기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231223.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ChatGPT3.5와 ChatGPT4의 차이점</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231231.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">코루틴(coroutine)과 이벤트 루프</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2023/20231231-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">우분투와 윈도우 파일 공유하기 (samba)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">2024</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2024/20240103.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Javascript의 defer 속성은 왜 사용하는가?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2024/20240105.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL 정렬 명령 order by</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog/posts/2024/20240623.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Robots.txt 작성방법</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -582,6 +889,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="gabrielwithappy/publickrbook_comment" data-repo-id="R_kgDOKOzGlg" data-category="General" data-category-id="DIC_kwDOKOzGls4CZDaD" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../blog/posts/2023/20231004.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Plotly 차트의 축 tick 회전 및 폰트 변경하기</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../blog/posts/2023/20231008.html" class="pagination-link">
+        <span class="nav-page-text">Plotly line, shape 그리기</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
