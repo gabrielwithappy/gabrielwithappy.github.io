@@ -1,0 +1,21 @@
+---
+title: DashBoard
+subtitle: Visualization DashBoard
+listing:
+  sort: "date desc"
+  contents: "posts/*/*.qmd"
+  sort-ui: false
+  filter-ui: false
+  categories: true
+  type: grid
+  page-size: 36
+  feed: true
+# margin-header: signup.html
+# title-block-banner: "#00000"
+title-block-banner-color: body
+search: false
+---
+
+
+
+

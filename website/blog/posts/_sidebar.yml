@@ -1,0 +1,7 @@
+website:
+  page-navigation: true
+  sidebar:
+    - id: blog
+      style: "floating"
+      collapse-level: 1
+      contents: "blog/posts/*/*.qmd"

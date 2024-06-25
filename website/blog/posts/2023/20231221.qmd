@@ -1,0 +1,36 @@
+---
+title: RAG(Retrieval Argumented Generation) 정리하기
+subtitle: RAG(Retrieval Argumented Generation) 정리하기
+description:
+    RAG(Retrieval Argumented Generation) 정리하기
+categories:
+  - AI
+# All, Data Visualization, Database, DevOps, Pandas, Quarto, Web
+author: gabriel yang
+date: "12/14/2023"
+image: "https://picsum.photos/id/114/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# RAG(Retrieval Argumented Generation) 정리하기
+
+## RAG가 무엇인가요?
+
+"Retrieval-Augmented Generation" (RAG)는 자연어 처리 분야에서 사용되는 기술로, 특히 질문에 대한 답변이나 문장 생성과 같은 작업을 수행할 때 기존의 텍스트 생성 모델과 정보 검색을 결합하는 방법입니다. RAG는 크게 두 가지 주요 구성 요소로 나눌 수 있습니다: 정보 검색(retrieval)과 생성(generation).
+
+정보 검색 (Retrieval): 이 단계에서는 주어진 질문이나 입력에 가장 관련이 높은 문서나 데이터를 검색합니다. 이 과정은 대규모의 데이터베이스나 문서 집합에서 특정 키워드나 문맥에 기반하여 가장 적절한 정보를 찾는 것을 포함합니다.
+
+생성 (Generation): 검색된 정보를 바탕으로, 언어 모델이 자연스러운, 일관된 답변이나 문장을 생성합니다. 이 단계에서는 전통적인 언어 모델링 기법이 사용되며, 검색된 결과를 참조하여 보다 정확하고 상세한 정보를 제공하는 데 도움이 됩니다.
+
+RAG의 핵심은 정보 검색과 생성 두 부분을 통합하여, 단순한 텍스트 생성을 넘어서 사용자의 질문이나 요구에 맞는 구체적이고 상세한 답변을 제공하는 것입니다. 이 기술은 질문-답변 시스템, 챗봇, 기사 생성, 요약 생성 등 다양한 분야에서 활용됩니다.
+
+RAG 시스템의 성능은 검색하는 데이터베이스의 질과 크기, 그리고 언어 모델의 능력에 크게 의존합니다. 이러한 시스템은 대량의 정보에 접근하고, 그 정보를 바탕으로 사용자에게 보다 정확하고 유용한 답변을 제공할 수 있는 잠재력을 가지고 있습니다
+
+## LangChain은 무엇인가요?
+
+LangChain은 언어 모델과 에이전트의 개발 및 분석을 용이하게 하는 다기능 파이썬 라이브러리입니다. 이 라이브러리는 특히 응용 프로그램에서 Retrieval-Augmented Generation (RAG) 패턴을 구현하는 데 유용합니다. LangChain을 사용하면 "문서" 객체를 통해 여러 다른 소스에서 온 데이터를 정규화할 수 있으며, 이는 다양한 체인에서 데이터를 구조화된 방식으로 처리하고 전달하는 데 필수적입니다.
+
+LangChain의 핵심 아이디어는 AI 행동을 특정 순서대로 배열하여 처리 파이프라인을 만드는 것입니다. RAG 패턴의 맥락에서는 사용자가 질문을 제출하는 것으로 시작하여, 임베딩 생성, 추가 맥락을 위한 벡터 데이터베이스 조회, 그리고 마지막으로 언어 모델을 위한 프롬프트 생성의 순서를 따릅니다. LangChain의 "체인" 구성은 이러한 단계들을 특정 구성으로 연결하여 처리 파이프라인의 원활한 흐름과 오류 처리를 보장합니다.
+

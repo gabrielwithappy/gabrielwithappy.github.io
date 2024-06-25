@@ -1,0 +1,111 @@
+---
+title: 우분투와 윈도우 파일 공유하기 (samba)
+subtitle: 우분투와 윈도우 파일 공유하기 (samba)
+description:
+  우분투와 윈도우 파일 공유하기 (samba)
+categories:
+  - DevOps
+# All, Data Visualization, Database, DevOps, Pandas, Quarto, Web, HuggingFace
+author: gabriel yang
+date: "12/31/2023"
+image: "https://picsum.photos/id/131/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+execute:
+  echo: false
+---
+
+# 우분투와 윈도우 운영체제 사이의 파일 공유하기
+
+우분투와 윈도우 운영체제 사이에 파일을 공유하는 방법을 정리합니다.
+
+## 왜 SAMBA를 사용해야 하나요?
+
+다양한 운영체제 간의 호환성은 파일 공유의 업무 효율성을 올려줍니다. 우리가 흔히 사용하는 윈도우, 맥OS, 리눅스(예: 우분투) 등은 
+각기 다른 파일 시스템을 사용하기 때문에 파일 공유를 위해서는 특정 도구나 소프트웨어(예: SAMBA)가 필요합니다. 
+저의 경우 윈도우 노트북에서 리눅스 서버 사이의 파일 공유를 위해 Samba를 사용하고 있습니다.
+
+파일 공유를 이야기 하면 가장먼저 떠오르는 방식은 FTP(File Transper Protocol)입니다. FTP는 주로 대용량 파일 전송이나 웹사이트 파일 관리 등에 사용되고
+FTP 클라이언트를 통해서 접속이 가능합니다. 윈도우와 우분투 운영체제 사이의 파일공유는 SAMBA가 편리합니다. 파일 및 프린트 공유가 가능하며 FTP와 달리 FTP클라이언트
+설치없이 사용가능한 장점이 있습니다.
+
+## 우분투에 SAMBA 설치하기
+
+우분투에 SAMBA를 설치하여 윈도우에서 우분투 공유 폴더를 접속할 수 있습니다. 설치를 위해서 우분투 시스템의 패키지를 최신 상태로 업데이트 합니다. 
+(우분투에서 `패키지`는 소프트웨어나 어플리케이션을 설치하고 관리하기 위한 정보의 모음) 아래의 명령으로 패키지 업데이트와 `samba`설치를 진행합니다.
+
+``` bash
+sudo apt update && sudo apt upgrade
+sudo apt install samba
+```
+
+설치가 완료되었는 지 확인을 위해 아래 명령으로 서비스 상태를 확인합니다.
+
+``` bash
+sudo systemctl status smbd
+```
+```
+Active: active (running) since Sun 2023-12-31 13:24:19 KST; 1h 53min ago
+```
+서비스 동작 상태가 정상적으로 `Active`로 동작하도록 설치를 완료 했습니다.
+
+## SAMBA 설정하기
+
+SAMBA를 통한 공유폴더 및 프린트를 네트워크에 공유하는 과정에 보안을 위해서 SAMBA이 설정정보를 업데이트 해야합니다.
+우선 기존 SAMBA 설정파일을 백업하고 `smb.conf`설정 파일을 수정합니다.
+
+``` bash
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.backup
+sudo vi /etc/samba/smb.conf
+```
+
+설정파일인 `smb.conf`의 가장 하단에 공유를 위한 폴더위치 및 세부 정보를 아래와 같이 작성합니다.
+공유폴더 이름은 `MyShareFolder`로 정했습니다. `path`에는 자신이 공유할 폴더위치를 사용하세요~
+
+``` bash
+[SharedFolder]
+path = /home/[자신의유저명]/MyShareFolder
+read only = no
+browsable = yes
+writable = yes
+public = no:writable
+```
+
+변경된 설정정보를 적용하가 위해서 SAMBA 서비스를 재시작 합니다.
+
+``` bash
+sudo systemctl restart smbd
+```
+
+이제 폴더에 접근가능한 `유저정보`를 정의합니다.
+
+```
+sudo smbpasswd -a [사용할 사용자명]
+```
+`[사용할 사용자명]`은 우분투 시스템의 사용자 명입니다. 이 명령어는 해당 사용자는 SAMBA 사용자로 추가합니다.
+생성되면 암호를 물어봅니다. SAMBA접속 시 필요한 내용이니 잘 정리해두세요.
+
+
+## 윈도우에서 우분투 공유폴더 접근하기
+
+윈도우에서는 우분투에 생성된 SAMBA 공유폴더에 접근할 수 있습니다. 접근할 공유폴더가 생성된 우분투의 ip정보를 확인합니다.
+우분투에서 `ip a`명령을 사용하면 우분투 서버의 ip주소를 확인할 수 있습니다. 예시로 작성한 아래 코드에선
+`192.123.123.123`이 우분투 서버 주소입니다.
+
+```
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 74:11:11:11:11:f0 brd ff:ff:ff:ff:ff:ff
+    inet 192.123.123.123/24 brd 192.123.123.255 scope global dynamic noprefixroute enp4s0
+       valid_lft 78753sec preferred_lft 78753sec
+    inet6 fe80::e78b:acd3:ea2a:cafb/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+```
+
+윈도우 탐색기에서 `\\192.123.123.123` 주소를 입력하면 삼바 공유폴더로 설정한 폴더가 보이고 선택 시 
+설정한 SAMBA 유저명과 암호로 접속 가능합니다.

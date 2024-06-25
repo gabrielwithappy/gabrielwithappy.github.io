@@ -1,0 +1,82 @@
+---
+title: Plotly Line Plot만들기
+subtitle: Plotly Line Plot만들기
+description:
+  Plotly Line Plot의 사용방법을 정리합니다.
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "09/22/2023"
+image: "https://picsum.photos/id/220/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Line Plot만들기
+
+Plotly Line plot 연습을 위해서 `gapminder` 데이터를 사용합니다. 데이터를 살펴보기 위해서 sample 데이터 3개를 확인합니다.
+
+``` {python}
+import plotly.express as px
+df = px.data.gapminder()
+df.sample(3)
+```
+
+각 국가의 기대수명, 인구 등 여러 정보를 시간에 표시됩니다. Line Plot으로 표시하기에는 많은 데이터이기 때문에 `Asia`대륙에 대한 정보만 표시하겠습니다.
+
+``` {python}
+df_asia = df.query("continent == 'Asia'")
+df_asia
+```
+
+`query`함수로 `continent`가 `Asia`인 정보만 다시 표시합니다. 396개의 데이터로 줄었습니다.
+``` {python}
+fig = px.line(df_asia, x='year', y='lifeExp', color='country')
+fig.show()
+```
+
+이 데이터를 Line Plot으로 표시합니다. x축을 `year`로 표시하고 y축을 기대수명을 나타내는 `lifeExp`로 표시합니다. 각 line의 색은 `country`에 따라 결정됩니다.
+
+아직 데이터가 많으니 평균기대수명보다 높고 1인당 GDP가 평균 이상인 국가만 다시 필터링하겠습니다.
+
+``` {python}
+lifeExp_avg = df['lifeExp'].mean()
+gdpPercap_avg = df['gdpPercap'].mean()
+display(lifeExp_avg)
+df_result = df.query("continent == 'Asia' and lifeExp > @lifeExp_avg and gdpPercap > @gdpPercap_avg")
+df_result
+```
+
+## Line Plot에 마커 적용하기
+
+이제 시점을 좀 더 확실히 보기 위해서 `markers`를 사용하여 마커를 적용합니다.
+``` {python}
+fig = px.line(df_result, x='year', y='lifeExp', color='country', markers=True)
+fig.show()
+```
+
+각 라인에 서로다른 마커 심볼을 적용하기 위해서 `symbol`에 `country`정보를 전달합니다. 각 라인은 서로 다른 마커 심볼로 표시됩니다.
+
+``` {python}
+fig = px.line(df_result, x='year', y='lifeExp', color='country', symbol='country', markers=True)
+fig.show()
+```
+
+## 마커 사이즈 설정하기
+
+날짜 정보를 갖는 데이터를 Line Plot으로 표시하는 방법을 정리합니다. `stock()`함수로 주식정보를 불러옵니다.
+
+``` {python}
+df = px.data.stocks()
+df
+```
+
+데이터를 살펴보면 회사들의 주가를 시간에 따라서 저장하고 있습니다. y축에 표시할 데이터는 리스트 형태로 정보를 전달합니다. 마커사이즈는 `marker_size`를 이용해서 설정합니다.
+
+``` {python}
+fig = px.line(df, x='date', y=["GOOG", "AAPL", "FB"], markers=True)
+fig.update_traces(marker_size=10)
+
+fig.show()
+```

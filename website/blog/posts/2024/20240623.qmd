@@ -1,0 +1,66 @@
+---
+title: Robots.txt 작성방법
+subtitle: Robots.txt 작성방법
+description:
+  Robots.txt 작성방법
+categories:
+  - Web
+# All, Data Visualization, Database, DevOps, Pandas, Quarto, Web, HuggingFace
+author: gabriel yang
+date: "23/06/2024"
+image: "https://picsum.photos/id/235/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+execute:
+  echo: false
+---
+
+# Robots.txt: 웹사이트의 문지기
+
+## 1. 개요
+
+웹사이트의 트래픽을 늘리기 위해 검색 엔진 최적화(SEO)가 중요한 역할을 합니다. 검색 엔진은 웹 크롤러를 통해 웹사이트의 콘텐츠를 수집하고 색인합니다. 하지만 모든 페이지가 크롤링되는 것은 바람직하지 않을 수 있습니다. 이때 필요한 것이 바로 `robots.txt` 파일입니다. 이 파일은 웹사이트 소유자가 웹 크롤러에 대해 특정 페이지나 섹션의 접근을 제한할 수 있도록 도와줍니다.
+
+## 2. Robots.txt란?
+
+`robots.txt`는 웹사이트의 루트 디렉토리에 위치한 텍스트 파일로, 검색 엔진의 웹 크롤러에게 어떤 페이지를 크롤링할 수 있는지, 또는 크롤링할 수 없는지를 지시하는 역할을 합니다. 예를 들어, 민감한 정보를 포함한 페이지나, 중복된 콘텐츠 페이지 등이 검색 엔진에 의해 인덱싱되는 것을 막기 위해 사용됩니다.
+
+## 3. Robots.txt의 구성 요소
+
+`robots.txt` 파일은 기본적으로 다음과 같은 지시어들로 구성됩니다:
+
+- `User-agent`: 크롤러의 이름을 지정합니다. 모든 크롤러에게 적용하고자 할 때는 `*`를 사용합니다.
+- `Disallow`: 특정 페이지나 디렉토리를 크롤링하지 않도록 지시합니다.
+- `Allow`: 특정 파일이나 디렉토리를 크롤링하도록 허용합니다(일부 크롤러에만 해당).
+- `Sitemap`: 사이트맵 파일의 위치를 지정하여 크롤러가 웹사이트 구조를 쉽게 이해할 수 있도록 합니다.
+
+## 4. Robots.txt 예제
+
+다음은 `robots.txt` 파일의 간단한 예제입니다:
+
+```txt
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Allow: /public/
+Sitemap: http://example.com/sitemap.xml
+```
+
+이 예제에서는 모든 크롤러(`User-agent: *`)에게 `/private/`와 `/tmp/` 디렉토리를 크롤링하지 말 것을 지시하고, `/public/` 디렉토리는 크롤링하도록 허용합니다. 또한, 사이트맵 파일의 위치를 지정하고 있습니다.
+
+## 5. Robots.txt 작성 시 주의사항
+
+`robots.txt` 파일을 작성할 때는 몇 가지 주의사항을 염두에 두어야 합니다:
+
+- **위치**: `robots.txt` 파일은 반드시 웹사이트의 루트 디렉토리에 있어야 합니다. 예를 들어, `http://example.com/robots.txt`와 같은 위치에 있어야 합니다.
+- **대소문자 구분**: `robots.txt` 파일 내의 지시어는 대소문자를 구분합니다. 잘못된 대소문자 사용은 의도한 대로 작동하지 않을 수 있습니다.
+- **기본 허용**: 명시적으로 `Disallow` 지시어를 사용하지 않으면, 기본적으로 모든 페이지가 크롤링될 수 있습니다.
+- **안전성**: 민감한 정보가 포함된 페이지는 `robots.txt`에만 의존하여 보호하지 마세요. URL이 노출될 수 있습니다. 대신 서버 측 인증을 통해 보호하는 것이 좋습니다.
+
+## 6. Robots.txt와 SEO
+
+`robots.txt` 파일은 웹사이트의 SEO 전략에 중요한 역할을 합니다. 잘 설계된 `robots.txt` 파일은 검색 엔진이 중요한 페이지를 효과적으로 크롤링하고, 불필요한 페이지는 무시하도록 함으로써 웹사이트의 검색 엔진 순위를 개선할 수 있습니다.
+
+## 7. 결론
+
+`robots.txt` 파일은 웹사이트 관리자가 검색 엔진 크롤러의 접근을 제어할 수 있는 강력한 도구입니다. 올바르게 설정된 `robots.txt` 파일은 웹사이트의 보안과 효율성을 높이는 데 기여할 수 있으며, SEO 최적화에도 중요한 역할을 합니다. 웹사이트의 구조와 콘텐츠에 따라 적절한 설정을 통해 최상의 결과를 얻으시길 바랍니다.

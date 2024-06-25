@@ -1,0 +1,87 @@
+---
+title: docker-compose로 airflow 설치하기
+subtitle: docker-compose로 airflow 설치하기
+description:
+   docker-compose로 airflow 설치하기
+categories:
+  - DevOps
+author: gabriel yang
+date: "11/18/2023"
+image: "https://picsum.photos/id/118/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# docker-compose로 airflow 설치하기
+
+airflow [공식홈페이지](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html)에서는 airflow 설치를 위한 다양한 방법을 제공합니다.
+
+Production 도커 이미지를 사용하는 방법은 Container/Docker 스택에 익숙할 때 유용합니다. 종속성을 쉽게 유지 관리하여 동일한 물리적 또는 가상 머신에서 실행되는 다른 소프트웨어와 별도로 Airflow 구성 요소를 실행하는 기능을 제공합니다.
+
+이 설치 방법은 Container/Docker 스택에 익숙할 뿐만 아니라 Kubernetes를 사용하고 Helm 차트를 통해 커뮤니티 관리 Kubernetes 설치 메커니즘을 사용하여 Airflow를 설치 및 유지 관리하려는 경우에 유용합니다.
+
+설치를 위해서 - Docker Compose v1.29.1 또는 최신버전을 설치해야합니다.
+
+## docker-compose yaml 다운로드
+
+Airflow docker compose를 사용하기 위해서 yaml파일을 다운로드 합니다.
+
+``` bash
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.7.3/docker-compose.yaml'
+```
+
+이 파일에는 아래의 서비스를 포함합니다.
+
+-   airflow-scheduler - 스케줄러는 모든 작업과 DAG를 모니터링하고 실행합니다.
+-   airflow-webserver - http://localhost:8080 에서 실행되는 웹서버
+-   airflow-worker - 스케쥴러가 제공하는 작업을 실행합니다.
+-   airflow-triggerer - 지연될 수 있는 작업에 대한 이벤트 루프를 생성합니다.
+-   airflow-init - 서비스를 초기화 합니다.
+-   postgres - 데이터베이스
+-   redis - The redis - 스케줄러에서 작업자에게 메세지를 전달하는 브로커입니다.
+
+airflow를 설치할 위치에서 도커 이미지의 airflow 폴더와 싱크되는 폴더를 생성합니다.
+
+``` bash
+mkdir -p ./dags ./logs ./plugins ./config
+echo -e "AIRFLOW_UID=$(id -u)"  . env
+```
+
+airflow에서 사용하는 [환경변수](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#docker-compose-env-variables)에서 세부내용을 확인할 수 있습니다.
+
+## 데이터 베이스 초기화
+
+데이터베이스 마이그레이션을 실행하고 첫 번째 사용자 계정을 생성해야 합니다. 아래의 `airflow-init`을 수행합니다. 초기 설정되는 ID와 PW는 모두 `airflow`로 설정됩니다.
+
+``` bash
+docker compose up airflow-init
+```
+
+## 도커 실행
+
+도커 서비스를 실행합니다.
+
+``` bash
+docker compose up
+```
+
+![](2023-11-18-dockercompose-airflow/images/paste-1.png)
+
+docker compose에서 사용되는 명령어를 함께 정리합니다. 백그라운드에서 airflow를 동작하는 경우 `docker compose up -d`를 사용합니다.
+
+| 명령어                           | 의미                                                                                         |
+|------------------------------|------------------------------------------|
+| docker compose build \<service\> | docker-compose.yaml 파일의 build로 표현된 서비스를 빌드합니다.                               |
+| docker compose up                | **`docker-compose.yml`** 파일을 기반으로 서비스를 시작합니다.                                |
+| docker compose up -d             | 백그라운드에서 서비스를 시작합니다.                                                          |
+| docker compose down              | 서비스를 중지하고 관련된 리소스(컨테이너, 네트워크, 볼륨 등)를 제거합니다.                   |
+| docker-compose logs \[service\]  | 지정된 서비스의 로그를 표시합니다. 서비스를 지정하지 않으면 모든 서비스의 로그를 표시합니다. |
+| docker-compose start             | 중지된 서비스를 시작합니다.                                                                  |
+| docker-compose stop              | 지정된 서비스를 중지합니다.                                                                  |
+| docker-compose restart           | 지정된 서비스를 재시작합니다.                                                                |
+
+# References
+
+1.  https://airflow.apache.org/docs/apache-airflow/stable/start.html
+2.  https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html

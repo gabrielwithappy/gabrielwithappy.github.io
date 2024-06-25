@@ -1,0 +1,94 @@
+---
+title: Plotly Hover 설정하기
+subtitle: Plotly Hover 설정하기
+description:
+   Plotly Hover 레이블을 설정하는 방법을 정리합니다.
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "10/02/2023"
+image: "https://picsum.photos/id/20/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Hover 설정하기
+
+Plotly에서는 데이터의 정보를 쉽게 확인할 수 있는 Hover 레이블을 제공합니다. Hover 레이블은 정보를 확인할 데이터의 위치로 마우스를 이동하면 정보를 표시하는 기능입니다.
+
+``` {python}
+import plotly.express as px
+
+df = px.data.gapminder().query("continent=='Oceania'")
+
+fig = px.line(df, x="year", y="lifeExp", color="country", title="layout.hovermode='closest' (the default)")
+fig.update_traces(mode="markers+lines")
+
+fig.show()
+```
+
+테스트를위해서 line 차트를 생성합니다. Hover 레이블에 대한 설정이 없을 경우 `layout.hovermode='closest`으로 설정되고 가장 가까운 데이터를 Hover 레이블로 표시합니다.
+
+## X축 Y축 기준으로 Hover 레이블 표시하기
+
+선택된 X축 또는 Y축에 해당하는 데이터를 함게 표시하는 Hover 레이블 모드를 정리합니다.
+
+``` {python}
+import plotly.express as px
+
+df = px.data.gapminder().query("continent=='Oceania'")
+
+fig = px.line(df, x="year", y="lifeExp", color="country", title="layout.hovermode='x'")
+fig.update_traces(mode="markers+lines", hovertemplate=None)
+fig.update_layout(hovermode="x")
+
+fig.show()
+```
+
+`update_layout`에 `hovermode`를 `x`로 정의하면 선택된 X축에 위치한 데이터 벙보를 호버 레이블로 표시합니다.
+
+`x unified`형식은 X, Y정보를 Hover 레이블에 추가합니다. 그리고 각 축의 값을 표시하기위한 점선도 함께 추가됩니다.
+
+``` {python}
+import plotly.express as px
+
+df = px.data.gapminder().query("continent=='Oceania'")
+
+fig = px.line(df, x="year", y="lifeExp", color="country", title="layout.hovermode='x unified'")
+fig.update_traces(mode="markers+lines", hovertemplate=None)
+fig.update_layout(hovermode="x unified")
+
+fig.show()
+```
+
+위의 실행결과를 확인하면 점선이 생성되는 것을 확인할 수 있습니다.
+
+## Hover 레이블에 표시할 데이터 설정하기
+
+Hover 레이블에 표시할 데이터를 설정하는 방법을 정리합니다.
+
+``` {python}
+import plotly.express as px
+
+df_2007 = px.data.gapminder().query("year==2007")
+df.head()
+```
+
+`gapminder`데이터를 `gdpPercap`을 x축, `lifeExp`를 y축으로 설정하여 데이터를 표시합니다.
+```{python}
+fig = px.scatter(df_2007, x="gdpPercap", y="lifeExp", log_x=True,
+                 hover_name="country",)
+fig.show()
+```
+
+위의 그래프에서 임의의 데이터의 위치로 마우스를 이동하면 기본적으로 그래프에 사용한 x축과 y축의 데이터인 `gdpPercap`과 `lifeExp`정보만 Hover 레이블에 표시됨을 알 수 있습니다.
+
+```{python}
+fig = px.scatter(df_2007, x="gdpPercap", y="lifeExp", log_x=True,
+                 hover_name="country", hover_data=["continent", "pop"])
+
+fig.show()
+```
+
+위의 차트에는 `hover_data`를 통해서 추가 정보를 확인할 컬럼명을 전달하였습니다. 이제 추가정보가 Hover 레이블에 표시됩니다.

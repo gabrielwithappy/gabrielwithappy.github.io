@@ -1,6 +1,0 @@
----
-title: Summary
-author: Gabriel Yang
----
-
-In summary, this book has no content whatsoever.

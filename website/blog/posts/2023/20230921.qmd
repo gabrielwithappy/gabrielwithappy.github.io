@@ -1,0 +1,42 @@
+---
+title: Plotly Histogram Plot만들기
+subtitle: Plotly Histogram Plot만들기
+description:
+  Plotly Histogram Plot의 사용방법을 정리합니다.
+categories:
+  - Data Visualization
+author: gabriel yang
+date: "09/21/2023"
+image: "https://picsum.photos/id/210/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+# draft: true
+---
+
+# Plotly Histogram Plot만들기
+
+`tips`데이터는 고객 정보와 고객이 지불한 금액과 팁을 표시한 데이터입니다.
+
+``` {python}
+import plotly.express as px
+df = px.data.tips()
+df.head(3)
+```
+
+## 서브플롯에 그래프 표시하기
+
+'total_bill'에 대한 histogram을 표시합니다. 시간별 차이를 비교하기 위해서 `facet_row`에 `time`정보를 전달합니다.
+
+``` {python}
+fig = px.histogram(df, x="total_bill", facet_row="time")
+fig.show()
+```
+
+히스토그램의 막대 갯수는 `nbins`로 수정합니다.
+
+``` {python}
+fig = px.histogram(df, x="total_bill", nbins=100)
+fig.show()
+```
+
+

@@ -2,10 +2,10 @@ project:
   type: website
 
 metadata-files:
-  - docs/bookshelf/korean/_sidebar.yml
-  - docs/bookshelf/data_visualization/_sidebar.yml
-  - docs/bookshelf/hf-examples/_sidebar.yml
-  - docs/blog/posts/_sidebar.yml
+  - bookshelf/korean/_sidebar.yml
+  - bookshelf/data_visualization/_sidebar.yml
+  - bookshelf/hf-examples/_sidebar.yml
+  - blog/posts/_sidebar.yml
 
 website:
   title: "BookShelf"
@@ -24,9 +24,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - docs/blog/blog.qmd
-      - docs/book_blog/book_blog.qmd
-      - docs/slide_blog/slide_blog.qmd
+      - blog/blog.qmd
+      - book_blog/book_blog.qmd
+      - dashboard_blog/dashboard_blog.qmd
       - about.qmd
 
 execute:

@@ -1,7 +1,0 @@
----
-title: References
-author: Gabriel Yang
----
-
-::: {#refs}
-:::

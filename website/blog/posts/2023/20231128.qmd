@@ -1,0 +1,62 @@
+---
+title: mongoDB 서비스 시작/종료/상태확인
+subtitle: mongoDB 서비스 시작/종료/상태확인
+description:
+    mongoDB 서비스 시작/종료/상태확인
+categories:
+  - Database
+# All, Data Visualization, Database, DevOps, Pandas, Quarto
+author: gabriel yang
+date: "11/28/2023"
+image: "https://picsum.photos/id/228/200/150"
+# image-alt: "deep learning glossary"
+page-layout: article
+execute:
+  enabled: false
+---
+
+# mongoDB 서비스 시작/종료/상태확인
+
+mongodb 서비스 실행/종료/상태 확인 방법을 정리합니다.
+
+## 로컬 서비스 상태확인
+
+자신의 사용하는 운영체제에 설치된 mongodb 서비스의 상태확인 방법을 정리합니다.
+
+``` bash
+service mongodb start # mongodb 서비스 실행
+service mongodb status # mongodb 서비스 상태확인
+service mongodb stop # mongodb 서비스 정지
+```
+
+## mongodb Docker 상태 확인하기
+
+도커로 실행된 mongodb의 상태를 확인하는 방법을 정리합니다. `docker ps`로 실행 중인 컨테이너 정보를 확인할 수 있습니다. `-a`옵션을 사용하면 현재 실행되지 않는 컨테이너 정보도 모두 출력됩니다.
+
+``` bash
+docker ps
+```
+```
+CONTAINER ID   IMAGE           COMMAND                   CREATED        STATUS          PORTS                                                  NAMES
+8d45ded6e5ef   mongo           "docker-entrypoint.s…"   10 hours ago   Up 10 minutes   0.0.0.0:27017->27017/tcp, :::27017->27017/tcp          mongodb
+```
+
+몽고 db 컨테이너에 접속을 위해 아래 명령을 사용합니다. 실행할 컨테이너 이름은 `docker ps`정보의 `NAMES`에서 확인할 수 있습니다.
+
+``` bash
+docker exec -it mongodb bash
+```
+
+컨테이너에 진입 후 `ps -ef | grep mongodb`를 실행하면 현재 실행 중인 mongodb 프로세스를 확인할 수 있습니다.
+
+``` bash
+ps -ef | grep mongodb
+```
+```
+root@8d45ded6e5ef:/# ps -ef | grep mongodb
+mongodb        1       0  0 Nov28 ?        00:00:06 mongod --auth --bind_ip_all
+root         206     196  0 00:12 pts/0    00:00:00 grep mongodb
+```
+
+# References
+1. https://blog.qvil.dev/docker/docker-mongo
