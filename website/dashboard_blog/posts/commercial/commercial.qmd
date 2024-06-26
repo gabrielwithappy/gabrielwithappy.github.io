@@ -6,17 +6,26 @@ description:
 categories:
   - 시각화
 author: 양성모
-date: "23/06/2024"
-image: "data_visualization.jpg"
+date: "2024/06/23"
+image: "commercial.png"
 image-alt: ""
 page-layout: article
 ---
 
-우리나라 상권 중 총 유동인구수가 높은 10개의 지역을 정리하고 각 지역의 유동인구 특성을 확인합니다.
+# 연령별 상권 분석
+
+상권분석에서 연령별 유동인구를 확인하는 것은 다양한 중요한 이유가 있습니다.
+
+특정 연령층의 선호도와 소비 패턴을 이해함으로써 해당 연령층을 타겟으로 한 마케팅 전략을 세울 수 있습니다. 예를 들어, 특정 지역의 주요 유동인구가 20대에서 30대인 경우, 이들이 선호하는 상품이나 서비스를 개발하거나 마케팅 전략을 세울 수 있습니다.
+
+또한 해당 지역에 특정 연령층이 많은 이유를 분석해서 유행하고 있는 연령별 라이프 패턴을 이해할 수 있습니다.
+
+# 상권 유동인구 분석
+
+우리나라 상권 중 총 유동인구수가 높은 지역은 어디일까요? 상권 중 총 유동인구가 높은 지역을 확인하고 상위 10개 지역을 알아봅니다.
 
 ```{python}
 #| echo: false
-
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -29,33 +38,137 @@ df = df.sort_values(by='총_유동인구_수', ascending=False)
 df = df.drop_duplicates(['상권이름'])
 df[['상권이름', '총_유동인구_수']].head(15)
 df = df[df['상권이름'] != '천호초등학교_3111070']
-fig = px.bar(df.head(50), y='상권이름', x='총_유동인구_수', title='상권분석 그래프', orientation='h', height=700, template='seaborn')
+fig = px.bar(df.head(20), y='상권이름', x='총_유동인구_수', title='상권분석 그래프', orientation='h', height=700, template='seaborn')
 fig.update_layout(yaxis=dict(autorange="reversed"))
+fig.update_layout(
+    # width=800,
+    margin=dict(l=0, r=0, t=50, b=50), # remove due to mis-aligned range button
+    hovermode = 'x' or 'y',
+    showlegend=True,
+    legend = dict(
+        orientation="h", # 가로 방향으로
+        yanchor="bottom", y=0, # y축 방향 위치 설정
+        xanchor="left", x=0, # x축 방향 위치 설정
+    ),
+)
 fig.show()
 ```
 
-총 유동인구수를 기준으로 정렬한 결과 종로/청계 관광특구가 1위를 차지 했습니다.
+<br>
+총 유동인구수를 기준으로 정렬한 결과 `종로/청계 관광특구`가 1위를 차지 했습니다. 2위는 `강남역`입니다.
+
+상권과 함께 `까치산역`, `종로3가역`, `수유역`, `선릉역`, `충정로역`, `화곡역`이 유동인구 상위 순위에 포함되었습니다. 해당 역의 유동인구과 상권을 분석하면 상권의 특징을 좀 더 자세히 알 수 있을 것 같습니다.
+
+## 가설 설정
+
+::: {.callout-note appearance="simple"}
+상권에 대한 특징은 상권의 유동인구 정보로 이해할 수 있다.
+:::
+
+상권에 대한 특징을 알기 위해서 여러가지 정보를 확인할 수 있습니다. 그 중 연령별 유동인구를 사용하면 상권 정보를 잘 구분할 수 있을까요?
+
+
+
+
+## 연령별 유동인구 분석
+
+유동인구 수가 높은 상위 지역별 상권의 특징을 확인하기 위해서 상위 7개 지역에 대한 연령별 유동인구 수를 확인 합니다. 데이터의 특징을 분석하며 가설을 검증해 봅니다.
+
 
 ```{python}
 #| echo: false
 df_age_list = ['상권이름', '연령대_10_유동인구_수', '연령대_20_유동인구_수', '연령대_30_유동인구_수', '연령대_40_유동인구_수', '연령대_50_유동인구_수', '연령대_60_이상_유동인구_수']
 df_age = pd.melt(df[df_age_list], id_vars=['상권이름'], var_name='연령대', value_name='인구수')
+```
 
-locations = df['상권이름'].head(10)
+총 유동인구가 많은 7개 지역의 연령대별 유동인구를 조사합니다. 7개 지역은 각각 `종로/청계 관광특구`, `강남역`, `명동/남대문/무교동 관광특구`, `신촌역`, `종로3가`, `까치산역`, `수유역`입니다.
+
+각 지역에서 어떤 연령대 비율이 많은지 비교하기 위해서 각 지역의 `연령별 유동인구수`를 `총 유동인구 수`로 나누어 연령별 비율 정보를 확인하고 그래프로 표시합니다.
+
+
+
+```{python}
+#| echo: false
+
+import numpy as np
+import warnings
+
+warnings.filterwarnings("ignore")
+
+locations = df_age['상권이름'][:15]
 fig = go.Figure()
 for loc in locations:
     df_graph = df_age[df_age['상권이름'] == loc]
-    fig.add_trace(go.Bar(x=df_graph['연령대'], y=df_graph['인구수'], name = loc))
+    df_graph['인구수'] = (df_graph['인구수']/np.sum(df_graph['인구수'])*100).astype(int)
+    fig.add_trace(go.Bar(
+        x=df_graph['연령대'],
+        y=df_graph['인구수'],
+        name = loc,
+        text=df_graph['인구수'],
+        texttemplate='%{text}%',  # 값 뒤에 % 기호 추가
+        hovertemplate='%{y}%',  # hover 값에 % 기호 추가
+        ))
     # fig = px.bar(melt , x='연령대', y='인구수', title=location, facet_row='상권이름', barmode= 'group')
-
 fig.update_layout(
-    legend_yanchor="bottom",
-    # legend_y=0,
-    legend_xanchor="right",
-    # legend_x=0
+    # width=800,
+    margin=dict(l=0, r=0, t=50, b=200), # remove due to mis-aligned range button
+    showlegend=True,
+    legend = dict(
+        orientation="h", # 가로 방향으로
+        yanchor="bottom", y=1, # y축 방향 위치 설정
+        xanchor="left", x=0, # x축 방향 위치 설정
+    ),
 )
-
+fig.update_xaxes(
+    tickangle = 90,
+)
 fig.show()
 ```
 
-10개 지역의 연령대별 유동인구 비교는 위와 같습니다.
+## 20대 유동인구
+
+20대 유동인구가 많은 특징을 보이는 지역은 `신촌`, `홍대`, `강남역`, `신림역`, `관악구`입니다.
+
+선택된 지역들은 모두 20대 연령대가 높은 특징을 갖고 있으며 `신촌역`과 `홍대입구역`은 20대 연령대에 특화 되어 있으며 그외 지역은 20~30대에 좀 더 넓게 분포하고 있습니다. 대학가의 특징으로 발생하는 분석 결과로 보입니다.
+
+따라서 대학가 20대 연령에 대한 특징은 `신촌`, `홍대` 상권가에서 두드러지게 보일 것으로 보이며 좀 더 일반적인 20대 연령에 대한 특징은 그 외 지역인 `강남역`, `신림역`, `관악구`에서 확인할 수 있을 것으로 보입니다.
+
+
+```{python}
+#| echo: false
+
+locations = [ '신촌역(신촌역, 신촌로터리)_3120094',
+              '홍대입구역(홍대)_3120103',
+              '강남역_3120189',
+              '신림역(신림)_3120157',
+              '관악구 중앙길_3110892'
+            ]
+fig = go.Figure()
+for loc in locations:
+    df_graph = df_age[df_age['상권이름'] == loc]
+    df_graph['인구수'] = (df_graph['인구수']/np.sum(df_graph['인구수'])*100).astype(int)
+    fig.add_trace(go.Bar(
+        x=df_graph['연령대'],
+        y=df_graph['인구수'],
+        name = loc,
+        text=df_graph['인구수'],
+        texttemplate='%{text}%',  # 값 뒤에 % 기호 추가
+        hovertemplate='%{y}%',  # hover 값에 % 기호 추가
+        ))
+
+fig.update_layout(
+    # width=800,
+    margin=dict(l=0, r=0, t=50, b=200), # remove due to mis-aligned range button
+    showlegend=True,
+    legend = dict(
+        orientation="h", # 가로 방향으로
+        yanchor="bottom", y=1, # y축 방향 위치 설정
+        xanchor="left", x=0, # x축 방향 위치 설정
+    ),
+)
+fig.update_xaxes(
+    tickangle = 90,
+)
+fig.show()
+```
+
