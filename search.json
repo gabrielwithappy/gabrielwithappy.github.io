@@ -606,7 +606,28 @@
     "href": "dashboard_blog/posts/commercial/commercial.html",
     "title": "상권분석",
     "section": "",
-    "text": "우리나라 상권 중 총 유동인구수가 높은 10개의 지역을 정리하고 각 지역의 유동인구 특성을 확인합니다.\n\n\n\n                                                \n\n\n총 유동인구수를 기준으로 정렬한 결과 종로/청계 관광특구가 1위를 차지 했습니다.\n\n\n\n                                                \n\n\n10개 지역의 연령대별 유동인구 비교는 위와 같습니다."
+    "text": "상권분석에서 연령별 유동인구를 확인하는 것은 다양한 중요한 이유가 있습니다.\n특정 연령층의 선호도와 소비 패턴을 이해함으로써 해당 연령층을 타겟으로 한 마케팅 전략을 세울 수 있습니다. 예를 들어, 특정 지역의 주요 유동인구가 20대에서 30대인 경우, 이들이 선호하는 상품이나 서비스를 개발하거나 마케팅 전략을 세울 수 있습니다.\n또한 해당 지역에 특정 연령층이 많은 이유를 분석해서 유행하고 있는 연령별 라이프 패턴을 이해할 수 있습니다."
+  },
+  {
+    "objectID": "dashboard_blog/posts/commercial/commercial.html#가설-설정",
+    "href": "dashboard_blog/posts/commercial/commercial.html#가설-설정",
+    "title": "상권분석",
+    "section": "가설 설정",
+    "text": "가설 설정\n\n\n\n\n\n\n연령별 유동인구 특징을 확인하면 상권에 대한 특징을 구분할 수 있다?\n\n\n\n상권에 대한 특징을 알기 위해서 여러가지 정보를 확인할 수 있습니다. 그 중 연령별 유동인구를 사용하면 상권 정보를 잘 구분할 수 있을까요?"
+  },
+  {
+    "objectID": "dashboard_blog/posts/commercial/commercial.html#연령별-유동인구-분석",
+    "href": "dashboard_blog/posts/commercial/commercial.html#연령별-유동인구-분석",
+    "title": "상권분석",
+    "section": "연령별 유동인구 분석",
+    "text": "연령별 유동인구 분석\n유동인구 수가 높은 상위 지역별 상권의 특징을 확인하기 위해서 상위 7개 지역에 대한 연령별 유동인구 수를 확인 합니다. 데이터의 특징을 분석하며 가설을 검증해 봅니다.\n총 유동인구가 많은 7개 지역의 연령대별 유동인구를 조사합니다. 7개 지역은 각각 종로/청계 관광특구, 강남역, 명동/남대문/무교동 관광특구, 신촌역, 종로3가, 까치산역, 수유역입니다."
+  },
+  {
+    "objectID": "dashboard_blog/posts/commercial/commercial.html#대-유동인구",
+    "href": "dashboard_blog/posts/commercial/commercial.html#대-유동인구",
+    "title": "상권분석",
+    "section": "20대 유동인구",
+    "text": "20대 유동인구\n20대 유동인구가 많은 특징을 보이는 지역은 신촌이며 50~60대 유동인구의 경우는 종로/청계 관광특구입니다."
   },
   {
     "objectID": "bookshelf/data_visualization/data_visualization.html",
