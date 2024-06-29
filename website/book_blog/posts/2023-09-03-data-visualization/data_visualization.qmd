@@ -1,19 +1,13 @@
 ---
-title: 시계열 데이터 시각화
-subtitle: 시계열 데이터 시각화
-description:
-  시계열 데이터의 시각화 방법을 정리합니다.
-categories:
-  - 시각화
-author: 양성모
-date: "09/03/2023"
-image: "data_visualization.jpg"
-image-alt: "deep learning glossary"
-page-layout: article
+title: Welcome
+author: Gabriel Yang
 ---
 
-[시계열 데이터 시각화](../../../bookshelf/data_visualization/data_visualization.qmd)는 시계열 데이터를 시각화하는 방법을 정리합니다.
+데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다.
 
+배움을 잘 이해하고 기억하는 가장 좋은 방법은 정리하여 글로 남기는 것이라고 생각합니다.
+다만 배운 내용을 정리하는 과정에 잘못된 정보가 있을 수 있습니다.
 
+읽으시며 중요한 내용이 있다면 틀린 부분이 있는 지 다시 확인해 주시길 부탁드립니다. 이 책을 만들면서 데이터 시각화에 대해서 좀 더 잘 이해하고 더불어 이 책을 보는 분들에게도 도움이 되면 좋겠습니다.
 
-
+감사합니다.

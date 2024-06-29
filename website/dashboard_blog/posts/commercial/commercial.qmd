@@ -12,17 +12,15 @@ image-alt: ""
 page-layout: article
 ---
 
-# 연령별 상권 분석
+# 서울지역 상권 분석
 
-상권분석에서 연령별 유동인구를 확인하는 것은 다양한 중요한 이유가 있습니다.
+서울 지역 상권 중 유동인구가 높은 주요 상권을 알아보고 각 상권의 연령별 특징을 알아봅니다. 20~30대 연령과 40~50대 유동인구가 높은 상권이 어떤 지역인지 살펴봅니다.
 
-특정 연령층의 선호도와 소비 패턴을 이해함으로써 해당 연령층을 타겟으로 한 마케팅 전략을 세울 수 있습니다. 예를 들어, 특정 지역의 주요 유동인구가 20대에서 30대인 경우, 이들이 선호하는 상품이나 서비스를 개발하거나 마케팅 전략을 세울 수 있습니다.
+연령별 특징을 확인하면 해당 상권의 소비 패턴을 예상할 수 있고 특정 연령층을 타겟으로 한 마케팅 전략을 세울 수 있습니다. 예를 들어, 특정 지역의 주요 유동인구가 20대에서 30대인 경우, 이들이 선호하는 상품이나 서비스를 개발하거나 마케팅 전략을 세울 수 있습니다.
 
-또한 해당 지역에 특정 연령층이 많은 이유를 분석해서 유행하고 있는 연령별 라이프 패턴을 이해할 수 있습니다.
+## 상권 유동인구 분석
 
-# 상권 유동인구 분석
-
-우리나라 상권 중 총 유동인구수가 높은 지역은 어디일까요? 상권 중 총 유동인구가 높은 지역을 확인하고 상위 10개 지역을 알아봅니다.
+우리나라 상권 중 총 유동인구수가 높은 지역은 어디일까요? 상권 중 총 유동인구가 높은 지역을 확인하고 상위 10개 지역을 알아봅니다. 데이터는 2024년 1분기 총 유동인구를 표시합니다.
 
 ```{python}
 #| echo: false
@@ -34,22 +32,31 @@ import plotly.express as px
 file_path="./commercial.csv"
 df = pd.read_csv(file_path, encoding="cp949")
 df['상권이름'] = df['상권_코드_명'].astype(str) + '_' + df['상권_코드'].astype(str)
+df = df[df['기준_년분기_코드'] == 20241]
 df = df.sort_values(by='총_유동인구_수', ascending=False)
 df = df.drop_duplicates(['상권이름'])
-df[['상권이름', '총_유동인구_수']].head(15)
+# df[['상권이름', '총_유동인구_수']].head(15)
 df = df[df['상권이름'] != '천호초등학교_3111070']
-fig = px.bar(df.head(20), y='상권이름', x='총_유동인구_수', title='상권분석 그래프', orientation='h', height=700, template='seaborn')
+fig = px.bar(df.head(20), y='상권이름', x='총_유동인구_수', title='상권분석 그래프', orientation='h')#, template='seaborn')
 fig.update_layout(yaxis=dict(autorange="reversed"))
 fig.update_layout(
-    # width=800,
-    margin=dict(l=0, r=0, t=50, b=50), # remove due to mis-aligned range button
+    margin=dict(l=0, r=0), # remove due to mis-aligned range button
     hovermode = 'x' or 'y',
     showlegend=True,
     legend = dict(
-        orientation="h", # 가로 방향으로
+        # orientation="h", # 가로 방향으로
         yanchor="bottom", y=0, # y축 방향 위치 설정
         xanchor="left", x=0, # x축 방향 위치 설정
     ),
+)
+fig.update_xaxes(
+    fixedrange = True,
+    tickangle = 90,
+
+)
+fig.update_yaxes(
+    fixedrange = True,
+
 )
 fig.show()
 ```
@@ -111,7 +118,7 @@ for loc in locations:
     # fig = px.bar(melt , x='연령대', y='인구수', title=location, facet_row='상권이름', barmode= 'group')
 fig.update_layout(
     # width=800,
-    margin=dict(l=0, r=0, t=50, b=200), # remove due to mis-aligned range button
+    margin=dict(l=0, r=0), # remove due to mis-aligned range button
     showlegend=True,
     legend = dict(
         orientation="h", # 가로 방향으로
@@ -120,12 +127,16 @@ fig.update_layout(
     ),
 )
 fig.update_xaxes(
+    fixedrange = True,
     tickangle = 90,
+)
+fig.update_yaxes(
+    fixedrange = True,
 )
 fig.show()
 ```
 
-## 20대 유동인구
+## 20~30대 유동인구
 
 20대 유동인구가 많은 특징을 보이는 지역은 `신촌`, `홍대`, `강남역`, `신림역`, `관악구`입니다.
 
@@ -158,6 +169,56 @@ for loc in locations:
 
 fig.update_layout(
     # width=800,
+    margin=dict(l=0, r=0), # remove due to mis-aligned range button
+    showlegend=True,
+    legend = dict(
+        orientation="h", # 가로 방향으로
+        yanchor="bottom", y=1, # y축 방향 위치 설정
+        xanchor="left", x=0, # x축 방향 위치 설정
+    ),
+)
+fig.update_xaxes(
+    fixedrange = True,
+    tickangle = 90,
+)
+fig.update_yaxes(
+    fixedrange = True,
+)
+fig.show()
+```
+
+
+## 40~50대 유동인구
+
+40~50대 유동인구가 많은 특징을 보이는 지역은 `충정로`, `선릉역`, `명동`, `종로`, `까치산`, `망리단길`입니다.
+
+선택된 지역들은 모두 40~50대 연령대가 높은 특징을 갖고 있으며 `충정로`역는 전체 중 55% 40~50대 연령대에 분포하여 해당 연령대 비율이 가장 높습니다. `선릉`, `명동` 역시 53%로 높은 비율을 보입니다.
+
+```{python}
+#| echo: false
+
+locations = [ '충정로역 7번_3110533',
+              '선릉역_3120210',
+              '명동 남대문 북창동 다동 무교동 관광특구_3001492',
+              '종로?청계 관광특구_3001494',
+              '까치산역 3번_3110656',
+              '망리단길_3110544'
+            ]
+fig = go.Figure()
+for loc in locations:
+    df_graph = df_age[df_age['상권이름'] == loc]
+    df_graph['인구수'] = (df_graph['인구수']/np.sum(df_graph['인구수'])*100).astype(int)
+    fig.add_trace(go.Bar(
+        x=df_graph['연령대'],
+        y=df_graph['인구수'],
+        name = loc,
+        text=df_graph['인구수'],
+        texttemplate='%{text}%',  # 값 뒤에 % 기호 추가
+        hovertemplate='%{y}%',  # hover 값에 % 기호 추가
+        ))
+
+fig.update_layout(
+    # width=800,
     margin=dict(l=0, r=0, t=50, b=200), # remove due to mis-aligned range button
     showlegend=True,
     legend = dict(
@@ -167,8 +228,13 @@ fig.update_layout(
     ),
 )
 fig.update_xaxes(
+    fixedrange = True,
     tickangle = 90,
+)
+fig.update_yaxes(
+    fixedrange = True,
 )
 fig.show()
 ```
 
+궁금한 내용은 댓글로 알려주세요~

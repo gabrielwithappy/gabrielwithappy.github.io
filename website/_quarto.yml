@@ -3,9 +3,9 @@ project:
 
 metadata-files:
   - bookshelf/korean/_sidebar.yml
-  - bookshelf/data_visualization/_sidebar.yml
-  - bookshelf/hf-examples/_sidebar.yml
   - blog/posts/_sidebar.yml
+  - book_blog/posts/2024-06-29-plotly/_sidebar.yml
+  - book_blog/posts/2023-09-03-data-visualization/_sidebar.yml
 
 website:
   title: "BookShelf"
