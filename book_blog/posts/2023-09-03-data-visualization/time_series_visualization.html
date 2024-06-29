@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gabriel Yang">
 
-<title>BookShelf - Welcome</title>
+<title>BookShelf - 시계열 데이터 시각화</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_basic.html" rel="next">
+<link href="../../../book_blog/posts/2023-09-03-data-visualization/references.html" rel="next">
+<link href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_analysis.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,6 +71,25 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.16.1.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1386106477710113" crossorigin="anonymous"></script>
 
 
@@ -124,7 +144,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../book_blog/posts/2023-09-03-data-visualization/data_visualization.html">시계열 데이터 시각화</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_visualization.html">Part 3. 데이터 시각화</a></li><li class="breadcrumb-item"><a href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_visualization.html">시계열 데이터 시각화</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -146,7 +166,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../book_blog/posts/2023-09-03-data-visualization/data_visualization.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../book_blog/posts/2023-09-03-data-visualization/data_visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">시계열 데이터 시각화</span></a>
   </div>
 </li>
@@ -195,7 +215,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_visualization.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">시계열 데이터 시각화</span></a>
   </div>
 </li>
@@ -220,7 +240,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome</h1>
+<h1 class="title">시계열 데이터 시각화</h1>
 </div>
 
 
@@ -241,10 +261,170 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<p>데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다.</p>
-<p>배움을 잘 이해하고 기억하는 가장 좋은 방법은 정리하여 글로 남기는 것이라고 생각합니다. 다만 배운 내용을 정리하는 과정에 잘못된 정보가 있을 수 있습니다.</p>
-<p>읽으시며 중요한 내용이 있다면 틀린 부분이 있는 지 다시 확인해 주시길 부탁드립니다. 이 책을 만들면서 데이터 시각화에 대해서 좀 더 잘 이해하고 더불어 이 책을 보는 분들에게도 도움이 되면 좋겠습니다.</p>
-<p>감사합니다.</p>
+<p>시계열 데이터를 시각화를 연습합니다. 시계열 데이터 중 좋은 예로 사용할 수 있는 데이터는 주식데이터일 것 같습니다. <code>FinanceDataReader</code>라이브러리를 이용하여 <code>Kospi</code> 주가 정보를 읽어오고 이를 이용하여 월별 수익률을 계산합니다.</p>
+<p>시계열 데이터의 경우 일정 기간을 기준으로 통계정보를 추출하고 이를 지표로 사용하는 경우가 많습니다. KOSPI 주가지수를 분석하는 예제로 시계열 데이터를 시각화합니다.</p>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Open</th>
+<th data-quarto-table-cell-role="th">High</th>
+<th data-quarto-table-cell-role="th">Low</th>
+<th data-quarto-table-cell-role="th">Close</th>
+<th data-quarto-table-cell-role="th">Adj Close</th>
+<th data-quarto-table-cell-role="th">Volume</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2021-01-04</td>
+<td>2874.500000</td>
+<td>2946.540039</td>
+<td>2869.110107</td>
+<td>2944.449951</td>
+<td>2944.449951</td>
+<td>1026500</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2021-01-05</td>
+<td>2943.669922</td>
+<td>2990.570068</td>
+<td>2921.840088</td>
+<td>2990.570068</td>
+<td>2990.570068</td>
+<td>1519900</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2021-01-06</td>
+<td>2993.340088</td>
+<td>3027.159912</td>
+<td>2961.370117</td>
+<td>2968.209961</td>
+<td>2968.209961</td>
+<td>1793400</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2021-01-07</td>
+<td>2980.750000</td>
+<td>3055.280029</td>
+<td>2980.750000</td>
+<td>3031.679932</td>
+<td>3031.679932</td>
+<td>1524700</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2021-01-08</td>
+<td>3040.110107</td>
+<td>3161.110107</td>
+<td>3040.110107</td>
+<td>3152.179932</td>
+<td>3152.179932</td>
+<td>1297900</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2024-06-24</td>
+<td>2772.850098</td>
+<td>2782.899902</td>
+<td>2758.090088</td>
+<td>2764.729980</td>
+<td>2764.729980</td>
+<td>592800</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2024-06-25</td>
+<td>2765.760010</td>
+<td>2780.419922</td>
+<td>2765.760010</td>
+<td>2774.389893</td>
+<td>2774.389893</td>
+<td>714200</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2024-06-26</td>
+<td>2767.429932</td>
+<td>2792.070068</td>
+<td>2762.979980</td>
+<td>2792.050049</td>
+<td>2792.050049</td>
+<td>534300</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2024-06-27</td>
+<td>2767.620117</td>
+<td>2784.330078</td>
+<td>2761.550049</td>
+<td>2784.060059</td>
+<td>2784.060059</td>
+<td>396700</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2024-06-28</td>
+<td>2792.790039</td>
+<td>2797.820068</td>
+<td>2782.399902</td>
+<td>2797.820068</td>
+<td>2797.820068</td>
+<td>610600</td>
+</tr>
+</tbody>
+</table>
+
+<p>858 rows × 6 columns</p>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+
+<div>                            <div id="0f84f11b-6e67-4039-a428-c561454ed868" class="plotly-graph-div" style="height:700px; width:700px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0f84f11b-6e67-4039-a428-c561454ed868")) {                    Plotly.newPlot(                        "0f84f11b-6e67-4039-a428-c561454ed868",                        [{"name":"monthly returns(%)","x":["2022-07-31T00:00:00","2022-08-31T00:00:00","2022-09-30T00:00:00","2022-10-31T00:00:00","2022-11-30T00:00:00","2022-12-31T00:00:00","2023-01-31T00:00:00","2023-02-28T00:00:00","2023-03-31T00:00:00","2023-04-30T00:00:00","2023-05-31T00:00:00","2023-06-30T00:00:00","2023-07-31T00:00:00","2023-08-31T00:00:00","2023-09-30T00:00:00","2023-10-31T00:00:00","2023-11-30T00:00:00","2023-12-31T00:00:00","2024-01-31T00:00:00","2024-02-29T00:00:00","2024-03-31T00:00:00","2024-04-30T00:00:00","2024-05-31T00:00:00","2024-06-30T00:00:00"],"y":[5.0955189164296755,0.8382642871711088,-12.805568363312691,6.407829200821302,7.800799336118369,-9.550141928731248,8.436781625292689,-0.5043124188330417,2.652879640266814,0.9960159611065222,3.0217541713947638,-0.4982339750211895,2.663517565460083,-2.898679460416398,-3.5676963421884533,-7.589239771662348,11.295047393952773,4.732791442170781,-5.957561510360765,5.817572209273059,3.9460850064975572,-1.986792044234087,-2.063105494779749,6.117914780711575],"type":"bar","xaxis":"x","yaxis":"y"},{"name":"monthly return(avg. 6M)","x":["2022-07-31T00:00:00","2022-08-31T00:00:00","2022-09-30T00:00:00","2022-10-31T00:00:00","2022-11-30T00:00:00","2022-12-31T00:00:00","2023-01-31T00:00:00","2023-02-28T00:00:00","2023-03-31T00:00:00","2023-04-30T00:00:00","2023-05-31T00:00:00","2023-06-30T00:00:00","2023-07-31T00:00:00","2023-08-31T00:00:00","2023-09-30T00:00:00","2023-10-31T00:00:00","2023-11-30T00:00:00","2023-12-31T00:00:00","2024-01-31T00:00:00","2024-02-29T00:00:00","2024-03-31T00:00:00","2024-04-30T00:00:00","2024-05-31T00:00:00","2024-06-30T00:00:00"],"y":[-1.1924242295150655,-1.2769923203950946,-3.772289111901452,-2.3259769911882144,-0.9692576394031852,-0.3688830919172473,0.18799402622658823,-0.03576875810743685,2.5406392424891475,1.6386703692033509,0.8421628417494166,2.35081416736776,1.3886034907289921,0.989542317131766,-0.04722034661077849,-1.4780963020722568,-0.0992140983125888,0.772623471219406,-0.6642230414174021,0.7884855701975074,2.040782461645176,2.974523749549886,0.7481649347611324,0.9790188245179315],"type":"scatter","xaxis":"x2","yaxis":"y2"},{"name":"Kospi","x":["2022-07-31T00:00:00","2022-08-31T00:00:00","2022-09-30T00:00:00","2022-10-31T00:00:00","2022-11-30T00:00:00","2022-12-31T00:00:00","2023-01-31T00:00:00","2023-02-28T00:00:00","2023-03-31T00:00:00","2023-04-30T00:00:00","2023-05-31T00:00:00","2023-06-30T00:00:00","2023-07-31T00:00:00","2023-08-31T00:00:00","2023-09-30T00:00:00","2023-10-31T00:00:00","2023-11-30T00:00:00","2023-12-31T00:00:00","2024-01-31T00:00:00","2024-02-29T00:00:00","2024-03-31T00:00:00","2024-04-30T00:00:00","2024-05-31T00:00:00","2024-06-30T00:00:00"],"y":[2451.5,2472.050049,2155.48999,2293.610107,2472.530029,2236.399902,2425.080078,2412.850098,2476.860107,2501.530029,2577.120117,2564.280029,2632.580078,2556.27002,2465.070068,2277.98999,2535.290039,2655.280029,2497.090088,2642.360107,2746.629883,2692.060059,2636.52002,2797.820068],"type":"scatter","xaxis":"x3","yaxis":"y3"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"tickfont":{"size":9},"dtick":"M1","tickangle":45},"yaxis":{"anchor":"x","domain":[0.7333333333333333,1.0]},"xaxis2":{"anchor":"y2","domain":[0.0,1.0]},"yaxis2":{"anchor":"x2","domain":[0.36666666666666664,0.6333333333333333]},"xaxis3":{"anchor":"y3","domain":[0.0,1.0]},"yaxis3":{"anchor":"x3","domain":[0.0,0.26666666666666666]},"shapes":[{"line":{"color":"black"},"opacity":0.3,"type":"line","x0":0,"x1":1,"xref":"x2 domain","y0":0,"y1":0,"yref":"y2"}],"legend":{"orientation":"h","yanchor":"top","y":1.1,"xanchor":"left","x":0.01},"height":700,"width":700},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('0f84f11b-6e67-4039-a428-c561454ed868');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
+<p>Pandas 데이터 프레임으로 KOSPI 주가지수 정보를 로드하고 각각의 정보를 3개의 sub plot으로 구성하여 같이 비교할 수 있도록 위와 같이 구성합니다. 예제를 통해서 subplot을 생성하는 방법에 대해서 이해할 수 있었고 특정 시간 단위로 시계열 데이터를 처리하는 방법도 배울 수 있었습니다.</p>
 
 
 
@@ -486,10 +666,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">시계열 데이터 분석</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../book_blog/posts/2023-09-03-data-visualization/time_series_basic.html" class="pagination-link">
-        <span class="nav-page-text">시계열 데이터</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../book_blog/posts/2023-09-03-data-visualization/references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -499,7 +682,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/book_blog/posts/2023-09-03-data-visualization/data_visualization.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    <div class="nav-footer-center">gabrielwithhappy@gmail.com<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/book_blog/posts/2023-09-03-data-visualization/time_series_visualization.qmd" class="toc-action">Edit this page</a></p></div></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

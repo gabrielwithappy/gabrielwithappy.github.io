@@ -1,15 +1,15 @@
 [
   {
-    "listing": "/dashboard_blog/dashboard_blog.html",
-    "items": [
-      "/dashboard_blog/posts/commercial/commercial.html"
-    ]
-  },
-  {
     "listing": "/book_blog/book_blog.html",
     "items": [
       "/book_blog/posts/2024-06-29-plotly/plotly.html",
       "/book_blog/posts/2023-09-03-data-visualization/data_visualization.html"
+    ]
+  },
+  {
+    "listing": "/dashboard_blog/dashboard_blog.html",
+    "items": [
+      "/dashboard_blog/posts/commercial/commercial.html"
     ]
   },
   {
