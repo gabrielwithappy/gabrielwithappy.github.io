@@ -571,7 +571,7 @@
     "href": "bookshelf/plotly/what_is_plotly.html#plotly의-응용-분야",
     "title": "Plotly가 무엇인가요?",
     "section": "Plotly의 응용 분야",
-    "text": "Plotly의 응용 분야\nPlotly는 다양한 분야에서 활용될 수 있습니다. 예를 들어:\n\n데이터 분석: 데이터 과학자들이 데이터를 분석하고 시각화 및 분석을 위해 사용합니다.\n금융: 주식 시장 데이터, 금융 지표 등을 시각화하여 트렌드를 분석합니다.\n연구 및 학술: 연구자들이 실험 데이터를 시각화하여 논문에 사용하거나 프레젠테이션에 활용합니다.\n마케팅: 마케팅 데이터를 시각화하여 캠페인 성과를 분석하고 전략을 수립합니다.\n\n특히 데이터 시각화를 웹으로 표현해야하는 목적이 있다면 Plotly는 좋은 데이터 시각화 라이브러리소 사용될 수 있습니다."
+    "text": "Plotly의 응용 분야\nPlotly는 다양한 분야에서 활용될 수 있습니다. 예를 들어:\n\n데이터 분석: 데이터 과학자들이 데이터를 분석하고 시각화 및 분석을 위해 사용합니다.\n금융: 주식 시장 데이터, 금융 지표 등을 시각화하여 트렌드를 분석합니다.\n연구 및 학술: 연구자들이 실험 데이터를 시각화하여 논문에 사용하거나 프레젠테이션에 활용합니다.\n마케팅: 마케팅 데이터를 시각화하여 캠페인 성과를 분석하고 전략을 수립합니다.\n\n특히 데이터 시각화를 웹으로 표현해야하는 목적이 있다면 Plotly가 적합한 데이터 시각화 라이브러리가 될 수 있습니다."
   },
   {
     "objectID": "bookshelf/data_visualization/summary.html",
@@ -627,7 +627,14 @@
     "href": "book_blog/posts/2023-09-03-data-visualization/data_visualization.html",
     "title": "시계열 데이터 시각화",
     "section": "",
-    "text": "시계열 데이터 시각화는 시계열 데이터를 시각화하는 방법을 정리합니다."
+    "text": "[시계열 데이터 시각화]는 시계열 데이터를 시각화하는 방법을 정리합니다."
+  },
+  {
+    "objectID": "book_blog/posts/2023-09-03-data-visualization/data_visualization.html#책소개",
+    "href": "book_blog/posts/2023-09-03-data-visualization/data_visualization.html#책소개",
+    "title": "시계열 데이터 시각화",
+    "section": "",
+    "text": "[시계열 데이터 시각화]는 시계열 데이터를 시각화하는 방법을 정리합니다."
   },
   {
     "objectID": "index.html",
@@ -648,7 +655,14 @@
     "href": "book_blog/posts/2024-06-29-plotly/plotly.html",
     "title": "Plotly를 이용한 데이터시각화",
     "section": "",
-    "text": "Plotly를 이용한 데이터시각화는 시계열 데이터를 시각화하는 방법을 정리합니다."
+    "text": "[Plotly를 이용한 데이터시각화]는 시계열 데이터를 시각화하는 방법을 정리합니다."
+  },
+  {
+    "objectID": "book_blog/posts/2024-06-29-plotly/plotly.html#책소개",
+    "href": "book_blog/posts/2024-06-29-plotly/plotly.html#책소개",
+    "title": "Plotly를 이용한 데이터시각화",
+    "section": "",
+    "text": "[Plotly를 이용한 데이터시각화]는 시계열 데이터를 시각화하는 방법을 정리합니다."
   },
   {
     "objectID": "dashboard_blog/posts/commercial/commercial.html",

@@ -24,9 +24,12 @@
 
 
 
-<p><a href="../../../bookshelf/plotly/plotly.html">Plotly를 이용한 데이터시각화</a>는 시계열 데이터를 시각화하는 방법을 정리합니다.</p>
+<section id="책소개" class="level2">
+<h2 class="anchored" data-anchor-id="책소개">책소개</h2>
+<p><strong>[<a href="../../../bookshelf/plotly/plotly.html">Plotly를 이용한 데이터시각화</a>]</strong>는 시계열 데이터를 시각화하는 방법을 정리합니다.</p>
 
 
+</section>
 
  ]]></description>
   <category>시각화</category>
@@ -42,9 +45,12 @@
 
 
 
-<p><a href="../../../bookshelf/data_visualization/data_visualization.html">시계열 데이터 시각화</a>는 시계열 데이터를 시각화하는 방법을 정리합니다.</p>
+<section id="책소개" class="level2">
+<h2 class="anchored" data-anchor-id="책소개">책소개</h2>
+<p><strong>[<a href="../../../bookshelf/data_visualization/data_visualization.html">시계열 데이터 시각화</a>]</strong>는 시계열 데이터를 시각화하는 방법을 정리합니다.</p>
 
 
+</section>
 
  ]]></description>
   <category>시각화</category>
