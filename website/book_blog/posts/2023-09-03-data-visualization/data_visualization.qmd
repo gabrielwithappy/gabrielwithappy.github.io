@@ -1,6 +1,15 @@
 ---
-title: Welcome
+title: 시계열 데이터 시각화
+subtitle: 시계열 데이터 시각화
+description:
+  시계열 데이터 시각화
+categories:
+  - 시각화
 author: Gabriel Yang
+date: "2023/07/10"
+image: "data_visualization.jpg"
+image-alt: "deep learning glossary"
+page-layout: article
 ---
 
 데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다.

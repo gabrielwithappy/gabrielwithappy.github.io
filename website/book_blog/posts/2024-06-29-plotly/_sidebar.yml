@@ -11,6 +11,7 @@ website:
         - section: "Part 1. Plotly 시작하기"
           contents:
           - book_blog/posts/2024-06-29-plotly/what_is_plotly.qmd
+          - book_blog/posts/2024-06-29-plotly/installation.qmd
 
 
 
