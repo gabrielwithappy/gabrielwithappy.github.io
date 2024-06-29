@@ -37,8 +37,8 @@
   <media:content url="https://gabrielwithappy.github.io/book_blog/posts/2024-06-29-plotly/plotly.png" medium="image" type="image/png" height="56" width="144"/>
 </item>
 <item>
-  <title>Welcome</title>
-  <dc:creator>양성모 </dc:creator>
+  <title>시계열 데이터 시각화</title>
+  <dc:creator>Gabriel Yang</dc:creator>
   <link>https://gabrielwithappy.github.io/book_blog/posts/2023-09-03-data-visualization/data_visualization.html</link>
   <description><![CDATA[ 
 
@@ -54,7 +54,7 @@
  ]]></description>
   <category>시각화</category>
   <guid>https://gabrielwithappy.github.io/book_blog/posts/2023-09-03-data-visualization/data_visualization.html</guid>
-  <pubDate>Sat, 02 Sep 2023 15:00:00 GMT</pubDate>
+  <pubDate>Sun, 09 Jul 2023 15:00:00 GMT</pubDate>
   <media:content url="https://gabrielwithappy.github.io/book_blog/posts/2023-09-03-data-visualization/data_visualization.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
