@@ -686,6 +686,13 @@
     "text": "Jupyter Notebook에서 그래프 표시\nJupyter Notebook 내부에서 직접 그래프를 표시하려면 fig.show()명령을 사용합니다.\n\nimport plotly.graph_objs as go\n\n# 샘플 데이터 생성\nx_data = [1, 2, 3, 4, 5]\ny_data = [10, 11, 12, 13, 14]\n\n# 그래프 객체 생성\nfig = go.Figure()\nfig.add_trace(go.Scatter(\n        x=x_data,\n        y=y_data,\n        mode='lines+markers',\n        name='Sample Data',\n    ))\n\nfig.show()\n\n\n                                                \n\n\nfig.show()를 호출하여 그래프를 표시합니다."
   },
   {
+    "objectID": "book_blog/posts/2024-06-29-plotly/line_chart.html",
+    "href": "book_blog/posts/2024-06-29-plotly/line_chart.html",
+    "title": "Line Chart",
+    "section": "",
+    "text": "업데이트 예정"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Public BookShelf",
@@ -705,6 +712,41 @@
     "title": "Plotly를 이용한 데이터시각화",
     "section": "",
     "text": "Plotly는 Python을 비롯한 여러 프로그래밍 언어에서 데이터 시각화를 쉽게 만들 수 있도록 도와주는 오픈 소스 그래프 라이브러리입니다.\nPlotly의 주요 장점은 대화형(interactive) 그래프를 생성할 수 있다는 점입니다. 이는 사용자가 그래프와 상호작용하며 데이터를 더 깊이 탐색할 수 있게 합니다.\n이 책을 통해서 Plotly로 데이터를 시각화하는 방법을 정리합니다."
+  },
+  {
+    "objectID": "book_blog/posts/2024-06-29-plotly/main_features.html",
+    "href": "book_blog/posts/2024-06-29-plotly/main_features.html",
+    "title": "Plotly의 기능소개",
+    "section": "",
+    "text": "Plotly를 이용해서 간단한 그래프를 그리고 그래프를 커스터마이징하는 과정을 진행했습니다. 이 장에서는 Plotly에서 지원하는 더룬 주요 기능에 대해서 설명합니다."
+  },
+  {
+    "objectID": "book_blog/posts/2024-06-29-plotly/main_features.html#다양한-그래프-유형",
+    "href": "book_blog/posts/2024-06-29-plotly/main_features.html#다양한-그래프-유형",
+    "title": "Plotly의 기능소개",
+    "section": "다양한 그래프 유형",
+    "text": "다양한 그래프 유형\nPlotly는 다양한 그래프 유형을 지원하여 사용자가 다양한 형태의 데이터를 시각화할 수 있도록 합니다. 주요 그래프 유형으로는 선형 차트, 막대 차트, 원형 차트, 히스토그램, 산점도, 박스 플롯, 히트맵, 버블 차트, 트리맵, 지오스캐터 차트, 영역 차트, 극좌표 차트 등이 있습니다.\n\n\n\n\n\n\n\n차트종류\n목적\n\n\n\n\n선형 차트 (Line Chart)\n선형 차트는 시간의 경과에 따른 데이터 변화를 시각화하는 데 유용합니다.\n\n\n막대 차트 (Bar Chart)\n막대 차트는 범주형 데이터를 비교하는 데 유용합니다.\n\n\n원형 차트 (Pie Chart)\n원형 차트는 전체에 대한 각 부분의 비율을 시각화하는 데 유용합니다.\n\n\n히스토그램 (Histogram)\n히스토그램은 데이터의 분포를 시각화하는 데 유용합니다.\n\n\n산점도 (Scatter Plot)\n산점도는 두 변수 간의 관계를 시각화하는 데 유용합니다.\n\n\n박스 플롯 (Box Plot)\n박스 플롯은 데이터의 분포와 이상치를 시각화하는 데 유용합니다.\n\n\n히트맵 (Heatmap)\n히트맵은 두 변수의 값을 색상으로 시각화하는 데 유용합니다.\n\n\n버블 차트 (Bubble Chart)\n버블 차트는 산점도의 확장으로, 세 번째 변수를 점의 크기로 시각화합니다.\n\n\n트리맵 (Treemap)\n트리맵은 계층 구조를 색상과 면적으로 시각화하는 데 유용합니다.\n\n\n지오스캐터 차트 (Geoscatter Plot)\n지오스캐터 차트는 지도 위에 데이터 포인트를 시각화하는 데 유용합니다.\n\n\n영역 차트 (Area Chart)\n영역 차트는 선형 차트와 비슷하지만, 아래 영역을 색칠하여 데이터의 누적치를 강조합니다.\n\n\n극좌표 차트 (Polar Chart)\n극좌표 차트는 원형 축을 사용하여 데이터를 시각화합니다.\n\n\n\nPlotly는 이 외에도 다양한 특수 목적의 그래프를 지원합니다. 각 그래프 유형은 다양한 시각화 요구를 충족시키기 위해 커스터마이징이 가능합니다."
+  },
+  {
+    "objectID": "book_blog/posts/2024-06-29-plotly/main_features.html#대화형-그래프",
+    "href": "book_blog/posts/2024-06-29-plotly/main_features.html#대화형-그래프",
+    "title": "Plotly의 기능소개",
+    "section": "대화형 그래프",
+    "text": "대화형 그래프\nPlotly의 가장 큰 장점 중 하나는 대화형 그래프를 쉽게 생성할 수 있다는 점입니다. 마우스 오버, 클릭, 확대/축소 등의 기능을 통해 사용자와 상호작용할 수 있는 그래프를 만들 수 있습니다. 이러한 대화형 기능은 데이터 분석을 더욱 직관적이고 이해하기 쉽게 만듭니다."
+  },
+  {
+    "objectID": "book_blog/posts/2024-06-29-plotly/main_features.html#대시보드와-통합",
+    "href": "book_blog/posts/2024-06-29-plotly/main_features.html#대시보드와-통합",
+    "title": "Plotly의 기능소개",
+    "section": "대시보드와 통합",
+    "text": "대시보드와 통합\nPlotly는 Dash와 함께 사용하여 대시보드를 쉽게 생성할 수 있습니다. Dash는 Plotly를 기반으로 한 대시보드 프레임워크로, 웹 애플리케이션을 만들기 위한 다양한 도구와 기능을 제공합니다."
+  },
+  {
+    "objectID": "book_blog/posts/2024-06-29-plotly/main_features.html#출력-형식",
+    "href": "book_blog/posts/2024-06-29-plotly/main_features.html#출력-형식",
+    "title": "Plotly의 기능소개",
+    "section": "출력 형식",
+    "text": "출력 형식\nPlotly는 그래프를 다양한 형식으로 저장할 수 있습니다. HTML, PNG, JPEG, SVG 등 여러 형식으로 저장할 수 있어 웹에 쉽게 삽입하거나 문서에 포함시킬 수 있습니다.\nPlotly 그래프를 이미지 파일로 저장하려면 추가적으로 Kaleido 라이브러리를 설치해야 합니다. Kaleido는 Plotly 그래프를 PNG, JPEG, SVG와 같은 형식으로 저장하는 데 사용되는 도구입니다. 아래의 명령어를 샐행하여 Kaleido를 설치합니다.\n\npip install -U kaleido\n\nRequirement already up-to-date: kaleido in /usr/lib/python3.8/site-packages (0.2.1)\nNote: you may need to restart the kernel to use updated packages.\n\n\n데이터를 로드하고 그래프를 생성한 후 이미지로 저장하기 위해 아래 코드를 실행합니다.\n\nimport pandas as pd\nimport plotly.express as px\n\ndata = {\n    \"날짜\": [\"2024-01-01\", \"2024-01-02\", \"2024-01-03\", \"2024-01-04\", \"2024-01-05\"],\n    \"판매량\": [150, 200, 170, 220, 180],\n    \"판매왕\": [\"John\", \"Peter\", \"Peter\", \"Tony\", \"Bob\"]\n}\n\ndf = pd.DataFrame(data)\ndf[\"날짜\"] = pd.to_datetime(df[\"날짜\"])\n\nfig = px.line(df, x=\"날짜\", y=\"판매량\", title=\"일별 판매량\")\nfig.write_image(\"fig1.png\")\n\n\n위의 코드를 실행하면 위와 같이 그래프가 fig1.png 파일로 저장됩니다."
   },
   {
     "objectID": "book_blog/posts/2024-06-29-plotly/first_plotly.html",
@@ -746,7 +788,7 @@
     "href": "book_blog/posts/2024-06-29-plotly/first_plotly.html#다양한-그래프-유형",
     "title": "첫 번째 Plotly 그래프 그리기",
     "section": "다양한 그래프 유형",
-    "text": "다양한 그래프 유형\nPlotly는 선 그래프 외에도 막대 그래프, 원형 차트, 산점도 등 다양한 그래프 유형을 지원합니다. 데이터에 맞는 그래프를 선택해서 데이터를 시각화할 수 있습니다.\n\n\n\n\n\n\n\n차트종류\n목적\n\n\n\n\n선형 차트 (Line Chart)\n선형 차트는 시간의 경과에 따른 데이터 변화를 시각화하는 데 유용합니다.\n\n\n막대 차트 (Bar Chart)\n막대 차트는 범주형 데이터를 비교하는 데 유용합니다.\n\n\n원형 차트 (Pie Chart)\n원형 차트는 전체에 대한 각 부분의 비율을 시각화하는 데 유용합니다.\n\n\n히스토그램 (Histogram)\n히스토그램은 데이터의 분포를 시각화하는 데 유용합니다.\n\n\n산점도 (Scatter Plot)\n산점도는 두 변수 간의 관계를 시각화하는 데 유용합니다.\n\n\n박스 플롯 (Box Plot)\n박스 플롯은 데이터의 분포와 이상치를 시각화하는 데 유용합니다.\n\n\n히트맵 (Heatmap)\n히트맵은 두 변수의 값을 색상으로 시각화하는 데 유용합니다.\n\n\n버블 차트 (Bubble Chart)\n버블 차트는 산점도의 확장으로, 세 번째 변수를 점의 크기로 시각화합니다.\n\n\n트리맵 (Treemap)\n트리맵은 계층 구조를 색상과 면적으로 시각화하는 데 유용합니다.\n\n\n지오스캐터 차트 (Geoscatter Plot)\n지오스캐터 차트는 지도 위에 데이터 포인트를 시각화하는 데 유용합니다.\n\n\n영역 차트 (Area Chart)\n영역 차트는 선형 차트와 비슷하지만, 아래 영역을 색칠하여 데이터의 누적치를 강조합니다.\n\n\n극좌표 차트 (Polar Chart)\n극좌표 차트는 원형 축을 사용하여 데이터를 시각화합니다.\n\n\n\nPlotly는 이 외에도 다양한 특수 목적의 그래프를 지원합니다. 각 그래프 유형은 다양한 시각화 요구를 충족시키기 위해 커스터마이징이 가능합니다."
+    "text": "다양한 그래프 유형\nPlotly는 선 그래프 외에도 막대 그래프, 원형 차트, 산점도 등 다양한 그래프 유형을 지원합니다. 데이터에 맞는 그래프를 선택해서 데이터를 시각화할 수 있습니다."
   },
   {
     "objectID": "book_blog/posts/2023-09-03-data-visualization/time_series_basic.html",
