@@ -12,7 +12,14 @@ website:
           contents:
           - book_blog/posts/2024-06-29-plotly/what_is_plotly.qmd
           - book_blog/posts/2024-06-29-plotly/installation.qmd
+          - book_blog/posts/2024-06-29-plotly/main_features.qmd
           - book_blog/posts/2024-06-29-plotly/first_plotly.qmd
+        - section: "Part 2. 기본 차트 만들기"
+          contents:
+          - book_blog/posts/2024-06-29-plotly/line_chart.qmd
+
+
+
 
 
 
@@ -22,58 +29,58 @@ website:
 # Plotly 설치 및 설정
 # 첫 번째 Plotly 그래프 만들기
 # Plotly의 주요 기능 소개
-# 2장: 기본 차트 만들기
 
+# 2장: 기본 차트 만들기
 # 선 그래프 (Line Chart)
 # 막대 그래프 (Bar Chart)
 # 히스토그램 (Histogram)
 # 원형 차트 (Pie Chart)
 # 산점도 (Scatter Plot)
-# 3장: 레이아웃과 스타일링
 
+# 3장: 레이아웃과 스타일링
 # 레이아웃 설정
 # 축 설정과 라벨링
 # 색상 및 테마 적용
 # 마커 스타일링
 # 텍스트와 주석 추가
-# 4장: 고급 차트 만들기
 
+# 4장: 고급 차트 만들기
 # 버블 차트 (Bubble Chart)
 # 히트맵 (Heatmap)
 # 3D 차트
 # 지리 차트 (Geographical Chart)
 # 시간 시리즈 차트
-# 5장: 대화형 요소 추가하기
 
+# 5장: 대화형 요소 추가하기
 # Hover 기능
 # 필터 및 슬라이더
 # 클릭 이벤트
 # 대화형 위젯 통합
-# 6장: 데이터 분석과 통계적 시각화
 
+# 6장: 데이터 분석과 통계적 시각화
 # 상관 관계 분석
 # 분포 분석
 # 회귀 분석
 # 데이터 분류 및 클러스터링
-# 7장: Plotly Express
 
+# 7장: Plotly Express
 # Plotly Express 개요
 # Plotly Express로 빠른 시각화
 # Plotly Express의 고급 기능
-# 8장: Dash를 사용한 웹 애플리케이션
 
+# 8장: Dash를 사용한 웹 애플리케이션
 # Dash 소개
 # Dash 설치 및 기본 사용법
 # Dash 레이아웃 및 콜백
 # 대화형 Dash 애플리케이션 만들기
-# 9장: Plotly와 다른 도구 통합
 
+# 9장: Plotly와 다른 도구 통합
 # Pandas와 Plotly
 # NumPy와 Plotly
 # Plotly와 Jupyter Notebook
 # Plotly와 Flask/Django
-# 10장: 사례 연구 및 실습 프로젝트
 
+# 10장: 사례 연구 및 실습 프로젝트
 # 금융 데이터 시각화
 # 마케팅 데이터 분석
 # 과학 데이터 시각화
