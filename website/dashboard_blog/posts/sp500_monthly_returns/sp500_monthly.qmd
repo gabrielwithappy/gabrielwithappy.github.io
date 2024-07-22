@@ -1,0 +1,80 @@
+---
+title: SP500 Monthly Returns
+subtitle: SP500 Monthly Returns
+description:
+  SP500 Monthly Returns
+categories:
+  - 시각화
+author: 양성모
+date: "2024/07/22"
+image: "sp500.jpg"
+image-alt: ""
+page-layout: article
+---
+# SP500 Monthly Returns
+```{python}
+#| echo: false
+
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+from dash import Dash, dcc, html, Input, Output
+
+import os
+
+path = "./"
+filename = 'result_sp500_monthly_returns.csv'
+df = pd.read_csv(os.path.join(path, filename))
+
+df['Date'] = pd.to_datetime(df['Date'])
+df = df.set_index('Date')
+updated = df.index[-1]
+
+monthly_df = df.resample('M').last()
+monthly_df['Adj Close(+1)'] = monthly_df['Adj Close'].shift(1)
+monthly_df['monthly returns(%)'] = (monthly_df['Adj Close'] / monthly_df['Adj Close(+1)'] - 1)*100
+monthly_df['monthly returns(6개월평균)'] = monthly_df['monthly returns(%)'].rolling(6, min_periods=1).mean()
+rate_monthly = np.round(monthly_df.loc[monthly_df.index[-1], '국고채(3년)-월복리'],2)
+rate = np.round(monthly_df.loc[monthly_df.index[-1], '국고채(3년)'], 2)
+
+
+fig = make_subplots(specs=[[{'secondary_y':True}]])
+color_info =['lightblue']*(monthly_df.shape[0]-12) + ['blue']*12
+fig.add_trace(go.Bar(x=monthly_df.index,
+                      y=monthly_df['monthly returns(%)'],
+                      name='월수익률(%)',
+                      marker_color=color_info
+            ),
+    secondary_y = False,
+)
+fig.add_trace(go.Scatter(x=monthly_df.index, y=monthly_df['Adj Close'], name='S&P500'),
+        secondary_y = True,
+)
+
+fig.add_hline(y = 3, line_color='red', line={'dash':'dot','width':1}, opacity=0.5)
+fig.add_hline(y = 0, line_color='black', opacity=0.7)
+
+fig.update_layout(
+    xaxis=dict(
+            showspikes=True,
+            spikethickness=1,
+            fixedrange = True,
+            rangeslider_visible = True,
+            tickangle = 45,
+            tickfont = dict(size = 9),
+            range= [(pd.Timestamp.now() - pd.DateOffset(months=13)), \
+                        pd.Timestamp.now() + pd.DateOffset(months=1)],
+
+    ),
+    yaxis=dict(
+            # showspikes=True,
+            fixedrange = True,
+            # secondary_y = True,
+    ),
+)
+
+fig.show()
+
+```
