@@ -1,3 +1,0 @@
-User-Agent: *
-Allow: /
-Sitemap: https://gabrielwithappy.github.io/sitemap.xml
