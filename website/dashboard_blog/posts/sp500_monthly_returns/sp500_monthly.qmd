@@ -57,6 +57,7 @@ fig.add_hline(y = 3, line_color='red', line={'dash':'dot','width':1}, opacity=0.
 fig.add_hline(y = 0, line_color='black', opacity=0.7)
 
 fig.update_layout(
+    margin=dict(l=0, r=0), # remove due to mis-aligned range button
     xaxis=dict(
             showspikes=True,
             spikethickness=1,
@@ -66,12 +67,16 @@ fig.update_layout(
             tickfont = dict(size = 9),
             range= [(pd.Timestamp.now() - pd.DateOffset(months=13)), \
                         pd.Timestamp.now() + pd.DateOffset(months=1)],
-
     ),
     yaxis=dict(
             # showspikes=True,
             fixedrange = True,
             # secondary_y = True,
+    ),
+    legend = dict(
+        # orientation="h", # 가로 방향으로
+        # yanchor="bottom", y=0, # y축 방향 위치 설정
+        xanchor="left", x=0, # x축 방향 위치 설정
     ),
 )
 
