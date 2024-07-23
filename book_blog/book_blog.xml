@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>BookShelf</title>
+<link>https://gabrielwithappy.github.io/book_blog/book_blog.html</link>
+<atom:link href="https://gabrielwithappy.github.io/book_blog/book_blog.xml" rel="self" type="application/rss+xml"/>
+<description>A online bookstore</description>
+<image>
+<url>https://gabrielwithappy.github.io/images/docs/book_blog/test.png</url>
+<title>BookShelf</title>
+<link>https://gabrielwithappy.github.io/book_blog/book_blog.html</link>
+</image>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Fri, 28 Jun 2024 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>Plotly를 이용한 데이터시각화</title>
+  <dc:creator>Gabriel Yang</dc:creator>
+  <link>https://gabrielwithappy.github.io/book_blog/posts/2024-06-29-plotly/plotly.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Plotly는 Python을 비롯한 여러 프로그래밍 언어에서 데이터 시각화를 쉽게 만들 수 있도록 도와주는 오픈 소스 그래프 라이브러리입니다.</p>
+<p>Plotly의 주요 장점은 대화형(interactive) 그래프를 생성할 수 있다는 점입니다. 이는 사용자가 그래프와 상호작용하며 데이터를 더 깊이 탐색할 수 있게 합니다.</p>
+<p>이 책을 통해서 Plotly로 데이터를 시각화하는 방법을 정리합니다.</p>
+
+
+
+ ]]></description>
+  <category>시각화</category>
+  <guid>https://gabrielwithappy.github.io/book_blog/posts/2024-06-29-plotly/plotly.html</guid>
+  <pubDate>Fri, 28 Jun 2024 15:00:00 GMT</pubDate>
+  <media:content url="https://gabrielwithappy.github.io/book_blog/posts/2024-06-29-plotly/plotly.png" medium="image" type="image/png" height="56" width="144"/>
+</item>
+<item>
+  <title>시계열 데이터 시각화</title>
+  <dc:creator>Gabriel Yang</dc:creator>
+  <link>https://gabrielwithappy.github.io/book_blog/posts/2023-09-03-data-visualization/data_visualization.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>데이터 시각화 과정을 정리하고 결과를 정리하기 위한 책입니다.</p>
+<p>배움을 잘 이해하고 기억하는 가장 좋은 방법은 정리하여 글로 남기는 것이라고 생각합니다. 다만 배운 내용을 정리하는 과정에 잘못된 정보가 있을 수 있습니다.</p>
+<p>읽으시며 중요한 내용이 있다면 틀린 부분이 있는 지 다시 확인해 주시길 부탁드립니다. 이 책을 만들면서 데이터 시각화에 대해서 좀 더 잘 이해하고 더불어 이 책을 보는 분들에게도 도움이 되면 좋겠습니다.</p>
+<p>감사합니다.</p>
+
+
+
+ ]]></description>
+  <category>시각화</category>
+  <guid>https://gabrielwithappy.github.io/book_blog/posts/2023-09-03-data-visualization/data_visualization.html</guid>
+  <pubDate>Sun, 09 Jul 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://gabrielwithappy.github.io/book_blog/posts/2023-09-03-data-visualization/data_visualization.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>
