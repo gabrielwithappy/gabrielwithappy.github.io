@@ -7,7 +7,7 @@ categories:
   - 시각화
 author: 양성모
 date: "2024/07/24"
-image: "sp500.jpg"
+image: "news.jpg"
 image-alt: ""
 page-layout: article
 ---
