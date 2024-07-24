@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-12-23">
-<meta name="description" content="ChatGPT3.5와 ChatGPT4의 차이점">
+<meta name="dcterms.date" content="2024-07-24">
+<meta name="description" content="GitHub Actions 시작하기">
 
-<title>BookShelf - ChatGPT3.5와 ChatGPT4의 차이점</title>
+<title>BookShelf - GitHub Actions 시작하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../blog/posts/2023/20231231.html" rel="next">
-<link href="../../../blog/posts/2023/20231222.html" rel="prev">
+<link href="../../../blog/posts/2024/20240623.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -127,7 +160,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../blog/posts/2023/20230910.html">2023</a></li><li class="breadcrumb-item"><a href="../../../blog/posts/2023/20231223.html">ChatGPT3.5와 ChatGPT4의 차이점</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../blog/posts/2024/20240103.html">2024</a></li><li class="breadcrumb-item"><a href="../../../blog/posts/2024/20240724.html">GitHub Actions 시작하기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -141,13 +174,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">2023</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../blog/posts/2023/20230910.html" class="sidebar-item-text sidebar-link">
@@ -372,7 +405,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../blog/posts/2023/20231223.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../blog/posts/2023/20231223.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ChatGPT3.5와 ChatGPT4의 차이점</span></a>
   </div>
 </li>
@@ -392,13 +425,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">2024</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../blog/posts/2024/20240103.html" class="sidebar-item-text sidebar-link">
@@ -419,7 +452,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../blog/posts/2024/20240724.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../blog/posts/2024/20240724.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">GitHub Actions 시작하기</span></a>
   </div>
 </li>
@@ -435,30 +468,42 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#chatgpt3.5와-chatgpt4의-차이점" id="toc-chatgpt3.5와-chatgpt4의-차이점" class="nav-link active" data-scroll-target="#chatgpt3.5와-chatgpt4의-차이점">ChatGPT3.5와 ChatGPT4의 차이점</a>
+  <li><a href="#github-actions-시작하기-cicd-파이프라인-구축-가이드" id="toc-github-actions-시작하기-cicd-파이프라인-구축-가이드" class="nav-link active" data-scroll-target="#github-actions-시작하기-cicd-파이프라인-구축-가이드">GitHub Actions 시작하기: CI/CD 파이프라인 구축 가이드</a>
   <ul class="collapse">
-  <li><a href="#멀티모달이-뭔가요" id="toc-멀티모달이-뭔가요" class="nav-link" data-scroll-target="#멀티모달이-뭔가요">멀티모달이 뭔가요?</a></li>
-  <li><a href="#실시간-웹검색-기능" id="toc-실시간-웹검색-기능" class="nav-link" data-scroll-target="#실시간-웹검색-기능">실시간 웹검색 기능</a></li>
-  <li><a href="#mygpt를-통한-개인화된-gpt-사용" id="toc-mygpt를-통한-개인화된-gpt-사용" class="nav-link" data-scroll-target="#mygpt를-통한-개인화된-gpt-사용">MyGPT를 통한 개인화된 GPT 사용</a></li>
+  <li><a href="#github-actions-소개" id="toc-github-actions-소개" class="nav-link" data-scroll-target="#github-actions-소개">1. GitHub Actions 소개</a></li>
+  <li><a href="#기본-용어-이해하기" id="toc-기본-용어-이해하기" class="nav-link" data-scroll-target="#기본-용어-이해하기">2. 기본 용어 이해하기</a></li>
+  <li><a href="#워크플로우-파일-생성" id="toc-워크플로우-파일-생성" class="nav-link" data-scroll-target="#워크플로우-파일-생성">3. 워크플로우 파일 생성</a>
+  <ul class="collapse">
+  <li><a href="#예제-간단한-node.js-프로젝트-ci-설정" id="toc-예제-간단한-node.js-프로젝트-ci-설정" class="nav-link" data-scroll-target="#예제-간단한-node.js-프로젝트-ci-설정">예제: 간단한 Node.js 프로젝트 CI 설정</a></li>
+  <li><a href="#설명" id="toc-설명" class="nav-link" data-scroll-target="#설명">설명:</a></li>
+  </ul></li>
+  <li><a href="#고급-설정" id="toc-고급-설정" class="nav-link" data-scroll-target="#고급-설정">4. 고급 설정</a>
+  <ul class="collapse">
+  <li><a href="#캐싱-사용" id="toc-캐싱-사용" class="nav-link" data-scroll-target="#캐싱-사용">캐싱 사용</a></li>
+  <li><a href="#매트릭스-전략" id="toc-매트릭스-전략" class="nav-link" data-scroll-target="#매트릭스-전략">매트릭스 전략</a></li>
+  <li><a href="#배포-설정" id="toc-배포-설정" class="nav-link" data-scroll-target="#배포-설정">배포 설정</a></li>
+  </ul></li>
+  <li><a href="#github-secrets-사용" id="toc-github-secrets-사용" class="nav-link" data-scroll-target="#github-secrets-사용">5. GitHub Secrets 사용</a></li>
+  <li><a href="#마무리" id="toc-마무리" class="nav-link" data-scroll-target="#마무리">마무리</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20231223.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2024/20240724.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ChatGPT3.5와 ChatGPT4의 차이점</h1>
-<p class="subtitle lead">ChatGPT3.5와 ChatGPT4의 차이점</p>
+<h1 class="title">GitHub Actions 시작하기</h1>
+<p class="subtitle lead">GitHub Actions 시작하기</p>
   <div class="quarto-categories">
-    <div class="quarto-category">AI</div>
+    <div class="quarto-category">Web</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    ChatGPT3.5와 ChatGPT4의 차이점
+    GitHub Actions 시작하기
   </div>
 </div>
 
@@ -475,7 +520,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 23, 2023</p>
+      <p class="date">July 24, 2024</p>
     </div>
   </div>
   
@@ -485,76 +530,146 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="chatgpt3.5와-chatgpt4의-차이점" class="level1">
-<h1>ChatGPT3.5와 ChatGPT4의 차이점</h1>
-<p>ChatGPT-4는 유료로 사용할 수 있는 OpenAI의 챗봇입니다. ChatGPT-3.5는 무료이기 때문에 어떤 차이가 있는 지 궁금하여 내용을 정리합니다. GPTI를 통해서 정리한 큰 차이점은 아래와 같습니다.</p>
+<section id="github-actions-시작하기-cicd-파이프라인-구축-가이드" class="level1">
+<h1>GitHub Actions 시작하기: CI/CD 파이프라인 구축 가이드</h1>
+<p>GitHub Actions는 GitHub 저장소에서 CI/CD(Continuous Integration/Continuous Deployment) 파이프라인을 쉽게 설정하고 관리할 수 있는 강력한 도구입니다. 이 블로그 글에서는 GitHub Actions를 사용하여 CI/CD 파이프라인을 구축하는 방법을 단계별로 설명하겠습니다.</p>
+<section id="github-actions-소개" class="level2">
+<h2 class="anchored" data-anchor-id="github-actions-소개">1. GitHub Actions 소개</h2>
+<p>GitHub Actions는 코드를 빌드, 테스트, 배포하는 워크플로우를 자동화할 수 있는 기능을 제공합니다. GitHub 저장소에 push, pull request, issue 등 이벤트가 발생할 때마다 워크플로우를 트리거할 수 있습니다.</p>
+</section>
+<section id="기본-용어-이해하기" class="level2">
+<h2 class="anchored" data-anchor-id="기본-용어-이해하기">2. 기본 용어 이해하기</h2>
+<ul>
+<li><strong>워크플로우(Workflow)</strong>: 하나 이상의 작업으로 구성된 자동화 프로세스.</li>
+<li><strong>잡(Job)</strong>: 워크플로우 내에서 실행되는 개별 단위 작업.</li>
+<li><strong>스텝(Step)</strong>: 잡 내에서 실행되는 명령어 또는 액션.</li>
+<li><strong>액션(Action)</strong>: 재사용 가능한 커뮤니티 또는 사용자 정의 스크립트.</li>
+</ul>
+</section>
+<section id="워크플로우-파일-생성" class="level2">
+<h2 class="anchored" data-anchor-id="워크플로우-파일-생성">3. 워크플로우 파일 생성</h2>
+<p>워크플로우 파일은 <code>.github/workflows</code> 디렉토리에 YAML 형식으로 저장됩니다. 예를 들어, <code>ci.yml</code> 파일을 생성하여 기본적인 CI 설정을 할 수 있습니다.</p>
+<section id="예제-간단한-node.js-프로젝트-ci-설정" class="level3">
+<h3 class="anchored" data-anchor-id="예제-간단한-node.js-프로젝트-ci-설정">예제: 간단한 Node.js 프로젝트 CI 설정</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Node.js CI</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at"> main </span><span class="kw">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at"> main </span><span class="kw">]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Node.js</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-node@v2</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">node-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'14'</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm install</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run tests</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="설명" class="level3">
+<h3 class="anchored" data-anchor-id="설명">설명:</h3>
+<ul>
+<li><code>name</code>: 워크플로우의 이름. 이 이름은 GitHub Actions 인터페이스에서 워크플로우를 식별하는 데 사용됩니다.</li>
+<li><code>on</code>: 워크플로우가 트리거되는 이벤트. 워크플로우를 트리거하는 이벤트를 정의합니다. 이 예제에서는 push와 pull_request 이벤트를 사용하여 워크플로우를 트리거합니다.</li>
+<li><code>jobs</code>: 워크플로우 내에서 실행되는 작업들.</li>
+<li><code>runs-on</code>: 작업이 실행될 환경(예: <code>ubuntu-latest</code>). 작업이 실행될 환경을 지정합니다. 이 예제에서는 ubuntu-latest를 사용하여 최신 버전의 우분투에서 작업이 실행됩니다.</li>
+<li><code>steps</code>: 작업 내에서 실행되는 단계들. 작업 내에서 실행될 단계(Step)들을 정의합니다. 단계는 순차적으로 실행됩니다.
+<ul>
+<li><code>uses</code>: 특정 액션을 사용하는 단계. GitHub에서 제공하는 액션을 사용합니다.
+<ul>
+<li><code>actions/checkout@v2</code>는 GitHub 저장소를 체크아웃하는 액션입니다.</li>
+<li><code>actions/setup-node@v2</code>는 Node.js를 설정하는 액션입니다.</li>
+</ul></li>
+<li><code>with</code>: 액션에 전달할 매개변수를 정의합니다. 여기서는 node-version: ’14’를 사용하여 Node.js 버전 14를 설정합니다.</li>
+<li><code>run</code>: 명령어를 실행하는 단계.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="고급-설정" class="level2">
+<h2 class="anchored" data-anchor-id="고급-설정">4. 고급 설정</h2>
+<section id="캐싱-사용" class="level3">
+<h3 class="anchored" data-anchor-id="캐싱-사용">캐싱 사용</h3>
+<p>반복적인 의존성 설치를 빠르게 하기 위해 캐싱을 사용할 수 있습니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Cache dependencies</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/cache@v2</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">path</span><span class="kw">:</span><span class="at"> ~/.npm</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">key</span><span class="kw">:</span><span class="at"> ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">        restore-keys</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>          ${{ runner.os }}-node-</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="매트릭스-전략" class="level3">
+<h3 class="anchored" data-anchor-id="매트릭스-전략">매트릭스 전략</h3>
+<p>여러 환경에서 테스트를 실행하기 위해 매트릭스 전략을 사용할 수 있습니다.</p>
+<p>매트릭스 전략은 CI/CD 워크플로우에서 여러 가지 설정 조합을 테스트할 때 유용한 기능입니다. 이를 통해 코드가 다양한 환경에서 제대로 작동하는지 확인할 수 있습니다. 매트릭스 전략을 사용하면 여러 버전의 언어, 운영 체제, 그리고 기타 종속성 조합에서 빌드와 테스트를 자동화할 수 있습니다.</p>
+<p>매트릭스 전략은 jobs.<job_id>.strategy.matrix 속성을 사용하여 설정합니다. 매트릭스의 각 키는 여러 값을 가질 수 있으며, GitHub Actions는 각 조합에 대해 잡을 실행합니다.</job_id></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">node-version</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="dv">12</span><span class="kw">,</span><span class="at"> </span><span class="dv">14</span><span class="kw">,</span><span class="at"> </span><span class="dv">16</span><span class="kw">]</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Node.js</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-node@v2</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">node-version</span><span class="kw">:</span><span class="at"> ${{ matrix.node-version }}</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm install</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run tests</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="배포-설정" class="level3">
+<h3 class="anchored" data-anchor-id="배포-설정">배포 설정</h3>
+<p>CI 파이프라인이 성공하면 자동으로 배포할 수 있습니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">deploy</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">needs</span><span class="kw">:</span><span class="at"> build</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to server</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        ssh user@your-server 'bash -s' &lt; deploy-script.sh</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">SSH_PRIVATE_KEY</span><span class="kw">:</span><span class="at"> ${{ secrets.SSH_PRIVATE_KEY }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="github-secrets-사용" class="level2">
+<h2 class="anchored" data-anchor-id="github-secrets-사용">5. GitHub Secrets 사용</h2>
+<p>배포 시 민감한 정보(예: API 키, 서버 비밀번호)는 GitHub Secrets를 통해 관리할 수 있습니다.</p>
 <ol type="1">
-<li>모델 크기 및 처리 능력: ChatGPT-4는 ChatGPT-3.5보다 크고 고급화된 모델로, 더 많은 데이터를 학습하고 더 복잡한 문제를 처리할 수 있습니다.</li>
-<li>이해도 및 반응의 정확성: ChatGPT-4는 더 정확하고 세밀한 대응을 할 수 있으며, 다양한 주제에 대한 더 깊은 이해를 보여줍니다.</li>
-<li>다양한 언어 처리 능력: ChatGPT-4는 더 많은 언어를 지원하고, 특히 다양한 언어에서의 뉘앙스와 문화적 맥락을 더 잘 이해합니다.</li>
-<li>멀티모달 기능: ChatGPT-4는 텍스트뿐만 아니라 이미지를 포함한 멀티모달 입력을 처리할 수 있는 능력을 갖추고 있습니다.</li>
-</ol>
-<p>쉬운 비교를 위해 표로 정리합니다.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>기능</th>
-<th>ChatGPT-3.5</th>
-<th>ChatGPT-4</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>모델 크기 및 처리 능력</td>
-<td>작음</td>
-<td>큼</td>
-</tr>
-<tr class="even">
-<td>이해도 및 반응의 정확성</td>
-<td>높지만 제한적</td>
-<td>매우 높음</td>
-</tr>
-<tr class="odd">
-<td>다양한 언어 처리 능력</td>
-<td>제한적</td>
-<td>향상됨</td>
-</tr>
-<tr class="even">
-<td>멀티모달 기능</td>
-<td>없음</td>
-<td>있음</td>
-</tr>
-</tbody>
-</table>
-<p>성능의 차이를 제외하면 멀티모달 기능을 지원하는 점이 가장 큰 차이점입니다. 그럼 멀티모달 기능이 무엇일까요?</p>
-<section id="멀티모달이-뭔가요" class="level2">
-<h2 class="anchored" data-anchor-id="멀티모달이-뭔가요">멀티모달이 뭔가요?</h2>
-<p>컴퓨터나 인공지능 분야에서 멀티모달이라는 말은 이러한 다양한 형태의 정보를 모두 처리할 수 있는 기술을 의미해요. 즉, 텍스트(글), 이미지(사진), 오디오(소리), 비디오(동영상) 등 다양한 유형의 데이터를 이해하고, 그 정보를 통합해서 더 풍부하고 정확한 분석이나 반응을 할 수 있는 능력을 가리킵니다.</p>
-<p>ChatGPT4는 멀티모달 기능을 지원하기 때문에 글로 된 질문에 답하는 것뿐만 아니라, 이미지를 분석하거나 이미지와 관련된 질문에도 답할 수 있습니다. 그럼 ChatGPT4에서는 어떤 멀티모달 기능을 지원할까요?</p>
-<ol type="1">
-<li>이미지 기반 질문 응답 : 사용자가 제공한 이미지에 대한 질문에 답변할 수 있습니다. 예를 들어, 특정 사진에 대한 설명을 요청하거나 사진 속 개체를 식별하는 질문에 답할 수 있습니다.</li>
-<li>이미지와 텍스트의 통합 이해 : 이미지와 관련된 텍스트 정보를 함께 분석하여, 두 입력 유형 간의 관계를 이해하고 관련된 답변을 제공합니다. 예를 들어, 특정 이미지와 관련된 설명을 요청할 때, 이미지의 내용을 바탕으로 한 텍스트 설명을 제공합니다.</li>
-<li>이미지 생성 : 사용자의 텍스트 설명을 바탕으로 새로운 이미지를 생성하는 기능도 포함됩니다. 예를 들어, 사용자가 제공한 상세한 설명에 따라 이미지를 생성할 수 있습니다.</li>
+<li>저장소 페이지로 이동.</li>
+<li><code>Settings</code> 탭 선택.</li>
+<li><code>Secrets</code> 메뉴에서 <code>New repository secret</code> 버튼 클릭.</li>
+<li>이름과 값을 입력하고 저장.</li>
 </ol>
 </section>
-<section id="실시간-웹검색-기능" class="level2">
-<h2 class="anchored" data-anchor-id="실시간-웹검색-기능">실시간 웹검색 기능</h2>
-<p>ChatGPT4는 특정 조건 하에서 웹 정보를 이용하여 답변을 제공할 수 있습니다. 이를 위해 “브라우저” 기능이라는 특별한 도구가 ChatGPT4 모델에 통합되어 있습니다. 이 도구를 사용하여, ChatGPT-4는 웹을 검색하고 최신 정보를 찾아 사용자의 질문에 답변할 수 있습니다.</p>
-<p>이 기능은 특히 최신 정보가 필요한 경우 또는 특정 주제에 대한 최근 데이터나 통계가 필요할 때 유용합니다. 예를 들어, 최신 뉴스 이벤트, 최근 연구 결과, 현재 스포츠 점수, 날씨 업데이트 등의 정보를 제공받을 수 있습니다.</p>
-<p>그러나 모든 상황에서 웹 검색 기능을 사용할 수 있는 것은 아니며, 사용자의 요청과 상황에 따라 이 기능의 사용 여부가 결정됩니다. 웹 검색은 실시간으로 정보를 검색하고, 다양한 웹 페이지에서 정보를 수집하여 답변을 제공하는 과정을 포함합니다. 이러한 접근 방식은 최신의 정보를 제공하는 데 유용하며, 특히 변화하는 데이터나 최근의 사건에 대한 질문에 효과적입니다.</p>
-</section>
-<section id="mygpt를-통한-개인화된-gpt-사용" class="level2">
-<h2 class="anchored" data-anchor-id="mygpt를-통한-개인화된-gpt-사용">MyGPT를 통한 개인화된 GPT 사용</h2>
-<p>“MyGPT” 기능은 사용자의 대화를 개인화하여 맞춤형 경험을 제공하는 기능입니다. 이를 통해 사용자의 이전 대화 기록을 기억하고, 특정 주제에 대해 더 많은 정보를 제공하며, 사용자의 선호도와 설정에 맞춘 맞춤형 응답을 만들 수 있습니다. MyGPT는 시간이 지남에 따라 사용자의 관심사와 선호를 반영하여 더 풍부한 대화 경험을 제공하며, 사용자의 개인 정보 보호를 철저히 고려합니다.</p>
-<p>실제 사용예를 확인하면 차이점을 좀 더 쉽게 이해할 수 있습니다.</p>
-<ul>
-<li>언어 학습 보조</li>
-</ul>
-<p>사용자가 영어를 배우고 있다고 가정해봅시다. MyGPT는 사용자가 이전 대화에서 어려움을 겪었던 문법 포인트를 기억하고, 향후 대화에서 해당 문법을 중심으로 추가 연습 기회를 제공할 수 있습니다. 또한, 사용자가 관심을 보인 특정 주제에 대한 대화를 통해 언어 학습을 더욱 흥미롭고 효과적으로 만들 수 있습니다.</p>
-<ul>
-<li>건강 및 운동 일지</li>
-</ul>
-<p>사용자가 건강과 운동에 중점을 두고 있다고 가정해 봅시다. MyGPT는 사용자의 운동 목표, 진행 상황, 건강 관련 질문 등을 기억하여, 시간이 지남에 따라 맞춤형 운동 조언이나 건강 정보를 제공할 수 있습니다. 사용자의 진행 상황을 추적하며, 개선점이나 새로운 운동 방법에 대한 제안을 할 수도 있습니다.</p>
+<section id="마무리" class="level2">
+<h2 class="anchored" data-anchor-id="마무리">마무리</h2>
+<p>이제 GitHub Actions를 사용하여 간단한 CI/CD 파이프라인을 구축할 수 있게 되었습니다. GitHub Actions는 매우 유연하고 강력한 도구로, 다양한 요구사항에 맞게 확장할 수 있습니다. 더 많은 정보를 원하시면 <a href="https://docs.github.com/en/actions">GitHub Actions 공식 문서</a>를 참고하세요.</p>
 
 
 </section>
@@ -798,14 +913,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../blog/posts/2023/20231222.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Google Gemeni API Key 얻기</span>
+      <a href="../../../blog/posts/2024/20240623.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Robots.txt 작성방법</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../blog/posts/2023/20231231.html" class="pagination-link">
-        <span class="nav-page-text">코루틴(coroutine)과 이벤트 루프</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
