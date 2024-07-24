@@ -37,7 +37,7 @@ def monthly_returns(name, dstfile):
     df_temp['TIME'] = pd.to_datetime(df_temp['TIME'])
     df_temp = df_temp.set_index('TIME')
     rate = df_temp[df_temp['ITEM_NAME1'] == '국고채(3년)']['DATA_VALUE'].to_list()[-1]
-    monthly_rate = np.power(rate, 1/12)
+    monthly_rate = np.power(rate, 1/12)-1
     df['국고채(3년)'] = rate
     df['국고채(3년)-월복리'] = monthly_rate
 
