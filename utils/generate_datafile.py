@@ -21,29 +21,30 @@ class GraphData():
         if d['list'] == 'all':
             for g in self.module_functions.keys():
                 print(f"- {g}")
+            return
 
         graph_name = d['graph_name']
-
+        _key = d['key']
         if  graph_name == 'korea_nsi':
             print("Korea News Sentiment Index Data generate")
             dstfile = "../website/dashboard_blog/posts/nsi/result_korea_NSI.csv"
-            self.module_functions[graph_name](dstfile)
+            self.module_functions[graph_name](dstfile, _key)
 
         if graph_name == 'sp500_mdd':
             dstfile = "../website/dashboard_blog/posts/sp500_mdd/result_sp500_mdd.csv"
-            self.module_functions[graph_name](dstfile)
+            self.module_functions[graph_name](dstfile, _key)
 
         elif graph_name == 'kospi_mdd':
             dstfile = "../website/dashboard_blog/posts/kospi_mdd/result_kospi_mdd.csv"
-            self.module_functions[graph_name](dstfile)
+            self.module_functions[graph_name](dstfile, _key)
 
         elif graph_name == 'kospi_monthly_returns':
             dstfile = "../website/dashboard_blog/posts/kospi_monthly_returns/result_kospi_monthly_returns.csv"
-            data_module.monthly_returns(name = 'KS11', dstfile = dstfile)
+            data_module.monthly_returns(name = 'KS11', dstfile = dstfile, key= _key)
 
         elif graph_name == 'sp500_monthly_returns':
             dstfile = "../website/dashboard_blog/posts/sp500_monthly_returns/result_sp500_monthly_returns.csv"
-            data_module.monthly_returns(name = 'US500', dstfile = dstfile)
+            data_module.monthly_returns(name = 'US500', dstfile = dstfile, key= _key)
 
 
 
@@ -55,6 +56,7 @@ class GraphData():
         parser.add_argument('-filename', help=': a filename of the new dataframe')
         parser.add_argument('-list', help=": list all graph names")
         parser.add_argument('-graph_name', type=str)
+        parser.add_argument('-key', type=str)
         self.args = parser.parse_args()
 
 

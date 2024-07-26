@@ -4,5 +4,5 @@ _freeze/
 /site_libs/
 /_*.local
 *_cache/
-
+*.pyc
 /.luarc.json
