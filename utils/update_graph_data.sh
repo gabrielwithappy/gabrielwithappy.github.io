@@ -13,4 +13,4 @@ echo ">> updated SP500 Monthly Returns"
 python3 generate_datafile.py -graph_name korea_nsi -key $1
 echo ">> updated KOSPI NSI Returns"
 echo ">> Finish update data files >>"
-
+date > update.log
