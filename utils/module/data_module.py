@@ -7,7 +7,7 @@ import os
 def load_korea_nsi(dstfile, api_key):
     print('load_korea_nsi')
     reader = ECOSReader(api_key)
-    start_date = (pd.Timestamp.now() - pd.DateOffset(years=5)).strftime("%Y%m%d")
+    start_date = (pd.Timestamp.now() - pd.DateOffset(years=1)).strftime("%Y%m%d")
     end_date = (pd.Timestamp.now()).strftime("%Y%m%d")
     nsi_df = reader.statiscic_search(start_date, end_date, '521Y001', 'D')
     nsi_df['DATA_VALUE'] = nsi_df['DATA_VALUE'].astype('float')
