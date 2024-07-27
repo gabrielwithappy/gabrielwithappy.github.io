@@ -25,19 +25,11 @@ jobs:
           pip3 install -r requirements.txt
           git config --global user.email "gabrielwithhappy@gmail.com"
           git config --global user.name "gabriel"
-          git add ./utils
-          git commit -m "update data"
-          git push origin main
 
       - name: Update Data
         run: |
           cd utils
           ./update_graph_data.sh ${{secrets.ECOS_KEY}}
-
-      - name: Set up Quarto and publish
-        run: |
-          sudo dpkg -i quarto-1.3.450-linux-amd64.deb
-          cd website
-          quarto publish --no-prompt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git add ./utils
+          git commit -m "update data"
+          git push origin main
