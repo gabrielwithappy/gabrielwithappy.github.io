@@ -1,9 +1,6 @@
 on:
   schedule:
     - cron: 0 0 * * *
-  push:
-    branches:
-      - main
 
 name: Update Data
 
@@ -28,6 +25,9 @@ jobs:
           pip3 install -r requirements.txt
           git config --global user.email "gabrielwithhappy@gmail.com"
           git config --global user.name "gabriel"
+          git add ./utils
+          git commit -m "update data"
+          git push origin main
 
       - name: Update Data
         run: |
