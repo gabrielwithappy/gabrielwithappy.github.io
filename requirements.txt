@@ -34,7 +34,6 @@ charset-normalizer==3.0.1
 chex==0.1.7
 click==8.1.3
 clldutils==3.19.0
-cloud-init==23.1.2
 cloudpickle==2.2.1
 cmaes==0.10.0
 cmake==3.27.2
