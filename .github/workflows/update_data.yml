@@ -18,17 +18,17 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v5
 
-      - name: Update Data
-        run: |
-          cd utils
-          ./update_graph_data.sh ${{secrets.ECOS_KEY}}
-
       - name : Install requirements
         run: |
           python3 -m pip install -U pip
           pip3 install -r requirements.txt
           git config --global user.email "gabrielwithhappy@gmail.com"
           git config --global user.name "gabriel"
+
+      - name: Update Data
+      run: |
+        cd utils
+        ./update_graph_data.sh ${{secrets.ECOS_KEY}}
 
       - name: Set up Quarto and publish
         run: |
