@@ -20,12 +20,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Render and Publish
+      - name: Set up Quarto and publish
         run: |
           sudo dpkg -i quarto-1.3.450-linux-amd64.deb
           quarto publis --no-prompt
