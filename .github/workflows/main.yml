@@ -24,7 +24,9 @@ jobs:
         uses: actions/setup-python@v5
 
       - name : Install requirements
-        run: pip3 install -r requirements.txt
+        run: |
+          python3 -m pip install -U pip
+          pip3 install -r requirements.txt
 
       - name: Set up Quarto and publish
         run: |
