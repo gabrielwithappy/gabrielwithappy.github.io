@@ -1,4 +1,6 @@
 on:
+  schedule:
+    - cron: 0 0 * * *
   push:
     branches:
       - main
@@ -14,6 +16,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup python
         uses: actions/setup-python@v5
@@ -26,9 +30,9 @@ jobs:
           git config --global user.name "gabriel"
 
       - name: Update Data
-      run: |
-        cd utils
-        ./update_graph_data.sh ${{secrets.ECOS_KEY}}
+        run: |
+          cd utils
+          ./update_graph_data.sh ${{secrets.ECOS_KEY}}
 
       - name: Set up Quarto and publish
         run: |
