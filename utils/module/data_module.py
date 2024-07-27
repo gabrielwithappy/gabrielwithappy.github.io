@@ -7,7 +7,7 @@ import os
 def load_korea_nsi(dstfile, api_key):
     print('load_korea_nsi')
     reader = ECOSReader(api_key)
-    start_date = (pd.Timestamp.now() - pd.DateOffset(years=1)).strftime("%Y%m%d")
+    start_date = (pd.Timestamp.now() - pd.DateOffset(years=2)).strftime("%Y%m%d")
     end_date = (pd.Timestamp.now()).strftime("%Y%m%d")
     nsi_df = reader.statiscic_search(start_date, end_date, '521Y001', 'D')
     nsi_df['DATA_VALUE'] = nsi_df['DATA_VALUE'].astype('float')
@@ -24,7 +24,7 @@ def load_korea_nsi(dstfile, api_key):
 
 def monthly_returns(name, dstfile, key):
     print("monthly_returns()")
-    df = fdr.DataReader(name, start=str(pd.Timestamp.now().year - 5))
+    df = fdr.DataReader(name, start=str(pd.Timestamp.now().year - 2))
 
     start_date = (pd.Timestamp.now() - pd.DateOffset(days=5)).strftime("%Y%m%d")
     end_date = (pd.Timestamp.now()).strftime("%Y%m%d")
@@ -44,7 +44,7 @@ def monthly_returns(name, dstfile, key):
 
 def make_kospi_MDD(dstfile, key):
     print("make_kospi_MDD")
-    kospi_df = fdr.DataReader('KS11', start=str(pd.Timestamp.now().year - 5) )
+    kospi_df = fdr.DataReader('KS11', start=str(pd.Timestamp.now().year - 2) )
 
     window = 252
     kospi_df['Peak'] = kospi_df['Adj Close'].cummax()
@@ -56,7 +56,7 @@ def make_kospi_MDD(dstfile, key):
 
 def make_sp500_MDD(dstfile, key):
     print("make_s&p500_mdd")
-    spy_df = fdr.DataReader('US500', start=str(pd.Timestamp.now().year - 5) )
+    spy_df = fdr.DataReader('US500', start=str(pd.Timestamp.now().year - 2) )
 
     window = 252
     spy_df['Peak'] = spy_df['Adj Close'].cummax()
