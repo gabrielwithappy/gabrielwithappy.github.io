@@ -29,8 +29,8 @@ website:
       - dashboard_blog/dashboard_blog.qmd
       - about.qmd
 
-execute:
-  freeze: auto
+# execute:
+#   freeze: auto
 
 format:
   html:
