@@ -1,0 +1,132 @@
+---
+title: S&P500 MDD
+subtitle: S&P500 MDD
+description:
+   S&P500 MDD
+categories:
+  - 시각화
+author: 양성모
+date: "2024/07/28"
+image: "sp500_mdd.jpg"
+image-alt: ""
+page-layout: article
+---
+# S&P500 MDD
+
+최대 하락폭 (MDD; Maximum Drop Down)은 일정 투자기간에서 최고점과 최저점 사이의 차이를 측정하여 변동성을 보여주며 미래의 가격변동을 예측할 때 도움이 됩니다.
+
+특정 기간 동안 자산의 가치가 얼마나 크게 감소했는지를 나타내며, 투자 위험을 평가하는 데 중요한 역할을 합니다.
+
+## 투자 전략 평가
+
+MDD를 사용해 기존 투자 전략의 효과성을 평가할 수 있습니다. 두 가지 전략을 비교할 때, MDD가 더 낮은 전략이 상대적으로 덜 위험할 수 있습니다. 이는 안정적인 수익을 추구하는 투자자들에게 중요한 기준이 될 수 있습니다.
+
+## 포트폴리오 리벨런싱
+
+정기적으로 포트폴리오의 MDD를 검토함으로써, 시장 환경 변화에 따른 리스크를 모니터링하고 필요 시 조정할 수 있습니다. 이는 장기적인 포트폴리오 안정성을 유지하는 데 도움을 줍니다.
+
+MDD가 큰 시기에 대비해 일정 부분을 현금으로 보유함으로써 시장 회복 시 더 많은 자본을 투입할 수 있습니다.
+
+
+
+```{python}
+#| echo: false
+
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+
+import os
+
+path = "./"
+filename = 'result_sp500_mdd.csv'
+df_spy_MDD = pd.read_csv(os.path.join(path, filename), encoding='CP949')
+
+fig = make_subplots(specs=[[{'secondary_y':True}]])
+
+fig.update_layout(
+    margin=dict(l=0, r=0, pad=0), # remove due to mis-aligned range button
+    # autosize=True,
+    hovermode = 'x' or 'y',
+    showlegend=True,
+    legend = dict(
+        orientation="h", # 가로 방향으로
+        # yanchor="top",
+        # xanchor="left",
+    ),
+)
+
+fig.update_layout(
+    xaxis = dict(
+        showspikes=True,
+        spikethickness=1,
+        rangeslider_visible = True,
+        tickangle = 45,
+        # range=[(pd.Timestamp.now() - pd.DateOffset(years=1)), \
+        #         pd.Timestamp.now()],
+        fixedrange = True,
+        rangeslider=dict(
+            range=[(pd.Timestamp.now() - pd.DateOffset(years=1)), \
+                    pd.Timestamp.now()],
+        ),
+        rangeselector=dict(
+            buttons=list([
+                dict(count=1,
+                    label='1m',
+                    step='month',
+                    stepmode='backward'),
+                dict(count=6,
+                    label='6m',
+                    step='month',
+                    stepmode='backward'),
+                dict(count=1,
+                    label="YTD",
+                    step="year",
+                    stepmode="todate"),
+                dict(count=12,
+                    label='1Y',
+                    step='month',
+                    stepmode='backward'),
+                dict(step="all")
+            ])
+        ),
+    ),
+    yaxis = dict(
+        showspikes=True,
+        spikethickness=1,
+        fixedrange = True,
+    ),
+)
+
+fig.add_trace(
+    go.Scatter(x=df_spy_MDD['Date'],
+                y = df_spy_MDD['MDD'],
+                name='MDD'),
+    secondary_y = False,
+)
+fig.add_trace(
+    go.Scatter(x=df_spy_MDD['Date'],
+                y=df_spy_MDD['MDD(6개월평균)'],
+                name='6개월평균 MDD'),
+    secondary_y = False,
+)
+fig.add_trace(
+    go.Scatter(x=df_spy_MDD['Date'],
+                y=df_spy_MDD['Adj Close'],
+                name='S&P500'),
+    secondary_y = True,
+)
+fig.add_trace(
+    go.Scatter(x=df_spy_MDD['Date'],
+                y=df_spy_MDD['DD'],
+                line_dash='dot',
+                line_color='blue',
+                line_width=1,
+                opacity = 0.3,
+                line_shape='spline',
+                name='DD'),
+    secondary_y = False,
+)
+```

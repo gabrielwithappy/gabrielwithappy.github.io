@@ -30,7 +30,7 @@ jobs:
         run: |
           cd utils
           ./update_graph_data.sh ${{secrets.ECOS_KEY}}
-          git add ./utils
+          git add .
           git add ../website/dashboard_blog/posts
           git commit -m "update data"
           git push origin main
