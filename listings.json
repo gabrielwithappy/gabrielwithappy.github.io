@@ -51,6 +51,7 @@
   {
     "listing": "/dashboard_blog/dashboard_blog.html",
     "items": [
+      "/dashboard_blog/posts/sp500_mdd/sp500_mdd.html",
       "/dashboard_blog/posts/nsi/nsi.html",
       "/dashboard_blog/posts/sp500_monthly_returns/sp500_monthly.html",
       "/dashboard_blog/posts/commercial/commercial.html"
