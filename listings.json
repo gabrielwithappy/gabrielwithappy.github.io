@@ -1,20 +1,5 @@
 [
   {
-    "listing": "/dashboard_blog/dashboard_blog.html",
-    "items": [
-      "/dashboard_blog/posts/nsi/nsi.html",
-      "/dashboard_blog/posts/sp500_monthly_returns/sp500_monthly.html",
-      "/dashboard_blog/posts/commercial/commercial.html"
-    ]
-  },
-  {
-    "listing": "/book_blog/book_blog.html",
-    "items": [
-      "/book_blog/posts/2024-06-29-plotly/plotly.html",
-      "/book_blog/posts/2023-09-03-data-visualization/data_visualization.html"
-    ]
-  },
-  {
     "listing": "/blog/blog.html",
     "items": [
       "/blog/posts/2024/20240623.html",
@@ -61,6 +46,21 @@
       "/blog/posts/2023/20230913.html",
       "/blog/posts/2023/20230912.html",
       "/blog/posts/2023/20230910.html"
+    ]
+  },
+  {
+    "listing": "/dashboard_blog/dashboard_blog.html",
+    "items": [
+      "/dashboard_blog/posts/nsi/nsi.html",
+      "/dashboard_blog/posts/sp500_monthly_returns/sp500_monthly.html",
+      "/dashboard_blog/posts/commercial/commercial.html"
+    ]
+  },
+  {
+    "listing": "/book_blog/book_blog.html",
+    "items": [
+      "/book_blog/posts/2024-06-29-plotly/plotly.html",
+      "/book_blog/posts/2023-09-03-data-visualization/data_visualization.html"
     ]
   }
 ]
