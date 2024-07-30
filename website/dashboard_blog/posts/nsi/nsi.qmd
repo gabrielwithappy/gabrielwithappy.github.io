@@ -53,7 +53,7 @@ fig.add_trace(go.Scatter(x = df.Date,
                         name = 'NSI')
         )
 fig.add_trace(go.Scatter(x = df.Date,
-                        y=df['Adj Close'],
+                        y=df['Close'],
                         name = 'KOSPI'),
                         secondary_y = True,
                 )
