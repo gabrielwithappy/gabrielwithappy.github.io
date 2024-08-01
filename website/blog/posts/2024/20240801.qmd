@@ -1,0 +1,157 @@
+---
+title:  환경변수 설정하고 Python에서 읽어오기
+subtitle: 환경변수 설정하고 Python에서 읽어오기
+description:
+  환경변수 설정하고 Python에서 읽어오기
+categories:
+  - Python
+# All, Data Visualization, Database, DevOps, Pandas, Quarto, Web, HuggingFace, Python
+author: gabriel yang
+date: "8/01/2024"
+image: "https://picsum.photos/id/190/200/120"
+# image-alt: "deep learning glossary"
+page-layout: article
+execute:
+  echo: false
+---
+
+# 환경변수 설정하고 Python에서 읽어오기
+
+우분투에서 환경변수를 설정하고 Python에서 해당 환경변수를 읽어오는 방법에 대해 알아보겠습니다. 환경변수는 시스템의 동작에 영향을 미치는 중요한 설정을 저장하는 데 사용됩니다. 예를 들어, 데이터베이스 연결 정보나 API 키를 환경변수에 저장하여 애플리케이션에서 쉽게 사용할 수 있습니다.
+
+## 우분투에서 환경변수 설정하기
+
+우분투에서 환경변수를 설정하는 방법에는 여러 가지가 있지만, 가장 일반적인 방법은 `.bashrc` 파일이나 `.profile` 파일을 수정하는 것입니다. 여기서는 `.bashrc` 파일을 사용하는 방법을 설명합니다.
+
+### 환경변수 추가하기
+
+`.bashrc` 터미널에서 아래 명령어를 입력하여 `.bashrc` 파일을 엽니다.
+
+```bash
+nano ~/.bashrc
+```
+
+파일의 맨 아래에 환경변수를 추가합니다. 예를 들어, `MY_ENV_VAR`라는 이름의 환경변수를 설정하고 싶다면 다음과 같이 추가합니다.
+
+```bash
+export MY_ENV_VAR="my_value"
+```
+
+## Python에서 환경변수 읽어오기
+
+Python에서는 `os` 모듈을 사용하여 환경변수를 읽어올 수 있습니다. 다음은 환경변수를 읽어오는 간단한 예제입니다.
+
+### Python 코드로 환경변수 읽어오기
+
+```python
+import os
+
+# 환경변수 읽어오기
+my_env_var = os.getenv('MY_ENV_VAR')
+
+# 환경변수 출력하기
+if my_env_var:
+    print(f"MY_ENV_VAR: {my_env_var}")
+else:
+    print("MY_ENV_VAR 환경변수가 설정되지 않았습니다.")
+```
+
+위 코드를 `example.py`라는 파일에 저장하고, 터미널에서 아래 명령어를 입력하여 실행합니다.
+
+```bash
+python3 example.py
+```
+실행 결과로 환경변수의 값이 출력될 것입니다.
+
+## 환경변수를 사용하는 이유
+
+환경변수는 소프트웨어 및 시스템에서 중요한 역할을 하는 설정 값들을 관리하는 데 사용됩니다. 환경변수를 사용하는 이유와 예시를 살펴보겠습니다.
+
+1. **보안 강화**: 환경변수는 코드에서 민감한 정보를 숨길 수 있는 방법을 제공합니다. API 키, 비밀번호, 데이터베이스 접속 정보 등은 환경변수에 저장하고 코드에서는 이 변수를 참조하여 보안을 강화할 수 있습니다.
+
+2. **유연성 및 재사용성**: 환경변수를 사용하면 애플리케이션을 다양한 환경(개발, 테스트, 프로덕션 등)에서 쉽게 설정할 수 있습니다. 코드 변경 없이 환경변수만 수정하면 다른 환경에서 동일한 코드가 동작하도록 설정할 수 있습니다.
+
+3. **구성 관리**: 환경변수를 통해 애플리케이션의 설정을 중앙에서 관리할 수 있습니다. 다양한 설정 값들을 코드와 분리하여 관리함으로써 설정의 유지보수성을 높일 수 있습니다.
+
+4. **배포 용이성**: 배포 시 다양한 환경에 맞게 설정을 조정할 수 있습니다. 환경변수를 활용하면 소스 코드를 수정하지 않고도 환경에 맞는 설정을 쉽게 적용할 수 있습니다.
+
+### 데이터베이스 연결 정보
+
+애플리케이션에서 데이터베이스에 연결할 때, 환경변수를 사용하여 데이터베이스 주소, 사용자 이름, 비밀번호 등을 설정할 수 있습니다. 이렇게 하면 코드를 배포할 때 데이터베이스 연결 정보를 쉽게 변경할 수 있습니다.
+
+**예시:**
+
+아래의 코드로 환경변수 설정 DB서버에서 필요한 로그인 정보를 환경변수로 저장합니다.
+```bash
+export DB_HOST="localhost"
+export DB_USER="admin"
+export DB_PASS="secret_password"
+```
+
+이제 `getenv()`함수를 이용해서 DB가 동작할 때 필요한 정보를 읽어올 수 있습니다. 동작되는 서버마다 접속에 필요한 정보가 다른 경우 환경변수를 서버마다 독립적으로 관리할 수 있기 때문에 유지/보수가 편리합니다.
+
+```python
+import os
+import psycopg2
+
+db_host = os.getenv('DB_HOST')
+db_user = os.getenv('DB_USER')
+db_pass = os.getenv('DB_PASS')
+
+conn = psycopg2.connect(
+    host=db_host,
+    user=db_user,
+    password=db_pass
+)
+```
+
+### API 키 관리
+
+클라우드 서비스나 외부 API를 사용할 때 API 키를 환경변수로 설정하여 코드에 직접 포함시키지 않고 안전하게 관리할 수 있습니다. 환경변수를 아래와 같이 설정합니다.
+
+```bash
+export API_KEY="your_api_key_here"
+```
+
+API Key를 코드에 노출하지 않고 API를 사용할 수 있습니다.
+
+```python
+import os
+import requests
+
+api_key = os.getenv('API_KEY')
+response = requests.get(f"https://api.example.com/data?api_key={api_key}")
+
+print(response.json())
+```
+
+### 애플리케이션 설정
+
+애플리케이션의 다양한 설정(예: 로깅 수준, 서버 포트 등)을 환경변수로 관리하여 코드와 설정을 분리할 수 있습니다. 이를 통해 애플리케이션을 실행할 때 설정을 쉽게 조정할 수 있습니다.
+
+```bash
+export LOG_LEVEL="DEBUG"
+export PORT=8000
+```
+
+서버에 저장된 환경변수를 이용해서 필요에 따라서 디버그 정보를 출력할 수 있습니다.
+
+```python
+import os
+import logging
+
+log_level = os.getenv('LOG_LEVEL', 'INFO')
+port = int(os.getenv('PORT', 8080))
+
+logging.basicConfig(level=log_level)
+logging.info(f"Starting server on port {port}")
+```
+
+이처럼 환경변수는 보안, 유연성, 구성 관리, 배포 용이성 등을 고려할 때 매우 유용합니다. 환경변수를 잘 활용하면 코드와 설정을 효과적으로 분리하고, 다양한 환경에서 일관된 동작을 유지할 수 있습니다.
+
+## 주의사항
+
+- **환경변수의 보안:** 환경변수에 중요한 정보(예: API 키, 비밀번호 등)를 저장할 때는 해당 정보를 안전하게 관리해야 합니다. 특히 코드와 함께 버전 관리 시스템에 업로드하지 않도록 주의하세요.
+- **영향 범위:** `.bashrc`에 설정한 환경변수는 해당 사용자의 터미널 세션에서만 유효합니다. 시스템 전체에 적용하려면 `/etc/environment` 파일을 수정할 수도 있습니다.
+
+이제 우분투에서 환경변수를 설정하고 Python에서 해당 변수를 읽어오는 방법을 알게 되었습니다. 이 방법을 활용하여 다양한 설정을 손쉽게 관리해 보세요!

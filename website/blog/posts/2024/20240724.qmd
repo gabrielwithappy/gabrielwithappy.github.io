@@ -7,7 +7,7 @@ categories:
   - Web
 # All, Data Visualization, Database, DevOps, Pandas, Quarto, Web, HuggingFace
 author: gabriel yang
-date: "2024/07/24"
+date: "7/24/2024"
 image: "https://picsum.photos/id/240/200/120"
 # image-alt: "deep learning glossary"
 page-layout: article
