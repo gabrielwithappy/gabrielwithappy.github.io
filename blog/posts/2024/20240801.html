@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="gabriel yang">
-<meta name="dcterms.date" content="2023-11-27">
-<meta name="description" content="우분투 docker, docker-compse 설치">
+<meta name="dcterms.date" content="2024-08-01">
+<meta name="description" content="환경변수 설정하고 Python에서 읽어오기">
 
-<title>BookShelf - 우분투 docker, docker-compse 설치</title>
+<title>BookShelf - 환경변수 설정하고 Python에서 읽어오기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../blog/posts/2023/20231128.html" rel="next">
-<link href="../../../blog/posts/2023/20231126.html" rel="prev">
+<link href="../../../blog/posts/2024/20240724.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -161,7 +160,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../blog/posts/2023/20230910.html">2023</a></li><li class="breadcrumb-item"><a href="../../../blog/posts/2023/20231127.html">우분투 docker, docker-compse 설치</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../blog/posts/2024/20240103.html">2024</a></li><li class="breadcrumb-item"><a href="../../../blog/posts/2024/20240801.html">환경변수 설정하고 Python에서 읽어오기</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -175,13 +174,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">2023</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../blog/posts/2023/20230910.html" class="sidebar-item-text sidebar-link">
@@ -346,7 +345,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../blog/posts/2023/20231127.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../blog/posts/2023/20231127.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">우분투 docker, docker-compse 설치</span></a>
   </div>
 </li>
@@ -426,13 +425,13 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">2024</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../blog/posts/2024/20240103.html" class="sidebar-item-text sidebar-link">
@@ -459,7 +458,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../blog/posts/2024/20240801.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../blog/posts/2024/20240801.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">환경변수 설정하고 Python에서 읽어오기</span></a>
   </div>
 </li>
@@ -475,30 +474,42 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#우분투-docker-docker-compse-설치" id="toc-우분투-docker-docker-compse-설치" class="nav-link active" data-scroll-target="#우분투-docker-docker-compse-설치">우분투 docker, docker-compse 설치</a>
+  <li><a href="#환경변수-설정하고-python에서-읽어오기" id="toc-환경변수-설정하고-python에서-읽어오기" class="nav-link active" data-scroll-target="#환경변수-설정하고-python에서-읽어오기">환경변수 설정하고 Python에서 읽어오기</a>
   <ul class="collapse">
-  <li><a href="#필요한-패키지-설치" id="toc-필요한-패키지-설치" class="nav-link" data-scroll-target="#필요한-패키지-설치">필요한 패키지 설치</a></li>
-  <li><a href="#docker의-공식-gpg키와-저장소-추가" id="toc-docker의-공식-gpg키와-저장소-추가" class="nav-link" data-scroll-target="#docker의-공식-gpg키와-저장소-추가">Docker의 공식 GPG키와 저장소 추가</a></li>
-  <li><a href="#docker-설치" id="toc-docker-설치" class="nav-link" data-scroll-target="#docker-설치">Docker 설치</a></li>
+  <li><a href="#우분투에서-환경변수-설정하기" id="toc-우분투에서-환경변수-설정하기" class="nav-link" data-scroll-target="#우분투에서-환경변수-설정하기">우분투에서 환경변수 설정하기</a>
+  <ul class="collapse">
+  <li><a href="#환경변수-추가하기" id="toc-환경변수-추가하기" class="nav-link" data-scroll-target="#환경변수-추가하기">환경변수 추가하기</a></li>
+  </ul></li>
+  <li><a href="#python에서-환경변수-읽어오기" id="toc-python에서-환경변수-읽어오기" class="nav-link" data-scroll-target="#python에서-환경변수-읽어오기">Python에서 환경변수 읽어오기</a>
+  <ul class="collapse">
+  <li><a href="#python-코드로-환경변수-읽어오기" id="toc-python-코드로-환경변수-읽어오기" class="nav-link" data-scroll-target="#python-코드로-환경변수-읽어오기">Python 코드로 환경변수 읽어오기</a></li>
+  </ul></li>
+  <li><a href="#환경변수를-사용하는-이유" id="toc-환경변수를-사용하는-이유" class="nav-link" data-scroll-target="#환경변수를-사용하는-이유">환경변수를 사용하는 이유</a>
+  <ul class="collapse">
+  <li><a href="#데이터베이스-연결-정보" id="toc-데이터베이스-연결-정보" class="nav-link" data-scroll-target="#데이터베이스-연결-정보">데이터베이스 연결 정보</a></li>
+  <li><a href="#api-키-관리" id="toc-api-키-관리" class="nav-link" data-scroll-target="#api-키-관리">API 키 관리</a></li>
+  <li><a href="#애플리케이션-설정" id="toc-애플리케이션-설정" class="nav-link" data-scroll-target="#애플리케이션-설정">애플리케이션 설정</a></li>
+  </ul></li>
+  <li><a href="#주의사항" id="toc-주의사항" class="nav-link" data-scroll-target="#주의사항">주의사항</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2023/20231127.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/gabrielwithappy/gabrielwithappy.github.io/edit/main/website/blog/posts/2024/20240801.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">우분투 docker, docker-compse 설치</h1>
-<p class="subtitle lead">우분투 docker, docker-compse 설치</p>
+<h1 class="title">환경변수 설정하고 Python에서 읽어오기</h1>
+<p class="subtitle lead">환경변수 설정하고 Python에서 읽어오기</p>
   <div class="quarto-categories">
-    <div class="quarto-category">DevOps</div>
+    <div class="quarto-category">Python</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    우분투 docker, docker-compse 설치
+    환경변수 설정하고 Python에서 읽어오기
   </div>
 </div>
 
@@ -515,7 +526,7 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 27, 2023</p>
+      <p class="date">August 1, 2024</p>
     </div>
   </div>
   
@@ -525,22 +536,108 @@ gtag('config', 'G-N916ZQ0D0N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="우분투-docker-docker-compse-설치" class="level1">
-<h1>우분투 docker, docker-compse 설치</h1>
-<section id="필요한-패키지-설치" class="level2">
-<h2 class="anchored" data-anchor-id="필요한-패키지-설치">필요한 패키지 설치</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="환경변수-설정하고-python에서-읽어오기" class="level1">
+<h1>환경변수 설정하고 Python에서 읽어오기</h1>
+<p>우분투에서 환경변수를 설정하고 Python에서 해당 환경변수를 읽어오는 방법에 대해 알아보겠습니다. 환경변수는 시스템의 동작에 영향을 미치는 중요한 설정을 저장하는 데 사용됩니다. 예를 들어, 데이터베이스 연결 정보나 API 키를 환경변수에 저장하여 애플리케이션에서 쉽게 사용할 수 있습니다.</p>
+<section id="우분투에서-환경변수-설정하기" class="level2">
+<h2 class="anchored" data-anchor-id="우분투에서-환경변수-설정하기">우분투에서 환경변수 설정하기</h2>
+<p>우분투에서 환경변수를 설정하는 방법에는 여러 가지가 있지만, 가장 일반적인 방법은 <code>.bashrc</code> 파일이나 <code>.profile</code> 파일을 수정하는 것입니다. 여기서는 <code>.bashrc</code> 파일을 사용하는 방법을 설명합니다.</p>
+<section id="환경변수-추가하기" class="level3">
+<h3 class="anchored" data-anchor-id="환경변수-추가하기">환경변수 추가하기</h3>
+<p><code>.bashrc</code> 터미널에서 아래 명령어를 입력하여 <code>.bashrc</code> 파일을 엽니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>파일의 맨 아래에 환경변수를 추가합니다. 예를 들어, <code>MY_ENV_VAR</code>라는 이름의 환경변수를 설정하고 싶다면 다음과 같이 추가합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MY_ENV_VAR</span><span class="op">=</span><span class="st">"my_value"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="docker의-공식-gpg키와-저장소-추가" class="level2">
-<h2 class="anchored" data-anchor-id="docker의-공식-gpg키와-저장소-추가">Docker의 공식 GPG키와 저장소 추가</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="kw">|</span> <span class="fu">sudo</span> apt-key add <span class="at">-</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="st">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="va">$(</span><span class="ex">lsb_release</span> <span class="at">-cs</span><span class="va">)</span><span class="st"> stable"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="docker-설치" class="level2">
-<h2 class="anchored" data-anchor-id="docker-설치">Docker 설치</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install docker-ce docker-ce-cli containerd.io</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="python에서-환경변수-읽어오기" class="level2">
+<h2 class="anchored" data-anchor-id="python에서-환경변수-읽어오기">Python에서 환경변수 읽어오기</h2>
+<p>Python에서는 <code>os</code> 모듈을 사용하여 환경변수를 읽어올 수 있습니다. 다음은 환경변수를 읽어오는 간단한 예제입니다.</p>
+<section id="python-코드로-환경변수-읽어오기" class="level3">
+<h3 class="anchored" data-anchor-id="python-코드로-환경변수-읽어오기">Python 코드로 환경변수 읽어오기</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 환경변수 읽어오기</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>my_env_var <span class="op">=</span> os.getenv(<span class="st">'MY_ENV_VAR'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 환경변수 출력하기</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> my_env_var:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"MY_ENV_VAR: </span><span class="sc">{</span>my_env_var<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"MY_ENV_VAR 환경변수가 설정되지 않았습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>위 코드를 <code>example.py</code>라는 파일에 저장하고, 터미널에서 아래 명령어를 입력하여 실행합니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> example.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>실행 결과로 환경변수의 값이 출력될 것입니다.</p>
+</section>
+</section>
+<section id="환경변수를-사용하는-이유" class="level2">
+<h2 class="anchored" data-anchor-id="환경변수를-사용하는-이유">환경변수를 사용하는 이유</h2>
+<p>환경변수는 소프트웨어 및 시스템에서 중요한 역할을 하는 설정 값들을 관리하는 데 사용됩니다. 환경변수를 사용하는 이유와 예시를 살펴보겠습니다.</p>
+<ol type="1">
+<li><p><strong>보안 강화</strong>: 환경변수는 코드에서 민감한 정보를 숨길 수 있는 방법을 제공합니다. API 키, 비밀번호, 데이터베이스 접속 정보 등은 환경변수에 저장하고 코드에서는 이 변수를 참조하여 보안을 강화할 수 있습니다.</p></li>
+<li><p><strong>유연성 및 재사용성</strong>: 환경변수를 사용하면 애플리케이션을 다양한 환경(개발, 테스트, 프로덕션 등)에서 쉽게 설정할 수 있습니다. 코드 변경 없이 환경변수만 수정하면 다른 환경에서 동일한 코드가 동작하도록 설정할 수 있습니다.</p></li>
+<li><p><strong>구성 관리</strong>: 환경변수를 통해 애플리케이션의 설정을 중앙에서 관리할 수 있습니다. 다양한 설정 값들을 코드와 분리하여 관리함으로써 설정의 유지보수성을 높일 수 있습니다.</p></li>
+<li><p><strong>배포 용이성</strong>: 배포 시 다양한 환경에 맞게 설정을 조정할 수 있습니다. 환경변수를 활용하면 소스 코드를 수정하지 않고도 환경에 맞는 설정을 쉽게 적용할 수 있습니다.</p></li>
+</ol>
+<section id="데이터베이스-연결-정보" class="level3">
+<h3 class="anchored" data-anchor-id="데이터베이스-연결-정보">데이터베이스 연결 정보</h3>
+<p>애플리케이션에서 데이터베이스에 연결할 때, 환경변수를 사용하여 데이터베이스 주소, 사용자 이름, 비밀번호 등을 설정할 수 있습니다. 이렇게 하면 코드를 배포할 때 데이터베이스 연결 정보를 쉽게 변경할 수 있습니다.</p>
+<p><strong>예시:</strong></p>
+<p>아래의 코드로 환경변수 설정 DB서버에서 필요한 로그인 정보를 환경변수로 저장합니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DB_HOST</span><span class="op">=</span><span class="st">"localhost"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DB_USER</span><span class="op">=</span><span class="st">"admin"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DB_PASS</span><span class="op">=</span><span class="st">"secret_password"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이제 <code>getenv()</code>함수를 이용해서 DB가 동작할 때 필요한 정보를 읽어올 수 있습니다. 동작되는 서버마다 접속에 필요한 정보가 다른 경우 환경변수를 서버마다 독립적으로 관리할 수 있기 때문에 유지/보수가 편리합니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> psycopg2</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>db_host <span class="op">=</span> os.getenv(<span class="st">'DB_HOST'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>db_user <span class="op">=</span> os.getenv(<span class="st">'DB_USER'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>db_pass <span class="op">=</span> os.getenv(<span class="st">'DB_PASS'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> psycopg2.<span class="ex">connect</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    host<span class="op">=</span>db_host,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    user<span class="op">=</span>db_user,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    password<span class="op">=</span>db_pass</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="api-키-관리" class="level3">
+<h3 class="anchored" data-anchor-id="api-키-관리">API 키 관리</h3>
+<p>클라우드 서비스나 외부 API를 사용할 때 API 키를 환경변수로 설정하여 코드에 직접 포함시키지 않고 안전하게 관리할 수 있습니다. 환경변수를 아래와 같이 설정합니다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">API_KEY</span><span class="op">=</span><span class="st">"your_api_key_here"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>API Key를 코드에 노출하지 않고 API를 사용할 수 있습니다.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> os.getenv(<span class="st">'API_KEY'</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="ss">f"https://api.example.com/data?api_key=</span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="애플리케이션-설정" class="level3">
+<h3 class="anchored" data-anchor-id="애플리케이션-설정">애플리케이션 설정</h3>
+<p>애플리케이션의 다양한 설정(예: 로깅 수준, 서버 포트 등)을 환경변수로 관리하여 코드와 설정을 분리할 수 있습니다. 이를 통해 애플리케이션을 실행할 때 설정을 쉽게 조정할 수 있습니다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LOG_LEVEL</span><span class="op">=</span><span class="st">"DEBUG"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PORT</span><span class="op">=</span>8000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>서버에 저장된 환경변수를 이용해서 필요에 따라서 디버그 정보를 출력할 수 있습니다.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>log_level <span class="op">=</span> os.getenv(<span class="st">'LOG_LEVEL'</span>, <span class="st">'INFO'</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>port <span class="op">=</span> <span class="bu">int</span>(os.getenv(<span class="st">'PORT'</span>, <span class="dv">8080</span>))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>logging.basicConfig(level<span class="op">=</span>log_level)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>logging.info(<span class="ss">f"Starting server on port </span><span class="sc">{</span>port<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이처럼 환경변수는 보안, 유연성, 구성 관리, 배포 용이성 등을 고려할 때 매우 유용합니다. 환경변수를 잘 활용하면 코드와 설정을 효과적으로 분리하고, 다양한 환경에서 일관된 동작을 유지할 수 있습니다.</p>
+</section>
+</section>
+<section id="주의사항" class="level2">
+<h2 class="anchored" data-anchor-id="주의사항">주의사항</h2>
+<ul>
+<li><strong>환경변수의 보안:</strong> 환경변수에 중요한 정보(예: API 키, 비밀번호 등)를 저장할 때는 해당 정보를 안전하게 관리해야 합니다. 특히 코드와 함께 버전 관리 시스템에 업로드하지 않도록 주의하세요.</li>
+<li><strong>영향 범위:</strong> <code>.bashrc</code>에 설정한 환경변수는 해당 사용자의 터미널 세션에서만 유효합니다. 시스템 전체에 적용하려면 <code>/etc/environment</code> 파일을 수정할 수도 있습니다.</li>
+</ul>
+<p>이제 우분투에서 환경변수를 설정하고 Python에서 해당 변수를 읽어오는 방법을 알게 되었습니다. 이 방법을 활용하여 다양한 설정을 손쉽게 관리해 보세요!</p>
 
 
 </section>
@@ -784,14 +881,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../blog/posts/2023/20231126.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">AWS 호스팅 EC2 와 Lightsail의 차이</span>
+      <a href="../../../blog/posts/2024/20240724.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GitHub Actions 시작하기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../blog/posts/2023/20231128.html" class="pagination-link">
-        <span class="nav-page-text">mongoDB 서비스 시작/종료/상태확인</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
