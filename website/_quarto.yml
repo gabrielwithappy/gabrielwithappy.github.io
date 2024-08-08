@@ -9,6 +9,7 @@ metadata-files:
 
 website:
   title: "BookShelf"
+  favicon: images/favicon.jpg
   search: true
   site-url: https://gabrielwithappy.github.io/
   site-path: '/'
