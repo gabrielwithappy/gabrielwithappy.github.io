@@ -17,6 +17,7 @@ website:
         - section: "Part 2. 기본 차트 만들기"
           contents:
           - book_blog/posts/2024-06-29-plotly/line_chart.qmd
+          - book_blog/posts/2024-06-29-plotly/bar_chart.qmd
 
 
 
