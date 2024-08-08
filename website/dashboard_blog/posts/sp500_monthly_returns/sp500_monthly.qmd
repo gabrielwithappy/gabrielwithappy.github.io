@@ -62,7 +62,7 @@ fig.add_hline(y =rate_monthly, line_color='red', line={'dash':'dot','width':5}, 
 fig.add_hline(y = 0, line_color='black', opacity=0.7)
 
 fig.update_layout(
-        margin=dict(l=50, r=0),
+        margin=dict(l=0, r=0),
         xaxis=dict(
                 rangeselector=dict(
                         buttons=list([
@@ -112,6 +112,4 @@ fig.show()
 
 ## 모멘텀 투자
 
-주식과 채권의 비율을 12개월 중 국고채 수익률 보다 높은 월의 횟수로 결정하는 방법입니다. 예를들어 12개월 중 7개월이 국고채 수익률보다 높은 경우 주식과 채권의 비율을 7:3으로 적용할 수 있습니다.
-
-자신만에 포트폴리오 모멘텀 투자방식을 자신만의 포트폴리오 리벨런싱 규칙으로 사용할 수 있습니다.
+주식과 채권의 비율을 12개월 중 국고채 수익률 보다 높은 월의 횟수로 결정하는 방법입니다. 예를들어 12개월 중 7개월이 국고채 수익률보다 높은 경우 주식과 채권의 비율을 7:3으로 적용할 수 있습니다. 자신만에 포트폴리오 모멘텀 투자방식을 자신만의 포트폴리오 리벨런싱 규칙으로 사용할 수 있습니다.
